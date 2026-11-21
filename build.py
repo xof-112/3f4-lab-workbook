@@ -25,4 +25,12 @@ READER = '<div class="reader" data-reader hidden><button type="button" class="rd
 html = html.replace("{{READER}}", READER).replace("{{BACK}}", '<a class="back toc-back" href="#inhalt">↑ zum Inhaltsverzeichnis</a>')
 assert "{{" not in html, re.findall(r"\{\{[^}]*\}\}", html)
 open("3f4-lab-workbook.html", "w", encoding="utf-8").write(html)
+# GitHub Pages (Ordner docs/): dieselbe Seite als vollständiges HTML-Dokument
+import os
+os.makedirs("docs", exist_ok=True)
+open("docs/index.html", "w", encoding="utf-8").write(
+    '<!DOCTYPE html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n'
+    '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+    + html + '\n</html>\n')
+open("docs/.nojekyll", "w").close()
 print(len(html))

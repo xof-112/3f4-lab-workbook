@@ -10,6 +10,7 @@ Stand: Fassung 2.5, 21. November 2026 (Bauplan, Band 1–3, 44 Modulporträts, P
 3. Claude entpackt das ZIP, baut mit `python3 build.py` und veröffentlicht `3f4-lab-workbook.html` auf dieselbe Artifact-URL.
 4. Vorher prüfen: Stimmt die Fassungsnummer hier mit der veröffentlichten Seite überein (Titelzeile „Fassung …“)? Sonst ist das ZIP veraltet. So geschehen bei 1.3 gegen 1.7 und am 21.11.2026: ZIP 1.11 gegen Seite 2.4 (die ZIPs 1.12–2.4 fehlten), siehe „Herkunft“.
 5. Veröffentlichen mit publish_files (Datei 3f4-lab-workbook.html als index.html), die Seite ist rund 3 MB groß.
+6. Repo: https://github.com/xof-112/3f4-lab-workbook (Quelle ab 2.5, statt ZIP auch den Repo-Link nennen). Nach dem Build `docs/index.html` mit einchecken: Das ist die GitHub-Pages-Fassung unter https://xof-112.github.io/3f4-lab-workbook/
 
 ## Herkunft (wichtig)
 Fassung 2.5 wurde aus der veröffentlichten Seite 2.4 zurückgewonnen: Die Seite wurde wortgetreu in die Dateien unten zerlegt, `build.py` baut sie Byte für Byte nach (geprüft). Folgen:
@@ -30,7 +31,7 @@ Fassung 2.5 wurde aus der veröffentlichten Seite 2.4 zurückgewonnen: Die Seite
 | anhang.html | Quellen, Fußzeile (mit Fassungsnummer) |
 | script.html | gesamtes JavaScript: Spielplätze (u. a. fbplay, Formleiste Kap. 09 `formplay` mit Ton, localStorage „wb-form9“; Pegelrechner `pegelplay`; Patchkarte `pcard`, localStorage „wb-card10“), Vorlesefunktion, Seitenleiste |
 | figs.py … figs7.py | Grafik-Generatoren (siehe „Herkunft“), Regler `knob()`, Patchplan-Generator `patchplan()` in figs2.py |
-| build.py | setzt alles zusammen → 3f4-lab-workbook.html |
+| build.py | setzt alles zusammen → 3f4-lab-workbook.html (für das Artifact) und docs/index.html (GitHub Pages, mit DOCTYPE, charset, viewport; dazu docs/.nojekyll) |
 | shot.js | Playwright-Prüfung (Bildschirmfotos, Konsolenfehler) |
 
 Neue Kapitel oder Teile: als eigene .html anlegen und in `build.py` in ORDER eintragen; neue Grafiken in einer `figsN.py` und in das Dict `F`. SVG-Marker-IDs müssen auf der ganzen Seite eindeutig sein.
