@@ -1,0 +1,432 @@
+<!-- ======================= TEIL II ======================= -->
+<section class="part" id="teil2">
+<div class="part-h"><span class="pn">Teil II</span><h2>Band 1 · Lernen und Entdecken am Rack</h2></div>
+<p>Zehn Kapitel, der Reihe nach. Jedes Kapitel hat dieselben Bausteine (siehe <a href="#schablone">Kapitel-Schablone</a>), eine Vorlesefunktion am Kopf und am Ende einen Link zurück zum Inhaltsverzeichnis. Ausgearbeitet sind alle zehn Kapitel.</p>
+</section>
+<section class="part chapter" id="k1">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 01</span><h2>Grundlagen und Signalwege · die erste Stimme</h2></div>
+<p class="muted"><i>Vom ersten Signal zum nachvollziehbaren Audio-/CV-Patch</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 90 min</b><span>Theorie + Praxis</span></div>
+  <div><b>8</b><span>Kabel bis Patch <a class="xref" href="#p-1c">1C</a></span></div>
+  <div><b>6</b><span>Module + L6</span></div>
+  <div><b>keine</b><span>Voraussetzungen</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du unterscheidest Audio, CV, Gate und Trigger sicher, liest Signalwege im Pult systematisch und baust eine vollständige erste Stimme, die Du kontrolliert einpegelst.</dd>
+  <dt>Theorie</dt><dd>Spannungen im Eurorack · Signalarchitektur Quelle → Formung → Dynamik → Ausgang · Pegel zum Schutz von Gehör und L6 · das 1-V/Oct-Prinzip · Grundbegriffe</dd>
+  <dt>Praxis</dt><dd>Referenz-Patch „Die erste Stimme · vom Grundton zum lebendigen Drone“ in drei Stufen: 1A, 1B, 1C</dd>
+  <dt>Prüfstatus</dt><dd>Buchsen und Kennwerte nach Herstellerangaben <span class="tag tag-h">Hersteller</span>; die Punkte, die das Handbuch offenlässt, sind am Pult nachgeprüft <span class="tag tag-ok">verifiziert</span>. Offen ist nur, wie stark der CatSynth-Mixer abschwächt.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 Theorie ---------- -->
+<h3 id="k1-rack">Teil 1 · Wie Dein Rack denkt</h3>
+<p>Ein fest verdrahteter Synthesizer nimmt Dir die grundlegenden Entscheidungen ab. Der Oszillator ist intern mit dem Filter verbunden, das Filter mit dem VCA, und Hüllkurven und LFOs warten nur darauf, per Regler eingeblendet zu werden. Im Eurorack gibt es diese unsichtbare Verdrahtung nicht, bis auf wenige Ausnahmen. Jede Verbindung und jede klangliche Bewegung entsteht erst, wenn Du einen Ausgang mit einem Eingang verbindest.</p>
+<p>Hinter jeder 3,5-mm-Buchse fließt nur Spannung. Dem Kabel ist es gleich, ob es eine Basslinie, eine langsame Filterfahrt oder einen Taktimpuls trägt. Damit Du trotzdem gezielt steuerst und nicht im Zufall landest, sortieren wir diese Spannungen nach ihrer Aufgabe. Vorher fünf Begriffe, die in jedem Kapitel wiederkehren:</p>
+<div class="tbl"><table>
+<thead><tr><th>Begriff</th><th>Bedeutung im Pult</th></tr></thead>
+<tbody>
+<tr><td>Patchen</td><td>Einen <b>Ausgang</b> mit einem <b>Eingang</b> verbinden. Nie zwei Ausgänge miteinander: Dann arbeiten zwei Schaltungen gegeneinander, und im besten Fall passiert nur nichts.</td></tr>
+<tr><td>Signalrichtung</td><td>Spannung fließt immer vom Ausgang zum Eingang. Ein Eingang darf mehrere Kabel bekommen, wenn er ein Mischer ist, sonst nicht. Ein Ausgang darf über einen Mult an mehrere Eingänge.</td></tr>
+<tr><td>Normalisierung</td><td>Eine interne Vorverbindung, die nur gilt, solange in der Buchse kein Stecker steckt. Beispiel: Beim A-185-2 liegt an jedem leeren Eingang +1 V an. Ein Stecker unterbricht die Normalisierung.</td></tr>
+<tr><td>Mult</td><td>Verteiler: ein Signal an mehrere Ziele. Passive Mults verbinden Buchsen nur; aktive Mults (Deine CatSynth-Mults) puffern, sodass die Spannung auch bei vielen Abnehmern stabil bleibt. Für Tonhöhen-CV immer aktiv.</td></tr>
+<tr><td>Eingang / Ausgang</td><td>Auf vielen Panels unterscheidbar an Beschriftung oder Farbe. Im Patchplan dieses Buchs: hohler Kreis = Eingang, gefüllter Kreis = Ausgang.</td></tr>
+</tbody></table></div>
+
+<h4 id="k1-signale">1 · Die vier Signalarten</h4>
+<figure>
+  <div class="sv">{{FIG:signals}}</div>
+  <figcaption><b>Gleiche Buchse, vier Aufgaben.</b> Audio schwingt schnell und bipolar um 0 V, CV wandert langsam, ein Gate hält eine Spannung so lange wie eine gedrückte Taste, ein Trigger ist nur ein Startschuss. Mit dem ZeroScope in Reihe 2 kannst Du jede dieser Kurven direkt sehen.</figcaption>
+</figure>
+<ul>
+<li><b class="a">Audio · der hörbare Klang.</b> Schnelle Schwingungen im Hörbereich, etwa 20 Hz bis 20 kHz. Im Eurorack bipolar um 0 V, typisch von −5 V bis +5 V, also 10 Vpp. Der 258t liefert an jedem Ausgang etwa 10 Vpp. <span class="tag tag-h">Hersteller</span></li>
+<li><b class="c">CV · die unsichtbare Hand.</b> Steuerspannungen ersetzen Deine Finger am Regler. Drehst Du am Cutoff, veränderst Du intern eine Spannung; steckst Du eine externe Spannung in den CV-Eingang des Filters, dreht sie für Dich. CV ist meist langsam, kann aber schnell genug werden, um selbst hörbar zu sein (Audio-Rate-Modulation).</li>
+<li><b class="g">Gate · der gehaltene Schalter.</b> Eine Spannung mit Dauer. Solange eine Taste gedrückt oder ein Step aktiv ist, bleibt sie oben, danach fällt sie auf 0 V. Ein Gate überträgt zwei Dinge: wann etwas beginnt (steigende Flanke) und wie lange es dauert (Plateau).</li>
+<li><b class="t">Trigger · der Startschuss.</b> Ein sehr kurzer Impuls ohne relevante Dauer. Er sagt nur „jetzt!“: Hüllkurve starten, Sequencer weiterschalten, Drum auslösen. Der 281t gibt am Ende jedes Decays selbst einen solchen Impuls aus. <span class="tag tag-h">Hersteller</span></li>
+</ul>
+<div class="tbl w"><table>
+<thead><tr><th>Signalart</th><th>Verhalten</th><th>Typischer Bereich</th><th>Aufgabe</th></tr></thead>
+<tbody>
+<tr><td class="a">Audio</td><td>schnelle Schwingung, &gt; 20 Hz</td><td>−5 … +5 V</td><td>Klangmaterial: Oszillatoren, Rauschen, Effekte</td></tr>
+<tr><td class="c">CV</td><td>fließend, langsam bis schnell</td><td>−5 … +5 V oder 0 … +10 V</td><td>Parameter bewegen: Tonhöhe, Cutoff, Pegel</td></tr>
+<tr><td class="g">Gate</td><td>gehaltenes Plateau</td><td>0 V aus / +5 … +10 V an</td><td>Notenlängen, ADSR mit Sustain</td></tr>
+<tr><td class="t">Trigger</td><td>Impuls, ca. 1–10 ms</td><td>0 V → +5 V (oder +10 V)</td><td>Clocks, Drums, AD-Hüllkurven</td></tr>
+</tbody></table></div>
+
+<h4 id="k1-arch">2 · Signalarchitektur</h4>
+<p>Damit aus vier Spannungsarten ein Instrument wird, folgt fast jedes Patch derselben Architektur. Du liest sie wie Text, von links nach rechts.</p>
+<figure>
+  <div class="sv">{{FIG:arch}}</div>
+  <figcaption><b>Audio läuft durch, Modulation greift ein.</b> Die untere Reihe ist der hörbare Weg. Die obere Ebene erzeugt keinen Klang, sie bewegt nur die Parameter der Stufen darunter.</figcaption>
+</figure>
+<ol>
+<li><b>Quelle.</b> Ein Oszillator erzeugt eine rohe, dauerhaft klingende Schwingung.</li>
+<li><b>Klangformung.</b> Ein Filter nimmt Obertöne weg, ein Wavefolder fügt welche hinzu.</li>
+<li><b>Dynamik.</b> Ein VCA oder ein Low Pass Gate entscheidet, ob und wie laut das Signal zu hören ist.</li>
+<li><b>Ausgang.</b> Das Signal verlässt das Rack Richtung L6.</li>
+<li><b>Modulation</b> liegt quer darüber: LFOs, Hüllkurven und Sequencer schicken CV in die Stufen 1 bis 3.</li>
+</ol>
+
+<h4 id="k1-pegel">3 · Pegel, Gehör und der L6</h4>
+<p>Eurorack-Audio ist für Studiogeräte sehr „heiß“. Ein normaler Line-Ausgang liefert eine Spitzenspannung um 1,7 V, ein Eurorack-Oszillator 5 V. Ob das am L6 ein Problem ist, hängt davon ab, in welche Buchse Du gehst.</p>
+<figure>
+  <div class="sv">{{FIG:levels}}</div>
+  <figcaption><b>Die Klinke an Kanal 1 und 2 hat Reserve, die Line-Eingänge 3–6 nicht.</b> Spitzenspannung jeweils für einen Sinus aus den Datenblattwerten berechnet (L6: XLR max. +4 dBu, Klinke an der Kombibuchse max. +24 dBu, Line-Eingänge max. +9 dBu). Ein voller Eurorack-Pegel überfährt die Line-Eingänge um etwa 4 dB; genau das fangen Deine Passivfader vor dem L6 ab. <span class="tag tag-h">Hersteller</span></figcaption>
+</figure>
+<div class="warn">
+<strong>Drei Regeln für jedes neue Patch</strong>
+<ol>
+<li><b>Der Passivfader ist die erste Pegelstufe.</b> Jeder der acht L6-Eingänge hängt im Pult hinter einem CatSynth-Passivfader. Der Fader schwächt das heiße Rack-Signal ab, bevor es den Wandler erreicht. Das schützt den Eingang und hält die Aufnahme der Spur sauber: Eine Übersteuerung am Eingang steckt fest in der Datei, daran ändert auch die 32-Bit-Float-Aufnahme nichts.</li>
+<li><b>Erst zu, dann auf.</b> Passivfader unten, L6-Kanal zurück, VCA im Rack geschlossen. Wenn alles gesteckt ist, den VCA öffnen, dann den Passivfader hochziehen, bis das Signal kräftig anliegt, ohne dass der L6 eine Übersteuerung anzeigt. Die Lautstärke im Kopfhörer regelst Du danach am L6-Kanal.</li>
+<li><b>Den Fader nicht als Lautstärkeregler missbrauchen.</b> Ist der Fader einmal eingepegelt, bleibt er stehen. Musikalische Lautstärkeänderungen macht der VCA im Rack, sonst ändert sich mit jeder Geste auch der Aufnahmepegel. Wie weit Du den Fader öffnen darfst, hängt am Eingang: Die Line-Eingänge 3–6 vertragen nur +9 dBu und brauchen deutlich weniger als Vollausschlag; die Klinke an Kanal 1 und 2 verträgt +24 dBu, den XLR-Teil der Kombibuchse (nur +4 dBu) nimmst Du für das Rack nicht. <span class="tag tag-h">Hersteller</span></li>
+</ol>
+</div>
+<p>Auch im Rack selbst gibt es Pegelgrenzen. Der Audio-Eingang des A-106-5 hat einen Abschwächer; laut Doepfer beginnt die Verzerrung etwa ab Mittelstellung. <span class="tag tag-h">Hersteller</span> Mischst Du zwei Oszillatoren mit je 10 Vpp, entstehen Spitzen von 20 Vpp, mehr als die ±12-V-Versorgung durchlässt. Deshalb steht der Mischer in Patch <a class="xref" href="#p-1c">1C</a> nicht auf Vollausschlag.</p>
+
+<h4 id="k1-voct">4 · Tonhöhe mit 1 V/Oct und Quantisierung</h4>
+<p>Damit Sequencer und Oszillatoren sich auf Töne einigen, sprechen sie im Eurorack dieselbe Sprache: <b>1 Volt pro Oktave</b>. Steigt die Spannung am 1-V/Oct-Eingang um genau 1,000 V, verdoppelt sich die Frequenz, der Ton klingt eine Oktave höher. Eine Oktave hat zwölf Halbtöne, ein Halbton ist also 1/12 V ≈ 83,3 mV. Der 258t folgt diesem Standard; das Buchla-Original arbeitete übrigens mit 1,2 V pro Oktave. <span class="tag tag-h">Hersteller</span></p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 330" role="img" aria-label="1 Volt pro Oktave: jedes zusätzliche Volt verdoppelt die Frequenz. Ohne Quantizer gleitet die Tonhöhe stufenlos, mit Quantizer springt sie in Halbtonstufen von einem Zwölftel Volt.">
+<line x1="70" y1="30" x2="70" y2="280" class="t-grid"/>
+<text x="70" y="298" class="t-ax" text-anchor="middle">0 V</text>
+<line x1="286.7" y1="30" x2="286.7" y2="280" class="t-grid"/>
+<text x="286.7" y="298" class="t-ax" text-anchor="middle">1 V</text>
+<line x1="503.3" y1="30" x2="503.3" y2="280" class="t-grid"/>
+<text x="503.3" y="298" class="t-ax" text-anchor="middle">2 V</text>
+<line x1="720" y1="30" x2="720" y2="280" class="t-grid"/>
+<text x="720" y="298" class="t-ax" text-anchor="middle">3 V</text>
+<line x1="70" y1="280" x2="720" y2="280" class="t-grid"/>
+<text x="64" y="284" class="t-ax" text-anchor="end">A1</text>
+<text x="724" y="284" class="t-ax">55 Hz</text>
+<line x1="70" y1="196.7" x2="720" y2="196.7" class="t-grid"/>
+<text x="64" y="200.7" class="t-ax" text-anchor="end">A2</text>
+<text x="724" y="200.7" class="t-ax">110 Hz</text>
+<line x1="70" y1="113.3" x2="720" y2="113.3" class="t-grid"/>
+<text x="64" y="117.3" class="t-ax" text-anchor="end">A3</text>
+<text x="724" y="117.3" class="t-ax">220 Hz</text>
+<line x1="70" y1="30" x2="720" y2="30" class="t-grid"/>
+<text x="64" y="34" class="t-ax" text-anchor="end">A4</text>
+<text x="724" y="34" class="t-ax">440 Hz</text>
+<line x1="70" y1="280" x2="720" y2="30" class="sig sig-cv" />
+<polyline points="70,280 88.1,280 88.1,273.1 106.1,273.1 106.1,266.1 124.2,266.1 124.2,259.2 142.2,259.2 142.2,252.2 160.3,252.2 160.3,245.3 178.3,245.3 178.3,238.3 196.4,238.3 196.4,231.4 214.4,231.4 214.4,224.4 232.5,224.4 232.5,217.5 250.6,217.5 250.6,210.6 268.6,210.6 268.6,203.6 286.7,203.6 286.7,196.7 304.7,196.7 304.7,189.7 322.8,189.7 322.8,182.8 340.8,182.8 340.8,175.8 358.9,175.8 358.9,168.9 376.9,168.9 376.9,161.9 395,161.9 395,155 413.1,155 413.1,148.1 431.1,148.1 431.1,141.1 449.2,141.1 449.2,134.2 467.2,134.2 467.2,127.2 485.3,127.2 485.3,120.3 503.3,120.3 503.3,113.3 521.4,113.3 521.4,106.4 539.4,106.4 539.4,99.4 557.5,99.4 557.5,92.5 575.6,92.5 575.6,85.6 593.6,85.6 593.6,78.6 611.7,78.6 611.7,71.7 629.7,71.7 629.7,64.7 647.8,64.7 647.8,57.8 665.8,57.8 665.8,50.8 683.9,50.8 683.9,43.9 701.9,43.9 701.9,36.9 720,36.9" class="sig sig-step"/>
+<line x1="286.7" y1="276" x2="304.7" y2="276" class="anno"/>
+<text x="286.7" y="268" class="t-ax">1 Halbton = 1/12 V ≈ 83,3 mV</text>
+<text x="535.8" y="86.8" class="t-ax lab-cv" text-anchor="end">ohne Quantizer: gleitet</text>
+<text x="557.5" y="114.5" class="t-ax lab-step">mit Quantizer: Stufen</text>
+<text x="70" y="326" class="t-ax">Annahme: FREQ so gestimmt, dass 0 V am 1-V/Oct-Eingang A1 ergibt.</text>
+</svg></div>
+  <figcaption><b>Gleiche Spannungsrampe, zwei Ergebnisse.</b> Direkt in den Oszillator gleitet der Ton wie eine Sirene durch alle Zwischenwerte (orange). Ein Quantizer rundet jeden Wert auf das nächste Vielfache von 83,3 mV, und aus der Rampe wird eine chromatische Tonleiter (blau).</figcaption>
+</figure>
+<p>Ein stufenloser Regler oder ein LFO liefert jeden Zwischenwert, etwa 0,412 V. Für definierte Töne schaltest Du einen Quantizer dazwischen, im Pult den <b>Doepfer A-156</b> oder den <b>Penrose</b>. Der A-156 nimmt 0 bis +10 V an; Quantizer 1 rundet auf Halbtöne, Quantizer 2 auf Dur, Moll, Akkorde oder Grundton plus Quinte. <span class="tag tag-h">Hersteller</span> Ausprobieren kannst Du das in <a href="#k1-1d">Exkurs 1D</a>.</p>
+
+<!-- ---------- Teil 2 Praxis ---------- -->
+<h3 id="k1-praxis">Teil 2 · Praxis am Rack: die erste Stimme</h3>
+<p>Wir setzen die Theorie sofort um, in drei Ausbaustufen. Jede Stufe wird einzeln gehört und geprüft, bevor das nächste Kabel dazukommt. Die Kabel sind über alle Stufen durchnummeriert, damit klar ist, was beim Umstecken wohin wandert.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>Ein analoger Oszillator schwingt ununterbrochen, sobald das Rack an ist. In <b>Patch <a class="xref" href="#p-1a">1A</a></b> machen wir diesen Grundton über Filter und VCA kontrolliert hörbar. Der VCA ist hier noch kein Rhythmuswerkzeug, sondern ein Pegelsteller, und weil der A-130-8 keine Regler hat, lernst Du dabei gleich die wichtigste Idee des Kapitels: <b>eine Gleichspannung kann ein Regler sein.</b> In <b>Patch <a class="xref" href="#p-1b">1B</a></b> übernimmt der 281t die Bewegung des Cutoff-Reglers, der Ton beginnt zu atmen. In <b>Patch <a class="xref" href="#p-1c">1C</a></b> kommt der zweite Oszillator des 258t dazu. Minimal gegeneinander verstimmt erzeugen beide Schwebungen, und aus einem statischen Laborton wird eine breite, lebendige Fläche.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Dieses Patch ist das Rückgrat fast jeder Klanggestaltung im Pult. Du lernst im Kleinen, wie ein einzelner gehaltener Ton allein durch Obertonfilterung, langsame zyklische Modulation und die Phasenbeziehung zweier Oszillatoren so viel innere Bewegung bekommt, dass er über Minuten trägt. Das ist die Grundlage für Ambient-Flächen, Intros und atmosphärische Fundamente, und Patch <a class="xref" href="#p-1c">1C</a> ist der Ausgangspunkt von Kapitel <a class="xref" href="#k4">04</a>.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>Benutzt</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Klangquelle</td><td>Tiptop Audio / Buchla 258t</td><td>OSC 1 und OSC 2</td><td>1A / 1C</td></tr>
+<tr><td>Filter</td><td>Doepfer A-106-5 SEM</td><td><span class="jack">AUDIO IN</span> <span class="jack">CV2 IN</span> <span class="jack">MIX-OUT</span></td><td>1A</td></tr>
+<tr><td>VCA</td><td>Doepfer A-130-8 Octal Linear VCA</td><td>Kanal 1</td><td>1A</td></tr>
+<tr><td>Pegelspannung</td><td>CatSynth Slimline Dual Attenuverter</td><td>Kanal A, nur OFFSET</td><td>1A</td></tr>
+<tr><td>Modulation</td><td>Tiptop Audio / Buchla 281t</td><td>Kanal 1</td><td>1B</td></tr>
+<tr><td>Mischer</td><td>CatSynth 4× Mixer</td><td>IN 1, IN 2, OUT</td><td>1C</td></tr>
+<tr><td>Abhören</td><td>CatSynth-Passivfader → Zoom LiveTrak L6</td><td>der Fader, der auf L6 Kanal 1 führt</td><td>1A</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Alternativen aus dem Pult</h4>
+<ul>
+<li><b>Filter:</b> ein Behringer Surges (Tiefpass-Ausgang, schwingt bei Vollresonanz selbst <span class="tag tag-ok">verifiziert</span>) statt A-106-5. Er klingt in Stufe C schärfer, weil er bei viel Resonanz zu pfeifen beginnt; der SEM tut das nicht.</li>
+<li><b>VCA:</b> ein Kanal Behringer FOUR PLAY statt A-130-8. Hier brauchst Du keine Offset-Spannung: Ohne CV-Kabel ist der <span class="jack">LEVEL</span>-Regler des Kanals ein manueller Pegelsteller; eine angelegte CV kommt zu dieser Grundstellung hinzu (LED grün) oder zieht davon ab (LED rot). <span class="tag tag-h">Hersteller</span> Zwei Fallen: Eine CV in CV IN 1 wirkt auch auf alle Kanäle darunter, die kein eigenes CV-Kabel haben, und ein Ausgang ohne Kabel wird in den Kanal rechts daneben gemischt. Stell <span class="jack">CURVE</span> für Patch <a class="xref" href="#p-1a">1A</a> auf linear (Rechtsanschlag).</li>
+<li><b>Mischer:</b> der A-130-8 selbst über seine Summenbuchse <span class="jack">1-4</span>, siehe <a href="#k1-var">Vertiefte Variante</a>.</li>
+<li><b>Zweite Quelle:</b> der Dannysound Cali statt 258t-OSC 2; schaltungsverwandt, aber eine andere Umsetzung, und deshalb etwas weniger verschmelzend.</li>
+</ul>
+</div>
+
+<p class="bst" id="k1-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp1">
+  <button type="button" data-stage="1A" aria-pressed="false">Patch 1A</button>
+  <button type="button" data-stage="1B" aria-pressed="false">Patch 1B</button>
+  <button type="button" data-stage="1C" aria-pressed="true">Patch 1C</button>
+</div>
+<figure>
+<div class="sv" id="pp1">
+<svg class="pp" viewBox="0 0 990 520" role="img" aria-label="Patchplan der ersten Stimme: 258t über Mixer und A-106-5 in den A-130-8 und weiter zum L6; der 281t bewegt die Filterfrequenz, der Attenuverter liefert die Pegelspannung für den VCA.">
+  <!-- Module -->
+  <g class="mod" data-st="1B 1C">
+    <rect class="m" x="30" y="20" width="180" height="120" rx="3"/>
+    <text class="mt" x="44" y="46">281t</text><text class="ms" x="44" y="64">Function Gen. · Kanal 1</text>
+    <text class="ms" x="44" y="82">MODE: LOOP</text>
+    <circle class="jk o" cx="180" cy="100" r="8"/><text class="jl" x="180" y="128" text-anchor="middle">OUT</text>
+  </g>
+  <g class="mod" data-st="1A 1B 1C">
+    <rect class="m" x="30" y="190" width="180" height="220" rx="3"/>
+    <text class="mt" x="44" y="216">258t</text><text class="ms" x="44" y="234">Dual Oscillator</text>
+    <circle class="jk o" cx="180" cy="250" r="8"/><text class="jl" x="166" y="254" text-anchor="end">OSC 1 OUT</text>
+    <circle class="jk o" cx="180" cy="340" r="8"/><text class="jl" x="166" y="344" text-anchor="end">OSC 2 OUT</text>
+    <text class="ms" x="44" y="290">OSC 1: Sinus → Säge</text>
+    <text class="ms" x="44" y="380">OSC 2: Sinus → Rechteck</text>
+  </g>
+  <g class="mod" data-st="1C">
+    <rect class="m" x="260" y="345" width="150" height="130" rx="3"/>
+    <text class="mt" x="274" y="371">4× Mixer</text><text class="ms" x="350" y="371">CatSynth</text>
+    <circle class="jk" cx="290" cy="395" r="8"/><text class="jl" x="304" y="399">IN 1</text>
+    <circle class="jk" cx="290" cy="440" r="8"/><text class="jl" x="304" y="444">IN 2</text>
+    <circle class="jk o" cx="385" cy="418" r="8"/><text class="jl" x="385" y="446" text-anchor="middle">OUT</text>
+  </g>
+  <g class="mod" data-st="1A 1B 1C">
+    <rect class="m" x="470" y="150" width="180" height="200" rx="3"/>
+    <text class="mt" x="484" y="176">A-106-5</text><text class="ms" x="560" y="176">SEM Filter</text>
+    <circle class="jk" cx="500" cy="210" r="8"/><text class="jl" x="514" y="214">CV2 IN</text>
+    <circle class="jk" cx="500" cy="300" r="8"/><text class="jl" x="514" y="304">AUDIO IN</text>
+    <circle class="jk o" cx="620" cy="300" r="8"/><text class="jl" x="620" y="328" text-anchor="middle">MIX-OUT</text>
+  </g>
+  <g class="mod" data-st="1A 1B 1C">
+    <rect class="m" x="470" y="390" width="180" height="110" rx="3"/>
+    <text class="mt" x="484" y="416">Attenuverter</text><text class="ms" x="484" y="434">CatSynth · Kanal A</text>
+    <text class="ms" x="484" y="470">OFFSET → Spannung</text>
+    <circle class="jk o" cx="620" cy="450" r="8"/><text class="jl" x="620" y="478" text-anchor="middle">OUT A</text>
+  </g>
+  <g class="mod" data-st="1A 1B 1C">
+    <rect class="m" x="700" y="190" width="130" height="220" rx="3"/>
+    <text class="mt" x="714" y="216">A-130-8</text><text class="ms" x="714" y="234">Octal VCA</text>
+    <circle class="jk" cx="725" cy="300" r="8"/><text class="jl" x="725" y="328" text-anchor="middle">IN 1</text>
+    <circle class="jk" cx="725" cy="370" r="8"/><text class="jl" x="745" y="374">CV 1</text>
+    <circle class="jk o" cx="805" cy="300" r="8"/><text class="jl" x="805" y="328" text-anchor="middle">OUT 1</text>
+  </g>
+  <g class="mod" data-st="1A 1B 1C">
+    <rect class="m" x="860" y="240" width="110" height="120" rx="3"/>
+    <text class="mt" x="874" y="266">Fader · L6</text><text class="ms" x="874" y="284">Kanal 1</text>
+    <circle class="jk" cx="890" cy="310" r="8"/><text class="jl" x="890" y="338" text-anchor="middle">FADER IN</text>
+  </g>
+  <!-- Kabel -->
+  <g class="cg off" data-st="1A 1B"><path class="cab audio" d="M180,250 C340,250 340,300 500,300"/><g class="badge audio"><circle cx="340" cy="275" r="11"/><text x="340" y="279" text-anchor="middle">1</text></g></g>
+  <g class="cg" data-st="1A 1B 1C"><path class="cab audio" d="M620,300 C670,290 680,290 725,300"/><g class="badge audio"><circle cx="674" cy="292" r="11"/><text x="674" y="296" text-anchor="middle">2</text></g></g>
+  <g class="cg" data-st="1A 1B 1C"><path class="cab audio" d="M805,300 C840,290 855,300 890,310"/><g class="badge audio"><circle cx="846" cy="297" r="11"/><text x="846" y="301" text-anchor="middle">3</text></g></g>
+  <g class="cg" data-st="1A 1B 1C"><path class="cab cv" d="M620,450 C680,450 670,370 725,370"/><g class="badge cv"><circle cx="674" cy="412" r="11"/><text x="674" y="416" text-anchor="middle">4</text></g></g>
+  <g class="cg" data-st="1B 1C"><path class="cab cv" d="M180,100 C340,100 380,210 500,210"/><g class="badge cv"><circle cx="355" cy="155" r="11"/><text x="355" y="159" text-anchor="middle">5</text></g></g>
+  <g class="cg" data-st="1C"><path class="cab audio" d="M180,250 C240,250 230,395 290,395"/><g class="badge audio"><circle cx="235" cy="322" r="11"/><text x="235" y="326" text-anchor="middle">6</text></g></g>
+  <g class="cg" data-st="1C"><path class="cab audio" d="M180,340 C240,340 230,440 290,440"/><g class="badge audio"><circle cx="235" cy="390" r="11"/><text x="235" y="394" text-anchor="middle">7</text></g></g>
+  <g class="cg" data-st="1C"><path class="cab audio" d="M385,418 C450,418 440,300 500,300"/><g class="badge audio"><circle cx="444" cy="359" r="11"/><text x="444" y="363" text-anchor="middle">8</text></g></g>
+</svg>
+</div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-1A="&lt;b&gt;Patch 1A, der Grundton.&lt;/b&gt; Nur der Audioweg (1, 2, 3) und die Pegelspannung für den VCA (4)." data-cap-1B="&lt;b&gt;Patch 1B, Bewegung.&lt;/b&gt; Kabel 5 bringt die erste Steuerspannung: Der 281t bewegt die Filterfrequenz." data-cap-1C="&lt;b&gt;Patch 1C, Gesamtausbau.&lt;/b&gt; Kabel 1 aus Stufe 1A ist hier blass: Es wird in 1C durch den Weg über den Mischer (6, 7, 8) ersetzt. Mit den Tasten oben siehst Du jede Stufe einzeln."><b>Patch <a class="xref" href="#p-1c">1C</a>, Gesamtausbau.</b> Kabel 1 aus Stufe 1A ist hier blass: Es wird in 1C durch den Weg über den Mischer (6, 7, 8) ersetzt. Mit den Tasten oben siehst Du jede Stufe einzeln.</figcaption>
+</figure>
+
+<p class="bst" id="k1-aufbau">05 · Schritt-für-Schritt-Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+
+<h4 id="p-1a">Stufe 1 · Patch 1A: der Grundton</h4>
+<p>Nur der reine Audioweg einer Stimme, plus die Spannung, die den VCA öffnet.</p>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Sicherheitscheck</b> · L6 Kanal 1 ganz zurück · Attenuverter A: OFFSET auf 12 Uhr</div><div class="why">Bei einem bipolaren Offset ist 12 Uhr null Volt, der VCA bleibt also zu. Ohne Eingangssignal liefert der Kanal am Ausgang nur die Offset-Spannung, er ist also eine einstellbare Spannungsquelle. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n audio">1</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> → A-106-5 <b>AUDIO IN</b></div><div class="why">Quelle zur Klangformung. Der 258t hat pro Oszillator zwei gleiche Ausgänge; nimm den oberen.</div></div></li>
+<li><span class="n audio">2</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → A-130-8 <b>IN 1</b></div><div class="why">Mit dem LP/HP-Mix-Regler am Tiefpass-Anschlag ist MIX-OUT ein reiner Tiefpass.</div></div></li>
+<li><span class="n audio">3</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → Passivfader von L6 Kanal 1</div><div class="why">Fader dabei ganz unten. Nicht den Summenausgang 1-4 nehmen; der ist bewusst leiser.</div></div></li>
+<li><span class="n cv">4</span><div class="r"><div class="route">Attenuverter <b>OUT A</b> → A-130-8 <b>CV 1</b></div><div class="why">Die Gleichspannung aus dem Offset öffnet den VCA. Ab Werk ist der A-130-8 auf 0 bis +5 V abgeglichen: 0 V zu, +5 V voll offen. <span class="tag tag-h">Hersteller</span> Die Lötbrücken Deines Exemplars sind offen (Werkszustand): Ohne Kabel in CV 1 bleibt Kanal 1 zu, er erbt keine Spannung von einem anderen Kanal. <span class="tag tag-ok">verifiziert</span></div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-1a">1A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t FREQ 1: Ziel ≈ 110 Hz"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t FREQ 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Ziel ≈ 110 Hz</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: Sägezahn"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Sägezahn</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t FM 1: 0 · kein FM"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t FM 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 · kein FM</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Audio: unter Mitte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Audio</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">unter Mitte</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Freq: halb offen"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Freq</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">halb offen</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Reso: aus"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Reso</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">aus</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 LP/HP: Tiefpass"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 LP/HP</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Tiefpass</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Atten. OFFSET: langsam öffnen"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Atten. OFFSET</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">langsam öffnen</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Die FREQ-Stellung ist gerechnet: Der Regler überstreicht 5 Hz bis 20 kHz, also etwa zwölf Oktaven, ohne Bereichsschalter. Verläuft er gleichmäßig exponentiell, liegt 110 Hz bei knapp 11 Uhr. Stimm nach Gehör oder mit einem Stimmgerät nach. Der LP/HP-Mix-Regler ist am Linksanschlag (7 Uhr) reiner Tiefpass. <span class="tag tag-ok">verifiziert</span></p>
+<div class="check"><b>Kontrollpunkt 1A</b> Dreh den OFFSET langsam nach rechts, bis der VCA offen ist, zieh dann den Passivfader hoch, bis das Signal kräftig anliegt, ohne dass der L6 Übersteuerung anzeigt, und regle zuletzt die Abhörlautstärke am L6-Kanal. Du hörst einen gleichmäßigen, kräftigen, etwas dumpfen Sägezahn. Dreh den Filter-Cutoff einmal ganz auf und wieder zurück: Der Ton wird hell und wieder dunkel. Dreh den OFFSET zurück auf 12 Uhr: Der Ton verschwindet. Damit hast Du den VCA mit einer Spannung bedient.</div>
+
+<h4 id="p-1b">Stufe 2 · Patch 1B: Bewegung ohne Sequencer</h4>
+<p>Jetzt trennst Du gedanklich den gehörten Audioweg von der ersten Steuerspannung.</p>
+<ol class="cables" start="5">
+<li><span class="n cv">5</span><div class="r"><div class="route">281t Kanal 1 <b>OUT</b> → A-106-5 <b>CV2 IN</b></div><div class="why">CV2 hat einen Polarizer; CV1 hätte keinen Abschwächer und würde mit 0–10 V den ganzen Regelweg überfahren.</div></div></li>
+</ol>
+<ul>
+<li><b>Modulator vorbereiten.</b> Jeder Kanal hat links, unter seiner <span class="jack">CYCLE</span>-Buchse, einen eigenen Modusschalter mit drei Stellungen: Attack/Decay-Hüllkurve, Attack/Hold/Decay-Hüllkurve oder Loop. <span class="tag tag-ok">verifiziert</span> Stell Kanal 1 auf <b>Loop</b>. Der 281t startet sich dann am Ende jedes Decays selbst neu und gibt eine Rampe von 0 auf 10 V und zurück aus, wie ein LFO. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Polarizer zuerst auf 12 Uhr</b>, dann sehr vorsichtig nach rechts.</li>
+<li><b>Cutoff etwas zurücknehmen.</b> Der 281t liefert nur positive Spannung, er kann das Filter also nur öffnen. Damit nach oben Platz bleibt, beginnst Du dunkler als in 1A.</li>
+</ul>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-1b">1B</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 1: Ziel 3–5 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Ziel 3–5 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 1: Ziel 3–5 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Ziel 3–5 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 CV2: leicht rechts"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 CV2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">leicht rechts</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Freq: dunkler als 1A"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Freq</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">dunkler als 1A</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Attack und Decay reichen laut Tiptop von 1 ms bis 10 s. <span class="tag tag-h">Hersteller</span> Maßgeblich ist das Ziel: Zähl einen Zyklus mit, er soll etwa 6 bis 10 Sekunden dauern.</p>
+<div class="check"><b>Kontrollpunkt 1B</b> Der Ton öffnet und schließt sich von selbst, langsam und gleichmäßig wie ein Atemzug. Drehst Du den Polarizer zurück auf 12 Uhr, steht der Ton wieder still. Drehst Du ihn nach links, kehrt sich die Bewegung um: Das Filter schließt, wenn die Spannung steigt.</div>
+
+<h4 id="p-1c">Stufe 3 · Patch 1C: zwei Oszillatoren, eine Klanglandschaft</h4>
+<p>Ein einzelner Oszillator klingt noch statisch. Weil der A-106-5 nur einen Audio-Eingang hat, mischen wir beide Oszillatoren vorher zusammen.</p>
+<ol class="cables" start="6">
+<li><span class="n audio">6</span><div class="r"><div class="route">Kabel 1 am Filter abziehen · 258t <b>OSC 1 OUT</b> → Mixer <b>IN 1</b></div><div class="why">Du kannst Kabel 1 einfach umstecken: Das Ende am 258t bleibt, das andere wandert vom Filter in den Mixer.</div></div></li>
+<li><span class="n audio">7</span><div class="r"><div class="route">258t <b>OSC 2 OUT</b> → Mixer <b>IN 2</b></div><div class="why">Mixer-Kanal 2 erst ganz zu, dann einblenden.</div></div></li>
+<li><span class="n audio">8</span><div class="r"><div class="route">Mixer <b>OUT</b> → A-106-5 <b>AUDIO IN</b></div><div class="why">Der Rest des Wegs (2, 3, 4, 5) bleibt unverändert.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-1c">1C</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer IN 1: halb"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer IN 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">halb</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer IN 2: halb"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer IN 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">halb</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 2: Rechteck"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Rechteck</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t FREQ 2: wie OSC 1"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t FREQ 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wie OSC 1</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t FINE 2: Hauch aus Mitte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="63" y2="21.2" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t FINE 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hauch aus Mitte</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Der CatSynth-Mixer ist aktiv, aber wie stark er pro Kanal abschwächt, ist nicht dokumentiert. Halbe Stellung ist ein vorsichtiger Start gegen die 20-Vpp-Spitzen. Häng den ZeroScope an den Mixer-Ausgang: Bleiben die Spitzen unter ±5 V, ist alles im grünen Bereich. <span class="tag tag-p" id="pr-1">am Gerät prüfen</span></p>
+<div class="check"><b>Kontrollpunkt 1C</b> Stimm OSC 2 mit FREQ grob auf denselben Ton, dann mit FINE so lange, bis die Schwebung fast stillsteht. Dreh FINE nun einen Hauch aus dieser Stelle: Ein langsames, warmes Pulsieren entsteht. Je weiter Du drehst, desto schneller pulsiert es, bis es bei mehr als etwa 10 Schwebungen pro Sekunde in Rauheit kippt.</div>
+
+<div class="play" id="beat">
+<h4>Schwebung zum Ansehen</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Zwei fast gleiche Töne addieren sich abwechselnd und löschen sich aus. Die Hüllkurve pulsiert genau mit der Differenz der beiden Frequenzen.</p>
+<div class="ctrls">
+<div><label for="bdet">Verstimmung OSC 2 <output id="bdetO">1,0 Hz</output></label><input type="range" id="bdet" min="0" max="8" step="0.1" value="1"></div>
+</div>
+<svg id="beatSvg" viewBox="0 0 720 150" role="img" aria-label="Summe zweier leicht verstimmter Schwingungen über zwei Sekunden mit pulsierender Hüllkurve"></svg>
+<p class="readout" id="beatR"></p>
+<p class="muted" style="font-size:13.5px;margin:0">Die Trägerschwingung ist stark verlangsamt gezeichnet; bei 110 Hz wären es 220 Perioden in zwei Sekunden.</p>
+</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k1-hoeren">08 · Hörübung: drei Zustände im selben Ton</p>
+<p>Nimm Dir zwei bis drei Minuten, ohne ein Kabel zu stecken. Dreh zuerst den CV2-Polarizer auf 12 Uhr, damit der 281t schweigt. Halt den Ton eine volle Minute und beweg nur Cutoff und Resonanz, sehr langsam. Such diese drei Ankerpunkte:</p>
+<ul>
+<li><b>Zustand A · offen und präsent.</b> Cutoff weit rechts (3–4 Uhr), Resonanz niedrig. Alle Obertöne liegen frei, der Klang ist direkt, vordergründig, fast schneidend.</li>
+<li><b>Zustand B · dunkel und weit weg.</b> Cutoff weit links (8–9 Uhr), Resonanz niedrig. Fast alle Obertöne sind weg, ein warmes Fundament bleibt. Achte darauf, wie Dein Gehör den Obertonverlust räumlich deutet: Der Klang scheint aus dem Nebenraum zu kommen.</li>
+<li><b>Zustand C · resonant und schwebend.</b> Cutoff Mitte (11–1 Uhr), Resonanz deutlich hoch (2–3 Uhr). Drehst Du jetzt minimal am Cutoff, hebt das Filter einzelne Teiltöne des verstimmten Paars wie ein Brennglas hervor. Der A-106-5 schwingt dabei nicht selbst; selbst bei voller Resonanz bleibt er musikalisch. <span class="tag tag-h">Hersteller</span></li>
+</ul>
+<p>Danach: Filter zurück auf dunkel (10 Uhr) mit mittlerer Resonanz (1 Uhr), und blende den 281t über den Polarizer langsam wieder ein. Hör, wie die Steuerspannung nun selbst zwischen B und C wandert, die Zustände, die Du gerade mit der Hand gefunden hast.</p>
+
+<div class="play" id="filt">
+<h4>Filter-Spielplatz</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Die Balken sind die Teiltöne eines Sägezahns auf 110 Hz, die Linie ist ein 12-dB-Tiefpass wie der SEM. Probier die drei Zustände, und hör sie Dir auf Wunsch im Browser an.</p>
+<div class="presets">
+<button type="button" data-p="A">Zustand A</button><button type="button" data-p="B">Zustand B</button><button type="button" data-p="C">Zustand C</button>
+<button type="button" class="btn" id="aud" aria-pressed="false">Anhören</button>
+</div>
+<div class="ctrls">
+<div><label for="fc">Cutoff <output id="fcO"></output></label><input type="range" id="fc" min="0" max="1" step="0.001" value="0.5"></div>
+<div><label for="fq">Resonanz <output id="fqO"></output></label><input type="range" id="fq" min="0" max="1" step="0.001" value="0"></div>
+<div><label for="fd">OSC 2 Verstimmung <output id="fdO"></output></label><input type="range" id="fd" min="0" max="4" step="0.05" value="0"></div>
+</div>
+<svg id="filtSvg" viewBox="0 0 720 230" role="img" aria-label="Obertonspektrum eines Sägezahns mit Tiefpass-Filterkurve; mit den Reglern verändert sich, welche Teiltöne durchkommen."></svg>
+<p class="readout" id="filtR"></p>
+<p class="muted" style="font-size:13.5px;margin:0">Vereinfachtes Modell: idealer 12-dB/Oktave-Tiefpass, Sägezahn mit Teiltönen in Stärke 1/n. Das Original klingt wärmer; der Spielplatz zeigt die Mechanik, nicht den Klang des A-106-5. Mit Verstimmung &gt; 0 spielt im Browser ein zweiter Sägezahn mit.</p>
+</div>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k1-var">09 · Variationen und kleine Experimente</p>
+<p>Verändere bei jedem Experiment nur einen Parameter, damit Du seine Wirkung isoliert hörst.</p>
+<ol>
+<li><b>Asymmetrisch atmen.</b> Am 281t Attack sehr lang (4 Uhr), Decay kurz (9 Uhr), danach umgekehrt. Allein die Kurvenform macht aus „sich aufbauend, saugend“ ein „perkussiv abfallend“.</li>
+<li><b>Gegensätzliche Wellenformen.</b> SHAPE von OSC 1 ganz nach links auf Sinus, OSC 2 bleibt auf Rechteck. OSC 1 wird zum ruhigen Sub-Fundament, und das Filter scheint nur noch die Obertöne von OSC 2 zu bewegen.</li>
+<li><b>Vom Schweben zum Intervall.</b> OSC 2 nach Gehör eine reine Quinte (7 Halbtöne) oder eine Oktave höher stimmen. Die Schwebung verschwindet, eine offene, fast sakrale Struktur entsteht.</li>
+<li><b>Den Filtereingang anfahren.</b> Nur den Audio-Abschwächer am A-106-5 von 10 Uhr über die Mitte hinaus drehen. Ab etwa Mittelstellung beginnt Verzerrung: erst Wärme, dann Körnung. Die Lautstärke danach mit dem OFFSET am Attenuverter ausgleichen, nicht am L6.</li>
+</ol>
+
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · Klangformung ohne Filter.</b> Lass das Filter weg: OSC 1 direkt in A-130-8 IN 1, und Kabel 5 vom 281t in den <span class="jack">WAVESHAPE CV</span>-Eingang von OSC 1 statt ins Filter. Statt Obertöne wegzunehmen, blendet der Oszillator selbst zwischen Sinus und Sägezahn. Der Eingang erwartet typisch 0–5 V; schwäch die 0–10 V des 281t ab, etwa über Attenuverter-Kanal B. Das ist der erste Blick nach West Coast und das Thema von Kapitel <a class="xref" href="#k2">02</a>.</li>
+<li><b>Vertiefte Variante · zwei Zeitebenen.</b> Kanal 2 des 281t ebenfalls auf Loop, aber deutlich schneller oder langsamer als Kanal 1, in den WAVESHAPE-CV von OSC 2. Weil beide Zyklen verschieden lang sind, wiederholt sich die genaue Klangfarbe erst nach vielen Durchläufen.</li>
+<li><b>Vertiefte Variante · VCA als Mischer.</b> Statt des CatSynth-Mixers: OSC 1 in A-130-8 IN 2, OSC 2 in IN 3, die Summenbuchse <span class="jack">1-4</span> in den Filter, MIX-OUT in IN 5 und <span class="jack">OUT 5</span> zum L6. Die Pegel der Oszillatoren sind jetzt Spannungen, die Du später modulieren kannst. Die Summenausgänge sind laut Doepfer bewusst leiser, um Übersteuerung zu vermeiden. <span class="tag tag-h">Hersteller</span> Weil die Lötbrücken offen sind, braucht jeder benutzte Kanal seine eigene Spannung: Attenuverter A und B für IN 2 und IN 3 (die Pegel der Oszillatoren), der zweite Slimline Attenuverter aus Reihe 4 für Kanal 5. <span class="tag tag-ok">verifiziert</span></li>
+</ul>
+
+<div class="box-c" id="k1-1d">
+<h4 id="p-1d">Exkurs 1D · Tonhöhe sprechen: Oktavsprung und Tonleiter</h4>
+<p>Zehn Minuten, um 1 V/Oct mit den Ohren zu prüfen. Patch <a class="xref" href="#p-1a">1A</a> genügt als Grundlage.</p>
+<ol>
+<li><b>Oktavsprung.</b> A-185-2 Ausgang → 258t <span class="jack">1V/OCT</span> von OSC 1. Solange in einem Eingang des A-185-2 kein Stecker steckt, liegen dort +1 V an, und der Dreistellungsschalter addiert sie (rechts), zieht sie ab (links) oder lässt sie weg (Mitte). <span class="tag tag-h">Hersteller</span> Schalte einen Eingang nach rechts: Der Ton springt exakt eine Oktave nach oben. Zwei Schalter rechts: zwei Oktaven.</li>
+<li><b>Sirene.</b> Am leeren Eingang 1 wirkt <span class="jack">Lev.1</span> als Feinregler über 0 bis +1 V. Dreh langsam: Der Ton gleitet stufenlos durch eine ganze Oktave.</li>
+<li><b>Tonleiter.</b> Zwischen A-185-2 und 258t den A-156 schalten: A-185-2 → Quantizer 1 <span class="jack">CV IN</span>, <span class="jack">CV OUT</span> → 258t 1V/OCT. Dreh wieder an Lev.1: Jetzt hörst Du zwölf Halbtonstufen. Wechsel zu Quantizer 2 auf Dur oder Moll, und dieselbe Drehung spielt eine Tonleiter.</li>
+<li><b>Melodie aus einer Kurve.</b> 281t Kanal 1 (Loop, langsam) in Eingang 1 des A-185-2, Lev.1 klein. Die Hüllkurve läuft nun durch den Quantizer, und aus einer Atembewegung wird eine auf- und absteigende Figur. Genau dieser Gedanke trägt später <a class="xref" href="#kwp-06">KWP-06</a>, „Der Oszillator als Komponist“.</li>
+</ol>
+</div>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k1-komp">11 · Kompositionsaufgabe: die Zwei-Minuten-Gezeiten-Drone</p>
+<p>Nimm mit dem L6 ein genau zweiminütiges Stück auf, das nur auf Patch <a class="xref" href="#p-1c">1C</a> beruht. Der L6 nimmt jede Spur zusätzlich einzeln auf, Du kannst den Durchlauf also später noch nachmischen.</p>
+<figure>
+  <div class="sv">{{FIG:timeline}}</div>
+  <figcaption><b>Ein Bogen in drei Teilen.</b> Aufbau über Oszillator 2, Resonanz und Modulationstiefe; ein kurzer unruhiger Höhepunkt durch schnellere 281t-Zyklen; dann Rückzug bis zum geschlossenen VCA.</figcaption>
+</figure>
+<ol>
+<li><b>0:00–0:30 · Ursprung.</b> Nur OSC 1 (Mixer IN 2 zu), Filter fast geschlossen, sehr flache 281t-Modulation. Kaum mehr als ein fernes Grollen.</li>
+<li><b>0:30–1:15 · Aufbau und Verdichtung.</b> OSC 2 langsam einblenden, verstimmt oder in der Quinte. Resonanz anheben, Polarizer schrittweise öffnen, bis die Filterwellen immer höher schlagen.</li>
+<li><b>1:15–2:00 · Rückzug.</b> Attack und Decay am 281t kurz verkürzen für einen unruhigen Höhepunkt, dann alles langsam in den dunklen Ausgangszustand zurückführen. Bei 2:00 den OFFSET sanft auf 12 Uhr: Der VCA schließt.</li>
+</ol>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k1-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<p>Das solltest Du nach diesem Kapitel sicher können. Die Häkchen merkt sich Dein Browser.</p>
+<ul class="todo">
+<li><input type="checkbox" id="lz1"><label for="lz1">Im Patch zeigen, welche Kabel Audio führen und welche CV.</label></li>
+<li><input type="checkbox" id="lz2"><label for="lz2">Erklären, warum der Oszillator dauernd klingt und der VCA erst über eine Spannung öffnet.</label></li>
+<li><input type="checkbox" id="lz3"><label for="lz3">Einen VCA ohne Regler mit einer Offset-Spannung bedienen.</label></li>
+<li><input type="checkbox" id="lz4"><label for="lz4">Das Filter mit dem 281t bewegen und die Tiefe am Polarizer dosieren, auch umgekehrt.</label></li>
+<li><input type="checkbox" id="lz5"><label for="lz5">Zwei Oszillatoren mischen und durch Feinverstimmung eine gewünschte Schwebungsrate einstellen.</label></li>
+<li><input type="checkbox" id="lz6"><label for="lz6">Sagen, an welche L6-Buchse das Rack gehört und warum.</label></li>
+<li><input type="checkbox" id="lz7"><label for="lz7">Am A-185-2 eine Oktave springen und am A-156 hören, was Quantisieren heißt.</label></li>
+</ul>
+
+<h4>Fehlercheck: Symptom → in dieser Reihenfolge prüfen</h4>
+<div class="fault">
+<details open><summary>Am L6 kommt gar kein Ton an</summary><ol>
+<li>Steckt Kabel 4 im <b>CV 1</b> des A-130-8, und steht der OFFSET rechts von 12 Uhr? Ohne Spannung bleibt der Kanal zu.</li>
+<li>Kommt das Signal aus <b>OUT 1</b>, nicht aus einer Summenbuchse oder einem anderen Kanal?</li>
+<li>Steht der Cutoff ganz links? Zum Testen auf 12 Uhr.</li>
+<li>Steht der LP/HP-Mix auf Hochpass, während der Cutoff weit rechts steht? Dann bleibt fast nichts übrig.</li>
+<li>Sind Passivfader und L6-Kanal aufgezogen, und ist der Kanal nicht stummgeschaltet?</li>
+</ol></details>
+<details><summary>Der Klang zerrt unangenehm</summary><ol>
+<li>Zeigt der L6 auf dem Kanal Übersteuerung an? Passivfader zurücknehmen, nicht den L6-Kanal; der regelt nur das Abhören, nicht den Eingang.</li>
+<li>Ist es einer der Line-Kanäle 3–6? Die brauchen den Fader deutlich tiefer als Kanal 1 und 2.</li>
+<li>Steht der Audio-Abschwächer am A-106-5 über der Mitte? Zurücknehmen.</li>
+<li>In 1C: Beide Mixer-Kanäle voll auf? Auf halbe Stellung.</li>
+</ol></details>
+<details><summary>Die Modulation aus dem 281t ist nicht hörbar</summary><ol>
+<li>Steht der Modusschalter (links unter der CYCLE-Buchse) auf Loop? In den beiden Hüllkurven-Stellungen läuft der Kanal nur nach einem Trigger und nur einmal.</li>
+<li>Steckt Kabel 5 in <b>CV2 IN</b> und steht der Polarizer nicht auf 12 Uhr?</li>
+<li>Steht der Cutoff schon ganz rechts? Dann kann positive CV das Filter nicht weiter öffnen.</li>
+<li>Sind Attack und Decay so lang, dass ein Zyklus länger als 20 Sekunden dauert? Etwas kürzer stellen.</li>
+</ol></details>
+<details><summary>Die Schwebung ist zu schnell oder ungleichmäßig</summary><ol>
+<li>FREQ von OSC 2 noch nicht auf denselben Ton gestimmt? Erst grob, dann FINE.</li>
+<li>Langsamer als eine Schwebung pro Sekunde wird es nur mit sehr kleinen FINE-Bewegungen; nimm Dir Zeit.</li>
+<li>Analoge Oszillatoren driften in den ersten Minuten nach dem Einschalten. Lass das Pult eine Viertelstunde warmlaufen.</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k1-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k2">B1-02</a></span> West-Coast-Waveshaping und Filtercharaktere<br><span class="id"><a href="#k4">B1-04</a></span> Patch <a class="xref" href="#p-1c">1C</a> als mehrschichtige Raum-Drone<br><span class="id"><a href="#k5">B1-05</a></span> komplexere 281t-Verschaltungen</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-a01">B2-A-01</a></span> Audio, CV, Gate, Trigger<br><span class="id"><a href="#b2-a02">B2-A-02</a></span> Pegel, Clipping, Routing zum L6<br><span class="id"><a href="#b2-a03">B2-A-03</a></span> V/Oct und Quantisierung<br><span class="id"><a href="#b2-a04">B2-A-04</a></span> Mixer, Attenuverter, Offset<br><span class="id"><a href="#b2-c01">B2-C-01</a></span> Function Generatoren</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-01">B3-01</a></span> Ambient aus dem Grundpatch<br><span class="id"><a href="#kwp-02">KWP-02</a></span> Drei Stimmen, eine löst sich<br><span class="id"><a href="#kwp-04">KWP-04</a></span> Die Frahm-Fläche<br><span class="id"><a href="#kwp-06">KWP-06</a></span> Der Oszillator als Komponist</div>
+<div><b>Module</b><span class="id"><a href="#mp-258t">MOD-258t</a></span> · <span class="id"><a href="#mp-281t">MOD-281t</a></span><br><span class="id"><a href="#mp-a-106-5">MOD-A-106-5</a></span> · <span class="id"><a href="#mp-a-130-8">MOD-A-130-8</a></span><br><span class="id"><a href="#mp-l6">MOD-L6</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult geprüft · 3. November 2026</h4>
+<ul>
+<li><b>CatSynth Slimline Dual Attenuverter:</b> Ohne Eingangssignal gibt der Ausgang die Offset-Spannung aus. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>281t:</b> Ein Modusschalter pro Kanal, links unter der CYCLE-Buchse: Attack/Decay, Attack/Hold/Decay, Loop. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>A-106-5:</b> Der LP/HP-Mix-Regler ist am Linksanschlag (7 Uhr) Tiefpass. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>A-130-8:</b> Lötbrücken offen (Werkszustand), keine CV- oder Signal-Verkettung. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>FOUR PLAY:</b> Der LEVEL-Regler arbeitet ohne CV als manueller Pegel. <span class="tag tag-h">Hersteller</span></li>
+<li><b>CatSynth 4× Mixer:</b> aktiv; die Stärke der Abschwächung ist noch nicht gemessen. <span class="tag tag-p" id="pr-2">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

@@ -1,0 +1,639 @@
+<!-- ======================= KAPITEL 08 ======================= -->
+<section class="part chapter" id="k8">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 08</span><h2>FX, Feedback und räumlicher Klang</h2></div>
+<p class="muted"><i>Klang vertiefen, vervielfachen, verschieben und bewegen, ohne dass eine Schleife Dir davonläuft</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 3 × 90 min</b><span>Theorie, drei Stufen, Komposition</span></div>
+  <div><b>26 Kabel</b><span>in drei Stufen</span></div>
+  <div><b>5 Effekte</b><span>+ VCAs, Mults, L6</span></div>
+  <div><b><a class="xref" href="#k2">B1-02</a>, <a class="xref" href="#k4">04</a>, <a class="xref" href="#k7">07</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du entscheidest bei jedem Effekt, wo er sitzt: im Signalweg, an einem Send oder in einer Schleife. Du stellst Delays über Zeit, Feedback und Taps ein, setzt Hall, Phasing und Frequenzverschiebung gezielt ein, baust Rückkopplungen, deren Lautstärke Du jederzeit im Griff hast, und verteilst das Ergebnis bewusst im Stereobild. Am Ende benutzt Du Effekte als Rhythmus, als Textur und als Übergang.</dd>
+  <dt>Theorie</dt><dd>Insert, Send/Return und Schleife · Delay: Zeit, Feedback, Taps · Hall · Phaser, Flanger, Chorus · Frequency Shifting · Schleifenverstärkung und Pegelsicherheit bis zum L6 · Stereo und Panorama · Effekte als Rhythmus, Textur und Übergang</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-8a">8A</a> „Ein Raum am Send“ · Patch <a class="xref" href="#p-8b">8B</a> „Echo mit Filter im Loop“ (<a class="xref" href="#kwp-15">KWP-15</a>) · Patch <a class="xref" href="#p-8c">8C</a> „Die Spirale“ (<a class="xref" href="#kwp-20">KWP-20</a>) · dazu ein Spielplatz für Delay, Feedback und Filter</dd>
+  <dt>Prüfstatus</dt><dd>Morphor Echo, Milky Way, Lyra8-FX, Bode 1630 und Skies nach Handbuch, Herstellerseite oder Kurzanleitung <span class="tag tag-h">Hersteller</span>. Ob der FEEDBACK-Regler des Echos auch den externen Rückweg dosiert, die längste Lyra-Delayzeit, die CV-Wirkung am Bode in den linearen SCALE-Stellungen, die Blend-Belegung am Skies und der Mono-Betrieb von K3/K4 am L6 sind am Pult zu prüfen <span class="tag tag-p" id="pr-95">am Gerät prüfen</span>.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k8-theorie">Teil 1 · Was ein Effekt mit Zeit und Raum macht</h3>
+<p>Bis hierher hast Du Klänge gebaut, geformt, bewegt und in einen Takt gesetzt. Effekte fügen nichts davon hinzu, was nicht schon da ist. Sie <b>wiederholen</b> es (Delay), <b>verwischen</b> es zu einem Raum (Hall), <b>kerben</b> sein Spektrum ein (Phaser, Flanger), <b>verschieben</b> es (Frequency Shifter) oder <b>verteilen</b> es zwischen links und rechts. Trotzdem verändern sie einen Patch oft stärker als ein neuer Oszillator: Ein trockener Pluck wird mit einem Echo zur Melodie, eine Fläche mit Hall zum Ort.</p>
+<p>Fast alle Effekte arbeiten mit derselben Zutat, einer <b>Verzögerung</b>. Ein Hall ist eine sehr dichte Wolke aus kurzen Verzögerungen, ein Flanger eine winzige, bewegte, ein Echo eine lange. Und fast alle werden spannend, sobald ein Teil des Ausgangs wieder in den Eingang läuft. Diese <b>Rückkopplung</b> ist das zweite Thema dieses Kapitels und der Grund, warum es einen eigenen Abschnitt über Pegelsicherheit hat.</p>
+
+<h4 id="k8-wege">1 · Wo ein Effekt sitzt: Insert, Send/Return, Schleife</h4>
+<p>Derselbe Hall klingt anders, je nachdem, wie er eingebunden ist. Es gibt drei Grundformen.</p>
+<figure>
+  <div class="sv">{{FIG:fxroute}}</div>
+  <figcaption><b>In Reihe, daneben oder im Kreis.</b> Beim Insert läuft alles durch den Effekt, das Verhältnis trocken zu nass stellst Du am Effekt ein. Beim Send zweigt ein Mult einen Teil ab, ein VCA dosiert ihn, der Effekt arbeitet 100 % nass, und der Return kommt am Mischpult zum unveränderten trockenen Signal. In der Schleife läuft ein Teil des Ausgangs über Filter und VCA zurück in den Eingang.</figcaption>
+</figure>
+<div class="tbl w"><table>
+<thead><tr><th>Form</th><th>Vorteil</th><th>Nachteil</th><th>typisch für</th></tr></thead>
+<tbody>
+<tr><td>Insert</td><td>wenig Kabel; der Effekt kann den Klang ganz ersetzen</td><td>mehr Effekt heißt weniger Original; jede Quelle braucht einen eigenen Effekt</td><td>Verzerrung, Phaser, Chorus, Frequency Shifter als Klangfarbe</td></tr>
+<tr><td>Send/Return</td><td>die Quelle bleibt vorn; mehrere Quellen teilen einen Raum; der Send wird zur Spannung (Throw)</td><td>mehr Kabel, ein VCA pro Send, zwei Fader am L6 für den Return</td><td>Hall, Echo, alles, was „dazukommt“</td></tr>
+<tr><td>Schleife</td><td>was im Rückweg liegt, wirkt bei jeder Runde erneut</td><td>kann sich aufschaukeln; braucht eine Notbremse</td><td>Bandecho, Spiral-Delay, Drones aus Rückkopplung</td></tr>
+</tbody></table></div>
+<p>Ein Mischpult hat für Sends eigene Regler. Im Rack baust Du sie aus drei Teilen: Ein <b>aktiver Mult</b> verteilt die Quelle, ein <b>VCA-Kanal</b> ist der Send-Regler, und der Effekt steht auf <b>100 % nass</b>, sonst kommt das trockene Signal doppelt am L6 an. Weil der Send ein VCA ist, kann eine Hüllkurve ihn öffnen. Diesen Trick aus dem Dub nennt man <b>Throw</b>: Eine einzelne Note oder ein einzelner Schlag wird in den Effekt „geworfen“, die übrigen bleiben trocken.</p>
+
+<h4 id="k8-delay">2 · Delay: Zeit, Feedback, Taps</h4>
+<p>Ein Delay speichert das Signal und gibt es nach der <b>Zeit</b> T wieder aus. Mit <b>Feedback</b> läuft ein Teil davon, der Faktor g, zurück in den Speicher und kommt nach weiteren T Sekunden noch einmal, dann noch einmal, jedes Mal um denselben Faktor leiser. Die Zeit bestimmt, was Du überhaupt hörst:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Zeit</th><th>was Du hörst</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>unter 10 ms</td><td>kein Echo, sondern eine Klangfarbe: Kammfilter, Flanger. Mit viel Feedback ein Ton bei 1/T Hz</td><td>Milky Way Flanger (DARKWAVES IV)</td></tr>
+<tr><td>10–30 ms</td><td>Verdopplung, Chorus, Breite zwischen links und rechts</td><td>Morphor Echo ab 10 ms, Milky Way Chorus (AIRWAYS VIII)</td></tr>
+<tr><td>30–120 ms</td><td>Slapback, ein kleiner harter Raum</td><td>Morphor Echo, Lyra8-FX</td></tr>
+<tr><td>ab ≈ 120 ms</td><td>hörbare Echos, die einen Rhythmus bilden</td><td>Morphor Echo bis 2040 ms, Lyra8-FX, Milky Way Pingpong und Tape Echo</td></tr>
+</tbody></table></div>
+<figure>
+  <div class="sv">{{FIG:echoes}}</div>
+  <figcaption><b>Gleicher Abstand, gleicher Faktor.</b> Bei g = 0,6 ist jede Wiederholung 4,4 dB leiser als die vorige. Die vier Taps des Morphor Echo teilen die eingestellte Zeit in Viertel; zurückgekoppelt wird Tap 4, also wiederholt sich das ganze Viererpaket.</figcaption>
+</figure>
+<p><b>Feedback in Zahlen.</b> Pro Runde ändert sich der Pegel um 20 · log₁₀(g) dB. Wie lange eine Fahne steht, bis sie um 60 dB gefallen ist, also praktisch verschwunden, ergibt sich daraus: <span class="mono">T60 = T × 60 ÷ (−20 · log₁₀ g)</span>. Bei 500 ms und g = 0,6 sind das knapp 7 Sekunden, bei g = 0,9 schon 33 Sekunden. Zwischen „ein paar Echos“ und „endlos“ liegt also nur ein kleiner Weg am Regler, und genau dort wird es musikalisch.</p>
+<p><b>Zeit im Takt.</b> Eine Notenlänge in Millisekunden ist <span class="mono">60 000 ÷ BPM × Viertel</span>. Die punktierte Achtel (0,75 Viertel) ist das klassische Echo, das zwischen die Schläge fällt und einen galoppierenden Rhythmus ergibt. Am Morphor Echo holst Du sie mit einer Zählspur im Programm; die Tabellen dazu stehen in KWP-G2 und in <a href="#b2-e01">B2-E-01</a>.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Delay</th><th>Zeit und Takt</th><th>Feedback</th><th>Ein- und Ausgänge</th></tr></thead>
+<tbody>
+<tr><td>Morphor Echo</td><td>10–2040 ms; Sync 1 oder 24 PPQN per Jumper, Faktoren 1 · 1,5 · 2 · 3 · 4 · 5 · 6; Tap-Tempo <span class="tag tag-h">Hersteller</span></td><td>FEEDBACK-Regler mit CV; <span class="jack">FEEDBACK IN</span> ersetzt die interne Rückführung von Tap 4 ganz; PHASE INVERT <span class="tag tag-h">Hersteller</span></td><td>IN mono, bis 10 Vpp; vier Tap-Ausgänge; Tap 4 + Mix und All Taps + Mix je stereo; TEMPO OUT <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Lyra8-FX</td><td>zwei Delays mit eigener Zeit und Zeitmodulation; längste Zeit gut 1 s (Test Sound On Sound) <span class="tag tag-p" id="pr-96">am Gerät prüfen</span></td><td>gemeinsame Rückkopplung beider Delays, Regler und CV <span class="tag tag-h">Hersteller</span></td><td>IN mono; MAIN OUT mit Distortion, DELAY OUT davor <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Milky Way</td><td>Pingpong (AIRWAYS VI), Tape Echo mit drei Köpfen (AIRWAYS VII); Clock erwartet Sechzehntel <span class="tag tag-h">Hersteller</span></td><td>CABIN FEVER</td><td>IN 1/2, OUT 1/2, IN 1 auf IN 2 normalisiert <span class="tag tag-h">Hersteller</span></td></tr>
+</tbody></table></div>
+<p><b>Warum Echos dunkler werden.</b> Das Morphor Echo ist ein analoges Eimerkettendelay (BBD): vier Bausteine mit je 4096 Stufen. <span class="tag tag-h">Hersteller</span> Ein BBD tastet das Signal ab; je länger die Zeit, desto langsamer der Takt und desto tiefer muss ein Filter das Abtastrauschen wegschneiden. Lange Echos klingen darum dunkler, und mit jeder Runde im Feedback noch einmal. Der A/B-Schalter wählt ohne Sync, wann dieser Tiefpass eingreift: früh ist dunkler und rauscht weniger, spät ist voller und rauscht mehr. <span class="tag tag-h">Hersteller</span> Liegt ein eigenes Filter im Rückweg, bestimmst Du den Verlauf selbst; das ist Patch <a class="xref" href="#p-8b">8B</a>.</p>
+<p><b>Taps.</b> Die vier Taps liegen bei ¼, ½, ¾ und der vollen Zeit; bei 2 s also bei 0,5, 1, 1,5 und 2 s (Test Sound On Sound). Jeder hat einen eigenen Ausgang. Über einen Mixer oder eine Matrix pegelst und verteilst Du sie einzeln: Ein Delay wird so zu einer kleinen Rhythmusmaschine aus Kopien (<a class="xref" href="#kwp-16">KWP-16</a>) oder zu einem Mehrkopf-Bandecho (<a class="xref" href="#kwp-15">KWP-15</a>).</p>
+
+<h4 id="k8-hall">3 · Hall: tausend Echos, die nicht mehr einzeln hörbar sind</h4>
+<p>Ein Raum wirft den Klang von allen Wänden zurück. Die ersten Reflexionen kommen einzeln (frühe Reflexionen, sie verraten die Größe), danach verdichten sie sich zu einer Fahne, die immer dunkler und leiser wird (Nachhall). Vier Größen beschreiben einen Hall:</p>
+<ul>
+<li><b>Vorverzögerung</b> (Predelay): Zeit bis zur ersten Reflexion. 20–60 ms trennen den Anschlag vom Raum, die Stimme bleibt deutlich.</li>
+<li><b>Nachhallzeit</b> (Decay): wie lange die Fahne steht. Kurz für Rhythmus, lang für Flächen.</li>
+<li><b>Dämpfung</b>: wie schnell die Höhen in der Fahne verschwinden. Viel Dämpfung klingt nach Holz und Vorhang, wenig nach Fliesen.</li>
+<li><b>Hochpass</b> vor dem Hall: hält den Bass aus der Fahne. Das ist der wichtigste Regler gegen Matsch.</li>
+</ul>
+<div class="tbl w"><table>
+<thead><tr><th>Milky Way</th><th>CABIN FEVER</th><th>zweite Funktion (TAP länger als 1 s)</th></tr></thead>
+<tbody>
+<tr><td>AIRWAYS I · Hall</td><td>Nachhallzeit, Größe</td><td>Hochpass gegen tiefe Frequenzen</td></tr>
+<tr><td>AIRWAYS II · Shimmer</td><td>Nachhallzeit</td><td>Anteil der Tonhöhenverschiebung</td></tr>
+<tr><td>AIRWAYS III · Stereo Room</td><td>Raumgröße</td><td>Stereobreite, mono bis sehr breit</td></tr>
+<tr><td>AIRWAYS IV · Plate</td><td>Nachhallzeit</td><td>Vorverzögerung</td></tr>
+<tr><td>AIRWAYS V · Spring</td><td>Nachhallzeit; TAP zupft die Feder an</td><td>Abklingen nach dem Anzupfen</td></tr>
+<tr><td>DARKWAVES I · Gated</td><td>Nachhallzeit</td><td>Schwelle des Gates</td></tr>
+<tr><td>DARKWAVES III · Reversed</td><td>Nachhallzeit; CABIN PRESSURE: Vorverzögerung und Mischung</td><td>Dämpfung</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">Alle Angaben nach Handbuch <span class="tag tag-h">Hersteller</span>. TYPE kurz drücken wechselt den Algorithmus, TYPE und TAP zusammen die Bank (AIRWAYS blau, DARKWAVES rot). CABIN PRESSURE ist bei den Hallprogrammen das Verhältnis trocken zu nass. Der Eingang erwartet ±5 V und sättigt ab etwa ±6,5 V; VOLUME über 3 Uhr fährt den Ausgang in die Sättigung. <span class="tag tag-h">Hersteller</span></p>
+<p><b>Skies als Raum, der kein Raum ist.</b> Der Skies zerlegt das Eingangssignal in kurze Körner und setzt sie neu zusammen: Granular, Pitch-Shift und Time-Stretch, Looping Delay, spektral. Position, Size, Pitch, Density, Texture und Blend haben je einen CV-Eingang, dazu ein FREEZE-Eingang und ein Stereo-Eingang mit Gain. <span class="tag tag-h">Hersteller</span> Beim Clouds-Vorbild schaltet ein Taster BLEND zwischen Trocken/Nass, Stereobreite, Feedback und eingebautem Hall um; die grüne LED zeigt die gewählte Funktion, und die BLEND-CV wirkt immer auf dieselbe Funktion wie der Regler. Die FREEZE-Buchse friert, solange ihr Gate oben ist, wie der eingerastete Taster. <span class="tag tag-h">Hersteller</span> Ob der Skies das genauso macht, <span class="tag tag-p" id="pr-97">am Gerät prüfen</span>. Im Pult ist der Skies darum weniger ein Hall als eine <b>Wolke</b>: mit FREEZE ein stehender Klang, mit kleiner Density ein Sprühen einzelner Körner.</p>
+
+<h4 id="k8-phaser">4 · Phaser, Flanger, Chorus: Kerben, die wandern</h4>
+<p>Mischt man ein Signal mit einer leicht verzögerten Kopie, löschen sich manche Frequenzen aus, andere verstärken sich. Wo genau, hängt von der Verzögerung ab. Bewegt ein LFO die Verzögerung, wandern die Auslöschungen durchs Spektrum, und das Ohr hört ein Schweben, Ziehen oder Strömen.</p>
+<figure>
+  <div class="sv">{{FIG:comb}}</div>
+  <figcaption><b>Kamm oder ein paar Kerben.</b> Der Flanger mischt eine echte Verzögerung dazu: Die Kerben liegen bei 250, 750, 1250 Hz und so weiter, im festen Abstand von 1 ÷ T. Der Phaser verschiebt nur die Phase über Allpässe: vier Stufen ergeben zwei Kerben, unregelmäßig verteilt. Darum klingt der Flanger metallisch und der Phaser weich.</figcaption>
+</figure>
+<ul>
+<li><b>Flanger:</b> 1–10 ms, mit Feedback ein singender Kamm. Im Pult: Milky Way DARKWAVES IV, CABIN PRESSURE ist der Delay-Betrag, CABIN FEVER das LFO-Tempo, die zweite Funktion das Feedback. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Chorus:</b> 10–30 ms, sanft moduliert, ohne Feedback. Klingt nach mehreren Spielern. Im Pult: Milky Way AIRWAYS VIII; CABIN FEVER ganz rechts gibt nahezu unendliches Feedback. <span class="tag tag-h">Hersteller</span> Oder das Morphor Echo an der kürzesten Zeit mit Dry/Wet auf 12 Uhr und einem langsamen LFO an DELAY CV.</li>
+<li><b>Phaser:</b> Ein eigener Phaser fehlt im Pult; <a class="xref" href="#kwp-17">KWP-17</a> nennt Kamieniec II, Beatrix und Toad. Bis dahin ergibt der Notch des SEM, mittig im Mix-Regler, mit einer langsamen CV auf den Cutoff eine einzelne wandernde Kerbe. Ein Bandpass im Feedback-Weg (Wasp, Surges) mit LFO auf dem Cutoff dreht die Echos ähnlich, nur gröber und vokaler.</li>
+</ul>
+
+<h4 id="k8-shift">5 · Frequency Shifting: Verschieben in Hertz</h4>
+<p>Ein Pitch-Shifter <b>multipliziert</b> alle Frequenzen: eine Quinte höher heißt mal 1,5. Die Abstände der Teiltöne wachsen mit, der Klang bleibt harmonisch, nur höher. Ein Frequency Shifter <b>addiert</b> zu allen Frequenzen denselben Betrag in Hertz. Die Abstände bleiben gleich, aber sie passen nicht mehr zum neuen Grundton: Aus einem Ton wird ein Klang zwischen Glocke und Metall.</p>
+<figure>
+  <div class="sv">{{FIG:shift}}</div>
+  <figcaption><b>Mal oder plus.</b> Ein Ton auf 100 Hz hat Teiltöne bei 100, 200, 300 Hz. Eine Quinte höher liegen sie bei 150, 300, 450 Hz, alle Vielfache von 150. Um 50 Hz verschoben liegen sie bei 150, 250, 350 Hz: Ihr Abstand ist 100 Hz, der tiefste Ton aber 150 Hz. Kein Grundton passt mehr zu allen.</figcaption>
+</figure>
+<p>Bei kleinen Shifts unter etwa 5 Hz hörst Du keine neue Tonhöhe, sondern Bewegung: Alles schwebt, phast, dreht sich. Bei mittleren Shifts wird der Klang unharmonisch, bei großen klingt er wie ein Ringmodulator. Und ein Shift gegen null mit dem trockenen Signal gemischt ergibt ein Phasing, das sich nie wiederholt.</p>
+<p><b>Der Bode 1630 im Pult.</b> Der große Regler AMOUNT OF SHIFT stellt den Betrag ein, SCALE die Charakteristik zwischen linear und exponentiell, SQUELCH THRESHOLD die Schwelle, unter der das Durchsickern des Trägers unterdrückt wird, ZERO ADJUST den Nullabgleich, MIXTURE das Verhältnis der beiden Ausgänge am <span class="jack">MIX OUT</span>. <span class="jack">OUT A</span> verschiebt in die eine, <span class="jack">OUT B</span> in die andere Richtung; welche nach oben geht, hängt vom Vorzeichen des Shifts ab. Die drei Eingänge <span class="jack">CTRL 1–3</span> werden mit dem Regler summiert, zusammen höchstens 10 V. <span class="jack">SIG IN</span> ist wechselspannungsgekoppelt und verträgt +12 dBu, das sind etwa ±4,4 V Spitze; übertragen werden etwa 30 Hz bis 16 kHz, Gleichspannung geht also nicht durch. SCALE hat sechs Stellungen: 0 (aus, auch die CTRL-Eingänge), EXP (+2 Hz bis +2 kHz, 1 V/Oct über CTRL) und linear ±5 Hz, ±50 Hz, ±500 Hz, ±5 kHz. Regler nach rechts verschiebt nach oben, nach links nach unten. MIXTURE nach links bevorzugt A, nach rechts B. <span class="tag tag-h">Hersteller</span> Ein Linksanschlag unter 0 Hz klappt nach oben um.</p>
+<p>Beim Abgleich hilft eine Eigenheit: Die LED über ZERO ADJUST blinkt mit der Shift-Frequenz und wird bei null Hz langsam bis zum Stillstand. <span class="tag tag-h">Hersteller</span> Für die Spirale in Patch <a class="xref" href="#p-8c">8C</a> heißt das: Ein Shift von 3 Hz ist eine LED, die dreimal pro Sekunde blinkt.</p>
+<p><b>A und B gleichzeitig.</b> Mischst Du beide Richtungen zu gleichen Teilen, liegt jeder Teilton einmal darüber und einmal darunter. Das ist genau, was ein Ringmodulator tut. MIXTURE auf 12 Uhr am MIX OUT ist darum ein Ringmodulator, und zwei Kanäle am L6, die im Mono zusammenfallen, ebenfalls. Das spielt in Abschnitt 7 eine Rolle.</p>
+
+<h4 id="k8-feedback">6 · Feedback-Schleifen mit Pegelsicherheit</h4>
+<p>Eine Schleife hat eine <b>Verstärkung pro Runde</b>, g: alles, was zwischen Ausgang und Eingang liegt, multipliziert. Ein VCA auf halbem Weg, ein Filter, das bei einer Frequenz um 6 dB anhebt, und ein Effekt, der etwas lauter ausgibt, als er bekommt, ergeben zusammen das g. Liegt g bei <i>irgendeiner</i> Frequenz über 1, wächst genau diese Frequenz mit jeder Runde, bis eine Stufe begrenzt.</p>
+<figure>
+  <div class="sv">{{FIG:loopgain}}</div>
+  <figcaption><b>Unter 1 klingt es aus, über 1 schaukelt es sich auf.</b> Genau bei 1 bleibt jede Wiederholung gleich laut. Über 1 wächst das Signal, bis Sättigung oder Clipping es abfangen: Dann steht eine verzerrte Fläche, die sich nicht mehr von selbst beruhigt.</figcaption>
+</figure>
+<p><b>Resonanz zählt doppelt.</b> Ein Filter im Loop mit Resonanz hebt die Frequenzen um den Cutoff an. Mit einem Feedback, das ohne Filter harmlos war, liegt die Verstärkung genau dort plötzlich über 1: Die Schleife singt oder pfeift auf der Cutoff-Frequenz. Das ist kein Fehler, es ist ein Instrument, aber eines, das Du von unten anfährst. Im Spielplatz unten siehst Du diese Kurve.</p>
+<figure>
+  <div class="sv">{{FIG:safety}}</div>
+  <figcaption><b>Drei Bremsen im Rack, zwei Schutzstufen dahinter.</b> Die Schleife regelst Du nur im Rack: VCA, Hochpass, Begrenzer. Passivfader und L6 schützen den Wandler und Deine Ohren, aber sie ändern nichts daran, was in der Schleife passiert.</figcaption>
+</figure>
+<div class="warn"><strong>Passivfader vor dem L6</strong>
+<p>Vor jedem L6-Eingang sitzt ein CatSynth-Passivfader. <span class="tag tag-ok">verifiziert</span> Er ist die <b>letzte</b> Pegelstufe vor dem Wandler, nicht Teil der Schleife. Drei Folgen:</p>
+<ul>
+<li><b>Er schützt den Eingang.</b> Eine aufgeschaukelte Schleife läuft im Rack bis an die Grenze der Versorgung, deutlich heißer als ein normaler Ton. Die Line-Eingänge 3–6 vertragen +9 dBu, das sind etwa ±3,1 V Spitze; die Klinke an Kanal 1 und 2 verträgt +24 dBu. <span class="tag tag-h">Hersteller</span> Leg die Returns, die am lautesten werden können, darum auf Kanal 1 und 2, und lass die Fader der Schleifen-Returns anfangs unter der Mitte.</li>
+<li><b>Er bremst nichts.</b> Pfeift die Schleife, wird sie mit dem Fader nur leiser hörbar. Sie läuft im Rack weiter und kommt sofort zurück, wenn Du den Fader aufziehst. Bremsen kannst Du nur am Feedback-VCA, am Hochpass oder durch Ziehen eines Kabels im Rückweg.</li>
+<li><b>Ein Rückweg über den L6 macht den Fader zum Feedback-Regler.</b> Führst Du einen Ausgang des L6 zurück ins Rack, etwa einen der beiden AUX-Sends (6,3-mm-Klinke, TRS; ob vor oder nach dem Pegel abgegriffen wird, stellst Du im L6 Editor ein <span class="tag tag-h">Hersteller</span>), liegen Passivfader, Kanalpegel (LEVEL) und Send-Regler mitten in der Schleife. Dann ändert jeder Handgriff am L6 die Schleifenverstärkung, auch einer, den Du nur fürs Abhören meinst. Das geht, aber nur mit einem VCA im Rückweg, der allein entscheidet. Ob und wie Deine L6-Ausgänge dafür taugen, <span class="tag tag-p" id="pr-98">am Gerät prüfen</span>.</li>
+</ul>
+</div>
+<div class="box-c">
+<h4>Sechs Regeln für jede Schleife</h4>
+<ol>
+<li><b>Von null aus.</b> Feedback-VCA zu, L6-Kanal leise, Passivfader unten. Erst steht der Patch, dann drehst Du die Schleife langsam auf.</li>
+<li><b>Ein VCA im Rückweg.</b> Ein Poti am Effekt kann nur ein Mensch drehen. Ein VCA hört auf eine Spannung: OFFSET auf null, und die Schleife ist offen. Das ist Deine Notbremse und zugleich Dein Throw.</li>
+<li><b>Ein Hochpass im Rückweg.</b> Er hält Bässe, Gleichanteile und Subsonik aus der Schleife, die Du kaum hörst, die aber Lautsprecher belasten.</li>
+<li><b>Ein Begrenzer im Rückweg.</b> Eine Verzerrung (Lyra8-FX), ein sättigender Eingang (Milky Way über ±6,5 V) oder ein Filter mit weicher Kennlinie fangen ein Aufschaukeln als Klang ab statt als Knall.</li>
+<li><b>Resonanz zuletzt.</b> Erst Feedback einstellen, dann Resonanz. Umgekehrt springt die Schleife, sobald Du das Feedback anfasst.</li>
+<li><b>Ohren zuletzt.</b> Kopfhörer erst aufsetzen, wenn die Schleife steht. Schleifen kippen nicht langsam, sondern plötzlich.</li>
+</ol>
+</div>
+
+<div class="play" id="fbplay">
+<h4>Spielplatz · Delay mit Feedback und Filter im Loop</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Ein Anschlag (Sägezahn, 220 Hz) läuft in ein Delay. Hinter dem Delay sitzen im Rückweg ein Filter und eine weiche Sättigung, dann der Feedback-Regler. Oben siehst Du, wie laut und wie hell jede Wiederholung ist, unten die Verstärkung einer Runde über der Frequenz. Wo die Kurve über die Linie bei 1 steigt, schaukelt sich die Schleife auf.</p>
+<div class="presets">
+<button type="button" data-fbp="echo">Bandecho · KWP-15</button><button type="button" data-fbp="dub">Dub-Throw</button><button type="button" data-fbp="dunkel">Dunkler Raum</button><button type="button" data-fbp="hp">Hochpass-Spirale</button><button type="button" data-fbp="pfeift">Resonanz pfeift</button><button type="button" data-fbp="kamm">Kamm, 10 ms</button>
+</div>
+<div class="presets" role="group" aria-label="Filtertyp im Rückweg" style="margin-top:8px">
+<button type="button" class="btn" data-ft="lowpass" aria-pressed="true">Tiefpass</button><button type="button" class="btn" data-ft="bandpass" aria-pressed="false">Bandpass</button><button type="button" class="btn" data-ft="highpass" aria-pressed="false">Hochpass</button>
+<button type="button" class="btn" id="fbAud" aria-pressed="false">Anhören</button><button type="button" class="btn" id="fbHit">Anschlag</button><button type="button" class="btn" id="fbKill">Feedback auf null</button>
+</div>
+<div class="ctrls">
+<div><label for="fbT">Zeit <output id="fbTO"></output></label><input type="range" id="fbT" min="10" max="1500" step="1" value="450"></div>
+<div><label for="fbG">Feedback <output id="fbGO"></output></label><input type="range" id="fbG" min="0" max="110" step="1" value="60"></div>
+<div><label for="fbF">Cutoff <output id="fbFO"></output></label><input type="range" id="fbF" min="0" max="1" step="0.001" value="0.6"></div>
+<div><label for="fbQ">Resonanz <output id="fbQO"></output></label><input type="range" id="fbQ" min="0.5" max="12" step="0.1" value="0.7"></div>
+<div><label for="fbD">Sättigung <output id="fbDO"></output></label><input type="range" id="fbD" min="0" max="1" step="0.01" value="0.3"></div>
+</div>
+<svg id="fbSvg" viewBox="0 0 720 330" role="img" aria-label="Oben die Wiederholungen als Balken, ihre Höhe ist der Pegel, die orange Linie die Helligkeit. Unten die Verstärkung einer Runde über der Frequenz mit der Grenzlinie bei 1."></svg>
+<p class="readout" id="fbR" aria-live="polite"></p>
+<p class="muted" style="font-size:13.5px;margin:0">Das Filter ist ein einfaches 12-dB-Filter im Browser, die Sättigung eine weiche Kennlinie. Das Morphor Echo dunkelt zusätzlich mit seinem eigenen Tiefpass ab, und Surges, SEM oder Wasp haben andere Resonanzkurven. Die Richtung stimmt, die Zahlen am Pult weichen ab. Die Lautstärke ist begrenzt; trotzdem leise anfangen.</p>
+</div>
+
+<h4 id="k8-stereo">7 · Stereo und Panorama</h4>
+<p>Fast alle Klangquellen im Pult sind mono. Stereo entsteht erst durch Effekte, die links und rechts Verschiedenes ausgeben, und durch das Panorama am L6. Jeder L6-Kanal hat einen Pan-Regler. K1 und K2 sind mono, K3 bis K6 Stereokanäle mit je zwei Buchsen. An K5 und K6 gehört eine Monoquelle in die Buchse L (MONO). K3 und K4 haben eine MONO-Taste für zwei Monoquellen, die sich dann aber Pegel, EQ, Pan und Sends teilen. <span class="tag tag-h">Hersteller</span> Darum bekommt in diesem Kapitel jeder Rack-Ausgang einen eigenen Kanal; zwei unabhängig gepannte Monoquellen gehören auf K1/K2 und K5/K6. Ob ein einzelner Stecker in K3 L ohne MONO-Taste auf beiden Seiten ankommt, <span class="tag tag-p" id="pr-99">am Gerät prüfen</span>.</p>
+<ul>
+<li><b>Echos verteilen.</b> Das Morphor Echo verteilt seine Taps in drei Pan-Modi über das Stereobild; SPREAD regelt die Breite, auch per CV. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Mono rein, Stereo raus.</b> Der Milky Way macht aus einem Signal an IN 1 zwei verschiedene Ausgänge, weil IN 1 auf IN 2 normalisiert ist. <span class="tag tag-h">Hersteller</span> Ein Hall gehört darum fast immer auf zwei Kanäle, hart links und hart rechts.</li>
+<li><b>Zwei Richtungen.</b> OUT A und OUT B des Bode sind zwei verschiedene Klänge aus einer Quelle: aufwärts links, abwärts rechts.</li>
+<li><b>Kurze Unterschiede.</b> Liegt zwischen links und rechts weniger als etwa 30 ms, hörst Du kein Echo, sondern Breite, und die Quelle wandert zur früheren Seite. Das Morphor Echo an der kürzesten Zeit mit Tap 1 links und trocken rechts macht aus einer Monostimme eine breite.</li>
+</ul>
+<figure>
+  <div class="sv">{{FIG:pan}}</div>
+  <figcaption><b>Drei Arten, vier Echos zu verteilen.</b> Bei Chaos und negativem SPREAD ergänzen sich links und rechts für jeden Tap zu 100 %. <span class="tag tag-h">Hersteller</span> Mit Feedback entsteht daraus eine verschmierte, breite Bühne, die im Mono trotzdem vollständig bleibt.</figcaption>
+</figure>
+<p><b>Die Mono-Probe.</b> Viele Hörer hören irgendwann mono: ein Lautsprecher, ein Telefon. Dreh am Ende einer Session alle Pan-Regler kurz in die Mitte. Was im Stereo breit war, darf schmaler werden, aber es darf nicht verschwinden oder hohl klingen. Zwei Kanäle mit gegenphasigen Anteilen löschen sich dabei aus; Bode A und B in der Mitte werden zum Ringmodulator.</p>
+
+<h4 id="k8-form">8 · Effekte als Rhythmus, Textur und Übergang</h4>
+<p>Ein Effekt kann im Hintergrund färben. Er kann aber auch die Hauptrolle übernehmen. Drei Rollen sind für die folgenden Kapitel wichtig:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>so geht es</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>Rhythmus</td><td>Echos im Takt füllen die Lücken zwischen den Anschlägen; Taps als Figur; Gates entscheiden, welche Kopie klingt</td><td>Morphor Echo mit Zählspur, punktierte Achtel; Taps über VCAs (<a class="xref" href="#kwp-16">KWP-16</a>); Milky Way Gated Reverb</td></tr>
+<tr><td>Textur</td><td>lange Fahnen, eingefrorene Klänge und Rückkopplung werden zur Fläche, auf der etwas anderes spielt</td><td>Milky Way Hall lang, Shimmer, Freezer; Skies mit FREEZE; Lyra8-FX mit hohem Feedback; Spirale aus Bode und Delay (<a class="xref" href="#kwp-20">KWP-20</a>)</td></tr>
+<tr><td>Übergang</td><td>ein Effekt schwillt zum Ende einer Phrase an, trägt sie über den Wechsel und gibt den neuen Teil frei</td><td>Throw per Hüllkurve auf den Send; Feedback-Swell auf den Loop-VCA (<a class="xref" href="#kwp-17">KWP-17</a>); Reversed Reverb; ein Effekt pro 16 Takte (<a class="xref" href="#kwp-18">KWP-18</a>)</td></tr>
+</tbody></table></div>
+<p>Für Übergänge gilt dieselbe Regel wie bei der 8-Takt-Regel in Kapitel <a class="xref" href="#k7">07</a>: Die Bewegung beginnt <i>vor</i> dem Wechsel und endet <i>nach</i> ihm. Ein Throw auf der letzten Note eines Teils lässt dessen Fahne in den neuen Teil hineinklingen; ein Feedback-Swell, der zwei Takte vor dem Wechsel beginnt, verdeckt den harten Schnitt.</p>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k8-praxis">Teil 2 · Praxis am Rack: ein Raum, ein Echo, eine Spirale</h3>
+<p>Alle drei Stufen benutzen die spielbare Stimme aus Patch <a class="xref" href="#p-2a">2A</a>, gespielt vom Keyboard über den µYarns. Ein Mult verteilt sie dreimal: trocken in die Mitte des L6, in einen Send und, in Stufe 8C, in eine zweite Schleife. Stufe 8B baut auf 8A auf, 8C auf 8B. Der Rack-Ausgang der Stimme geht dafür nicht mehr direkt zum L6.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-8a">8A</a></b> bekommt die Stimme einen Raum am Send: Ein FOUR-PLAY-Kanal dosiert, wie viel in den Milky Way geht, und eine Hüllkurve kann einzelne Noten hineinwerfen. In <b>Patch <a class="xref" href="#p-8b">8B</a></b> wandert das Morphor Echo vor den Hall. Seine Rückkopplung läuft nicht mehr intern, sondern über Surges und einen VCA-Kanal des A-130-8: Jede Wiederholung wird dunkler, und das Feedback ist eine Spannung. In <b>Patch <a class="xref" href="#p-8c">8C</a></b> kommt eine zweite, ganz andere Schleife dazu. Ein Frequency Shifter und das Lyra-Delay verschieben jede Wiederholung um ein paar Hertz, die beiden Richtungen liegen links und rechts.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Du lernst die beiden Arten, Raum zu bauen, nebeneinander kennen: den Raum, der eine Stimme umgibt, und den Raum, der selbst zur Stimme wird. Der Send aus 8A ist die Grundlage für jede spätere Mischung im Rack; ab Kapitel <a class="xref" href="#k9">09</a> hängen mehrere Quellen an demselben Raum. Das gefilterte Echo aus 8B ist das Werkzeug für Dub, Ambient und die ruhigen Klavierstücke, die <a class="xref" href="#kwp-15">KWP-15</a> nachbildet. Die Spirale aus 8C ist ein Generator für Übergänge und Klangflächen, die sich nie wiederholen, und ein Lehrstück dafür, wie man eine Schleife sicher fährt.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Quelle</td><td>Stimme aus Patch <a class="xref" href="#p-2a">2A</a>: µYarns, 258t, 281t Kanal 1, A-106-5 SEM, A-130-8 Kanal 1</td><td>8A</td></tr>
+<tr><td>Verteilen</td><td>aktiver 2×4 Mult (Reihe 4), Teil A und Teil B</td><td>8A / 8C</td></tr>
+<tr><td>Send und Throw</td><td>Behringer FOUR PLAY (Reihe 3), Kanal 3 · Tiptop 281t, Kanal 4</td><td>8A</td></tr>
+<tr><td>Hall</td><td>Endorphin.es Milky Way</td><td>8A</td></tr>
+<tr><td>Delay</td><td>Morphor Echo · Takt aus dem Programm (Clock-Baum aus Patch <a class="xref" href="#p-7a">7A</a>)</td><td>8B</td></tr>
+<tr><td>Filter im Rückweg</td><td>Behringer Surges (Tiefpass) · A-124 Wasp (Hochpass)</td><td>8B / 8C</td></tr>
+<tr><td>Feedback-VCAs</td><td>Doepfer A-130-8, Kanal 2 · FOUR PLAY (Reihe 3), Kanal 1 und 2</td><td>8B / 8C</td></tr>
+<tr><td>CV dosieren</td><td>CatSynth Slimline Dual Attenuverter (Reihe 4), Kanal A und B · FOUR LFO</td><td>8B / 8C</td></tr>
+<tr><td>Spirale</td><td>Behringer Bode 1630 · SOMA Lyra8-FX</td><td>8C</td></tr>
+<tr><td>Abhören</td><td>Passivfader → L6 Kanal 1–5</td><td>8A / 8C</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Keyboard, ohne Clock-Baum</h4>
+<p>Statt Hand am Keyboard spielt eine Sequenzspur des Programm die Stimme: Pitch-CV an 258t 1V/OCT, Gate an 281t TRIG 1. Kurze Noten mit Pausen dazwischen zeigen Echos am deutlichsten. Läuft der Clock-Baum aus Kapitel <a class="xref" href="#k7">07</a> nicht, entfällt in 8B Kabel 11: Dann tippst Du das Tempo viermal auf den Tap-Taster des Echos. <span class="tag tag-h">Hersteller</span></p>
+</div>
+
+<p class="bst" id="k8-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp8">
+  <button type="button" data-stage="8A" aria-pressed="true">Patch 8A</button>
+  <button type="button" data-stage="8B" aria-pressed="false">Patch 8B</button>
+  <button type="button" data-stage="8C" aria-pressed="false">Patch 8C</button>
+</div>
+<figure>
+<div class="sv" id="pp8"><svg class="pp" viewBox="0 0 1240 730" role="img" aria-label="Patchplan Kapitel 08: Die Stimme aus 2A wird über einen Mult verteilt, trocken auf L6 Kanal 3, über Kanal 3 des FOUR PLAY als Send in den Milky Way und stereo zurück auf Kanal 1 und 2. In Stufe 8B sitzt das Morphor Echo vor dem Hall, Tap 4 läuft über Surges und einen VCA-Kanal in den Feedback-Eingang. In Stufe 8C läuft eine zweite Schleife aus den Kanälen 1 und 2 desselben FOUR PLAY, Bode 1630, Lyra8-FX und Wasp, deren zwei Richtungen auf Kanal 4 und 5 liegen.">
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="20" y="20" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="44">Stimme 2A</text>
+<text class="ms" x="32" y="60">A-130-8 Kanal 1</text>
+<circle class="jk o" cx="155" cy="72" r="7"/>
+<text class="jl" x="143" y="76" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="20" y="130" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="154">281t</text>
+<text class="ms" x="32" y="170">Kanal 4 · Throw</text>
+<circle class="jk o" cx="155" cy="182" r="7"/>
+<text class="jl" x="143" y="186" text-anchor="end">OUT 4</text>
+</g>
+<g class="mod off" data-st="8B 8C">
+<rect class="m" x="20" y="240" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="264">Programm</text>
+<text class="ms" x="32" y="280">Zählspur</text>
+<circle class="jk o" cx="155" cy="292" r="7"/>
+<text class="jl" x="143" y="296" text-anchor="end">DRUM 2</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="20" y="540" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="564">FOUR LFO</text>
+<text class="ms" x="32" y="580">langsam</text>
+<circle class="jk o" cx="155" cy="592" r="7"/>
+<text class="jl" x="143" y="596" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="215" y="20" width="130" height="150" rx="3"/>
+<text class="mt" x="227" y="44">2×4 Mult</text>
+<text class="ms" x="227" y="60">Teil A</text>
+<circle class="jk" cx="230" cy="72" r="7"/>
+<text class="jl" x="242" y="76">IN</text>
+<circle class="jk o" cx="330" cy="72" r="7"/>
+<text class="jl" x="318" y="76" text-anchor="end"></text>
+<circle class="jk o" cx="330" cy="107" r="7"/>
+<text class="jl" x="318" y="111" text-anchor="end"></text>
+<circle class="jk o" cx="330" cy="142" r="7"/>
+<text class="jl" x="318" y="146" text-anchor="end"></text>
+</g>
+<g class="mod off" data-st="8B 8C">
+<rect class="m" x="215" y="360" width="130" height="150" rx="3"/>
+<text class="mt" x="227" y="384">Attenuverter</text>
+<text class="ms" x="227" y="400">Reihe 4</text>
+<circle class="jk" cx="230" cy="410" r="7"/>
+<text class="jl" x="242" y="414">IN A</text>
+<circle class="jk o" cx="330" cy="425" r="7"/>
+<text class="jl" x="318" y="429" text-anchor="end">OUT A</text>
+<circle class="jk" cx="230" cy="470" r="7"/>
+<text class="jl" x="242" y="474">IN B</text>
+<circle class="jk o" cx="330" cy="485" r="7"/>
+<text class="jl" x="318" y="489" text-anchor="end">OUT B</text>
+</g>
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="395" y="20" width="140" height="150" rx="3"/>
+<text class="mt" x="407" y="44">FOUR PLAY</text>
+<text class="ms" x="407" y="60">Kanal 3 · Send</text>
+<circle class="jk" cx="410" cy="72" r="7"/>
+<text class="jl" x="422" y="76">IN 3</text>
+<circle class="jk" cx="410" cy="122" r="7"/>
+<text class="jl" x="422" y="126">CV 3</text>
+<circle class="jk o" cx="520" cy="97" r="7"/>
+<text class="jl" x="508" y="101" text-anchor="end">OUT 3</text>
+</g>
+<g class="mod off" data-st="8B 8C">
+<rect class="m" x="395" y="360" width="140" height="130" rx="3"/>
+<text class="mt" x="407" y="384">A-130-8</text>
+<text class="ms" x="407" y="400">Kanal 2 · Feedback</text>
+<circle class="jk" cx="410" cy="410" r="7"/>
+<text class="jl" x="422" y="414">IN 2</text>
+<circle class="jk" cx="410" cy="455" r="7"/>
+<text class="jl" x="422" y="459">CV 2</text>
+<circle class="jk o" cx="520" cy="432" r="7"/>
+<text class="jl" x="508" y="436" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="395" y="540" width="140" height="170" rx="3"/>
+<text class="mt" x="407" y="564">FOUR PLAY</text>
+<text class="ms" x="407" y="580">Kanal 1+2 · Loop</text>
+<circle class="jk" cx="410" cy="590" r="7"/>
+<text class="jl" x="422" y="594">IN 1</text>
+<circle class="jk" cx="410" cy="670" r="7"/>
+<text class="jl" x="422" y="674">IN 2</text>
+<circle class="jk o" cx="520" cy="630" r="7"/>
+<text class="jl" x="508" y="634" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod off" data-st="8B 8C">
+<rect class="m" x="585" y="20" width="150" height="230" rx="3"/>
+<text class="mt" x="597" y="44">Morphor Echo</text>
+<text class="ms" x="597" y="60">Delay</text>
+<circle class="jk" cx="600" cy="72" r="7"/>
+<text class="jl" x="612" y="76">IN</text>
+<circle class="jk" cx="600" cy="122" r="7"/>
+<text class="jl" x="612" y="126">SYNC</text>
+<circle class="jk" cx="600" cy="172" r="7"/>
+<text class="jl" x="612" y="176">FB IN</text>
+<circle class="jk o" cx="720" cy="82" r="7"/>
+<text class="jl" x="708" y="86" text-anchor="end">ALL L</text>
+<circle class="jk o" cx="720" cy="122" r="7"/>
+<text class="jl" x="708" y="126" text-anchor="end">ALL R</text>
+<circle class="jk o" cx="720" cy="202" r="7"/>
+<text class="jl" x="708" y="206" text-anchor="end">TAP 4</text>
+</g>
+<g class="mod off" data-st="8B 8C">
+<rect class="m" x="585" y="270" width="150" height="80" rx="3"/>
+<text class="mt" x="597" y="294">Surges</text>
+<text class="ms" x="597" y="310">Tiefpass</text>
+<circle class="jk" cx="600" cy="322" r="7"/>
+<text class="jl" x="612" y="326">IN 1</text>
+<circle class="jk o" cx="720" cy="310" r="7"/>
+<text class="jl" x="708" y="314" text-anchor="end">LP</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="585" y="540" width="150" height="150" rx="3"/>
+<text class="mt" x="597" y="564">Bode 1630</text>
+<text class="ms" x="597" y="580">Shifter</text>
+<circle class="jk" cx="600" cy="590" r="7"/>
+<text class="jl" x="612" y="594">SIG IN</text>
+<circle class="jk" cx="600" cy="650" r="7"/>
+<text class="jl" x="612" y="654">CTRL 1</text>
+<circle class="jk o" cx="720" cy="600" r="7"/>
+<text class="jl" x="708" y="604" text-anchor="end">OUT A</text>
+<circle class="jk o" cx="720" cy="660" r="7"/>
+<text class="jl" x="708" y="664" text-anchor="end">OUT B</text>
+</g>
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="785" y="20" width="150" height="150" rx="3"/>
+<text class="mt" x="797" y="44">Milky Way</text>
+<text class="ms" x="797" y="60">Hall</text>
+<circle class="jk" cx="800" cy="72" r="7"/>
+<text class="jl" x="812" y="76">IN 1</text>
+<circle class="jk" cx="800" cy="122" r="7"/>
+<text class="jl" x="812" y="126">IN 2</text>
+<circle class="jk o" cx="920" cy="82" r="7"/>
+<text class="jl" x="908" y="86" text-anchor="end">OUT 1</text>
+<circle class="jk o" cx="920" cy="132" r="7"/>
+<text class="jl" x="908" y="136" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="785" y="400" width="150" height="80" rx="3"/>
+<text class="mt" x="797" y="424">Lyra8-FX</text>
+<text class="ms" x="797" y="440">Delay + Drive</text>
+<circle class="jk" cx="800" cy="452" r="7"/>
+<text class="jl" x="812" y="456">IN</text>
+<circle class="jk o" cx="920" cy="440" r="7"/>
+<text class="jl" x="908" y="444" text-anchor="end">OUT</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="785" y="510" width="150" height="80" rx="3"/>
+<text class="mt" x="797" y="534">Wasp</text>
+<text class="ms" x="797" y="550">Hochpass</text>
+<circle class="jk" cx="800" cy="562" r="7"/>
+<text class="jl" x="812" y="566">IN</text>
+<circle class="jk o" cx="920" cy="550" r="7"/>
+<text class="jl" x="908" y="554" text-anchor="end">LP/HP</text>
+</g>
+<g class="mod off" data-st="8C">
+<rect class="m" x="965" y="520" width="105" height="120" rx="3"/>
+<text class="mt" x="977" y="544">2×4 Mult</text>
+<text class="ms" x="977" y="560">Teil B</text>
+<circle class="jk" cx="980" cy="572" r="7"/>
+<text class="jl" x="992" y="576">IN</text>
+<circle class="jk o" cx="1055" cy="590" r="7"/>
+<text class="jl" x="1043" y="594" text-anchor="end"></text>
+<circle class="jk o" cx="1055" cy="622" r="7"/>
+<text class="jl" x="1043" y="626" text-anchor="end"></text>
+</g>
+<g class="mod" data-st="8A 8B 8C">
+<rect class="m" x="1100" y="20" width="100" height="700" rx="3"/>
+<text class="mt" x="1112" y="44">L6</text>
+<text class="ms" x="1112" y="60">über Fader</text>
+<circle class="jk" cx="1115" cy="82" r="7"/>
+<text class="jl" x="1127" y="86">K1 · L</text>
+<circle class="jk" cx="1115" cy="132" r="7"/>
+<text class="jl" x="1127" y="136">K2 · R</text>
+<circle class="jk" cx="1115" cy="230" r="7"/>
+<text class="jl" x="1127" y="234">K3 · M</text>
+<circle class="jk" cx="1115" cy="600" r="7"/>
+<text class="jl" x="1127" y="604">K4 · L</text>
+<circle class="jk" cx="1115" cy="670" r="7"/>
+<text class="jl" x="1127" y="674">K5 · R</text>
+</g>
+<g class="cg" data-st="8A 8B 8C"><path class="cab audio" d="M155,72 C195,72 190,72 230,72"/><g class="badge audio"><circle cx="192.5" cy="72" r="11"/><text x="192.5" y="76" text-anchor="middle">1</text></g></g>
+<g class="cg" data-st="8A 8B 8C"><path class="cab audio" d="M330,72 C683.2,72 761.8,230 1115,230"/><g class="badge audio"><circle cx="722.5" cy="151" r="11"/><text x="722.5" y="155" text-anchor="middle">2</text></g></g>
+<g class="cg" data-st="8A 8B 8C"><path class="cab audio" d="M330,107 C370,107 370,72 410,72"/><g class="badge audio"><circle cx="370" cy="89.5" r="11"/><text x="370" y="93.5" text-anchor="middle">3</text></g></g>
+<g class="cg" data-st="8A"><path class="cab audio" d="M520,97 C646,97 674,72 800,72"/><g class="badge audio"><circle cx="660" cy="84.5" r="11"/><text x="660" y="88.5" text-anchor="middle">4</text></g></g>
+<g class="cg" data-st="8A 8B 8C"><path class="cab audio" d="M920,82 C1007.8,82 1027.2,82 1115,82"/><g class="badge audio"><circle cx="1017.5" cy="82" r="11"/><text x="1017.5" y="86" text-anchor="middle">5</text></g></g>
+<g class="cg" data-st="8A 8B 8C"><path class="cab audio" d="M920,132 C1007.8,132 1027.2,132 1115,132"/><g class="badge audio"><circle cx="1017.5" cy="132" r="11"/><text x="1017.5" y="136" text-anchor="middle">6</text></g></g>
+<g class="cg" data-st="8A"><path class="cab cv" d="M155,182 C269.8,182 295.2,122 410,122"/><g class="badge cv"><circle cx="282.5" cy="152" r="11"/><text x="282.5" y="156" text-anchor="middle">7</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M520,97 C560,97 560,72 600,72"/><g class="badge audio"><circle cx="560" cy="84.5" r="11"/><text x="560" y="88.5" text-anchor="middle">8</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M720,82 C760,82 760,72 800,72"/><g class="badge audio"><circle cx="760" cy="77" r="11"/><text x="760" y="81" text-anchor="middle">9</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M720,122 C760,122 760,122 800,122"/><g class="badge audio"><circle cx="760" cy="122" r="11"/><text x="760" y="126" text-anchor="middle">10</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab trig" d="M155,292 C355.2,292 399.8,122 600,122"/><g class="badge trig"><circle cx="377.5" cy="207" r="11"/><text x="377.5" y="211" text-anchor="middle">11</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M720,202 C790,220 530,304 600,322"/><g class="badge audio"><circle cx="660" cy="262" r="11"/><text x="660" y="266" text-anchor="middle">12</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M720,310 C790,325 340,395 410,410"/><g class="badge audio"><circle cx="565" cy="360" r="11"/><text x="565" y="364" text-anchor="middle">13</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab audio" d="M520,432 C560,432 560,172 600,172"/><g class="badge audio"><circle cx="560" cy="302" r="11"/><text x="560" y="306" text-anchor="middle">14</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab cv" d="M330,425 C370,425 370,455 410,455"/><g class="badge cv"><circle cx="370" cy="440" r="11"/><text x="370" y="444" text-anchor="middle">15</text></g></g>
+<g class="cg off" data-st="8B 8C"><path class="cab cv" d="M155,182 C195,182 190,410 230,410"/><g class="badge cv"><circle cx="192.5" cy="296" r="11"/><text x="192.5" y="300" text-anchor="middle">16</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M330,142 C370,142 370,590 410,590"/><g class="badge audio"><circle cx="370" cy="366" r="11"/><text x="370" y="370" text-anchor="middle">17</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M520,630 C560,630 560,590 600,590"/><g class="badge audio"><circle cx="560" cy="610" r="11"/><text x="560" y="614" text-anchor="middle">18</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M720,600 C760,600 760,452 800,452"/><g class="badge audio"><circle cx="760" cy="526" r="11"/><text x="760" y="530" text-anchor="middle">19</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M920,440 C990,458.3 730,543.7 800,562"/><g class="badge audio"><circle cx="860" cy="501" r="11"/><text x="860" y="505" text-anchor="middle">20</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M920,550 C960,550 940,572 980,572"/><g class="badge audio"><circle cx="950" cy="561" r="11"/><text x="950" y="565" text-anchor="middle">21</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M1055,590 C1125,602 340,658 410,670"/><g class="badge audio"><circle cx="732.5" cy="630" r="11"/><text x="732.5" y="634" text-anchor="middle">22</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M1055,622 C1095,622 1075,600 1115,600"/><g class="badge audio"><circle cx="1085" cy="611" r="11"/><text x="1085" y="615" text-anchor="middle">23</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab audio" d="M720,660 C897.8,660 937.2,670 1115,670"/><g class="badge audio"><circle cx="917.5" cy="665" r="11"/><text x="917.5" y="669" text-anchor="middle">24</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab cv" d="M155,592 C195,592 190,470 230,470"/><g class="badge cv"><circle cx="192.5" cy="531" r="11"/><text x="192.5" y="535" text-anchor="middle">25</text></g></g>
+<g class="cg off" data-st="8C"><path class="cab cv" d="M330,485 C451.5,485 478.5,650 600,650"/><g class="badge cv"><circle cx="465" cy="567.5" r="11"/><text x="465" y="571.5" text-anchor="middle">26</text></g></g>
+</svg></div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--trig)"></i>Trigger</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-8A="&lt;b&gt;Patch 8A, ein Raum am Send.&lt;/b&gt; Der Mult verteilt die Stimme (1): trocken auf Kanal 3 (2), über FOUR PLAY Kanal 3 in den Milky Way (3, 4) und stereo zurück auf Kanal 1 und 2 (5, 6). Der 281t wirft einzelne Noten hinein (7)." data-cap-8B="&lt;b&gt;Patch 8B, Echo mit Filter im Loop.&lt;/b&gt; Der Send speist jetzt das Echo (8), das stereo in den Hall läuft (9, 10), im Takt der Zählspur (11). Tap 4 kehrt über Surges und A-130-8 Kanal 2 zurück (12–14); der Attenuverter liefert Grund-Feedback und Throw (15, 16). Kabel 4 und 7 sind gezogen." data-cap-8C="&lt;b&gt;Patch 8C, die Spirale.&lt;/b&gt; Eine zweite Schleife im selben FOUR PLAY: Stimme in Kanal 1 (17), summiert in Kanal 2, weiter in den Bode (18), Richtung A über Lyra und Wasp (19–21) und über den Mult zurück (22). Aufwärts auf Kanal 4 (23), abwärts auf Kanal 5 (24). Ein langsamer LFO schiebt den Shift (25, 26)."><b>Patch <a class="xref" href="#p-8a">8A</a>, ein Raum am Send.</b> Der Mult verteilt die Stimme (1): trocken auf Kanal 3 (2), über FOUR PLAY Kanal 3 in den Milky Way (3, 4) und stereo zurück auf Kanal 1 und 2 (5, 6). Der 281t wirft einzelne Noten hinein (7).</figcaption>
+</figure>
+
+<p class="bst" id="k8-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-8a">Stufe 1 · Patch 8A: ein Raum am Send</h4>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · Patch <a class="xref" href="#p-2a">2A</a> spielbar, Kabel 5 aus Kapitel <a class="xref" href="#k2">02</a> ziehen · alle Passivfader unten, L6-Kanäle 1–5 zu · L6-Pan: Kanal 1 links, 2 rechts, 3 Mitte · FOUR PLAY (Reihe 3): LEVEL 3 zu, CURVE 3 linear, BOOST 3 aus · Milky Way: AIRWAYS (blaue LED), Algorithmus I Hall</div><div class="why">Kabel 5 führte die Stimme bisher direkt zu Kanal 1. Ab jetzt geht sie über einen Mult, und Kanal 1 und 2 werden der Return. Die beiden Kanäle haben an der Klinke die meiste Reserve. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">1</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → 2×4 Mult <b>Teil A IN</b></div><div class="why">Ab hier gibt es die Stimme mehrfach. Ein aktiver Mult belastet die Quelle nicht, alle Abzweige bekommen denselben Pegel.</div></div></li>
+<li><span class="n audio">2</span><div class="r"><div class="route">Mult A → Passivfader → L6 <b>Kanal 3</b></div><div class="why">Der trockene Weg, in der Mitte. Er bleibt in allen Stufen unangetastet.</div></div></li>
+<li><span class="n audio">3</span><div class="r"><div class="route">Mult A → FOUR PLAY <b>IN 3</b></div><div class="why">Der Send. LEVEL 3 ist ab jetzt der Send-Regler. Kanal 1 und 2 bleiben für die Spirale in 8C frei.</div></div></li>
+<li><span class="n audio">4</span><div class="r"><div class="route">FOUR PLAY <b>OUT 3</b> → Milky Way <b>IN 1</b></div><div class="why">IN 2 bleibt frei; IN 1 ist darauf normalisiert. Mono rein, stereo raus. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">5</span><div class="r"><div class="route">Milky Way <b>OUT 1</b> → Passivfader → L6 <b>Kanal 1</b></div><div class="why">Return links.</div></div></li>
+<li><span class="n audio">6</span><div class="r"><div class="route">Milky Way <b>OUT 2</b> → Passivfader → L6 <b>Kanal 2</b></div><div class="why">Return rechts. Beide Fader gleich weit, sonst kippt der Raum zu einer Seite.</div></div></li>
+<li><span class="n cv">7</span><div class="r"><div class="route">281t <b>OUT 4</b> → FOUR PLAY <b>CV 3</b></div><div class="why">Der Throw. Kanal 4 auf Attack/Decay; der Taster TRIG 4 startet die Hüllkurve von Hand. LEVEL 3 bleibt die Grundöffnung, positive CV öffnet darüber hinaus <span class="tag tag-h">Hersteller</span>; für einen reinen Throw LEVEL 3 zudrehen. Die CV an CV 3 erreicht Kanal 1 und 2 nicht; CV 1 bleibt leer.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-8a">8A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 3: Send dezent"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Send dezent</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="CABIN PRESSURE: 100 % nass"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">CABIN PRESSURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">100 % nass</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="CABIN FEVER: Hall ≈ 3 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">CABIN FEVER</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hall ≈ 3 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MW VOLUME: unter 3 Uhr"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MW VOLUME</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">unter 3 Uhr</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 4: kurz"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="46.6" y2="53.4" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 4</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kurz</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 4: ≈ 1 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 4</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 1 s</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Die Hallzeit stellst Du nach Gehör ein: Eine kurze Note soll noch hörbar ausklingen, wenn die übernächste beginnt. Danach die zweite Funktion von CABIN FEVER (TAP länger als 1 s halten) so weit, dass tiefe Töne im Hall nicht dröhnen. <span class="tag tag-h">Hersteller</span></p>
+<div class="box-c">
+<h4>Gegenprobe: derselbe Hall als Insert</h4>
+<p>Bevor Du Kabel 2 bis 4 steckst: Mult A direkt in Milky Way IN 1, CABIN PRESSURE auf 12 Uhr, Kanal 3 bleibt zu. Dreh CABIN PRESSURE langsam nach rechts. Der Raum wird größer, aber die Stimme verliert an Anschlag und rückt nach hinten, bis sie ganz rechts nur noch Raum ist. Danach Kabel 2 bis 4 stecken und CABIN PRESSURE zurück auf 100 % nass. Jetzt regelt LEVEL 3 den Raum, und die Stimme bleibt vorn.</p>
+</div>
+<div class="check"><b>Kontrollpunkt 8A</b> Mit LEVEL 3 zu hörst Du die Stimme trocken in der Mitte. Dreh LEVEL 3 auf: Links und rechts wächst ein Raum, die Stimme bleibt in der Mitte und wird nicht leiser. Schalt Kanal 3 stumm, und es bleibt nur der Raum, ohne Anschläge. Mit LEVEL 3 wieder zu und einem Druck auf TRIG 4 kurz vor einer Note landet nur diese Note im Hall: ein Throw.</div>
+
+<h4 id="p-8b">Stufe 2 · Patch 8B: Echo mit Filter im Loop</h4>
+<p>Zieh Kabel 4 und 7. Am Echo: Dry/Wet ganz rechts (nur nass), FEEDBACK-Regler auf 12 Uhr, PHASE INVERT aus, Pan-Modus Ping-Pong, SPREAD 3 Uhr. Im Programm wird Drum-Spur 2 zur Zählspur: Länge 3 Steps, ein Hit auf Step 1, kürzestes Gate. Das ergibt einen Puls pro punktierter Achtel (KWP-G2). Das Echo erwartet dafür am Sync-Eingang 1 PPQN, Jumper hinten auf A. <span class="tag tag-h">Hersteller</span> So ist es in KWP-G2 eingerichtet; vor dem ersten Mal einmal nachsehen. <span class="tag tag-p" id="pr-100">am Gerät prüfen</span></p>
+<ol class="cables" start="8">
+<li><span class="n audio">8</span><div class="r"><div class="route">FOUR PLAY <b>OUT 3</b> → Echo <b>IN</b></div><div class="why">Der Send speist jetzt die Kette Echo → Hall. Der Eingang ist mono und verträgt 10 Vpp. <span class="tag tag-h">Hersteller</span> INPUT-Abschwächer so, dass die CLIP-LED höchstens bei den lautesten Noten aufblitzt.</div></div></li>
+<li><span class="n audio">9</span><div class="r"><div class="route">Echo <b>ALL TAPS + MIX L</b> → Milky Way <b>IN 1</b></div><div class="why">Alle vier Taps, im Stereobild verteilt.</div></div></li>
+<li><span class="n audio">10</span><div class="r"><div class="route">Echo <b>ALL TAPS + MIX R</b> → Milky Way <b>IN 2</b></div><div class="why">Ohne Stecker in R würde das Echo auf L mono summieren. <span class="tag tag-h">Hersteller</span> Mit beiden Kabeln steht jedes Echo im Hall dort, wohin der Pan-Modus es stellt.</div></div></li>
+<li><span class="n trig">11</span><div class="r"><div class="route">Programm <b>DRUM 2</b> → Echo <b>SYNC IN</b></div><div class="why">Die Zählspur. Die Modus-LED leuchtet blau, sobald das Echo den externen Takt erkannt hat; bei 1 PPQN braucht es mindestens vier Pulse. <span class="tag tag-h">Hersteller</span> DELAY TIME wählt jetzt einen Faktor; stell ihn auf 1.</div></div></li>
+<li><span class="n audio">12</span><div class="r"><div class="route">Echo <b>TAP 4</b> → Surges <b>IN 1</b></div><div class="why">Tap 4 ist der Abgriff, den das Echo sonst intern zurückführt. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">13</span><div class="r"><div class="route">Surges <b>LP</b> → A-130-8 <b>IN 2</b></div><div class="why">Tiefpass, 2-polig, Resonanz zu. Er macht jede Runde dunkler als die vorige.</div></div></li>
+<li><span class="n audio">14</span><div class="r"><div class="route">A-130-8 <b>OUT 2</b> → Echo <b>FEEDBACK IN</b></div><div class="why">Ein Stecker hier trennt die interne Rückführung ganz; das externe Signal ersetzt sie, es wird nicht addiert. <span class="tag tag-h">Hersteller</span> Ob der FEEDBACK-Regler den externen Weg noch dosiert, <span class="tag tag-p" id="pr-101">am Gerät prüfen</span>: Dreh ihn bei laufender Fahne einmal zwischen 9 und 3 Uhr. Ändert sich nichts, regelt allein der VCA.</div></div></li>
+<li><span class="n cv">15</span><div class="r"><div class="route">Attenuverter (Reihe 4) <b>OUT A</b> → A-130-8 <b>CV 2</b></div><div class="why">OFFSET A ist jetzt der Feedback-Regler. Auf 12 Uhr liefert er 0 V, der VCA ist zu, die Schleife offen. Der A-130-8 ist bei 5 V voll offen. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">16</span><div class="r"><div class="route">281t <b>OUT 4</b> → Attenuverter <b>IN A</b></div><div class="why">Kabel 7 wandert hierher. ATTEN A bestimmt, wie weit ein Druck auf TRIG 4 das Feedback anhebt; danach fällt es auf den OFFSET-Wert zurück. Ein Kanal, zwei Regler: Grund-Feedback und Throw.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-8b">8B</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ECHO DRY/WET: nur nass"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ECHO DRY/WET</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">nur nass</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ECHO SPREAD: breit"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ECHO SPREAD</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">breit</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ECHO FEEDBACK: 12 Uhr, s. Kabel 14"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ECHO FEEDBACK</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">12 Uhr, s. Kabel 14</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SURGES CUTOFF: mittig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SURGES CUTOFF</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">mittig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SURGES RESO: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SURGES RESO</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="OFFSET A: 0 V, Schleife zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">OFFSET A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 V, Schleife zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN A: Throw dezent"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Throw dezent</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 3: Send"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Send</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Spiel eine einzelne kurze Note und dreh OFFSET A in kleinen Schritten nach rechts, bis nach den vier Taps eine zweite, leisere Viererreihe kommt. Das Ziel: vier bis sechs Runden, jede leiser und dunkler. Wie weit OFFSET A dafür steht, hängt am Bereich des Attenuverters und an Kabel 14. Erst dann am Surges nachstellen: Cutoff weiter zu macht die Fahne kürzer und dumpfer, ohne das Feedback anzufassen.</p>
+<div class="check"><b>Kontrollpunkt 8B</b> Eine einzelne Note kommt in punktierten Achteln zurück, abwechselnd links und rechts, jede Viererreihe dunkler als die vorige, und verschwindet im Hall. Ein Druck auf TRIG 4 lässt die Fahne kurz anschwellen und wieder abklingen. Dreh jetzt die Resonanz am Surges langsam auf: Ab einem Punkt beginnt die Fahne zu singen, obwohl OFFSET A unverändert ist. Das ist die Resonanzspitze aus dem Spielplatz. Resonanz zurück unter diese Schwelle.</div>
+
+<h4 id="p-8c">Stufe 3 · Patch 8C: die Spirale</h4>
+<p>8A und 8B bleiben stehen; Kanal 3 des FOUR PLAY ist weiter der Send. Für die Spirale: LEVEL 1 und 2 zu, CURVE 1 und 2 linear. Am Bode ZERO ADJUST abgleichen: Signal anlegen, AMOUNT OF SHIFT auf die Mitte, ZERO ADJUST drehen, bis die LED darüber fast stillsteht. <span class="tag tag-h">Hersteller</span> Am Lyra8-FX: Delay-Mix ganz nass, Feedback zu, Drive gering. Am Wasp den Mix-Regler ganz nach rechts (Hochpass), Cutoff tief, Resonanz zu. L6: Kanal 4 Pan links, Kanal 5 rechts, beide Fader unten.</p>
+<ol class="cables" start="17">
+<li><span class="n audio">17</span><div class="r"><div class="route">Mult A → FOUR PLAY <b>IN 1</b></div><div class="why">Ausgang 1 bleibt frei. Ein FOUR-PLAY-Ausgang ohne Stecker mischt in den Kanal rechts daneben; so werden Stimme und Rückweg in Kanal 2 zusammengeführt. <span class="tag tag-h">Hersteller</span> LEVEL 1 = wie viel Stimme in die Spirale geht. Kabel 18 gleich danach stecken: Solange OUT 2 frei ist, läuft Kanal 2 weiter in Kanal 3 und damit in den Send.</div></div></li>
+<li><span class="n audio">18</span><div class="r"><div class="route">FOUR PLAY <b>OUT 2</b> → Bode <b>SIG IN</b></div><div class="why">Der Stecker in OUT 2 hält die Spirale aus dem Send auf Kanal 3 heraus. SIG IN verträgt +12 dBu, etwa ±4,4 V Spitze. <span class="tag tag-h">Hersteller</span> Ein voller Eurorack-Ton mit ±5 V liegt gut 1 dB darüber; LEVEL 1 darum nicht über 3 Uhr.</div></div></li>
+<li><span class="n audio">19</span><div class="r"><div class="route">Bode <b>OUT A</b> → Lyra8-FX <b>IN</b></div><div class="why">Eine Richtung kommt in die Schleife. Welche, entscheidet das Vorzeichen des Shifts.</div></div></li>
+<li><span class="n audio">20</span><div class="r"><div class="route">Lyra8-FX <b>MAIN OUT</b> → Wasp <b>AUDIO IN</b></div><div class="why">Am MAIN OUT liegt die Distortion hinter dem Delay. <span class="tag tag-h">Hersteller</span> Sie ist hier der Begrenzer: Läuft die Spirale über, sättigt sie, statt zu explodieren.</div></div></li>
+<li><span class="n audio">21</span><div class="r"><div class="route">Wasp <b>LP/HP</b> → 2×4 Mult <b>Teil B IN</b></div><div class="why">Hochpass im Rückweg: Er hält Bässe und Gleichanteile aus der Schleife, die bei Shifts nahe null entstehen können.</div></div></li>
+<li><span class="n audio">22</span><div class="r"><div class="route">Mult B → FOUR PLAY <b>IN 2</b></div><div class="why">Der Rückweg. LEVEL 2 ist das Feedback der Spirale und bleibt vorerst zu.</div></div></li>
+<li><span class="n audio">23</span><div class="r"><div class="route">Mult B → Passivfader → L6 <b>Kanal 4</b></div><div class="why">Die Spirale selbst, links.</div></div></li>
+<li><span class="n audio">24</span><div class="r"><div class="route">Bode <b>OUT B</b> → Passivfader → L6 <b>Kanal 5</b></div><div class="why">Die Gegenrichtung, rechts, ohne Wiederholungen. Sie liegt nicht in der Schleife.</div></div></li>
+<li><span class="n cv">25</span><div class="r"><div class="route">FOUR LFO <b>OUT 1</b> → Attenuverter <b>IN B</b></div><div class="why">Dreieck, sehr langsam, ein Zyklus 20–40 s.</div></div></li>
+<li><span class="n cv">26</span><div class="r"><div class="route">Attenuverter <b>OUT B</b> → Bode <b>CTRL 1</b></div><div class="why">ATTEN B klein, OFFSET B auf 12 Uhr. Der LFO schiebt den Shift langsam um den eingestellten Wert hin und her; reicht der Hub über null, kehrt die Spirale die Richtung um.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-8c">8C</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 1: Stimme in die Spirale"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Stimme in die Spirale</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 2: Feedback zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Feedback zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="BODE SHIFT: 3–5 Hz"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="64.9" y2="21.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">BODE SHIFT</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">3–5 Hz</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="LYRA DELAY MIX: nass"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">LYRA DELAY MIX</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">nass</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="LYRA FEEDBACK: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">LYRA FEEDBACK</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="LYRA DRIVE: wenig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">LYRA DRIVE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="WASP CUTOFF: Hochpass tief"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">WASP CUTOFF</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hochpass tief</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN B: kleiner Hub"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="64.9" y2="21.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN B</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kleiner Hub</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Den Shift stellst Du mit der LED ein: drei- bis fünfmal Blinken pro Sekunde. Die Delayzeiten am Lyra nach Gehör auf etwa eine Viertel des Tempos, beide ähnlich, damit die Stufen deutlich bleiben. Dann LEVEL 2 langsam von unten hoch, Kanal 4 erst danach aufziehen.</p>
+<div class="check"><b>Kontrollpunkt 8C</b> Mit LEVEL 2 zu hörst Du links jede Note einmal als verschobenes Echo, rechts die Gegenrichtung ohne Wiederholung. Dreh LEVEL 2 auf: Jedes Echo kommt ein Stück höher (oder tiefer) zurück als das vorige und läuft als Treppe weiter, die nicht ankommt. Ab einem Punkt wachsen die Stufen zu einer rauen, stehenden Fläche; das ist die Distortion, die begrenzt. Zurück unter diese Schwelle. Wenn der LFO den Shift durch null schiebt, steht die Spirale kurz still und dreht dann um.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k8-hoeren">08 · Hörübung: Raum, Zeit, Richtung</p>
+<ol>
+<li><b>Vorn und hinten.</b> In 8A Kanal 3 stumm und wieder an. Wie weit „hinten“ klingt der Raum ohne die trockene Stimme? Dann dasselbe mit dem Insert aus der Gegenprobe. Beim Send ändert sich nur die Menge Raum, beim Insert auch die Entfernung der Stimme.</li>
+<li><b>Runden zählen.</b> In 8B eine kurze Note, dann zählen, bis keine Wiederholung mehr zu hören ist. Danach Surges-Cutoff um eine Stunde zu, gleiche Note, wieder zählen. Die Fahne wird kürzer, obwohl das Feedback gleich geblieben ist: Das Filter nimmt jeder Runde Energie.</li>
+<li><b>Hören, wo es liegt.</b> In 8B den Pan-Modus von Ping-Pong auf Traverse und Chaos schalten. Bei Ping-Pong springt das Echo, bei Traverse wandert es, bei Chaos verschwimmt der Ort.</li>
+<li><b>Die Mono-Probe.</b> Alle Pan-Regler am L6 in die Mitte. Der Hall wird schmal, bleibt aber voll. Bei der Spirale klingen Kanal 4 und 5 zusammen plötzlich rau und flatternd: Auf- und Abwärtsverschiebung ergeben zusammen eine Ringmodulation.</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k8-var">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>PHASE INVERT.</b> In 8B umlegen. Die Kerben und Spitzen im Echo tauschen die Plätze; bei Resonanz am Surges beruhigt sich die Fahne oft sofort.</li>
+<li><b>Tap 3 statt Tap 4.</b> Kabel 12 auf TAP 3. Die Schleife ist jetzt nur drei Viertel so lang, läuft aber gegen den Takt der Taps: Die Fahne atmet (<a class="xref" href="#kwp-17">KWP-17</a>).</li>
+<li><b>Bandpass im Loop.</b> In Kabel 13 statt LP den BP-Ausgang des Surges, ein FOUR-LFO-Kanal langsam auf den Cutoff. Jede Wiederholung bekommt eine andere Farbe; die Filterspirale aus <a class="xref" href="#kwp-17">KWP-17</a>, solange kein Phaser im Pult ist.</li>
+<li><b>Anderer Raum.</b> Am Milky Way nacheinander Plate (IV), Spring (V) und Reversed (DARKWAVES III). Bei Spring zupft TAP die Feder. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Anderer Faktor.</b> DELAY TIME am Echo auf 1,5 oder 2. Aus den punktierten Achteln werden längere Abstände; Tabellen in KWP-G2.</li>
+<li><b>Sauberer Lyra.</b> In 8C statt MAIN OUT den DELAY OUT. Die Spirale wird klarer und kann jetzt wirklich überlaufen: LEVEL 2 vorsichtiger.</li>
+<li><b>Ringmodulator.</b> Bode MIX OUT mit MIXTURE auf 12 Uhr statt OUT B auf Kanal 5. Shift auf 100–300 Hz: metallisch, glockig.</li>
+<li><b>Feedback per Hüllkurve.</b> In 8C den Throw-Ausgang 281t OUT 4 über einen Mult zusätzlich in FOUR PLAY CV 2. Die Spirale blüht bei jedem Druck auf und fällt zurück.</li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · nur das Echo.</b> Ohne Kabel 12 bis 16, FEEDBACK am Echo intern, Pan-Modus Ping-Pong, ALL TAPS + MIX stereo direkt auf Kanal 1 und 2. In drei Kabeln steht ein Stereo-Echo; es fehlt nur die eigene Färbung der Wiederholungen.</li>
+<li><b>Vertiefte Variante · das Mehrkopf-Bandecho (<a class="xref" href="#kwp-15">KWP-15</a>).</b> Die vier Taps einzeln über die A-138m mit fallenden Pegeln und abwechselnd links und rechts, Gesamtzeit eine punktierte Halbe. Eine langsame, leise Modulation auf DELAY CV mit dem A/B-Schalter auf B macht daraus Band: im Sync verschiebt die CV dann stufenlos um bis zu ±25 %. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Taps als Rhythmusmaschine (<a class="xref" href="#kwp-16">KWP-16</a>).</b> Gesamtzeit eine Viertel, Tap 1–4 über die A-130-8-Kanäle 5–8, vier Programm-Spuren als Gates auf deren CV-Eingänge. Jedes Gate entscheidet, welche Kopie klingt.</li>
+<li><b>Die Hi-Hat wandert durch vier Effekte (<a class="xref" href="#kwp-18">KWP-18</a>).</b> Im Pult stehen die vier Effekte jetzt bereit: A-151 als 1→4 auf Echo, Lyra8-FX, Bode und Skies, alle 16 Takte weitergeschaltet, eine Volcan-Hüllkurve auf die Intensität. Nicht auf Feedback legen, sondern auf Mix, Zeit oder Shift.</li>
+<li><b>Skies am zweiten Send.</b> FOUR PLAY Kanal 4 als zweiter Send in den Skies, LEVEL 4 als sein Regler, seinen Ausgang über zwei freie Passivfader auf den L6. Ein Gate an FREEZE hält einen Akkord als Wolke fest, während die Stimme weiterspielt. Bedienung von BLEND <span class="tag tag-p" id="pr-102">am Gerät prüfen</span>.</li>
+<li><b>Ringmodulator als Insert · XDR.</b> Die Stimme aus 2A vor dem Send in <span class="jack">X</span>, ein fester Sinus (258t OSC 2 ohne Tonhöhen-CV) in <span class="jack">Y</span>, <span class="jack">MIX</span> OUT weiter in den Patch. Den MIX-Regler am XDR von DIODE nach XOR drehen, oder eine langsame Hüllkurve an <span class="jack">MIX CV</span>: Der Klang wird über einen Teil hinweg immer metallischer. Anders als beim Bode bleibt Y frei spielbar. Für mehr Kontrolle den XDR an einen Send hängen und nur beimischen. → <a href="#b2-b06">B2-B-06</a></li>
+<li><b>Federhall aus dem Swarm.</b> Den Send aus 8A zusätzlich oder statt in den Milky Way in <span class="jack">REV IN</span> am Swarm, den Ausgang <span class="jack">OUT</span> über einen Passivfader als zweiten Return auf den L6. Die Feder klingt kurz, scheppernd und dunkel, ideal für einzelne Throws auf der Snare. Der Regler <span class="jack">voice vol</span> am Swarm bleibt dabei zu. → <a href="#b2-b05">B2-B-05</a></li>
+<li><b>Die Spirale mit dem Echo (<a class="xref" href="#kwp-20">KWP-20</a>).</b> Statt Lyra das Morphor Echo in die Bode-Schleife: Bode OUT A → Echo FEEDBACK IN. Die Spirale steigt dann in gesyncten Stufen. Dafür muss das Echo aus 8B frei werden.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k8-komp">11 · Kompositionsaufgabe: ein Motiv, drei Räume, zwei Übergänge</p>
+<p>Spiel ein Motiv aus vier bis sechs kurzen Tönen mit Pausen, in Schleife oder von Hand, und nimm auf dem L6 drei Minuten auf. Nur die Effekte ändern sich:</p>
+<ol>
+<li><b>0:00–1:00 · Nähe.</b> Nur trocken und ein kleiner Raum (8A, LEVEL 3 niedrig, kurze Hallzeit). Ab und zu ein Throw auf einer letzten Note.</li>
+<li><b>1:00 · Übergang 1.</b> Zwei Takte vor der Minute OFFSET A langsam hoch: Das Echo schwillt an und trägt das Motiv in den nächsten Teil.</li>
+<li><b>1:00–2:00 · Rhythmus.</b> Das Echo füllt die Lücken in punktierten Achteln. Pan-Modus einmal von Ping-Pong auf Traverse wechseln.</li>
+<li><b>2:00 · Übergang 2.</b> Kanal 4 aufziehen und LEVEL 2 am FOUR PLAY hoch, bis die Spirale steht. Kanal 3 langsam zu.</li>
+<li><b>2:00–3:00 · Fläche.</b> Nur noch Raum und Spirale. Zum Schluss LEVEL 1 zu; die Spirale klingt aus, der Hall zuletzt.</li>
+</ol>
+<p>Weil der L6 jede Spur einzeln aufnimmt, kannst Du die Übergänge später noch nachmischen. Hör Dir am Ende alle drei Teile in Mono an.</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k8-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k8l1"><label for="k8l1">Einen Effekt als Insert und als Send/Return einbinden und den Unterschied hören.</label></li>
+<li><input type="checkbox" id="k8l2"><label for="k8l2">Mit einem VCA einen Send bauen und einzelne Noten per Hüllkurve hineinwerfen.</label></li>
+<li><input type="checkbox" id="k8l3"><label for="k8l3">Aus Tempo und Notenwert eine Delayzeit ausrechnen und mit dem Programm synchronisieren.</label></li>
+<li><input type="checkbox" id="k8l4"><label for="k8l4">Aus g die Abnahme pro Runde in dB ableiten und sagen, warum Resonanz im Loop die Schleife kippen lässt.</label></li>
+<li><input type="checkbox" id="k8l5"><label for="k8l5">Phaser, Flanger und Frequency Shifter an ihrer Wirkung aufs Spektrum unterscheiden.</label></li>
+<li><input type="checkbox" id="k8l6"><label for="k8l6">Eine Schleife mit VCA, Hochpass und Begrenzer sicher von null aus anfahren.</label></li>
+<li><input type="checkbox" id="k8l7"><label for="k8l7">Erklären, was der Passivfader vor dem L6 schützt und was nicht.</label></li>
+<li><input type="checkbox" id="k8l8"><label for="k8l8">Einen Patch einer Mono-Probe unterziehen.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Kein Hall zu hören</summary><ol>
+<li>Steht LEVEL 3 am FOUR PLAY über null? LEVEL ist die Grundöffnung; mit LEVEL zu öffnet nur der Throw.</li>
+<li>Stecken Kabel 3, 4 und 7 an Kanal 3 (IN 3, OUT 3, CV 3)? Kanal 1 und 2 gehören in 8C der Spirale.</li>
+<li>Leuchtet am Milky Way die blaue LED (AIRWAYS)? Algorithmus VI bis VIII sind Delay und Chorus, kein Hall.</li>
+<li>Sind die Passivfader von Kanal 1 und 2 auf, und stehen die Pan-Regler nicht beide auf derselben Seite?</li>
+</ol></details>
+<details><summary>Die Echos liegen nicht im Takt</summary><ol>
+<li>Leuchtet die Modus-LED am Echo blau? Sonst hat es den Sync nicht erkannt: Läuft das Programm, kommen mindestens vier Pulse an?</li>
+<li>Jumper auf A (1 PPQN)? Bei Stellung B erwartet das Echo 24 Pulse pro Viertel.</li>
+<li>Steht DELAY TIME auf Faktor 1? Liegen die Echos auf Tap 1 statt Tap 4, KWP-G2 „Gegenprobe“ lesen.</li>
+</ol></details>
+<details><summary>Die Schleife pfeift, brummt oder wird immer lauter</summary><ol>
+<li>OFFSET A beziehungsweise LEVEL 2 sofort auf null. Erst dann suchen.</li>
+<li>Resonanz am Surges oder Wasp zu weit offen? Resonanz hebt die Verstärkung genau am Cutoff.</li>
+<li>Brummt es tief: Hochpass fehlt oder steht zu tief, oder der Bode steht nahe 0 Hz und verschiebt Gleichanteile.</li>
+<li>PHASE INVERT am Echo umlegen.</li>
+</ol></details>
+<details><summary>Am L6 klingt es verzerrt, im Rack nicht</summary><ol>
+<li>Zeigt der L6 auf dem Kanal Übersteuerung? Passivfader zurück, nicht den L6-Kanal; der regelt nur das Abhören.</li>
+<li>Schleifen-Returns auf Kanal 1 und 2 legen, die an der Klinke die meiste Reserve haben.</li>
+</ol></details>
+<details><summary>Die Spirale bewegt sich nicht oder rauscht nur</summary><ol>
+<li>Blinkt die LED über ZERO ADJUST? Steht sie still, ist der Shift null: AMOUNT OF SHIFT ein Stück aus der Mitte.</li>
+<li>SQUELCH zu hoch? Dann bleibt leises Material ganz weg; zu niedrig, und der Träger schlägt durch.</li>
+<li>Bekommt der Bode zu viel Pegel? LEVEL 1 am FOUR PLAY zurück; SIG IN verträgt +12 dBu.</li>
+</ol></details>
+<details><summary>Im Mono klingt es hohl oder verschwindet</summary><ol>
+<li>Bode A und B liegen gegeneinander: im Mono ist das ein Ringmodulator. Für Mono-Fassungen nur eine Richtung nehmen.</li>
+<li>Beim Echo Chaos mit negativem SPREAD wählen; dort ergänzen sich links und rechts. <span class="tag tag-h">Hersteller</span></li>
+</ol></details>
+</div>
+
+<p class="bst" id="k8-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k2">B1-02</a></span> Stimme 2A<br><span class="id"><a href="#k4">B1-04</a></span> Raum schon beim Aufbau<br><span class="id"><a href="#k7">B1-07</a></span> Clock-Baum, Zählspur<br><span class="id"><a href="#k9">B1-09</a></span> Effekte im Arrangement</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-e01">B2-E-01</a></span> Delay, Reverb, Phaser, Shift<br><span class="id"><a href="#b2-e02">B2-E-02</a></span> Feedback-Architekturen<br><span class="id"><a href="#b2-e03">B2-E-03</a></span> Stereo, Sends, Returns<br><span class="id"><a href="#b2-c02">B2-C-02</a></span> VCA-Typen<br><span class="id"><a href="#b2-b06">B2-B-06</a></span> Ringmodulation · <span class="id"><a href="#b2-b05">B2-B-05</a></span> Federhall</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-01">B3-01</a></span> Ambient · <a class="xref" href="#b3-02">B3-02</a> · <a class="xref" href="#b3-03">B3-03</a><br><span class="id"><a href="#kwp-15">KWP-15</a></span> Mehrkopf-Bandecho<br><span class="id"><a href="#kwp-16">KWP-16</a></span> Taps als Rhythmus · <span class="id"><a href="#kwp-17">KWP-17</a></span> Wolke<br><span class="id"><a href="#kwp-18">KWP-18</a></span> Hi-Hat durch vier FX · <span class="id"><a href="#kwp-20">KWP-20</a></span> Spirale</div>
+<div><b>Module</b><span class="id"><a href="#mod-morphor-echo">MOD-Morphor Echo</a></span> · <span class="id"><a href="#mp-milky-way">MOD-Milky Way</a></span><br><span class="id"><a href="#mod-lyra8-fx">MOD-Lyra8-FX</a></span> · <span class="id"><a href="#mod-bode">MOD-Bode</a></span><br><span class="id"><a href="#mod-skies">MOD-Skies</a></span> · <span class="id"><a href="#mp-l6">MOD-L6</a></span><br><span class="id"><a href="#mp-xdr">MOD-XDR</a></span> · <span class="id"><a href="#mp-swarm">MOD-Swarm</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult zu prüfen</h4>
+<ul>
+<li><b>Morphor Echo:</b> ob der FEEDBACK-Regler bei gestecktem FEEDBACK IN noch wirkt; Jumper-Stellung (A = 1 PPQN); welche Seite von DELAY TIME im Sync verlängert. <span class="tag tag-p" id="pr-103">am Gerät prüfen</span></li>
+<li><b>Lyra8-FX:</b> längste Delayzeit, verträglicher Eingangspegel. Die beiden Schalter wählen laut SOMA je Stufe die Quelle der Zeitmodulation: den eigenen Ausgang (Self) oder den gemeinsamen Zeit-CV-Eingang. <span class="tag tag-p" id="pr-104">am Gerät prüfen</span></li>
+<li><b>Bode 1630:</b> Shift-Bereich und SCALE stehen in der Kurzanleitung (0, EXP, ±5 Hz bis ±5 kHz; SIG IN wechselspannungsgekoppelt); offen bleibt, wie stark die CTRL-Eingänge in den linearen Stellungen wirken. <span class="tag tag-p" id="pr-105">am Gerät prüfen</span></li>
+<li><b>FOUR PLAY:</b> CV-Bereich bis zur vollen Öffnung bei LEVEL zu (wie in Kapitel <a class="xref" href="#k3">03</a>). <span class="tag tag-p" id="pr-106">am Gerät prüfen</span></li>
+<li><b>Skies:</b> Belegung von BLEND und FREEZE. <span class="tag tag-p" id="pr-107">am Gerät prüfen</span></li>
+<li><b>L6:</b> ob ein einzelner Stecker in K3 L ohne MONO-Taste beidseitig ankommt; welchen Pegel die AUX-Sends (6,3 mm TRS) liefern, bevor sie ins Rack gehen. <span class="tag tag-p" id="pr-108">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

@@ -1,0 +1,677 @@
+<!-- ======================= KAPITEL 03 ======================= -->
+<section class="part chapter" id="k3">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 03</span><h2>Envelopes, VCAs und LPGs · Dynamik und Artikulation</h2></div>
+<p class="muted"><i>Wie ein Klang beginnt, sich entwickelt und wieder verschwindet</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 2 × 90 min</b><span>zwei Sitzungen</span></div>
+  <div><b>23</b><span>Kabel über vier Stufen</span></div>
+  <div><b>13</b><span>Module + L6</span></div>
+  <div><b><a class="xref" href="#k1">B1-01</a>, <a class="xref" href="#k2">02</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du setzt Hüllkurven und VCAs als musikalische Gestalter ein, nicht nur als Lautstärkeschalter: Du hörst, was jede Phase einer Hüllkurve mit einem Ton macht, unterscheidest lineare und exponentielle Verläufe, kennst den Unterschied zwischen Gate und Trigger und verteilst getrennte Hüllkurven auf Lautstärke, Klangfarbe und Akzent.</dd>
+  <dt>Theorie</dt><dd>AD, ASR und ADSR · die vier Hüllkurven im Pult · der VCA als Multiplikator für Audio und CV · lineare und exponentielle Kennlinien · das LPG als Lautstärke plus Klangfarbe · Gate, Trigger, Retrigger, Legato · getrennte Hüllkurven für Klang, Modulation und Akzente</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-3a">3A</a> „Ein Anschlag, ein VCA“ · Patch <a class="xref" href="#p-3b">3B</a> „Vier Hüllkurven, ein Ton“ · Patch <a class="xref" href="#p-3c">3C</a> „Linear oder exponentiell“ · Patch <a class="xref" href="#p-3d">3D</a> „Drei Hüllkurven, drei Aufgaben“</dd>
+  <dt>Prüfstatus</dt><dd>Kennwerte nach Herstellerangaben <span class="tag tag-h">Hersteller</span>. Modusschalter am 281t, Lötbrücken am A-130-8 und der Offset des Attenuverters sind am Pult geprüft <span class="tag tag-ok">verifiziert</span>. Buchsenbeschriftungen von SERRA und CatSynth ADSR, Pegel von Volcan und ADSR sowie das Retrigger-Verhalten aller vier Hüllkurven sind noch <span class="tag tag-p" id="pr-3">am Gerät prüfen</span>; Patch <a class="xref" href="#p-3b">3B</a> hat dafür eine Prüftabelle.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k3-theorie">Teil 1 · Wie ein Klang beginnt und endet</h3>
+<p>In Kapitel <a class="xref" href="#k2">02</a> hat jede Stimme schon eine Hüllkurve bekommen, aber nur als Mittel zum Zweck: Taste drücken, Ton an, Taste los, Ton aus. Dabei entscheidet gerade dieser Verlauf, was wir hören. Derselbe Sägezahn durch dasselbe Filter klingt mit einem harten Anschlag und kurzem Ausklang wie eine gezupfte Saite, mit einem langsamen Anstieg wie ein Streicher und mit einem kurzen Knacken ohne Ton wie ein Klick. Die Klangfarbe ist dieselbe, die <b>Artikulation</b> ist eine andere.</p>
+<p>Drei Bauteile teilen sich diese Arbeit. Die <b>Hüllkurve</b> erzeugt den Verlauf als Spannung. Der <b>VCA</b> setzt die Spannung in Lautstärke um. Das <b>Low Pass Gate</b> setzt sie gleichzeitig in Lautstärke und Helligkeit um. Was dazwischen passiert, wie stark, wie gekrümmt, wie oft neu gestartet, ist der Stoff dieses Kapitels.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 780 250" role="img" aria-label="Drei Hüllkurventypen mit ihrem Auslöser: AD läuft nach einem Trigger einmal durch, ASR hält den Höchstwert solange das Gate anliegt, ADSR fällt nach dem Anstieg auf einen Haltepegel und klingt nach dem Loslassen aus.">
+<text x="20" y="18" class="t-lab">AD</text>
+<text x="20" y="34" class="t-sub">281t A/D · Volcan</text>
+<line x1="20" y1="140" x2="250" y2="140" class="t-grid"/>
+<text x="250" y="52" class="t-ax" text-anchor="end">10 V</text>
+<polyline points="40,140 41.5,136.2 42.9,132.3 44.4,128.5 45.8,124.7 47.3,120.8 48.8,117 50.2,113.2 51.7,109.3 53.1,105.5 54.6,101.7 56,97.8 57.5,94 59,90.2 60.4,86.3 61.9,82.5 63.3,78.7 64.8,74.8 66.2,71 67.7,67.2 69.2,63.3 70.6,59.5 72.1,55.7 73.5,51.8 75,48 75,48 80.6,62.4 86.2,74.6 91.9,84.9 97.5,93.6 103.1,101 108.8,107.2 114.4,112.5 120,117 125.6,120.8 131.2,124 136.9,126.7 142.5,129 148.1,131 153.8,132.6 159.4,134 165,135.2 170.6,136.2 176.2,137.1 181.9,137.8 187.5,138.4 193.1,138.9 198.8,139.3 204.4,139.7 210,140" class="sig sig-cv"/>
+<text x="52" y="78" class="t-ax" text-anchor="middle">A</text>
+<text x="110" y="78" class="t-ax" text-anchor="middle">D</text>
+<line x1="20" y1="205" x2="250" y2="205" class="t-grid"/>
+<polyline points="20,205 40,205 40,185 44,185 44,205 250,205" class="sig sig-trig"/>
+<text x="20" y="236" class="t-ax">Trigger genügt, Länge egal</text>
+<text x="278" y="18" class="t-lab">ASR · AHD</text>
+<text x="278" y="34" class="t-sub">281t Attack/Hold/Decay</text>
+<line x1="278" y1="140" x2="508" y2="140" class="t-grid"/>
+<text x="508" y="52" class="t-ax" text-anchor="end">10 V</text>
+<polyline points="298,140 299.5,136.2 300.9,132.3 302.4,128.5 303.8,124.7 305.3,120.8 306.8,117 308.2,113.2 309.7,109.3 311.1,105.5 312.6,101.7 314,97.8 315.5,94 317,90.2 318.4,86.3 319.9,82.5 321.3,78.7 322.8,74.8 324.2,71 325.7,67.2 327.2,63.3 328.6,59.5 330.1,55.7 331.5,51.8 333,48 428,48 428,48 430.9,62.4 433.8,74.6 436.8,84.9 439.7,93.6 442.6,101 445.5,107.2 448.4,112.5 451.3,117 454.2,120.8 457.2,124 460.1,126.7 463,129 465.9,131 468.8,132.6 471.8,134 474.7,135.2 477.6,136.2 480.5,137.1 483.4,137.8 486.3,138.4 489.2,138.9 492.2,139.3 495.1,139.7 498,140" class="sig sig-cv"/>
+<text x="310" y="78" class="t-ax" text-anchor="middle">A</text>
+<text x="378" y="64" class="t-ax" text-anchor="middle">S</text>
+<text x="448" y="78" class="t-ax" text-anchor="middle">R</text>
+<line x1="278" y1="205" x2="508" y2="205" class="t-grid"/>
+<polyline points="278,205 298,205 298,185 428,185 428,205 508,205" class="sig sig-gate"/>
+<text x="278" y="236" class="t-ax">Gate: Taste gedrückt</text>
+<text x="536" y="18" class="t-lab">ADSR</text>
+<text x="536" y="34" class="t-sub">SERRA · CatSynth ADSR</text>
+<line x1="536" y1="140" x2="766" y2="140" class="t-grid"/>
+<text x="766" y="52" class="t-ax" text-anchor="end">10 V</text>
+<polyline points="556,140 557.2,136.2 558.5,132.3 559.8,128.5 561,124.7 562.2,120.8 563.5,117 564.8,113.2 566,109.3 567.2,105.5 568.5,101.7 569.8,97.8 571,94 572.2,90.2 573.5,86.3 574.8,82.5 576,78.7 577.2,74.8 578.5,71 579.8,67.2 581,63.3 582.2,59.5 583.5,55.7 584.8,51.8 586,48 586,48 587.7,54.9 589.3,60.7 591,65.6 592.7,69.8 594.3,73.3 596,76.3 597.7,78.9 599.3,81 601,82.8 602.7,84.4 604.3,85.7 606,86.8 607.7,87.7 609.3,88.5 611,89.1 612.7,89.7 614.3,90.2 616,90.6 617.7,90.9 619.3,91.2 621,91.5 622.7,91.7 624.3,91.9 626,92 686,92 686,92 688.9,99.5 691.8,105.9 694.8,111.2 697.7,115.8 700.6,119.6 703.5,122.9 706.4,125.7 709.3,128 712.2,130 715.2,131.7 718.1,133.1 721,134.3 723.9,135.3 726.8,136.2 729.8,136.9 732.7,137.5 735.6,138 738.5,138.5 741.4,138.8 744.3,139.2 747.2,139.4 750.2,139.6 753.1,139.8 756,140" class="sig sig-cv"/>
+<text x="564" y="78" class="t-ax" text-anchor="middle">A</text>
+<text x="601" y="58" class="t-ax" text-anchor="middle">D</text>
+<text x="656" y="84" class="t-ax" text-anchor="middle">S</text>
+<text x="706" y="114" class="t-ax" text-anchor="middle">R</text>
+<line x1="536" y1="205" x2="766" y2="205" class="t-grid"/>
+<polyline points="536,205 556,205 556,185 686,185 686,205 766,205" class="sig sig-gate"/>
+<text x="536" y="236" class="t-ax">Gate: Taste gedrückt</text>
+</svg></div>
+  <figcaption><b>Drei Grundformen.</b> AD braucht nur einen Startimpuls und läuft dann von selbst durch. ASR hält den Höchstwert, solange die Taste gedrückt ist; am 281t heißt das Attack/Hold/Decay. ADSR fällt nach dem Anstieg auf einen Haltepegel, den Sustain, und klingt erst nach dem Loslassen aus.</figcaption>
+</figure>
+
+<h4 id="k3-typen">1 · AD, ASR und ADSR</h4>
+<p>Jede Phase hat eine eigene musikalische Aufgabe. Wichtig ist der Unterschied zwischen Zeiten und Pegel: Attack, Decay und Release sind <i>Zeiten</i>, Sustain ist ein <i>Pegel</i>. Ein Sustain auf halbem Weg heißt nicht „halb so lang“, sondern „halb so laut, solange die Taste gedrückt ist“.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Phase</th><th>Was sie steuert</th><th>kurz</th><th>lang</th></tr></thead>
+<tbody>
+<tr><td>Attack</td><td>Zeit vom Anschlag bis zum Höchstwert</td><td>unter 5 ms: harter Anschlag, bei Rechteck und Säge ein hörbarer Klick</td><td>ab etwa 300 ms: der Ton schwillt an, wie gestrichen oder geblasen</td></tr>
+<tr><td>Decay</td><td>Zeit vom Höchstwert zum Sustain-Pegel (bei AD: bis null)</td><td>Zupfen, Klopfen, Perkussion</td><td>Glocke, Klavier, langsam verklingende Saite</td></tr>
+<tr><td>Sustain</td><td>Pegel, solange das Gate anliegt</td><td>niedrig: Anschlag mit leiser Fortsetzung</td><td>voll: Orgel, Dauerton</td></tr>
+<tr><td>Release</td><td>Zeit vom Loslassen bis null</td><td>Staccato, trocken</td><td>Nachklang, Fläche, Raum</td></tr>
+</tbody></table></div>
+<p>AD ist die einfachste Form und reicht für alles Perkussive. ASR ist eine AD-Hüllkurve, die oben wartet. ADSR ist die Form, die auf einem Keyboard am natürlichsten spielt, weil Anschlag und Haltepegel getrennt sind: ein kräftiger Einsatz, der in einen ruhigeren Ton übergeht.</p>
+
+<h4 id="k3-pult">2 · Vier Hüllkurven im Pult</h4>
+<p>Dein Pult hat vier sehr unterschiedliche Hüllkurven. Zwei kommen aus der Buchla-Tradition und denken in Anstieg und Abfall, zwei sind klassische ADSR.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Modul</th><th>Form</th><th>Auslösen</th><th>Kennwerte</th></tr></thead>
+<tbody>
+<tr><td>Tiptop 281t</td><td>AD · AHD · Loop, vier Kanäle in zwei Paaren</td><td>TRIG-Eingang und Taster je Kanal; CYCLE-Buchse per Gate</td><td>Attack und Decay je 1 ms – 10 s · Ausgang 0 → 10 V · PULSE OUT am Ende des Decays <span class="tag tag-h">Hersteller</span> · Modusschalter links unter CYCLE <span class="tag tag-ok">verifiziert</span></td></tr>
+<tr><td>Eowave Volcan</td><td>Rise/Fall (AD) · Loop, zwei Kanäle</td><td>Trigger-Eingang und Taster je Kanal; SLEW-Eingang</td><td>Rise und Fall per Fader und CV · SHAPE logarithmisch → linear → exponentiell · EOC am Ende des Falls <span class="tag tag-h">Hersteller</span> · laut Händlern im Einzelbetrieb unipolar positiv, im Loop bipolar; Gate in SLEW ergibt AR/ASR · Zeitbereich und Ausgangspegel nennt Eowave nicht <span class="tag tag-p" id="pr-4">am Gerät prüfen</span></td></tr>
+<tr><td>NANO SERRA</td><td>ADSR, 10 HP</td><td>getrennte Eingänge für GATE und TRIGGER; beleuchteter Gate-Taster</td><td>Fader A, D, S, R je mit CV-Eingang · Schalter Norm/Indep und Slow/Fast · 1 ms – 40 s je Segment · ENV unbearbeitet bis +10 V · OUT über bipolaren Abschwächer und Offset (±5 V) · EOC-Ausgang <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>CatSynth Slimline ADSR</td><td>ADSR, 2 HP</td><td>Gate-Eingang; Taster für Handauslösung</td><td>A, D, S, R · Zeitbasis-Schalter S/M/L · LED zeigt die Phase <span class="tag tag-h">Hersteller</span> · Buchsen, Zeiten, Pegel <span class="tag tag-p" id="pr-5">am Gerät prüfen</span></td></tr>
+</tbody></table></div>
+<p>Zwei Eigenheiten lohnen den zweiten Blick. Der SERRA hat zwei Ausgänge: <span class="jack">ENV</span> liefert die rohe Hüllkurve, <span class="jack">OUT</span> dieselbe Hüllkurve durch einen eingebauten Attenuverter mit Offset. Damit kannst Du sie ohne Zusatzmodul abschwächen, umdrehen oder anheben. Ohne Kabel im SIG-Eingang liegt dort die Hüllkurve an; mit Kabel bearbeitet der Abschwächer stattdessen das fremde Signal. <span class="tag tag-h">Hersteller</span> Der Volcan dagegen ist ein Function Generator wie der 281t: Er hat keinen Sustain, kann aber seine Kurvenform mit SHAPE stufenlos krümmen.</p>
+
+<h4 id="k3-vca">3 · Der VCA: Audio steuern, CV dosieren</h4>
+<p>Ein VCA rechnet nur eins: <b>Ausgang = Eingang × Steuerspannung</b>. Ist die Steuerspannung null, kommt nichts heraus. Ist sie voll, kommt das Eingangssignal unverändert durch. Dazwischen wird es proportional leiser. Was am Eingang hängt, ist dem VCA gleich, solange er gleichspannungsgekoppelt ist. Beide VCAs im Pult sind das. <span class="tag tag-h">Hersteller</span></p>
+<p>Daraus folgen zwei Anwendungen, die Du gleich gut kennen solltest:</p>
+<ul>
+<li><b>Audio steuern.</b> Ton in den Eingang, Hüllkurve an die Steuerspannung: Der Ton bekommt den Verlauf der Hüllkurve. Das ist die klassische Rolle.</li>
+<li><b>CV dosieren.</b> Eine Modulation in den Eingang, eine zweite Spannung an die Steuerung: Die zweite bestimmt, wie stark die erste wirkt. Ein LFO durch einen VCA, dessen Steuerung eine langsame Hüllkurve bekommt, ergibt ein Vibrato, das erst nach dem Anschlag einsetzt. Die Anschlagstärke vom µYarns an der Steuerung macht aus einer festen Hüllkurve eine, die mit dem Anschlag größer wird.</li>
+</ul>
+<p>Der Unterschied zum Attenuverter: Beim Attenuverter dosiert Deine Hand, beim VCA eine Spannung. Was ein Attenuverter kann, kann ein VCA also auch, nur ferngesteuert.</p>
+<p><b>Der A-130-8</b> hat acht lineare VCAs. Ab Werk erwartet jede Steuerbuchse 0 bis +5 V; bei +5 V ist der Kanal ganz offen, die Verstärkung reicht von 0 bis 1. Je Kanal gibt es einen Trimmer, mit dem sich der Bereich zum Beispiel auf 0 bis +10 V umstellen lässt. Die Eingänge vertragen bis 20 Vpp; dazu kommen drei Summenausgänge 1-4, 5-8 und 1-8. <span class="tag tag-h">Hersteller</span> Die Lötbrücken, mit denen sich Eingänge vorverbinden ließen, sind bei Dir offen <span class="tag tag-ok">verifiziert</span>: Jeder Kanal braucht sein eigenes Kabel. Weil der 281t bis 10 V liefert, läuft er wie in Kapitel <a class="xref" href="#k2">02</a> über den Attenuverter.</p>
+<p><b>Der FOUR PLAY</b> hat vier VCAs mit je einem LEVEL-Regler, einem CV-Abschwächer, einem CURVE-Regler und einem BOOST-Schalter (+6 dB am Eingang). Positive CV öffnet über die LEVEL-Stellung hinaus (LED grün), negative schließt (LED rot). Ein Kabel in CV IN 1 steuert alle Kanäle darunter mit, die kein eigenes CV-Kabel haben; ein Ausgang ohne Kabel wird in den Kanal rechts daneben gemischt, bis zum Ausgang 4/MIX. <span class="tag tag-h">Hersteller</span> Welchen Spannungsbereich die CV-Eingänge erwarten, gibt Behringer nicht an. Beim Veils-2020-Vorbild ergibt +5 V bei voll aufgezogenem CV-Regler die Verstärkung 1; mehr als +5 V kann verzerren. Ein leerer CV-Eingang liegt dort auf festen +8 V. <span class="tag tag-h">Hersteller</span> Ob der FOUR PLAY genauso skaliert, <span class="tag tag-p" id="pr-6">am Gerät prüfen</span>; der CV-Abschwächer fängt das in der Praxis ab.</p>
+
+<h4 id="k3-kurve">4 · Linear und exponentiell</h4>
+<p>Unser Gehör empfindet Lautstärke logarithmisch: Halbe Spannung klingt nicht halb so laut, sondern nur etwas leiser (−6 dB). Erst bei einem Zehntel (−20 dB) wirkt ein Ton deutlich leiser, und bei einem Tausendstel (−60 dB) ist er praktisch weg. Deshalb klingt derselbe Abfall ganz verschieden, je nachdem, ob die Spannung gerade oder gekrümmt fällt.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 780 270" role="img" aria-label="Ein linearer und ein exponentieller Abfall, links als Spannung, rechts als Pegel in Dezibel. In Dezibel bleibt der lineare Abfall lange laut und stürzt am Ende ab, der exponentielle fällt gleichmäßig.">
+<text x="20" y="18" class="t-lab">Spannung</text>
+<text x="410" y="18" class="t-lab">Pegel, wie das Ohr ihn hört</text>
+<line x1="20" y1="210" x2="360" y2="210" class="t-grid"/>
+<line x1="20" y1="40" x2="20" y2="210" class="t-grid"/>
+<text x="360" y="226" class="t-ax" text-anchor="end">1 s</text>
+<text x="20" y="226" class="t-ax">0</text>
+<text x="28" y="34" class="t-ax">10 V</text>
+<polyline points="20,40 22.8,41.4 25.7,42.8 28.5,44.2 31.3,45.7 34.2,47.1 37,48.5 39.8,49.9 42.7,51.3 45.5,52.8 48.3,54.2 51.2,55.6 54,57 56.8,58.4 59.7,59.8 62.5,61.2 65.3,62.7 68.2,64.1 71,65.5 73.8,66.9 76.7,68.3 79.5,69.8 82.3,71.2 85.2,72.6 88,74 90.8,75.4 93.7,76.8 96.5,78.2 99.3,79.7 102.2,81.1 105,82.5 107.8,83.9 110.7,85.3 113.5,86.8 116.3,88.2 119.2,89.6 122,91 124.8,92.4 127.7,93.8 130.5,95.2 133.3,96.7 136.2,98.1 139,99.5 141.8,100.9 144.7,102.3 147.5,103.8 150.3,105.2 153.2,106.6 156,108 158.8,109.4 161.7,110.8 164.5,112.3 167.3,113.7 170.2,115.1 173,116.5 175.8,117.9 178.7,119.3 181.5,120.8 184.3,122.2 187.2,123.6 190,125 192.8,126.4 195.7,127.8 198.5,129.2 201.3,130.7 204.2,132.1 207,133.5 209.8,134.9 212.7,136.3 215.5,137.8 218.3,139.2 221.2,140.6 224,142 226.8,143.4 229.7,144.8 232.5,146.2 235.3,147.7 238.2,149.1 241,150.5 243.8,151.9 246.7,153.3 249.5,154.8 252.3,156.2 255.2,157.6 258,159 260.8,160.4 263.7,161.8 266.5,163.2 269.3,164.7 272.2,166.1 275,167.5 277.8,168.9 280.7,170.3 283.5,171.8 286.3,173.2 289.2,174.6 292,176 294.8,177.4 297.7,178.8 300.5,180.2 303.3,181.7 306.2,183.1 309,184.5 311.8,185.9 314.7,187.3 317.5,188.8 320.3,190.2 323.2,191.6 326,193 328.8,194.4 331.7,195.8 334.5,197.2 337.3,198.7 340.2,200.1 343,201.5 345.8,202.9 348.7,204.3 351.5,205.8 354.3,207.2 357.2,208.6 360,210" class="sig sig-cv"/>
+<polyline points="20,40 22.8,49.5 25.7,58.5 28.5,66.9 31.3,74.9 34.2,82.5 37,89.6 39.8,96.3 42.7,102.7 45.5,108.7 48.3,114.3 51.2,119.7 54,124.7 56.8,129.5 59.7,134 62.5,138.2 65.3,142.3 68.2,146 71,149.6 73.8,153 76.7,156.2 79.5,159.2 82.3,162 85.2,164.7 88,167.2 90.8,169.6 93.7,171.9 96.5,174 99.3,176 102.2,177.9 105,179.7 107.8,181.4 110.7,183 113.5,184.5 116.3,185.9 119.2,187.3 122,188.5 124.8,189.7 127.7,190.9 130.5,191.9 133.3,193 136.2,193.9 139,194.8 141.8,195.7 144.7,196.5 147.5,197.2 150.3,197.9 153.2,198.6 156,199.2 158.8,199.8 161.7,200.4 164.5,200.9 167.3,201.5 170.2,201.9 173,202.4 175.8,202.8 178.7,203.2 181.5,203.6 184.3,203.9 187.2,204.3 190,204.6 192.8,204.9 195.7,205.2 198.5,205.5 201.3,205.7 204.2,206 207,206.2 209.8,206.4 212.7,206.6 215.5,206.8 218.3,207 221.2,207.1 224,207.3 226.8,207.4 229.7,207.6 232.5,207.7 235.3,207.8 238.2,208 241,208.1 243.8,208.2 246.7,208.3 249.5,208.4 252.3,208.5 255.2,208.6 258,208.6 260.8,208.7 263.7,208.8 266.5,208.9 269.3,208.9 272.2,209 275,209 277.8,209.1 280.7,209.1 283.5,209.2 286.3,209.2 289.2,209.3 292,209.3 294.8,209.4 297.7,209.4 300.5,209.4 303.3,209.5 306.2,209.5 309,209.5 311.8,209.5 314.7,209.6 317.5,209.6 320.3,209.6 323.2,209.6 326,209.7 328.8,209.7 331.7,209.7 334.5,209.7 337.3,209.7 340.2,209.7 343,209.8 345.8,209.8 348.7,209.8 351.5,209.8 354.3,209.8 357.2,209.8 360,209.8" class="sig sig-audio"/>
+<line x1="410" y1="210" x2="750" y2="210" class="t-grid"/>
+<line x1="410" y1="40" x2="410" y2="210" class="t-grid"/>
+<text x="750" y="226" class="t-ax" text-anchor="end">1 s</text>
+<text x="410" y="226" class="t-ax">0</text>
+<line x1="410" y1="40" x2="750" y2="40" class="t-grid"/>
+<text x="414" y="37" class="t-ax">0 dB</text>
+<line x1="410" y1="96.7" x2="750" y2="96.7" class="t-grid"/>
+<text x="414" y="93.7" class="t-ax">-20 dB</text>
+<line x1="410" y1="153.3" x2="750" y2="153.3" class="t-grid"/>
+<text x="414" y="150.3" class="t-ax">-40 dB</text>
+<line x1="410" y1="210" x2="750" y2="210" class="t-grid"/>
+<text x="414" y="207" class="t-ax">-60 dB</text>
+<polyline points="410,40 412.8,40.2 415.7,40.4 418.5,40.6 421.3,40.8 424.2,41 427,41.3 429.8,41.5 432.7,41.7 435.5,41.9 438.3,42.1 441.2,42.4 444,42.6 446.8,42.8 449.7,43.1 452.5,43.3 455.3,43.5 458.2,43.8 461,44 463.8,44.2 466.7,44.5 469.5,44.7 472.3,45 475.2,45.2 478,45.5 480.8,45.7 483.7,46 486.5,46.3 489.3,46.5 492.2,46.8 495,47.1 497.8,47.4 500.7,47.6 503.5,47.9 506.3,48.2 509.2,48.5 512,48.8 514.8,49.1 517.7,49.4 520.5,49.7 523.3,50 526.2,50.3 529,50.6 531.8,50.9 534.7,51.2 537.5,51.6 540.3,51.9 543.2,52.2 546,52.6 548.8,52.9 551.7,53.3 554.5,53.6 557.3,54 560.2,54.3 563,54.7 565.8,55.1 568.7,55.5 571.5,55.9 574.3,56.3 577.2,56.7 580,57.1 582.8,57.5 585.7,57.9 588.5,58.3 591.3,58.8 594.2,59.2 597,59.7 599.8,60.1 602.7,60.6 605.5,61.1 608.3,61.5 611.2,62 614,62.5 616.8,63.1 619.7,63.6 622.5,64.1 625.3,64.7 628.2,65.3 631,65.8 633.8,66.4 636.7,67 639.5,67.7 642.3,68.3 645.2,69 648,69.6 650.8,70.3 653.7,71 656.5,71.8 659.3,72.5 662.2,73.3 665,74.1 667.8,75 670.7,75.8 673.5,76.7 676.3,77.6 679.2,78.6 682,79.6 684.8,80.7 687.7,81.7 690.5,82.9 693.3,84.1 696.2,85.4 699,86.7 701.8,88.1 704.7,89.6 707.5,91.2 710.3,92.9 713.2,94.7 716,96.7 718.8,98.8 721.7,101.2 724.5,103.7 727.3,106.6 730.2,109.9 733,113.7 735.8,118.2 738.7,123.7 741.5,130.8 744.3,140.8 747.2,157.8 750,210" class="sig sig-cv"/>
+<polyline points="410,40 412.8,41.4 415.7,42.8 418.5,44.2 421.3,45.7 424.2,47.1 427,48.5 429.8,49.9 432.7,51.3 435.5,52.7 438.3,54.2 441.2,55.6 444,57 446.8,58.4 449.7,59.8 452.5,61.2 455.3,62.6 458.2,64.1 461,65.5 463.8,66.9 466.7,68.3 469.5,69.7 472.3,71.1 475.2,72.5 478,74 480.8,75.4 483.7,76.8 486.5,78.2 489.3,79.6 492.2,81 495,82.5 497.8,83.9 500.7,85.3 503.5,86.7 506.3,88.1 509.2,89.5 512,90.9 514.8,92.4 517.7,93.8 520.5,95.2 523.3,96.6 526.2,98 529,99.4 531.8,100.8 534.7,102.3 537.5,103.7 540.3,105.1 543.2,106.5 546,107.9 548.8,109.3 551.7,110.8 554.5,112.2 557.3,113.6 560.2,115 563,116.4 565.8,117.8 568.7,119.2 571.5,120.7 574.3,122.1 577.2,123.5 580,124.9 582.8,126.3 585.7,127.7 588.5,129.1 591.3,130.6 594.2,132 597,133.4 599.8,134.8 602.7,136.2 605.5,137.6 608.3,139.1 611.2,140.5 614,141.9 616.8,143.3 619.7,144.7 622.5,146.1 625.3,147.5 628.2,149 631,150.4 633.8,151.8 636.7,153.2 639.5,154.6 642.3,156 645.2,157.5 648,158.9 650.8,160.3 653.7,161.7 656.5,163.1 659.3,164.5 662.2,165.9 665,167.4 667.8,168.8 670.7,170.2 673.5,171.6 676.3,173 679.2,174.4 682,175.8 684.8,177.3 687.7,178.7 690.5,180.1 693.3,181.5 696.2,182.9 699,184.3 701.8,185.8 704.7,187.2 707.5,188.6 710.3,190 713.2,191.4 716,192.8 718.8,194.2 721.7,195.7 724.5,197.1 727.3,198.5 730.2,199.9 733,201.3 735.8,202.7 738.7,204.1 741.5,205.6 744.3,207 747.2,208.4 750,209.8" class="sig sig-audio"/>
+<line x1="20" y1="258" x2="44" y2="258" class="sig sig-cv"/><text x="50" y="262" class="t-ax">linear</text>
+<line x1="120" y1="258" x2="144" y2="258" class="sig sig-audio"/><text x="150" y="262" class="t-ax">exponentiell (−60 dB nach 1 s)</text>
+</svg></div>
+  <figcaption><b>Gerade fallen heißt nicht gleichmäßig leiser werden.</b> Links fallen beide Kurven in einer Sekunde. Rechts dieselben Kurven, wie das Ohr sie hört: Der lineare Abfall bleibt lange fast voll und stürzt in den letzten Millisekunden ab. Der exponentielle Abfall wird gleichmäßig leiser, wie eine ausschwingende Saite.</figcaption>
+</figure>
+<p>Krümmen lässt sich an zwei Stellen: in der Hüllkurve selbst oder im VCA. Am Ende zählt das Produkt aus beiden.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Hüllkurve</th><th>VCA</th><th>Klingt</th><th>Im Pult</th></tr></thead>
+<tbody>
+<tr><td>linear</td><td>linear</td><td>Ton bleibt lange laut, Ende abrupt; Attack wirkt sehr kurz</td><td>Volcan SHAPE auf linear → A-130-8</td></tr>
+<tr><td>exponentiell</td><td>linear</td><td>natürliches Ausklingen</td><td>Volcan SHAPE exponentiell → A-130-8</td></tr>
+<tr><td>linear</td><td>exponentiell</td><td>natürliches Ausklingen</td><td>Volcan linear → FOUR PLAY, CURVE links</td></tr>
+<tr><td>exponentiell</td><td>exponentiell</td><td>sehr kurz und schnappend, gut für Perkussion</td><td>Volcan exponentiell → FOUR PLAY, CURVE links</td></tr>
+</tbody></table></div>
+<p>Am FOUR PLAY regelst Du die VCA-Kennlinie stufenlos: CURVE ganz links ist exponentiell, ganz rechts linear. <span class="tag tag-h">Hersteller</span> Der A-130-8 ist fest linear und darum auch der richtige VCA für Steuerspannungen: Eine Modulation soll beim Dosieren ihre Form behalten. Wie gekrümmt die Kurven von 281t, SERRA und CatSynth ADSR ab Werk sind, sagen die Hersteller nicht. <span class="tag tag-p" id="pr-7">am Gerät prüfen</span> Patch <a class="xref" href="#p-3c">3C</a> macht das hörbar.</p>
+
+<div class="play" id="envplay">
+<h4>Hüllkurven-Spielplatz</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Oben die Steuerspannung mit Gate, unten der Pegel, wie er hinter dem VCA ankommt, in Dezibel. „Anschlagen“ spielt einen Sägezahn auf 220 Hz mit genau dieser Kurve.</p>
+<div class="presets" role="group" aria-label="Hüllkurventyp">
+<button type="button" class="btn" data-em="ad" aria-pressed="false">AD</button><button type="button" class="btn" data-em="asr" aria-pressed="false">ASR</button><button type="button" class="btn" data-em="adsr" aria-pressed="true">ADSR</button>
+<button type="button" class="btn" id="envSeg" aria-pressed="true">Kurve exponentiell</button><button type="button" class="btn" id="envVca" aria-pressed="false">VCA linear</button>
+</div>
+<div class="presets" style="margin-top:8px">
+<button type="button" data-ep="pluck">Zupfen</button><button type="button" data-ep="orgel">Orgel</button><button type="button" data-ep="pad">Fläche</button><button type="button" data-ep="swell">Anschwellen</button>
+<button type="button" class="btn" id="envHit">▶ Anschlagen</button>
+</div>
+<div class="ctrls">
+<div><label for="ea">Attack <output id="eaO"></output></label><input type="range" id="ea" min="0" max="1" step="0.005" value="0.2"></div>
+<div><label for="ed">Decay <output id="edO"></output></label><input type="range" id="ed" min="0" max="1" step="0.005" value="0.5"></div>
+<div><label for="es">Sustain <output id="esO"></output></label><input type="range" id="es" min="0" max="1" step="0.01" value="0.5"></div>
+<div><label for="er">Release <output id="erO"></output></label><input type="range" id="er" min="0" max="1" step="0.005" value="0.6"></div>
+<div><label for="eg">Taste gehalten <output id="egO"></output></label><input type="range" id="eg" min="0.05" max="3" step="0.01" value="1"></div>
+</div>
+<svg id="envSvg" viewBox="0 0 720 270" role="img" aria-label="Hüllkurve als Spannung über der Zeit und der daraus folgende Pegel in Dezibel"></svg>
+<p class="readout" id="envR" aria-live="polite"></p>
+</div>
+
+<h4 id="k3-lpg">5 · Das LPG: Lautstärke plus Klangfarbe</h4>
+<p>Ein VCA macht leiser, sonst nichts: Die Klangfarbe bleibt bis zum letzten Rest dieselbe. Ein <b>Low Pass Gate</b> schließt gleichzeitig ein Tiefpassfilter. Mit dem Pegel sinkt also die Helligkeit, und genau so verhalten sich angeschlagene Gegenstände (Kapitel <a class="xref" href="#k2">02</a>, <a href="#k2-lpg">Abschnitt 5</a>).</p>
+<p>Das DPLPG steuert jeden Kanal über einen Vaktrol. Ein Trigger am Steuereingang öffnet das Gate, der Vaktrol klingt mit seiner eigenen, trägen Kurve aus; eine Gleichspannung hält es offen. <span class="tag tag-h">Hersteller</span> Daraus ergeben sich zwei Spielweisen:</p>
+<ul>
+<li><b>Nur ein Impuls.</b> Ein kurzer Spannungsstoß, und der Vaktrol macht die Hüllkurve selbst: schneller Anstieg, natürliches, etwas gummiartiges Ausklingen. Das ist der Buchla-Bongo-Klang aus <a class="xref" href="#kwp-08">KWP-08</a>.</li>
+<li><b>Eine Hüllkurve.</b> Eine AD- oder ADSR-Kurve am Steuereingang gibt den Verlauf vor, der Vaktrol rundet ihn nur ab. So bekommt das LPG lange Töne und weiche Einsätze.</li>
+</ul>
+<p>Weil das DPLPG passiv ist, braucht es eine kräftige Steuerspannung und gibt weniger Pegel ab, als hineingeht. Die 10 V des 281t öffnen es sicher. Ob die kurzen Impulse vom µYarns (Gate +5 V) oder der Ausgang des Volcan dafür ausreichen, prüfst Du in Patch <a class="xref" href="#p-3d">3D</a>. <span class="tag tag-p" id="pr-8">am Gerät prüfen</span></p>
+
+<h4 id="k3-trig">6 · Gate, Trigger, Retrigger</h4>
+<p>Ein <span class="g">Gate</span> sagt „jetzt und so lange“, ein <span class="t">Trigger</span> nur „jetzt“. Für eine Hüllkurve mit Haltephase ist das Gate die Information über die Haltedauer, der Trigger die über den Anfang. Spannend wird es beim <b>Legato</b>: Spielst Du die nächste Taste, bevor Du die vorige loslässt, bleibt das Gate vom µYarns hoch. Eine Hüllkurve, die nur auf das Gate hört, merkt dann nichts von der neuen Note.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 780 380" role="img" aria-label="Drei Noten, die ersten beiden legato gespielt. Das Gate bleibt über die ersten beiden Noten hoch, der Trigger kommt bei jeder Note. Eine Hüllkurve vom Gate startet beim Legato nicht neu, eine Hüllkurve mit Trigger-Eingang setzt bei jeder Note einen neuen Anschlag. Unten: Neustart vom aktuellen Pegel oder von null.">
+<text x="10" y="30" class="t-lab" style="font-size:14px">Tasten</text>
+<text x="10" y="45" class="t-sub">drei Noten, 1+2 legato</text>
+<text x="10" y="80" class="t-lab" style="font-size:14px">Gate</text>
+<text x="10" y="95" class="t-sub">µYarns GATE 1</text>
+<text x="10" y="125" class="t-lab" style="font-size:14px">Trigger</text>
+<text x="10" y="140" class="t-sub">µYarns GATE 2</text>
+<text x="10" y="185" class="t-lab" style="font-size:14px">ADSR vom Gate</text>
+<text x="10" y="200" class="t-sub">kein Neustart bei Legato</text>
+<text x="10" y="255" class="t-lab" style="font-size:14px">ADSR + Trigger</text>
+<text x="10" y="270" class="t-sub">neuer Anschlag je Note</text>
+<text x="10" y="325" class="t-lab" style="font-size:14px">AD, schnell neu</text>
+<text x="10" y="340" class="t-sub">aktueller Pegel / null</text>
+<rect x="190" y="18" width="176.7" height="14" rx="2" class="box"/>
+<text x="196" y="29" class="t-ax">1</text>
+<rect x="361" y="18" width="114" height="14" rx="2" class="box"/>
+<text x="367" y="29" class="t-ax">2</text>
+<rect x="560.5" y="18" width="85.5" height="14" rx="2" class="box"/>
+<text x="566.5" y="29" class="t-ax">3</text>
+<polyline points="190,92 201.4,92 201.4,72 475,72 475,92 560.5,92 560.5,72 646,72 646,92 760,92" class="sig sig-gate"/>
+<polyline points="190,137 201.4,137 201.4,117 205.4,117 205.4,137 361,137 361,117 365,117 365,137 560.5,137 560.5,117 564.5,117 564.5,137 760,137" class="sig sig-trig"/>
+<line x1="190" y1="210" x2="760" y2="210" class="t-grid"/>
+<polyline points="201.4,210 202.3,207.9 203.3,205.8 204.2,203.8 205.2,201.7 206.2,199.6 207.1,197.5 208.1,195.4 209,193.3 209.9,191.2 210.9,189.2 211.8,187.1 212.8,185 213.8,182.9 214.7,180.8 215.7,178.8 216.6,176.7 217.5,174.6 218.5,172.5 219.4,170.4 220.4,168.3 221.3,166.2 222.3,164.2 223.2,162.1 224.2,160 224.2,160 225.9,163.4 227.5,166.4 229.2,168.8 230.8,170.9 232.5,172.7 234.2,174.2 235.8,175.4 237.5,176.5 239.2,177.4 240.8,178.2 242.5,178.8 244.2,179.4 245.8,179.8 247.5,180.2 249.1,180.6 250.8,180.9 252.5,181.1 254.1,181.3 255.8,181.5 257.5,181.6 259.1,181.7 260.8,181.8 262.4,181.9 264.1,182 475,182 475,182 478.1,185.9 481.2,189.2 484.3,192 487.4,194.4 490.4,196.4 493.5,198.1 496.6,199.5 499.7,200.8 502.8,201.8 505.9,202.7 509,203.4 512,204 515.1,204.5 518.2,205 521.3,205.4 524.4,205.7 527.5,206 530.6,206.2 533.7,206.4 536.8,206.6 539.8,206.7 542.9,206.8 546,206.9 549.1,207 560.5,207 561.5,205 562.4,203.1 563.4,201.1 564.3,199.2 565.2,197.2 566.2,195.2 567.1,193.3 568.1,191.3 569,189.4 570,187.4 570.9,185.5 571.9,183.5 572.9,181.5 573.8,179.6 574.8,177.6 575.7,175.7 576.6,173.7 577.6,171.8 578.5,169.8 579.5,167.8 580.4,165.9 581.4,163.9 582.3,162 583.3,160 583.3,160 585,163.4 586.6,166.4 588.3,168.8 589.9,170.9 591.6,172.7 593.3,174.2 594.9,175.4 596.6,176.5 598.3,177.4 599.9,178.2 601.6,178.8 603.2,179.4 604.9,179.8 606.6,180.2 608.2,180.6 609.9,180.9 611.6,181.1 613.2,181.3 614.9,181.5 616.6,181.6 618.2,181.7 619.9,181.8 621.5,181.9 623.2,182 646,182 646,182 649.3,186.4 652.6,190.1 656,193.2 659.3,195.9 662.6,198.1 666,200 669.3,201.6 672.6,203 675.9,204.2 679.2,205.1 682.6,206 685.9,206.7 689.2,207.3 692.6,207.8 695.9,208.2 699.2,208.5 702.5,208.8 705.9,209.1 709.2,209.3 712.5,209.5 715.8,209.7 719.2,209.8 722.5,209.9 725.8,210" class="sig sig-cv"/>
+<line x1="190" y1="280" x2="760" y2="280" class="t-grid"/>
+<polyline points="201.4,280 202.3,277.9 203.3,275.8 204.2,273.8 205.2,271.7 206.2,269.6 207.1,267.5 208.1,265.4 209,263.3 209.9,261.2 210.9,259.2 211.8,257.1 212.8,255 213.8,252.9 214.7,250.8 215.7,248.8 216.6,246.7 217.5,244.6 218.5,242.5 219.4,240.4 220.4,238.3 221.3,236.2 222.3,234.2 223.2,232.1 224.2,230 224.2,230 225.9,233.4 227.5,236.4 229.2,238.8 230.8,240.9 232.5,242.7 234.2,244.2 235.8,245.4 237.5,246.5 239.2,247.4 240.8,248.2 242.5,248.8 244.2,249.4 245.8,249.8 247.5,250.2 249.1,250.6 250.8,250.9 252.5,251.1 254.1,251.3 255.8,251.5 257.5,251.6 259.1,251.7 260.8,251.8 262.4,251.9 264.1,252 361,252 361,252 361.7,251.1 362.4,250.2 363.1,249.2 363.9,248.3 364.6,247.4 365.3,246.5 366,245.6 366.7,244.7 367.4,243.8 368.1,242.8 368.8,241.9 369.5,241 370.3,240.1 371,239.2 371.7,238.2 372.4,237.3 373.1,236.4 373.8,235.5 374.5,234.6 375.2,233.7 376,232.8 376.7,231.8 377.4,230.9 378.1,230 378.1,230 379.8,233.4 381.4,236.4 383.1,238.8 384.8,240.9 386.4,242.7 388.1,244.2 389.7,245.4 391.4,246.5 393.1,247.4 394.7,248.2 396.4,248.8 398,249.4 399.7,249.8 401.4,250.2 403,250.6 404.7,250.9 406.4,251.1 408,251.3 409.7,251.5 411.4,251.6 413,251.7 414.7,251.8 416.3,251.9 418,252 475,252 475,252 478.1,255.9 481.2,259.2 484.3,262 487.4,264.4 490.4,266.4 493.5,268.1 496.6,269.5 499.7,270.8 502.8,271.8 505.9,272.7 509,273.4 512,274 515.1,274.5 518.2,275 521.3,275.4 524.4,275.7 527.5,276 530.6,276.2 533.7,276.4 536.8,276.6 539.8,276.7 542.9,276.8 546,276.9 549.1,277 560.5,277 561.5,275 562.4,273.1 563.4,271.1 564.3,269.2 565.2,267.2 566.2,265.2 567.1,263.3 568.1,261.3 569,259.4 570,257.4 570.9,255.5 571.9,253.5 572.9,251.5 573.8,249.6 574.8,247.6 575.7,245.7 576.6,243.7 577.6,241.8 578.5,239.8 579.5,237.8 580.4,235.9 581.4,233.9 582.3,232 583.3,230 583.3,230 585,233.4 586.6,236.4 588.3,238.8 589.9,240.9 591.6,242.7 593.3,244.2 594.9,245.4 596.6,246.5 598.3,247.4 599.9,248.2 601.6,248.8 603.2,249.4 604.9,249.8 606.6,250.2 608.2,250.6 609.9,250.9 611.6,251.1 613.2,251.3 614.9,251.5 616.6,251.6 618.2,251.7 619.9,251.8 621.5,251.9 623.2,252 646,252 646,252 649.3,256.4 652.6,260.1 656,263.2 659.3,265.9 662.6,268.1 666,270 669.3,271.6 672.6,273 675.9,274.2 679.2,275.1 682.6,276 685.9,276.7 689.2,277.3 692.6,277.8 695.9,278.2 699.2,278.5 702.5,278.8 705.9,279.1 709.2,279.3 712.5,279.5 715.8,279.7 719.2,279.8 722.5,279.9 725.8,280" class="sig sig-cv"/>
+<line x1="190" y1="350" x2="760" y2="350" class="t-grid"/>
+<polyline points="201.4,350 202.1,348.1 202.8,346.2 203.5,344.4 204.2,342.5 205,340.6 205.7,338.8 206.4,336.9 207.1,335 207.8,333.1 208.5,331.2 209.2,329.4 209.9,327.5 210.7,325.6 211.4,323.8 212.1,321.9 212.8,320 213.5,318.1 214.2,316.2 214.9,314.4 215.7,312.5 216.4,310.6 217.1,308.8 217.8,306.9 218.5,305 218.5,305 223.5,312 228.5,318 233.5,323 238.5,327.3 243.4,330.9 248.4,334 253.4,336.6 258.4,338.8 258.4,338.8 259.1,337.3 259.8,335.9 260.5,334.5 261.2,333.1 262,331.7 262.7,330.3 263.4,328.9 264.1,327.5 264.8,326.1 265.5,324.7 266.2,323.3 266.9,321.9 267.7,320.5 268.4,319.1 269.1,317.7 269.8,316.3 270.5,314.8 271.2,313.4 271.9,312 272.6,310.6 273.4,309.2 274.1,307.8 274.8,306.4 275.5,305 275.5,305 280.5,312 285.5,318 290.5,323 295.4,327.3 300.4,330.9 305.4,334 310.4,336.6 315.4,338.8 315.4,338.8 315.4,338.8 316.1,337.3 316.8,335.9 317.5,334.5 318.2,333.1 319,331.7 319.7,330.3 320.4,328.9 321.1,327.5 321.8,326.1 322.5,324.7 323.2,323.3 324,321.9 324.7,320.5 325.4,319.1 326.1,317.7 326.8,316.3 327.5,314.8 328.2,313.4 328.9,312 329.6,310.6 330.4,309.2 331.1,307.8 331.8,306.4 332.5,305 332.5,305 337.5,312 342.5,318 347.5,323 352.4,327.3 357.4,330.9 362.4,334 367.4,336.6 372.4,338.8 372.4,338.8 372.4,338.8 373.1,337.3 373.8,335.9 374.5,334.5 375.2,333.1 376,331.7 376.7,330.3 377.4,328.9 378.1,327.5 378.8,326.1 379.5,324.7 380.2,323.3 380.9,321.9 381.7,320.5 382.4,319.1 383.1,317.7 383.8,316.3 384.5,314.8 385.2,313.4 385.9,312 386.6,310.6 387.4,309.2 388.1,307.8 388.8,306.4 389.5,305 389.5,305 394.5,312 399.5,318 404.5,323 409.4,327.3 414.4,330.9 419.4,334 424.4,336.6 429.4,338.8 434.4,340.6 439.4,342.2 444.4,343.5 449.4,344.6 454.3,345.6 459.3,346.4 464.3,347.1 469.3,347.7 474.3,348.1 479.3,348.6 484.3,348.9 489.2,349.2 494.2,349.5 499.2,349.7 504.2,349.8 509.2,350" class="sig sig-cv"/>
+<polyline points="486.4,350 487.1,348.1 487.8,346.2 488.5,344.4 489.2,342.5 490,340.6 490.7,338.8 491.4,336.9 492.1,335 492.8,333.1 493.5,331.2 494.2,329.4 495,327.5 495.7,325.6 496.4,323.8 497.1,321.9 497.8,320 498.5,318.1 499.2,316.2 499.9,314.4 500.6,312.5 501.4,310.6 502.1,308.8 502.8,306.9 503.5,305 503.5,305 508.5,312 513.5,318 518.5,323 523.5,327.3 528.4,330.9 533.4,334 538.4,336.6 543.4,338.8 543.4,338.8 543.4,350 543.4,350 544.1,348.1 544.8,346.2 545.5,344.4 546.2,342.5 547,340.6 547.7,338.8 548.4,336.9 549.1,335 549.8,333.1 550.5,331.2 551.2,329.4 552,327.5 552.7,325.6 553.4,323.8 554.1,321.9 554.8,320 555.5,318.1 556.2,316.2 556.9,314.4 557.6,312.5 558.4,310.6 559.1,308.8 559.8,306.9 560.5,305 560.5,305 565.5,312 570.5,318 575.5,323 580.5,327.3 585.4,330.9 590.4,334 595.4,336.6 600.4,338.8 600.4,338.8 600.4,350 600.4,350 601.1,348.1 601.8,346.2 602.5,344.4 603.2,342.5 604,340.6 604.7,338.8 605.4,336.9 606.1,335 606.8,333.1 607.5,331.2 608.2,329.4 609,327.5 609.7,325.6 610.4,323.8 611.1,321.9 611.8,320 612.5,318.1 613.2,316.2 613.9,314.4 614.6,312.5 615.4,310.6 616.1,308.8 616.8,306.9 617.5,305 617.5,305 622.5,312 627.5,318 632.5,323 637.5,327.3 642.4,330.9 647.4,334 652.4,336.6 657.4,338.8 657.4,338.8 657.4,350 657.4,350 658.1,348.1 658.8,346.2 659.5,344.4 660.2,342.5 661,340.6 661.7,338.8 662.4,336.9 663.1,335 663.8,333.1 664.5,331.2 665.2,329.4 666,327.5 666.7,325.6 667.4,323.8 668.1,321.9 668.8,320 669.5,318.1 670.2,316.2 670.9,314.4 671.6,312.5 672.4,310.6 673.1,308.8 673.8,306.9 674.5,305 674.5,305 679.5,312 684.5,318 689.5,323 694.5,327.3 699.4,330.9 704.4,334 709.4,336.6 714.4,338.8 719.4,340.6 724.4,342.2 729.4,343.5 734.4,344.6 739.3,345.6 744.3,346.4 749.3,347.1 754.3,347.7 759.3,348.1 764.3,348.6 769.3,348.9 774.2,349.2 779.2,349.5 784.2,349.7 789.2,349.8 794.2,350" class="sig sig-cv" style="stroke-dasharray:5 4"/>
+<text x="247" y="366" class="t-ax">vom aktuellen Pegel: glatt</text>
+<text x="532" y="366" class="t-ax">von null: Kante, kann klicken</text>
+</svg></div>
+  <figcaption><b>Wer hört auf was.</b> Note 1 und 2 sind gebunden gespielt: Das Gate bleibt durchgehend hoch, der Trigger kommt trotzdem bei jeder Note. Eine ADSR, die nur das Gate sieht, bleibt im Sustain; eine ADSR mit zusätzlichem Trigger-Eingang setzt einen neuen Anschlag. Unten: Kommt ein neuer Trigger, während die Kurve noch fällt, startet sie entweder vom aktuellen Pegel (glatt) oder springt erst auf null (Kante, die klicken kann).</figcaption>
+</figure>
+<p>Im Layout 1M gibt der µYarns an GATE 1 das Gate und an GATE 2 einen Trigger am Anfang jeder Note aus, auch bei Legato. <span class="tag tag-h">Hersteller</span> Der SERRA hat getrennte Eingänge für Gate und Trigger <span class="tag tag-h">Hersteller</span>; was der Trigger bei gehaltenem Gate genau auslöst, ob er die Kurve vom aktuellen Pegel neu startet und wie sich 281t, Volcan und CatSynth ADSR bei schnellen Wiederholungen verhalten, sagt keiner der Hersteller. <span class="tag tag-p" id="pr-9">am Gerät prüfen</span> Die Prüftabelle in Patch <a class="xref" href="#p-3b">3B</a> klärt das in zehn Minuten.</p>
+
+<h4 id="k3-rollen">7 · Getrennte Hüllkurven für Klang, Modulation und Akzente</h4>
+<p>Eine Hüllkurve für alles ist bequem, aber sie koppelt, was getrennt besser klingt. Gibst Du jeder Aufgabe eine eigene Hüllkurve, bekommst Du drei Freiheitsgrade:</p>
+<ul>
+<li><b>Lautstärke · Artikulation.</b> Folgt dem Gate: kurzer Attack, Haltephase, Release nach Geschmack. Sie bestimmt, ob Du staccato oder legato spielst.</li>
+<li><b>Klangfarbe · Entwicklung.</b> Langsamer als die Lautstärke, oft über mehrere Noten hinweg: Das Filter öffnet sich, während Du spielst, und schließt sich in der Pause.</li>
+<li><b>Akzent · Anschlag.</b> Sehr kurz, nur am Notenanfang: ein Klick im Filter, ein Schlag im LPG, ein Hauch mehr Pegel. Mit der Anschlagstärke dosiert wird daraus Betonung.</li>
+</ul>
+<figure>
+  <div class="sv"><svg viewBox="0 0 780 290" role="img" aria-label="Vier Noten und drei Hüllkurven mit verschiedenen Aufgaben: die Lautstärke folgt dem Gate, die Klangfarbe schwillt langsam an und bleibt über die Noten offen, der Akzent ist bei jeder Note ein kurzer Spitzenimpuls.">
+<text x="10" y="32" class="t-lab" style="font-size:14px">Gate</text>
+<text x="10" y="48" class="t-sub">Tasten</text>
+<line x1="210" y1="52" x2="760" y2="52" class="t-grid"/>
+<text x="10" y="97" class="t-lab" style="font-size:14px">Lautstärke</text>
+<text x="10" y="113" class="t-sub">281t AHD → A-130-8</text>
+<line x1="210" y1="117" x2="760" y2="117" class="t-grid"/>
+<text x="10" y="167" class="t-lab" style="font-size:14px">Klangfarbe</text>
+<text x="10" y="183" class="t-sub">SERRA, langer A → Filter</text>
+<line x1="210" y1="187" x2="760" y2="187" class="t-grid"/>
+<text x="10" y="237" class="t-lab" style="font-size:14px">Akzent</text>
+<text x="10" y="253" class="t-sub">Volcan kurz → DPLPG</text>
+<line x1="210" y1="257" x2="760" y2="257" class="t-grid"/>
+<polyline points="210,52 223.8,52 223.8,32 320,32 320,52 361.2,52 361.2,32 443.8,32 443.8,52 485,52 485,32 567.5,32 567.5,52 608.8,52 608.8,32 718.8,32 718.8,52 760,52" class="sig sig-gate"/>
+<polyline points="210,117 223.8,117 224,115.3 224.3,113.7 224.6,112 224.9,110.3 225.2,108.7 225.5,107 225.8,105.3 226,103.7 226.3,102 226.6,100.3 226.9,98.7 227.2,97 227.5,95.3 227.8,93.7 228,92 228.3,90.3 228.6,88.7 228.9,87 229.2,85.3 229.5,83.7 229.8,82 230.1,80.3 230.3,78.7 230.6,77 320,77 320,77 321.4,83.3 322.9,88.6 324.3,93 325.7,96.8 327.2,100 328.6,102.8 330,105.1 331.5,107 332.9,108.7 334.3,110.1 335.8,111.2 337.2,112.2 338.6,113.1 340.1,113.8 341.5,114.4 342.9,114.9 344.3,115.3 345.8,115.7 347.2,116 348.6,116.3 350.1,116.5 351.5,116.7 352.9,116.9 354.4,117 361.2,117 361.5,115.3 361.8,113.7 362.1,112 362.4,110.3 362.7,108.7 363,107 363.3,105.3 363.5,103.7 363.8,102 364.1,100.3 364.4,98.7 364.7,97 365,95.3 365.3,93.7 365.5,92 365.8,90.3 366.1,88.7 366.4,87 366.7,85.3 367,83.7 367.3,82 367.6,80.3 367.8,78.7 368.1,77 443.8,77 443.8,77 445.2,83.3 446.6,88.6 448,93 449.5,96.8 450.9,100 452.3,102.8 453.8,105.1 455.2,107 456.6,108.7 458.1,110.1 459.5,111.2 460.9,112.2 462.4,113.1 463.8,113.8 465.2,114.4 466.7,114.9 468.1,115.3 469.5,115.7 471,116 472.4,116.3 473.8,116.5 475.3,116.7 476.7,116.9 478.1,117 485,117 485.3,115.3 485.6,113.7 485.9,112 486.1,110.3 486.4,108.7 486.7,107 487,105.3 487.3,103.7 487.6,102 487.9,100.3 488.2,98.7 488.4,97 488.7,95.3 489,93.7 489.3,92 489.6,90.3 489.9,88.7 490.2,87 490.4,85.3 490.7,83.7 491,82 491.3,80.3 491.6,78.7 491.9,77 567.5,77 567.5,77 568.9,83.3 570.4,88.6 571.8,93 573.2,96.8 574.7,100 576.1,102.8 577.5,105.1 579,107 580.4,108.7 581.8,110.1 583.3,111.2 584.7,112.2 586.1,113.1 587.6,113.8 589,114.4 590.4,114.9 591.8,115.3 593.3,115.7 594.7,116 596.1,116.3 597.6,116.5 599,116.7 600.4,116.9 601.9,117 608.8,117 609,115.3 609.3,113.7 609.6,112 609.9,110.3 610.2,108.7 610.5,107 610.8,105.3 611,103.7 611.3,102 611.6,100.3 611.9,98.7 612.2,97 612.5,95.3 612.8,93.7 613,92 613.3,90.3 613.6,88.7 613.9,87 614.2,85.3 614.5,83.7 614.8,82 615.1,80.3 615.3,78.7 615.6,77 718.8,77 718.8,77 720.2,83.3 721.6,88.6 723,93 724.5,96.8 725.9,100 727.3,102.8 728.8,105.1 730.2,107 731.6,108.7 733.1,110.1 734.5,111.2 735.9,112.2 737.4,113.1 738.8,113.8 740.2,114.4 741.7,114.9 743.1,115.3 744.5,115.7 746,116 747.4,116.3 748.8,116.5 750.3,116.7 751.7,116.9 753.1,117 760,117" class="sig sig-cv"/>
+<polyline points="210,187 223.8,187 227.8,183.8 231.8,181.1 235.8,178.8 239.8,176.9 243.8,175.3 247.8,173.9 251.8,172.7 255.8,171.7 259.8,170.9 263.9,170.1 267.9,169.5 271.9,169 275.9,168.6 279.9,168.2 283.9,167.9 287.9,167.7 291.9,167.4 295.9,167.3 299.9,167.1 304,167 308,166.8 312,166.8 316,166.7 320,166.6 320,166.6 321.7,167.7 323.4,168.7 325.2,169.5 326.9,170.1 328.6,170.7 330.3,171.2 332,171.6 333.8,172 335.5,172.3 337.2,172.5 338.9,172.7 340.6,172.9 342.3,173 344.1,173.2 345.8,173.3 347.5,173.4 349.2,173.4 350.9,173.5 352.7,173.6 354.4,173.6 356.1,173.7 357.8,173.7 359.5,173.7 361.2,173.7 361.2,173.7 364.7,171.8 368.1,170.1 371.6,168.8 375,167.6 378.4,166.6 381.9,165.7 385.3,165 388.8,164.4 392.2,163.9 395.6,163.5 399.1,163.1 402.5,162.8 405.9,162.5 409.4,162.3 412.8,162.1 416.2,161.9 419.7,161.8 423.1,161.7 426.6,161.6 430,161.5 433.4,161.4 436.9,161.4 440.3,161.3 443.8,161.3 443.8,161.3 445.5,162.7 447.2,163.9 448.9,164.9 450.6,165.8 452.3,166.5 454.1,167.1 455.8,167.6 457.5,168 459.2,168.4 460.9,168.7 462.7,169 464.4,169.2 466.1,169.4 467.8,169.6 469.5,169.7 471.2,169.8 473,169.9 474.7,170 476.4,170.1 478.1,170.1 479.8,170.2 481.6,170.2 483.3,170.3 485,170.3 485,170.3 488.4,168.7 491.9,167.3 495.3,166.1 498.8,165.1 502.2,164.3 505.6,163.6 509.1,163 512.5,162.5 515.9,162.1 519.4,161.7 522.8,161.4 526.2,161.2 529.7,160.9 533.1,160.7 536.6,160.6 540,160.5 543.4,160.3 546.9,160.2 550.3,160.2 553.8,160.1 557.2,160 560.6,160 564.1,160 567.5,159.9 567.5,159.9 569.2,161.4 570.9,162.7 572.7,163.7 574.4,164.6 576.1,165.4 577.8,166 579.5,166.6 581.2,167 583,167.4 584.7,167.7 586.4,168 588.1,168.3 589.8,168.5 591.6,168.6 593.3,168.8 595,168.9 596.7,169 598.4,169.1 600.2,169.2 601.9,169.2 603.6,169.3 605.3,169.3 607,169.4 608.8,169.4 608.8,169.4 613.3,167.9 617.9,166.6 622.5,165.5 627.1,164.5 631.7,163.7 636.2,163.1 640.8,162.5 645.4,162 650,161.6 654.6,161.3 659.2,161 663.8,160.7 668.3,160.5 672.9,160.3 677.5,160.2 682.1,160.1 686.7,160 691.2,159.9 695.8,159.8 700.4,159.7 705,159.7 709.6,159.6 714.2,159.6 718.8,159.6 718.8,159.6 720.5,161.1 722.2,162.3 723.9,163.4 725.6,164.3 727.3,165.1 729.1,165.7 730.8,166.3 732.5,166.8 734.2,167.2 735.9,167.5 737.7,167.8 739.4,168 741.1,168.2 742.8,168.4 744.5,168.5 746.2,168.7 748,168.8 749.7,168.9 751.4,168.9 753.1,169 754.8,169 756.6,169.1 758.3,169.1 760,169.2" class="sig sig-cv"/>
+<polyline points="210,257 223.8,257 223.8,257 223.8,255.3 223.9,253.7 224,252 224.1,250.3 224.2,248.7 224.3,247 224.4,245.3 224.4,243.7 224.5,242 224.6,240.3 224.7,238.7 224.8,237 224.9,235.3 225,233.7 225,232 225.1,230.3 225.2,228.7 225.3,227 225.4,225.3 225.5,223.7 225.6,222 225.6,220.3 225.7,218.7 225.8,217 225.8,217 227.2,223.3 228.5,228.6 229.9,233 231.2,236.8 232.5,240 233.9,242.8 235.2,245.1 236.6,247 237.9,248.7 239.3,250.1 240.6,251.2 242,252.2 243.3,253.1 244.7,253.8 246,254.4 247.4,254.9 248.7,255.3 250,255.7 251.4,256 252.7,256.3 254.1,256.5 255.4,256.7 256.8,256.9 258.1,257 361.2,257 361.2,257 361.3,255.3 361.4,253.7 361.5,252 361.6,250.3 361.7,248.7 361.8,247 361.9,245.3 361.9,243.7 362,242 362.1,240.3 362.2,238.7 362.3,237 362.4,235.3 362.5,233.7 362.5,232 362.6,230.3 362.7,228.7 362.8,227 362.9,225.3 363,223.7 363.1,222 363.1,220.3 363.2,218.7 363.3,217 363.3,217 364.7,223.3 366,228.6 367.4,233 368.7,236.8 370,240 371.4,242.8 372.7,245.1 374.1,247 375.4,248.7 376.8,250.1 378.1,251.2 379.5,252.2 380.8,253.1 382.2,253.8 383.5,254.4 384.9,254.9 386.2,255.3 387.5,255.7 388.9,256 390.2,256.3 391.6,256.5 392.9,256.7 394.3,256.9 395.6,257 485,257 485,257 485.1,255.3 485.2,253.7 485.3,252 485.3,250.3 485.4,248.7 485.5,247 485.6,245.3 485.7,243.7 485.8,242 485.9,240.3 485.9,238.7 486,237 486.1,235.3 486.2,233.7 486.3,232 486.4,230.3 486.5,228.7 486.5,227 486.6,225.3 486.7,223.7 486.8,222 486.9,220.3 487,218.7 487.1,217 487.1,217 488.4,223.3 489.8,228.6 491.1,233 492.4,236.8 493.8,240 495.1,242.8 496.5,245.1 497.8,247 499.2,248.7 500.5,250.1 501.9,251.2 503.2,252.2 504.6,253.1 505.9,253.8 507.3,254.4 508.6,254.9 510,255.3 511.3,255.7 512.6,256 514,256.3 515.3,256.5 516.7,256.7 518,256.9 519.4,257 608.8,257 608.8,257 608.8,255.3 608.9,253.7 609,252 609.1,250.3 609.2,248.7 609.3,247 609.4,245.3 609.4,243.7 609.5,242 609.6,240.3 609.7,238.7 609.8,237 609.9,235.3 610,233.7 610,232 610.1,230.3 610.2,228.7 610.3,227 610.4,225.3 610.5,223.7 610.6,222 610.6,220.3 610.7,218.7 610.8,217 610.8,217 612.2,223.3 613.5,228.6 614.9,233 616.2,236.8 617.5,240 618.9,242.8 620.2,245.1 621.6,247 622.9,248.7 624.3,250.1 625.6,251.2 627,252.2 628.3,253.1 629.7,253.8 631,254.4 632.4,254.9 633.7,255.3 635,255.7 636.4,256 637.7,256.3 639.1,256.5 640.4,256.7 641.8,256.9 643.1,257 760,257" class="sig sig-cv"/>
+<text x="210" y="284" class="t-ax">Dieselben Gates, drei Antworten: Artikulation, Entwicklung, Anschlag.</text>
+</svg></div>
+  <figcaption><b>Dieselben vier Noten, drei Aufgaben.</b> Die Lautstärke folgt jedem Gate. Die Klangfarbe baut sich über mehrere Noten auf, weil jeder neue Attack dort weitermacht, wo der lange Release gerade steht. Der Akzent ist bei jeder Note ein kurzer Stoß. So ist es in Patch <a class="xref" href="#p-3d">3D</a> gesteckt.</figcaption>
+</figure>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k3-praxis">Teil 2 · Praxis am Rack: ein Ton, vier Hüllkurven, drei VCAs</h3>
+<p>Der Ton bleibt in allen Stufen gleich: OSC 1 des 258t durch den SEM, gespielt vom Keyboard über den µYarns. Verändert wird nur, <i>was ihn formt</i>. Ein aktiver Mult verteilt das Gate auf bis zu vier Hüllkurven, damit alle auf dieselben Tasten reagieren.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-3a">3A</a></b> formt der 281t allein den Ton über den A-130-8. Du hörst AD gegen AHD und Gate gegen Trigger. In <b>Patch <a class="xref" href="#p-3b">3B</a></b> laufen vier Hüllkurven gleichzeitig mit; ein Wechselkabel bestimmt, welche davon den VCA steuert. Dazu kommt die Prüftabelle für das Retrigger-Verhalten. In <b>Patch <a class="xref" href="#p-3c">3C</a></b> geht derselbe Ton mit derselben Hüllkurve durch zwei VCAs, den linearen A-130-8 und den FOUR PLAY mit seinem CURVE-Regler, auf zwei L6-Kanäle. In <b>Patch <a class="xref" href="#p-3d">3D</a></b> bekommen drei Hüllkurven drei Aufgaben: Lautstärke, Filter und ein Low Pass Gate als Anschlag.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Ab jetzt wählst Du bei jedem Patch zuerst die Artikulation: Soll der Klang zupfen, streichen, blasen, schlagen oder atmen? Das ist häufig wichtiger als die Wahl des Oszillators. Die getrennten Hüllkurven aus 3D sind außerdem die Vorlage für bewegte Flächen in Kapitel <a class="xref" href="#k4">04</a> und für Modulation in Kapitel <a class="xref" href="#k5">05</a>: Dort wird aus der Klangfarben-Hüllkurve ein langsamer Function Generator.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Spielsteuerung</td><td>µYarns, gespielt vom Masterkeyboard oder Exquis</td><td>3A</td></tr>
+<tr><td>Gate verteilen</td><td>CatSynth aktiver 1×8 Mult (Reihe 2)</td><td>3A</td></tr>
+<tr><td>Klangquelle · Filter</td><td>Tiptop 258t, OSC 1 · A-106-5 SEM</td><td>3A</td></tr>
+<tr><td>Hüllkurven</td><td>Tiptop 281t Kanal 1 · NANO SERRA · CatSynth 2HP ADSR · Eowave Volcan Kanal 1</td><td>3A / 3B</td></tr>
+<tr><td>CV skalieren</td><td>CatSynth Slimline Dual Attenuverter, Kanal A</td><td>3A</td></tr>
+<tr><td>VCA</td><td>Doepfer A-130-8 Kanal 1 · Behringer FOUR PLAY Kanal 1</td><td>3A / 3C</td></tr>
+<tr><td>Audio und CV verdoppeln</td><td>aktiver 2×4 Mult (Reihe 4), Abschnitt A für Audio, B für die Hüllkurve</td><td>3C</td></tr>
+<tr><td>Low Pass Gate</td><td>Meng Qi DPLPG, Kanal 1</td><td>3D</td></tr>
+<tr><td>Abhören</td><td>Passivfader → L6 Kanal 1 und 2</td><td>3A / 3C</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Keyboard</h4>
+<p>Kabel 1 und 2 entfallen. Stell 281t Kanal 2 auf Loop mit etwa einer Sekunde Zyklus und patch seinen PULSE OUT in den Mult (statt Kabel 2). Weil ein Puls kein Gate ist, halten dann AHD, ASR und ADSR nicht: Du hörst nur Attack, Decay beziehungsweise Release. Für die Haltephase nimm stattdessen einen Gate-Ausgang des Leo Leo oder den Gate-Taster des SERRA.</p>
+</div>
+
+<p class="bst" id="k3-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp3">
+  <button type="button" data-stage="3A" aria-pressed="true">Patch 3A</button>
+  <button type="button" data-stage="3B" aria-pressed="false">Patch 3B</button>
+  <button type="button" data-stage="3C" aria-pressed="false">Patch 3C</button>
+  <button type="button" data-stage="3D" aria-pressed="false">Patch 3D</button>
+</div>
+<figure>
+<div class="sv" id="pp3"><svg class="pp" viewBox="0 0 1250 600" role="img" aria-label="Patchplan Kapitel 03: Der µYarns spielt den 258t, sein Gate wird über einen aktiven Mult auf bis zu vier Hüllkurven verteilt. Der Ton läuft über den SEM in den A-130-8; im Vergleich zusätzlich in den FOUR PLAY; in der letzten Stufe übernehmen drei Hüllkurven getrennte Aufgaben für Lautstärke, Filter und ein Low Pass Gate.">
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="20" y="20" width="130" height="110" rx="3"/>
+<text class="mt" x="32" y="44">µYarns</text>
+<text class="ms" x="32" y="60">Layout 1M</text>
+<circle class="jk o" cx="50" cy="85" r="7"/>
+<text class="jl" x="50" y="107" text-anchor="middle">GATE 1</text>
+<circle class="jk o" cx="112" cy="85" r="7"/>
+<text class="jl" x="112" y="107" text-anchor="middle">CV 1</text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="20" y="160" width="130" height="200" rx="3"/>
+<text class="mt" x="32" y="184">Mult 1×8</text>
+<text class="ms" x="32" y="200">aktiv · Gate</text>
+<circle class="jk" cx="35" cy="215" r="7"/>
+<text class="jl" x="47" y="219">IN</text>
+<circle class="jk o" cx="135" cy="240" r="7"/>
+<text class="jl" x="123" y="244" text-anchor="end"></text>
+<circle class="jk o" cx="135" cy="275" r="7"/>
+<text class="jl" x="123" y="279" text-anchor="end"></text>
+<circle class="jk o" cx="135" cy="310" r="7"/>
+<text class="jl" x="123" y="314" text-anchor="end"></text>
+<circle class="jk o" cx="135" cy="345" r="7"/>
+<text class="jl" x="123" y="349" text-anchor="end"></text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="20" y="400" width="130" height="170" rx="3"/>
+<text class="mt" x="32" y="424">258t</text>
+<text class="ms" x="32" y="440">OSC 1</text>
+<circle class="jk" cx="35" cy="445" r="7"/>
+<text class="jl" x="47" y="449">1V/OCT</text>
+<circle class="jk o" cx="135" cy="495" r="7"/>
+<text class="jl" x="123" y="499" text-anchor="end">OUT</text>
+<circle class="jk o" cx="135" cy="540" r="7"/>
+<text class="jl" x="123" y="544" text-anchor="end">OUT ·2</text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="200" y="20" width="150" height="110" rx="3"/>
+<text class="mt" x="212" y="44">281t</text>
+<text class="ms" x="212" y="60">Kanal 1</text>
+<circle class="jk" cx="215" cy="70" r="7"/>
+<text class="jl" x="227" y="74">TRIG 1</text>
+<circle class="jk o" cx="335" cy="100" r="7"/>
+<text class="jl" x="323" y="104" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod off" data-st="3B 3D">
+<rect class="m" x="200" y="155" width="150" height="125" rx="3"/>
+<text class="mt" x="212" y="179">NANO SERRA</text>
+<text class="ms" x="212" y="195">ADSR</text>
+<circle class="jk" cx="215" cy="205" r="7"/>
+<text class="jl" x="227" y="209">GATE</text>
+<circle class="jk o" cx="335" cy="215" r="7"/>
+<text class="jl" x="323" y="219" text-anchor="end">ENV</text>
+<circle class="jk o" cx="335" cy="255" r="7"/>
+<text class="jl" x="323" y="259" text-anchor="end">OUT</text>
+</g>
+<g class="mod off" data-st="3B">
+<rect class="m" x="200" y="305" width="150" height="80" rx="3"/>
+<text class="mt" x="212" y="329">CatSynth</text>
+<text class="ms" x="212" y="345">2HP ADSR</text>
+<circle class="jk" cx="215" cy="360" r="7"/>
+<text class="jl" x="227" y="364">GATE</text>
+<circle class="jk o" cx="335" cy="360" r="7"/>
+<text class="jl" x="323" y="364" text-anchor="end">OUT</text>
+</g>
+<g class="mod off" data-st="3B 3D">
+<rect class="m" x="200" y="410" width="150" height="100" rx="3"/>
+<text class="mt" x="212" y="434">Volcan</text>
+<text class="ms" x="212" y="450">Kanal 1</text>
+<circle class="jk" cx="215" cy="465" r="7"/>
+<text class="jl" x="227" y="469">TRIG 1</text>
+<circle class="jk o" cx="335" cy="485" r="7"/>
+<text class="jl" x="323" y="489" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="400" y="20" width="130" height="110" rx="3"/>
+<text class="mt" x="412" y="44">Attenuverter</text>
+<text class="ms" x="412" y="60">Kanal A</text>
+<circle class="jk" cx="415" cy="70" r="7"/>
+<text class="jl" x="427" y="74">IN A</text>
+<circle class="jk o" cx="515" cy="100" r="7"/>
+<text class="jl" x="503" y="104" text-anchor="end">OUT A</text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="580" y="20" width="150" height="150" rx="3"/>
+<text class="mt" x="592" y="44">A-106-5</text>
+<text class="ms" x="592" y="60">SEM</text>
+<circle class="jk" cx="595" cy="60" r="7"/>
+<text class="jl" x="607" y="64">CV2 IN</text>
+<circle class="jk" cx="595" cy="120" r="7"/>
+<text class="jl" x="607" y="124">AUDIO IN</text>
+<circle class="jk o" cx="715" cy="145" r="7"/>
+<text class="jl" x="715" y="167" text-anchor="middle">MIX-OUT</text>
+</g>
+<g class="mod off" data-st="3D">
+<rect class="m" x="580" y="420" width="150" height="120" rx="3"/>
+<text class="mt" x="592" y="444">DPLPG</text>
+<text class="ms" x="592" y="460">Kanal 1</text>
+<circle class="jk" cx="595" cy="465" r="7"/>
+<text class="jl" x="607" y="469">IN 1</text>
+<circle class="jk" cx="595" cy="505" r="7"/>
+<text class="jl" x="607" y="509">TRIG 1</text>
+<circle class="jk o" cx="715" cy="490" r="7"/>
+<text class="jl" x="715" y="512" text-anchor="middle">OUT 1</text>
+</g>
+<g class="mod off" data-st="3C">
+<rect class="m" x="780" y="200" width="130" height="190" rx="3"/>
+<text class="mt" x="792" y="224">2×4 Mult</text>
+<text class="ms" x="792" y="240">aktiv</text>
+<circle class="jk" cx="795" cy="240" r="7"/>
+<text class="jl" x="807" y="244">IN A</text>
+<circle class="jk o" cx="895" cy="235" r="7"/>
+<text class="jl" x="883" y="239" text-anchor="end"></text>
+<circle class="jk o" cx="895" cy="265" r="7"/>
+<text class="jl" x="883" y="269" text-anchor="end"></text>
+<circle class="jk" cx="795" cy="330" r="7"/>
+<text class="jl" x="807" y="334">IN B</text>
+<circle class="jk o" cx="895" cy="325" r="7"/>
+<text class="jl" x="883" y="329" text-anchor="end"></text>
+<circle class="jk o" cx="895" cy="360" r="7"/>
+<text class="jl" x="883" y="364" text-anchor="end"></text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="960" y="20" width="120" height="150" rx="3"/>
+<text class="mt" x="972" y="44">A-130-8</text>
+<text class="ms" x="972" y="60">Kanal 1 · linear</text>
+<circle class="jk" cx="975" cy="70" r="7"/>
+<text class="jl" x="987" y="74">IN 1</text>
+<circle class="jk" cx="975" cy="120" r="7"/>
+<text class="jl" x="987" y="124">CV 1</text>
+<circle class="jk o" cx="1065" cy="100" r="7"/>
+<text class="jl" x="1065" y="122" text-anchor="middle">OUT 1</text>
+</g>
+<g class="mod off" data-st="3C">
+<rect class="m" x="960" y="230" width="120" height="150" rx="3"/>
+<text class="mt" x="972" y="254">FOUR PLAY</text>
+<text class="ms" x="972" y="270">Kanal 1 · CURVE</text>
+<circle class="jk" cx="975" cy="275" r="7"/>
+<text class="jl" x="987" y="279">IN 1</text>
+<circle class="jk" cx="975" cy="325" r="7"/>
+<text class="jl" x="987" y="329">CV 1</text>
+<circle class="jk o" cx="1065" cy="300" r="7"/>
+<text class="jl" x="1065" y="322" text-anchor="middle">OUT 1</text>
+</g>
+<g class="mod" data-st="3A 3B 3C 3D">
+<rect class="m" x="1130" y="20" width="100" height="560" rx="3"/>
+<text class="mt" x="1142" y="44">Fader·L6</text>
+<circle class="jk" cx="1145" cy="100" r="7"/>
+<text class="jl" x="1145" y="122" text-anchor="middle">KANAL 1</text>
+<circle class="jk" cx="1145" cy="400" r="7"/>
+<text class="jl" x="1145" y="422" text-anchor="middle">KANAL 2</text>
+</g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab cv" d="M112,85 C182,139 -35,391 35,445"/><g class="badge cv"><circle cx="73.5" cy="265" r="11"/><text x="73.5" y="269" text-anchor="middle">1</text></g></g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab gate" d="M50,85 C120,104.5 -35,195.5 35,215"/><g class="badge gate"><circle cx="42.5" cy="150" r="11"/><text x="42.5" y="154" text-anchor="middle">2</text></g></g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab gate" d="M135,240 C175,240 175,70 215,70"/><g class="badge gate"><circle cx="175" cy="155" r="11"/><text x="175" y="159" text-anchor="middle">3</text></g></g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab audio" d="M135,495 C342,495 388,120 595,120"/><g class="badge audio"><circle cx="365" cy="307.5" r="11"/><text x="365" y="311.5" text-anchor="middle">4</text></g></g>
+<g class="cg" data-st="3A 3B 3D"><path class="cab audio" d="M715,145 C832,145 858,70 975,70"/><g class="badge audio"><circle cx="845" cy="107.5" r="11"/><text x="845" y="111.5" text-anchor="middle">5</text></g></g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab audio" d="M1065,100 C1105,100 1105,100 1145,100"/><g class="badge audio"><circle cx="1105" cy="100" r="11"/><text x="1105" y="104" text-anchor="middle">6</text></g></g>
+<g class="cg" data-st="3A 3D"><path class="cab cv" d="M335,100 C375,100 375,70 415,70"/><g class="badge cv"><circle cx="375" cy="85" r="11"/><text x="375" y="89" text-anchor="middle">7</text></g></g>
+<g class="cg" data-st="3A 3B 3C 3D"><path class="cab cv" d="M515,100 C722,100 768,120 975,120"/><g class="badge cv"><circle cx="745" cy="110" r="11"/><text x="745" y="114" text-anchor="middle">8</text></g></g>
+<g class="cg off" data-st="3B 3D"><path class="cab gate" d="M135,275 C175,275 175,205 215,205"/><g class="badge gate"><circle cx="175" cy="240" r="11"/><text x="175" y="244" text-anchor="middle">9</text></g></g>
+<g class="cg off" data-st="3B"><path class="cab gate" d="M135,310 C175,310 175,360 215,360"/><g class="badge gate"><circle cx="175" cy="335" r="11"/><text x="175" y="339" text-anchor="middle">10</text></g></g>
+<g class="cg off" data-st="3B 3D"><path class="cab gate" d="M135,345 C175,345 175,465 215,465"/><g class="badge gate"><circle cx="175" cy="405" r="11"/><text x="175" y="409" text-anchor="middle">11</text></g></g>
+<g class="cg off" data-st="3B"><path class="cab cv" d="M335,215 C375,215 375,70 415,70"/><g class="badge cv"><circle cx="375" cy="142.5" r="11"/><text x="375" y="146.5" text-anchor="middle">12</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab audio" d="M715,145 C755,145 755,240 795,240"/><g class="badge audio"><circle cx="755" cy="192.5" r="11"/><text x="755" y="196.5" text-anchor="middle">13</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab audio" d="M895,235 C935,235 935,70 975,70"/><g class="badge audio"><circle cx="935" cy="152.5" r="11"/><text x="935" y="156.5" text-anchor="middle">14</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab audio" d="M895,265 C935,265 935,275 975,275"/><g class="badge audio"><circle cx="935" cy="270" r="11"/><text x="935" y="274" text-anchor="middle">15</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab audio" d="M1065,300 C1105,300 1105,400 1145,400"/><g class="badge audio"><circle cx="1105" cy="350" r="11"/><text x="1105" y="354" text-anchor="middle">16</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab cv" d="M335,100 C542,100 588,330 795,330"/><g class="badge cv"><circle cx="565" cy="215" r="11"/><text x="565" y="219" text-anchor="middle">17</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab cv" d="M895,325 C965,286.8 345,108.2 415,70"/><g class="badge cv"><circle cx="655" cy="197.5" r="11"/><text x="655" y="201.5" text-anchor="middle">18</text></g></g>
+<g class="cg off" data-st="3C"><path class="cab cv" d="M895,360 C935,360 935,325 975,325"/><g class="badge cv"><circle cx="935" cy="342.5" r="11"/><text x="935" y="346.5" text-anchor="middle">19</text></g></g>
+<g class="cg off" data-st="3D"><path class="cab cv" d="M335,255 C452,255 478,60 595,60"/><g class="badge cv"><circle cx="465" cy="157.5" r="11"/><text x="465" y="161.5" text-anchor="middle">20</text></g></g>
+<g class="cg off" data-st="3D"><path class="cab audio" d="M135,540 C342,540 388,465 595,465"/><g class="badge audio"><circle cx="365" cy="502.5" r="11"/><text x="365" y="506.5" text-anchor="middle">21</text></g></g>
+<g class="cg off" data-st="3D"><path class="cab audio" d="M715,490 C908.5,490 951.5,400 1145,400"/><g class="badge audio"><circle cx="930" cy="445" r="11"/><text x="930" y="449" text-anchor="middle">22</text></g></g>
+<g class="cg off" data-st="3D"><path class="cab cv" d="M335,485 C452,485 478,505 595,505"/><g class="badge cv"><circle cx="465" cy="495" r="11"/><text x="465" y="499" text-anchor="middle">23</text></g></g>
+</svg></div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--gate)"></i>Gate</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-3A="&lt;b&gt;Patch 3A, ein Anschlag, ein VCA.&lt;/b&gt; Tonhöhe (1), Gate über den Mult zum 281t (2, 3), Audioweg SEM → A-130-8 → L6 (4, 5, 6), Hüllkurve über den Attenuverter an den VCA (7, 8)." data-cap-3B="&lt;b&gt;Patch 3B, vier Hüllkurven.&lt;/b&gt; Der Mult gibt das Gate zusätzlich an SERRA, CatSynth ADSR und Volcan (9, 10, 11). Kabel 7 ist gezogen; Kabel 12 ist das Wechselkabel und wandert zwischen 281t OUT 1, SERRA ENV, ADSR OUT und Volcan OUT 1." data-cap-3C="&lt;b&gt;Patch 3C, linear oder exponentiell.&lt;/b&gt; Der 2×4 Mult verdoppelt den Ton (13, 14, 15) und die 281t-Hüllkurve (17, 18, 19). Kanal 1 hört den linearen A-130-8, Kanal 2 den FOUR PLAY (16). Kabel 5, 7 und 9–12 sind gezogen." data-cap-3D="&lt;b&gt;Patch 3D, drei Hüllkurven, drei Aufgaben.&lt;/b&gt; Aufbau wie 3A plus SERRA aufs Filter (9, 20) und Volcan als Anschlag über das DPLPG auf Kanal 2 (11, 21, 22, 23)."><b>Patch <a class="xref" href="#p-3a">3A</a>, ein Anschlag, ein VCA.</b> Tonhöhe (1), Gate über den Mult zum 281t (2, 3), Audioweg SEM → A-130-8 → L6 (4, 5, 6), Hüllkurve über den Attenuverter an den VCA (7, 8).</figcaption>
+</figure>
+
+<p class="bst" id="k3-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-3a">Stufe 1 · Patch 3A: ein Anschlag, ein VCA</h4>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · Passivfader und L6 zu · µYarns auf Layout <b>1M</b> · 281t Kanal 1 auf <b>Attack/Hold/Decay</b></div><div class="why">Wie in Kapitel <a class="xref" href="#k2">02</a>. Der Modusschalter sitzt links unter der CYCLE-Buchse. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n cv">1</span><div class="r"><div class="route">µYarns <b>CV 1</b> → 258t OSC 1 <b>1V/OCT</b></div><div class="why">Tonhöhe vom Keyboard.</div></div></li>
+<li><span class="n gate">2</span><div class="r"><div class="route">µYarns <b>GATE 1</b> → aktiver Mult <b>IN</b></div><div class="why">Ein Gate für alle Hüllkurven. Der aktive Mult hält die Flanken sauber, auch wenn vier Eingänge daran hängen.</div></div></li>
+<li><span class="n gate">3</span><div class="r"><div class="route">Mult → 281t <b>TRIG 1</b></div><div class="why">In AHD hält der 281t 10 V, solange das Gate anliegt. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">4</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> → A-106-5 <b>AUDIO IN</b></div><div class="why">SHAPE auf Sägezahn. Das Filter bleibt in diesem Kapitel fast statisch, damit Du nur die Dynamik hörst.</div></div></li>
+<li><span class="n audio">5</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → A-130-8 <b>IN 1</b></div><div class="why">Mix-Regler auf 7 Uhr, Tiefpass. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n audio">6</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → Passivfader → L6 <b>Kanal 1</b></div><div class="why">Erst einpegeln, wenn ein Ton kommt.</div></div></li>
+<li><span class="n cv">7</span><div class="r"><div class="route">281t <b>OUT 1</b> → Attenuverter <b>IN A</b></div><div class="why">0–10 V vom 281t, der VCA ist bei 5 V schon ganz offen.</div></div></li>
+<li><span class="n cv">8</span><div class="r"><div class="route">Attenuverter <b>OUT A</b> → A-130-8 <b>CV 1</b></div><div class="why">ATTEN A auf halbem Weg nach rechts: 0–5 V. OFFSET A genau auf 12 Uhr, sonst bleibt der VCA einen Spalt offen.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-3a">3A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 1: ≈ 10 ms"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 10 ms</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 1: ≈ 0,5 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 0,5 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN A: 10 V → 5 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="73.4" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">10 V → 5 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="OFFSET A: 0 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">OFFSET A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Freq: mittel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Freq</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">mittel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Reso: wenig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Reso</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: Sägezahn"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Sägezahn</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Die Uhrzeiten sind Richtwerte. Bei 281t-Reglern zählt, was Du hörst: Attack so kurz, dass der Ton sofort da ist, aber nicht klickt.</p>
+<div class="check"><b>Kontrollpunkt 3A</b> Halte eine Taste zwei Sekunden: Der Ton setzt sofort ein, bleibt stehen und klingt nach dem Loslassen in etwa einer halben Sekunde aus. Schalt Kanal 1 auf <b>Attack/Decay</b>: Jetzt klingt der Ton auch bei gehaltener Taste aus, die Haltedauer ist egal. Zurück auf AHD und Attack auf 12 Uhr: Jeder Ton schwillt an. Spiel zum Schluss zwei Tasten legato: In AHD gibt es keinen neuen Anschlag, die zweite Note gleitet einfach in die erste über.</div>
+
+<h4 id="p-3b">Stufe 2 · Patch 3B: vier Hüllkurven, ein Ton</h4>
+<p>Zieh Kabel 7. Der Mult verteilt das Gate jetzt an alle vier Hüllkurven; welche davon den VCA steuert, entscheidet ein einziges Kabel.</p>
+<ol class="cables" start="9">
+<li><span class="n gate">9</span><div class="r"><div class="route">Mult → SERRA <b>GATE</b></div><div class="why">Schalter auf <b>Fast</b> und <b>Indep</b>. Indep heißt: Jeder CV-Eingang wirkt nur auf seine eigene Phase. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n gate">10</span><div class="r"><div class="route">Mult → CatSynth ADSR <b>GATE</b></div><div class="why">Zeitbasis auf <b>M</b>, die Mitte. Buchsenbeschriftung <span class="tag tag-p" id="pr-10">am Gerät prüfen</span></div></div></li>
+<li><span class="n gate">11</span><div class="r"><div class="route">Mult → Volcan <b>TRIG 1</b></div><div class="why">Der Trigger-Eingang startet Rise und Fall einmal; das Gate hält den Volcan nicht. Loop aus.</div></div></li>
+<li><span class="n cv">12</span><div class="r"><div class="route"><b>Wechselkabel</b> · SERRA <b>ENV</b> → Attenuverter <b>IN A</b></div><div class="why">Dieses Kabel wanderst Du nacheinander an 281t OUT 1, SERRA ENV, ADSR OUT und Volcan OUT 1. Der SERRA-Ausgang ENV ist unbearbeitet und reicht bis +10 V, ATTEN A bleibt deshalb, wie er ist. <span class="tag tag-h">Hersteller</span></div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-3b">3B</a> · alle Hüllkurven ähnlich</p>
+<div class="tbl w"><table>
+<thead><tr><th>Modul</th><th>Einstellung</th></tr></thead>
+<tbody>
+<tr><td>SERRA</td><td>Fader A ganz unten · D auf ein Drittel · S auf halber Höhe · R auf ein Drittel</td></tr>
+<tr><td>Volcan Kanal 1</td><td>Rise ganz unten · Fall auf ein Drittel · SHAPE 12 Uhr</td></tr>
+<tr><td>281t Kanal 1</td><td>wie in 3A, auf AHD</td></tr>
+</tbody></table></div>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ADSR A: kürzest"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ADSR A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kürzest</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ADSR D: kurz"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ADSR D</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kurz</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ADSR S: halb"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ADSR S</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">halb</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ADSR R: kurz"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ADSR R</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kurz</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Volcan SHAPE: Mitte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Volcan SHAPE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Mitte</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Ob die Mittelstellung von SHAPE genau linear ist, steht nicht in der Beschreibung. <span class="tag tag-p" id="pr-11">am Gerät prüfen</span> Stell die Decays nach Gehör so, dass ein kurzer Anschlag bei allen vier ungefähr gleich lange nachklingt; erst dann vergleichen.</p>
+<div class="check"><b>Kontrollpunkt 3B</b> Steck Kabel 12 der Reihe nach um und spiel jedes Mal dieselbe kurze Figur. Der 281t hält in AHD voll und fällt erst beim Loslassen. SERRA und CatSynth ADSR fallen nach dem Anschlag auf den halben Pegel und halten dort: Der Einsatz ist betont, der Rest ruhiger. Der Volcan klingt aus, egal wie lange Du hältst. Dreh am Volcan SHAPE langsam nach links und rechts: Der Ausklang wird mal hohl und lang, mal knapp und natürlich.</div>
+<div class="box-c" id="k3-retest">
+<h4>Prüftabelle · Retrigger und Legato <span class="tag tag-p" id="pr-12">am Gerät prüfen</span></h4>
+<p>Drei Tests je Hüllkurve, Kabel 12 jeweils an ihrem Ausgang. Trag ein, was Du hörst; die Ergebnisse wandern danach als <span class="tag tag-ok">verifiziert</span> in <a class="xref" href="#b2-c01">B2-C-01</a>.</p>
+<ol>
+<li><b>Legato:</b> Zwei Tasten gebunden. Gibt es einen neuen Anschlag?</li>
+<li><b>Schnelle Wiederholung:</b> Eine Taste schnell hintereinander, Release lang. Startet der neue Anschlag weich aus dem Ausklang oder mit einem Knick von null?</li>
+<li><b>Trigger zusätzlich:</b> µYarns GATE 2 in den Trigger-Eingang (SERRA TRIGGER, 281t und Volcan TRIG). Was ändert sich beim Legato?</li>
+</ol>
+<div class="tbl w"><table>
+<thead><tr><th>Hüllkurve</th><th>Legato neu?</th><th>Neustart von</th><th>mit Trigger</th></tr></thead>
+<tbody>
+<tr><td>281t AHD</td><td>…</td><td>…</td><td>…</td></tr>
+<tr><td>NANO SERRA</td><td>…</td><td>…</td><td>…</td></tr>
+<tr><td>CatSynth ADSR</td><td>…</td><td>…</td><td>kein Trigger-Eingang?</td></tr>
+<tr><td>Volcan</td><td>…</td><td>…</td><td>…</td></tr>
+</tbody></table></div>
+</div>
+
+<h4 id="p-3c">Stufe 3 · Patch 3C: linear oder exponentiell</h4>
+<p>Zieh die Kabel 5 und 9 bis 12; Kabel 7 ist seit 3B ohnehin draußen. Der Ton und die 281t-Hüllkurve werden verdoppelt; beide VCAs bekommen genau dasselbe.</p>
+<ol class="cables" start="13">
+<li><span class="n audio">13</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → 2×4 Mult <b>IN A</b></div><div class="why">Das ist Kabel 5 mit neuem Ziel.</div></div></li>
+<li><span class="n audio">14</span><div class="r"><div class="route">2×4 Mult A → A-130-8 <b>IN 1</b></div><div class="why">Der lineare Weg, wie bisher.</div></div></li>
+<li><span class="n audio">15</span><div class="r"><div class="route">2×4 Mult A → FOUR PLAY <b>IN 1</b></div><div class="why">BOOST aus, sonst ist dieser Weg 6 dB lauter und der Vergleich unfair.</div></div></li>
+<li><span class="n audio">16</span><div class="r"><div class="route">FOUR PLAY <b>OUT 1</b> → Passivfader → L6 <b>Kanal 2</b></div><div class="why">Ein Kabel in OUT 1 verhindert, dass Kanal 1 in Kanal 2 weitergemischt wird. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">17</span><div class="r"><div class="route">281t <b>OUT 1</b> → 2×4 Mult <b>IN B</b></div><div class="why">Das ist Kabel 7 mit neuem Ziel.</div></div></li>
+<li><span class="n cv">18</span><div class="r"><div class="route">2×4 Mult B → Attenuverter <b>IN A</b></div><div class="why">Zum A-130-8 wie bisher, über Kabel 8.</div></div></li>
+<li><span class="n cv">19</span><div class="r"><div class="route">2×4 Mult B → FOUR PLAY <b>CV 1</b></div><div class="why">Ohne Attenuverter: Der FOUR PLAY hat seinen eigenen CV-Abschwächer. Weil nur CV 1 steckt, würde sie auch Kanal 2–4 steuern; die bleiben ohne Eingang aber stumm. <span class="tag tag-h">Hersteller</span></div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-3c">3C</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FOUR PLAY LEVEL 1: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FOUR PLAY LEVEL 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FOUR PLAY CV 1: nach Gehör"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FOUR PLAY CV 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">nach Gehör</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FOUR PLAY CURVE 1: exponentiell"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FOUR PLAY CURVE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">exponentiell</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 1: ≈ 10 ms"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 10 ms</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 1: ≈ 2 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 2 s</text></svg>
+</div>
+<p class="muted" style="font-size:15px">LEVEL muss zu sein, sonst ist der Kanal schon ohne Hüllkurve offen und die CV kommt nur obendrauf. Pegle die beiden L6-Kanäle bei gehaltener Taste auf gleiche Lautstärke; den Bereich des CV-Abschwächers findest Du dabei nach Gehör. <span class="tag tag-p" id="pr-13">am Gerät prüfen</span></p>
+<div class="check"><b>Kontrollpunkt 3C</b> Spiel einzelne, gehaltene Töne und schalt am L6 zwischen Kanal 1 und 2 um, oder schieb beide Fader hin und her. Mit CURVE links klingt der Ausklang im FOUR PLAY gleichmäßiger und wirkt kürzer; auch der Einsatz kommt weicher. Dreh CURVE langsam nach rechts: Je linearer, desto ähnlicher wird Kanal 2 dem A-130-8 auf Kanal 1, bis Du am Rechtsanschlag keinen Unterschied mehr hörst. Welche Stellung „natürlich“ klingt, hängt davon ab, wie gekrümmt der 281t schon von sich aus fällt: Notiere die CURVE-Stellung, die Dir am besten gefällt.</div>
+
+<h4 id="p-3d">Stufe 4 · Patch 3D: drei Hüllkurven, drei Aufgaben</h4>
+<p>Zurück zu 3A: Zieh die Kabel 13 bis 19 und steck 5 und 7 wieder. Steck 9 und 11 wieder, damit SERRA und Volcan das Gate bekommen. Dann:</p>
+<ol class="cables" start="20">
+<li><span class="n cv">20</span><div class="r"><div class="route">SERRA <b>OUT</b> → A-106-5 <b>CV2 IN</b></div><div class="why">Die Klangfarben-Hüllkurve. Über den eingebauten Abschwächer am OUT dosiert; steht er auf 12 Uhr, kommt nichts. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">21</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> (zweite Buchse) → DPLPG <b>IN 1</b></div><div class="why">Ungefiltert; das LPG bringt seinen eigenen Tiefpass mit.</div></div></li>
+<li><span class="n audio">22</span><div class="r"><div class="route">DPLPG <b>OUT 1</b> → Passivfader → L6 <b>Kanal 2</b></div><div class="why">Passiv, also leiser: Fader weiter auf als bei Kanal 1.</div></div></li>
+<li><span class="n cv">23</span><div class="r"><div class="route">Volcan <b>OUT 1</b> → DPLPG <b>TRIG 1</b></div><div class="why">Ein kurzer Stoß bei jeder Note. Reicht der Pegel des Volcan nicht, um das LPG ganz zu öffnen, nimm 281t Kanal 2 im AD-Modus. <span class="tag tag-p" id="pr-14">am Gerät prüfen</span></div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-3d">3D</a></p>
+<div class="tbl w"><table>
+<thead><tr><th>Modul</th><th>Einstellung</th></tr></thead>
+<tbody>
+<tr><td>SERRA</td><td>Schalter <b>Slow</b> · A auf halber Höhe (mehrere Sekunden) · D lang · S weit oben · R lang</td></tr>
+<tr><td>Volcan Kanal 1</td><td>Rise ganz unten · Fall knapp über unten (etwa 0,2 s) · SHAPE etwas nach rechts</td></tr>
+<tr><td>281t Kanal 1</td><td>AHD wie in 3A</td></tr>
+</tbody></table></div>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA OUT ATT: positiv, ⅔"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA OUT ATT</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">positiv, ⅔</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA OUT OFFSET: 0 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA OUT OFFSET</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Freq: dunkel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41.6" y2="44.9" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Freq</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">dunkel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 CV2: Filtertiefe"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 CV2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Filtertiefe</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: Sägezahn"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Sägezahn</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Das Filter beginnt dunkel und wird von der SERRA-Hüllkurve geöffnet. Mit dem CV2-Polarizer am SEM und dem Abschwächer am SERRA hast Du zwei Stellen, an denen Du die Tiefe dosieren kannst; nimm zum Spielen den am SERRA.</p>
+<div class="check"><b>Kontrollpunkt 3D</b> Spiel langsam eine Folge aus vier, fünf Noten, erst nur Kanal 1. Die Lautstärke folgt jeder Taste, aber die Helligkeit wächst über die ganze Folge und sinkt in der Pause langsam zurück. Jetzt Kanal 2 dazu: Jede Note bekommt einen kurzen, holzigen Schlag vorneweg. Nimm Kanal 2 wieder weg und hör, wie viel weicher die Einsätze werden. Das sind Körper, Entwicklung und Anschlag als drei getrennte Regler.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k3-hoeren">08 · Hörübung: Artikulation erkennen</p>
+<p>Schließ die Augen und lass Dir von jemandem, oder vom Zufall, die Hüllkurve verstellen. Dann höre:</p>
+<ol>
+<li><b>Der Einsatz.</b> Klickt es, ist es weich, schwillt es an? Unter 5 ms hörst Du einen Klick, zwischen 10 und 50 ms einen Anschlag, darüber einen Einsatz ohne Kante.</li>
+<li><b>Die Mitte.</b> Bleibt der Ton gleich laut, solange Du hältst (ASR, AHD), oder sackt er nach dem Einsatz ab (ADSR mit niedrigem Sustain, AD)?</li>
+<li><b>Das Ende.</b> Bricht der Ton ab, wird er gleichmäßig leiser oder bleibt er lange voll und verschwindet plötzlich? Das Letzte ist die Signatur einer linearen Kurve an einem linearen VCA.</li>
+<li><b>Die Farbe im Ausklang.</b> Wird der Ton beim Leiserwerden dunkler? Dann ist ein LPG oder eine zweite Hüllkurve am Filter im Spiel.</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k3-var">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>Akzent per Anschlagstärke.</b> In 3A die 281t-Hüllkurve nicht über den Attenuverter, sondern durch den FOUR PLAY: 281t OUT 1 → FOUR PLAY IN 1, µYarns CV 2 (Velocity) → FOUR PLAY CV 1, FOUR PLAY OUT 1 → Attenuverter IN A. CURVE rechts. Fester gespielte Töne bekommen eine größere Hüllkurve: Der VCA dosiert hier CV, nicht Audio.</li>
+<li><b>Umgedrehte Hüllkurve.</b> SERRA OUT mit dem Abschwächer links von 12 Uhr und dem Offset nach rechts: Die Kurve fällt bei jedem Anschlag, statt zu steigen. Am Filter ergibt das ein „Wah“ nach unten; an einem zweiten VCA-Kanal mit einer Fläche ein Ducking, das Platz für jede Note macht.</li>
+<li><b>Volcan mit Haltephase.</b> µYarns GATE 1 nicht in TRIG 1, sondern in den SLEW-Eingang: Der Ausgang steigt mit der Rise-Zeit auf den Gate-Pegel, hält und fällt mit der Fall-Zeit, wenn Du loslässt. Eine ASR mit einstellbarer Krümmung. So beschreiben es auch die Händler (Gate in SLEW = AR/ASR); eine Herstelleranleitung gibt es noch nicht. <span class="tag tag-p" id="pr-15">am Gerät prüfen</span></li>
+<li><b>Nachschlag.</b> SERRA EOC → Volcan TRIG 1: Am Ende jedes SERRA-Durchlaufs schlägt das LPG aus 3D noch einmal an. Wann genau der EOC kommt, nach dem Decay oder nach dem Release, sagt der Hersteller nicht. <span class="tag tag-p" id="pr-16">am Gerät prüfen</span></li>
+<li><b>Tremolo.</b> 281t Kanal 1 auf Loop, Attack und Decay je etwa 100 ms: Der VCA pulsiert. Mit dem FOUR PLAY und CURVE links klingt das Pulsieren härter als am A-130-8.</li>
+<li><b>Nur ein Impuls ins LPG.</b> In 3D Kabel 23 vom µYarns GATE 2 statt vom Volcan. Der Vaktrol macht dann die Hüllkurve allein; reicht der Gate-Pegel nicht, wird es sehr leise. <span class="tag tag-p" id="pr-17">am Gerät prüfen</span></li>
+<li><b>Zeiten unter Spannung.</b> SERRA auf <b>Norm</b> und eine langsame Spannung, etwa 281t Kanal 3 im Loop über Attenuverter B, in einen der CV-Eingänge: Alle vier Phasen werden gemeinsam länger und kürzer. <span class="tag tag-h">Hersteller</span></li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · eine Hüllkurve, zwei Ziele.</b> Der Klassiker aus Kapitel <a class="xref" href="#k2">02</a>: dieselbe Hüllkurve auf VCA und Filter. Vergleich ihn mit 3D, um zu hören, was die zweite Hüllkurve bringt.</li>
+<li><b>Vertiefte Variante · verzögertes Vibrato.</b> 281t Kanal 3 im Loop (≈ 5 Hz) → FOUR PLAY IN 2, SERRA mit langem Attack → FOUR PLAY CV 2, OUT 2 über Attenuverter B zur Keyboard-CV addiert, etwa mit dem A-185-2 aus Exkurs 1D, und von dort in 1V/OCT. Das Vibrato setzt erst nach dem Anschlag ein. Brücke zu Kapitel <a class="xref" href="#k5">05</a>.</li>
+<li><b>Buchla-Bongos.</b> Sinusnaher Ton, nur Impulse ins DPLPG, kein Filter, kein VCA. Ausgearbeitet in <a class="xref" href="#kwp-08">KWP-08</a>.</li>
+<li><b>Zwei Stimmen, zwei Artikulationen.</b> Auf L6 Kanal 1 eine Fläche mit SERRA-Swell, auf Kanal 2 dieselben Noten gezupft über das LPG. Ein Keyboard, zwei Instrumente; Vorgriff auf Kapitel <a class="xref" href="#k4">04</a>.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k3-komp">11 · Kompositionsaufgabe: ein Motiv, vier Artikulationen</p>
+<p>Erfinde ein Motiv aus fünf bis acht Tönen. Nimm es viermal je 30 Sekunden auf dem L6 auf und ändere dazwischen nur Hüllkurven und VCA, nie Ton oder Filter:</p>
+<ol>
+<li><b>Staccato:</b> 281t auf AD, Decay kurz. Jeder Ton ein Punkt.</li>
+<li><b>Legato:</b> SERRA auf den VCA, mittlerer Sustain, und spiel gebunden. Erst ohne, dann mit Trigger aus GATE 2.</li>
+<li><b>Swell:</b> SERRA mit langem Attack und langem Release auf den VCA. Die Töne überlappen und werden zur Fläche.</li>
+<li><b>Gezupft:</b> Patch <a class="xref" href="#p-3d">3D</a> mit beiden Kanälen.</li>
+</ol>
+<p>Leg die vier Aufnahmen hintereinander. Zwei Minuten, eine Melodie, vier Instrumente. Hör bewusst auf die Übergänge: Welche Artikulation trägt das Motiv am besten?</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k3-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k3l1"><label for="k3l1">AD, ASR und ADSR am Klang unterscheiden und wissen, dass Sustain ein Pegel ist.</label></li>
+<li><input type="checkbox" id="k3l2"><label for="k3l2">Mit einem VCA Audio formen und mit einem VCA eine Modulation dosieren.</label></li>
+<li><input type="checkbox" id="k3l3"><label for="k3l3">Erklären, warum ein linearer Abfall an einem linearen VCA lange laut bleibt und dann abbricht.</label></li>
+<li><input type="checkbox" id="k3l4"><label for="k3l4">Gate und Trigger richtig einsetzen; Legato und Retrigger hören.</label></li>
+<li><input type="checkbox" id="k3l5"><label for="k3l5">Ein LPG am Ausklang vom VCA unterscheiden.</label></li>
+<li><input type="checkbox" id="k3l6"><label for="k3l6">Lautstärke, Klangfarbe und Akzent mit drei getrennten Hüllkurven steuern.</label></li>
+<li><input type="checkbox" id="k3l7"><label for="k3l7">Die Prüftabelle aus Patch <a class="xref" href="#p-3b">3B</a> ausgefüllt.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Der Ton hört nicht auf</summary><ol>
+<li>Steht OFFSET A genau auf 12 Uhr? Schon ein wenig positiver Offset hält den linearen VCA einen Spalt offen.</li>
+<li>Am FOUR PLAY: Ist LEVEL ganz zu? LEVEL ist die Grundöffnung, die CV kommt dazu.</li>
+<li>281t in AHD und das Gate fällt nie ab: µYarns-Einstellung (Hold, Sustain-Pedal) prüfen, oder testweise auf AD schalten.</li>
+<li>ADSR mit vollem Sustain und sehr langem Release klingt nach, als hinge es. Release zurücknehmen.</li>
+</ol></details>
+<details><summary>Es klickt beim Anschlag oder beim Loslassen</summary><ol>
+<li>Attack oder Release ganz am Anschlag: einen Hauch mehr.</li>
+<li>Die Hüllkurve startet bei schneller Wiederholung von null (Prüftabelle 3B). Längeres Release oder eine andere Hüllkurve wählen.</li>
+<li>Linearer VCA mit linearer Kurve schließt in den letzten Millisekunden sehr schnell: FOUR PLAY mit CURVE nach links oder Volcan mit SHAPE exponentiell.</li>
+</ol></details>
+<details><summary>Kabel 12 steckt, aber nichts passiert</summary><ol>
+<li>Steckt es im SERRA in <b>ENV</b>? Am <b>OUT</b> bei Abschwächer auf 12 Uhr kommt keine Spannung.</li>
+<li>Bekommt die Hüllkurve ihr Gate? Am SERRA und am CatSynth ADSR zeigen LEDs die Phase.</li>
+<li>Volcan: Loop aus und Rise/Fall nicht beide ganz oben, sonst dauert ein Durchlauf sehr lange.</li>
+</ol></details>
+<details><summary>Kanal 2 ist zu laut oder klingt doppelt</summary><ol>
+<li>BOOST am FOUR PLAY aus?</li>
+<li>Steckt Kabel 16 wirklich in OUT 1? Ohne Kabel wird Kanal 1 nach rechts weitergemischt und taucht an einem anderen Ausgang auf.</li>
+</ol></details>
+<details><summary>Das LPG bleibt stumm oder sehr leise</summary><ol>
+<li>Reicht die Steuerspannung? Testweise 281t OUT 1 direkt in TRIG 1: Kommt dann Ton, ist der Volcan-Pegel zu niedrig.</li>
+<li>Fader von Kanal 2 weiter auf; das DPLPG ist passiv.</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k3-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k1">B1-01</a></span> Signalarten, Gate und Trigger<br><span class="id"><a href="#k2">B1-02</a></span> Stimmen, LPG<br><span class="id"><a href="#k4">B1-04</a></span> Flächen mit langen Hüllkurven<br><span class="id"><a href="#k5">B1-05</a></span> Hüllkurven als Modulation</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-c01">B2-C-01</a></span> Hüllkurven und Function Generatoren<br><span class="id"><a href="#b2-c02">B2-C-02</a></span> VCA-Typen, Matrix, Makros<br><span class="id"><a href="#b2-b02">B2-B-02</a></span> West Coast, LPG</div>
+<div><b>KWP</b><span class="id"><a href="#kwp-08">KWP-08</a></span> Buchla Bongos<br><span class="id"><a href="#kwp-09">KWP-09</a></span> Krell<br><span class="id"><a href="#kwp-02">KWP-02</a></span> Fläche aus zwei Stimmen</div>
+<div><b>Module</b><span class="id"><a href="#mp-281t">MOD-281t</a></span> · <span class="id"><a href="#mp-serra">MOD-SERRA</a></span><br><span class="id"><a href="#mp-volcan">MOD-Volcan</a></span> · <span class="id"><a href="#mp-a-130-8">MOD-A-130-8</a></span><br><span class="id"><a href="#mp-four-play">MOD-FOUR PLAY</a></span> · <span class="id"><a href="#mp-dplpg">MOD-DPLPG</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult zu prüfen</h4>
+<ul>
+<li><b>NANO SERRA:</b> genaue Buchsenbeschriftung (ENV, OUT, EOC, SIG, GATE, TRIGGER); Zeitbereiche von Slow und Fast; Wirkung des Trigger-Eingangs bei gehaltenem Gate; Zeitpunkt des EOC. <span class="tag tag-p" id="pr-18">am Gerät prüfen</span></li>
+<li><b>CatSynth ADSR:</b> Buchsen, Ausgangspegel, Zeitbereiche S/M/L. <span class="tag tag-p" id="pr-19">am Gerät prüfen</span></li>
+<li><b>Volcan:</b> Ausgangspegel, Zeitbereich, SHAPE-Mitte linear?, Gate am SLEW-Eingang als ASR. <span class="tag tag-p" id="pr-20">am Gerät prüfen</span></li>
+<li><b>FOUR PLAY:</b> CV-Bereich bis zur vollen Öffnung bei LEVEL zu (Veils-Vorbild: +5 V bei vollem CV-Regler = Verstärkung 1). <span class="tag tag-p" id="pr-21">am Gerät prüfen</span></li>
+<li><b>DPLPG:</b> öffnet ein µYarns-Gate (5 V) das Gate hörbar? <span class="tag tag-p" id="pr-22">am Gerät prüfen</span></li>
+<li><b>Alle vier Hüllkurven:</b> Prüftabelle Retrigger und Legato. <span class="tag tag-p" id="pr-23">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

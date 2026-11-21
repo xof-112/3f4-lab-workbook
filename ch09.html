@@ -1,0 +1,749 @@
+<!-- ======================= KAPITEL 09 ======================= -->
+<section class="part chapter" id="k9">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 09</span><h2>Arrangement und Songform</h2></div>
+<p class="muted"><i>Aus einzelnen Patches wird ein musikalischer Verlauf, mit einer Form, die feststeht, und einer Hand, die frei bleibt</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 3 × 90 min</b><span>Theorie, drei Stufen, Komposition</span></div>
+  <div><b>30 Kabel</b><span>in drei Stufen, eines davon achtfach</span></div>
+  <div><b>4 Arrangeure</b><span>Programm, Muxlicer, 8×8, Exquis</span></div>
+  <div><b><a class="xref" href="#k6">B1-06</a>, <a class="xref" href="#k7">07</a>, <a class="xref" href="#k8">08</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du gliederst einen laufenden Patch in Phrasen, Teile und eine ganze Form. Du weißt, welche Hebel im Pult Dichte und Energie verändern, legst eine Songform als Reglerplan auf Muxlicer und 8×8-Matrix, setzt das Programm als Zähler, Arrangeur und Transponierer ein und kündigst jede Teilgrenze so an, dass Du sie beim Spielen kommen siehst und Zuhörende sie kommen hören. Am Ende rahmst Du generative Teile und greifst mit dem Exquis improvisierend ein, ohne dass die Form zerfällt.</dd>
+  <dt>Theorie</dt><dd>Phrase, Teil, Form · die 8-Takt-Regel · Dichte und Energie · Muxlicer und 8×8 als Songpult · das Programm als Arrangeur · Transposition als Formmittel · Übergänge und Riser · Spannung über lange Zeit · Stimmen und Effekte ein- und ausblenden · generative Systeme rahmen · feste Form, freie Hand</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-9a">9A</a> „Phrasenzähler und Riser“ · Patch <a class="xref" href="#p-9b">9B</a> „Das Songpult“ (<a class="xref" href="#kwp-13">KWP-13</a>) · Patch <a class="xref" href="#p-9c">9C</a> „Freie Hand: Exquis, Rings, Transposition“ · dazu die interaktive Formleiste</dd>
+  <dt>Prüfstatus</dt><dd>Programm nach Handbuch 1.0 mit Kapitel und Seite <span class="tag tag-h">Hersteller</span>, Exquis nach User Guide 1.1 <span class="tag tag-h">Hersteller</span>, Muxlicer-Gate-Modus und One-Shot nach <a class="xref" href="#kwp-13">KWP-13</a> am Pult ermittelt <span class="tag tag-ok">verifiziert</span>. Ob die Programm-Transposition auch per MIDI oder pro Song-Schritt geht, wie der Exquis-Ausgang verdrahtet ist (TRS Typ A oder B), welche Achse die MOD-CV des Exquis steuert und wie die Eingänge am Elements-Nachbau beschriftet sind, ist offen <span class="tag tag-p" id="pr-109">am Gerät prüfen</span>.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k9-theorie">Teil 1 · Wie aus Zeit eine Form wird</h3>
+<p>Ein Patch, der läuft, ist noch kein Stück. Er hat einen Klang und vielleicht einen Groove, aber keinen Anfang, keinen Höhepunkt und kein Ende. Eine <b>Form</b> entsteht, wenn sich Dinge zu bestimmten Zeiten ändern und andere gleich bleiben. Das Ohr braucht beides: Wiederholung, um sich zu orientieren, und Veränderung, um dabeizubleiben. Wer nur wiederholt, langweilt. Wer nur verändert, verliert die Zuhörenden.</p>
+<p>Im Pult hat das eine handfeste Folge: Arrangieren heißt, <b>Spannungen zu bauen, die nur an bestimmten Zeitpunkten springen</b>. Ein Fill, eine neue Stimme, ein anderer Raum, eine Transposition sind alle dasselbe: ein Wert, der eine Weile stillsteht und dann an einer Grenze wechselt. Die Kapitel <a class="xref" href="#k6">06</a> bis <a class="xref" href="#k8">08</a> haben die Werkzeuge gebaut, die solche Werte erzeugen. Dieses Kapitel gibt ihnen einen Takt, in dem sie wechseln dürfen.</p>
+
+<h4 id="k9-form">1 · Phrase, Teil, Form</h4>
+<p>Musik zählt in Gruppen. Vier Schläge sind ein Takt, vier oder acht Takte eine <b>Phrase</b>, zwei bis vier Phrasen ein <b>Teil</b> (Intro, Thema, Break), und die Reihenfolge der Teile ist die <b>Form</b>. Nicht jede Musik hält sich daran, aber fast jede Tanz-, Pop- und Ambientmusik spielt damit. Im Pult zählt jede Ebene ein anderes Modul:</p>
+<figure>
+  <div class="sv">{{FIG:zeitebenen}}</div>
+  <figcaption><b>Fünf Ebenen, fünf Zähler.</b> Das Programm zählt Takte, das Arythmatik vier Takte (<a class="xref" href="#kwp-10">KWP-10</a>), eine Programm-Spur die Phrase, ein Flip-Ausgang oder ein halbierter Muxlicer die 16 Takte und der Muxlicer mit acht Schritten die ganze Form. Wichtig ist die orange Rampe: Eine gute Änderung beginnt schon vor der Grenze.</figcaption>
+</figure>
+<p>Eine einzige Ebene klingt mechanisch, wie ein Wecker, der alle acht Takte klingelt. Erst wenn mehrere Ebenen gleichzeitig zählen, entsteht etwas, das sich nach Form anfühlt: kleine Änderungen alle vier Takte, größere alle acht, eine neue Besetzung alle sechzehn, ein neuer Teil alle zweiunddreißig. Diesen Gedanken kennst Du aus <a class="xref" href="#kwp-11">KWP-11</a> als <i>verschachtelte Zyklen</i>.</p>
+
+<h4 id="k9-acht">2 · Die 8-Takt-Regel</h4>
+<p>Die Faustregel aus <a class="xref" href="#kwp-10">KWP-10</a> und <a class="xref" href="#kwp-11">KWP-11</a> lautet: <b>Alle acht Takte ändert sich etwas.</b> Das kann klein sein: eine Stimme mehr, ein Filter etwas offener, eine Hi-Hat, die sich verdoppelt. Die Regel ist kein Gesetz, sondern ein Taktgeber für Entscheidungen. Sie zwingt Dich, für jede Phrase zu wissen, was sie von der vorigen unterscheidet.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Ebene</th><th>was sich typisch ändert</th><th>wer es im Pult auslöst</th></tr></thead>
+<tbody>
+<tr><td>4 Takte</td><td>Kleinigkeit: ein Fill, ein Akzent, ein einzelnes Bit der Turing Machine</td><td>Arythmatik OUT 4 (16 Steps, 1 Hit, in Vierteln getaktet) · <a class="xref" href="#kwp-10">KWP-10</a></td></tr>
+<tr><td>8 Takte</td><td>Melodie neu würfeln, Grids-Map, Klangfarbe, Becken auf der Eins</td><td>PHRASE-Spur im Programm (Patch <a class="xref" href="#p-9a">9A</a>) oder Arythmatik OUT 1 (32 Steps in Vierteln)</td></tr>
+<tr><td>16 Takte</td><td>Stimme rein oder raus, Effekt wechseln (<a class="xref" href="#kwp-18">KWP-18</a>)</td><td>Arythmatik OUT 3 als Flip · zweite Programm-Spur mit 64 Steps</td></tr>
+<tr><td>32–64 Takte</td><td>neuer Teil: Besetzung, Energie, Raum, Tonart</td><td>Muxlicer-Schritt (Patch <a class="xref" href="#p-9b">9B</a>) · Song-Schritt im Programm</td></tr>
+</tbody></table></div>
+<p><b>Wie das Programm acht Takte zählt.</b> Im Clock-Baum aus Kapitel <a class="xref" href="#k7">07</a> läuft das Programm mit dem Eingangsteiler ÷ 6, also ein Step pro Sechzehntel. Jede der zwölf Spuren hat zusätzlich eine eigene <b>Clock Division</b> von 1 bis 16. <span class="tag tag-h">Hersteller</span> Kap. 20.01, S. 32 Bei Division 4 ist ein Step eine Viertel, und 32 Steps sind genau acht Takte. Diese Rechnung brauchst Du in jedem Abschnitt dieses Kapitels:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Länge</th><th>Clock Division</th><th>ein Step ist</th><th>ergibt</th></tr></thead>
+<tbody>
+<tr><td>16 Steps</td><td>1</td><td>Sechzehntel</td><td>1 Takt</td></tr>
+<tr><td>32 Steps</td><td>4</td><td>Viertel</td><td>8 Takte, das Lauflicht ist der Phrasenzähler</td></tr>
+<tr><td>64 Steps</td><td>4</td><td>Viertel</td><td>16 Takte</td></tr>
+<tr><td>64 Steps</td><td>8</td><td>Halbe</td><td>32 Takte</td></tr>
+<tr><td>64 Steps</td><td>16</td><td>ganzer Takt</td><td>64 Takte, längste Spur im Programm</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">Eine neue Division greift bei laufendem Programm erst, wenn die Spur wieder auf ihrem ersten Step steht. <span class="tag tag-h">Hersteller</span> Kap. 20.01 Dasselbe gilt für eine neue Länge (Kap. 23.02) und für das Laden einer Sequenz (Kap. 27.03). <span class="tag tag-h">Hersteller</span> Das ist für ein Arrangement ein Vorteil: Was Du während des Spielens umstellst, rastet auf der nächsten Eins dieser Spur ein.</p>
+
+<h4 id="k9-energie">3 · Dichte und Energie</h4>
+<p>Zwei Größen beschreiben fast jeden Moment eines Stücks. <b>Dichte</b> ist, wie viel gleichzeitig passiert: Stimmen, Schläge pro Takt, Schichten. <b>Energie</b> ist, wie stark es nach vorn drängt. Beide hängen zusammen, sind aber nicht dasselbe. Ein Break mit einem einzigen, lauten, verzerrten Bass hat wenig Dichte und viel Energie; eine Ambientfläche aus zehn Schichten hat viel Dichte und wenig Energie.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Hebel</th><th>mehr Energie</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>Besetzung</td><td>mehr Stimmen, Bass dazu</td><td>Matrix-Spalten auf FOUR-PLAY-CVs, Grids-Fill = 0 als Stummschaltung</td></tr>
+<tr><td>Rhythmusdichte</td><td>mehr Schläge, Ratchets, Achtel statt Viertel</td><td>Grids-Fills, CHANCE IN des Programm, Ratchet-Variation</td></tr>
+<tr><td>Helligkeit</td><td>Filter auf, mehr Obertöne, Fold</td><td>SEM-Cutoff, Wave am 258t, Big-O</td></tr>
+<tr><td>Raum</td><td>trockener, näher</td><td>Hall-Send kleiner; wenig Energie = viel Raum (<a class="xref" href="#kwp-13">KWP-13</a>)</td></tr>
+<tr><td>Register und Tonart</td><td>höher, Rückung nach oben</td><td>Transpose im Programm, Oktave am Exquis</td></tr>
+<tr><td>Zufall</td><td>unruhiger, aber Achtung: zu viel löst den Groove auf</td><td>Grids-Chaos, Öffnung der Turing Machine</td></tr>
+</tbody></table></div>
+<p>Die wichtigste Erkenntnis aus <a class="xref" href="#kwp-13">KWP-13</a>: <b>Ein einziger Wert pro Teil, die Energie, kann viele dieser Hebel zugleich bewegen.</b> Am Muxlicer ist das der Fader des laufenden Schritts. Er geht als Spannung in CHANCE IN des Programm, und schon spielen die Programm-Spuren in energischen Teilen mehr Ratchets und bedingte Steps. Weitere Ziele kommen über Attenuverter dazu.</p>
+
+<div class="play" id="formplay">
+<h4 id="k9-formleiste">Spielplatz · Formleiste</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Acht Teile, jeder mit Energie (Fader am Muxlicer) und acht Werten (eine Zeile der 8×8). Oben siehst Du die Teile, darunter die Besetzung, unten Dichte und Energie über die Zeit. Rampen vor einer Grenze sind Riser, Zahlen über einem Teil sind Transpositionen. Wähle einen Teil, verstell seine Werte, und lies unten den Reglerplan für die Matrix ab. Beim Durchlauf setzt „Eingriff jetzt“ eine Marke in die Spur „freie Hand“.</p>
+<div class="presets" role="group" aria-label="Vorlage laden">
+<button type="button" data-fp="techno">Techno/Dub · KWP-13</button><button type="button" data-fp="ambient">Ambient-Bogen</button><button type="button" data-fp="wellen">Zwei Wellen</button><button type="button" data-fp="leer">Leer</button>
+</div>
+<div class="presets" role="group" aria-label="Teil wählen" id="flParts" style="margin-top:8px"></div>
+<div class="ctrls" id="flCtrls"></div>
+<div class="presets" role="group" aria-label="Teil-Optionen und Durchlauf">
+<button type="button" class="btn" id="flRiser" aria-pressed="false">Riser davor</button><button type="button" class="btn" id="flCut" aria-pressed="false">harter Schnitt erlaubt</button>
+<label class="btn" style="cursor:default">Transposition <select id="flTr" style="font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:2px"></select></label>
+<label class="btn" style="cursor:default">Takte pro Teil <select id="flBars" style="font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:2px"><option value="8" selected>8</option><option value="16">16</option></select></label>
+<label class="btn" style="cursor:default">BPM <select id="flBpm" style="font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:2px"><option>90</option><option>110</option><option selected>120</option><option>125</option><option>140</option></select></label>
+</div>
+<div class="presets" style="margin-top:8px">
+<button type="button" class="btn" id="flSnd" aria-pressed="false">♪ Ton aus</button><button type="button" class="btn" id="flPlay" aria-pressed="false">▶ Durchlauf</button><button type="button" class="btn" id="flHand">Eingriff jetzt</button><button type="button" class="btn" id="flClearHand">Eingriffe löschen</button>
+</div>
+<div style="overflow-x:auto"><svg id="flSvg" viewBox="0 0 720 420" role="img" aria-label="Formleiste: acht Teile nebeneinander, darunter acht Spuren der Besetzung als Kästchen, deren Deckkraft den Wert zeigt, eine Spur mit freien Eingriffen und unten die Kurven für Dichte und Energie."></svg></div>
+<p class="readout" id="flR" aria-live="polite"></p>
+<p class="muted" style="font-size:13.5px;margin:0 0 8px">Mit „♪ Ton an“ läuft der Durchlauf in Echtzeit und klingt, als Skizze im Browser, nicht als Abbild des Pults: Kick, Snare und Hi-Hat spielen ein festes Grundmuster, die Stimme eine Bassfigur, Rings eine Fläche, jeweils so laut wie ihre Spalte. Hall ist der Hall-Anteil, Helligkeit ein Tiefpass über alles, Chaos verstreut Töne und Hi-Hats. Die Energie gibt den Gesamtpegel vor; auf der Grenze springen die Werte, mit „harter Schnitt“ ohne Übergang. Riser rauschen im letzten Takt vor der Grenze hoch, danach folgt ein Becken; Eingriffe der freien Hand klingen ebenfalls als Becken. Transpositionen verschieben Bass und Fläche. Du kannst die Regler während des Durchlaufs verstellen und hörst den Teil sofort anders.</p>
+<div class="tbl w" id="flTbl"></div>
+<p class="muted" style="font-size:13.5px;margin:0">Dichte ist hier die Summe der acht Spalten ohne Hall, auf 0–5 umgerechnet, Energie der Fader. Die Prüfungen unter der Grafik folgen den Regeln dieses Kapitels: eine Änderung pro Grenze, Kick und Hi-Hat versetzt, ein großer Energiesprung angekündigt. Deine Formleiste bleibt in diesem Browser gespeichert.</p>
+</div>
+
+<h4 id="k9-matrix">4 · Muxlicer und 8×8: das Songpult</h4>
+<p>In Kapitel <a class="xref" href="#k7">07</a> hast Du den Muxlicer als Schrittzähler, Gate-Generator und Schalter kennengelernt. Für ein Arrangement bekommt er eine andere Rolle: <b>Jeder seiner acht Schritte ist ein Teil des Stücks.</b> Er wird nicht mehr in Sechzehnteln getaktet, sondern einmal pro Phrase von der PHRASE-Spur des Programm. Seine acht Gate-Ausgänge sagen dann, welcher Teil gerade läuft, und sein Fader ist die Energie dieses Teils (COM I/O, wenn die Mux-Buchsen frei sind). <span class="tag tag-h">Hersteller</span></p>
+<p>Die CatSynth 8×8 Matrix macht daraus acht Spuren. Jeder Eingang (Zeile) geht an jeden Ausgang (Spalte), der Regler am Kreuzungspunkt bestimmt, wie viel ankommt. Weil vom Muxlicer immer nur ein Gate oben ist, bleibt von jeder Spalte genau ein Regler übrig: der des laufenden Teils.</p>
+<figure>
+  <div class="sv">{{FIG:matrix9}}</div>
+  <figcaption><b>Eine Spalte ist ein Sequencer mit acht Schritten, einer pro Teil.</b> Teil 4 läuft, also liegt nur an Zeile 4 Spannung. Die Regler dieser Zeile stehen unten an den Ausgängen an. Wechselt der Muxlicer auf Teil 5, springen alle acht Ausgänge gleichzeitig auf die Werte der nächsten Zeile. Die Werte stammen aus der Vorlage „Techno/Dub“ der Formleiste.</figcaption>
+</figure>
+<p><b>Die Fill-Spalte ersetzt den VCA.</b> Grids nimmt an den drei Fill-Eingängen 0–5 V zusätzlich zum Regler. <span class="tag tag-h">Hersteller</span> Steht der Regler an Grids ganz links und die Matrix-Spalte auf null, spielt dieses Instrument keine Schläge. Damit ist eine Spalte Stummschaltung und Dichte in einem. Chaos verändert die drei Fills zufällig und kann in eine stummgeschaltete Spur vereinzelt Schläge werfen; in Teilen, in denen ein Instrument schweigen soll, gehört Chaos deshalb auf null. <span class="tag tag-h">Hersteller</span></p>
+<p><b>Versetzte Wechsel.</b> Ändern sich Kick und Hi-Hat an derselben Grenze, hört man einen Schnitt. Ändert sich nur eine, bleibt die andere als Anker stehen, und der Wechsel klingt wie ein Übergang (<a class="xref" href="#kwp-13">KWP-13</a>). Die Regel beim Einstellen: In geraden Teilen wechselt die Kick, in ungeraden die Hi-Hat. Break und Peak dürfen bewusst alles auf einmal ändern; dort soll man den Schnitt hören. Die Formleiste prüft diese Regel für Dich.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Spalte</th><th>Ziel in Patch <a class="xref" href="#p-9b">9B</a></th><th>wirkt als</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>mGrids FILL BD</td><td>Kick an, aus und wie dicht</td></tr>
+<tr><td>2</td><td>mGrids FILL SD</td><td>Snare</td></tr>
+<tr><td>3</td><td>mGrids FILL HH</td><td>Hi-Hat</td></tr>
+<tr><td>4</td><td>FOUR PLAY (Reihe 3) CV 1</td><td>Stimme 2A rein und raus</td></tr>
+<tr><td>5</td><td>FOUR PLAY (Reihe 3) CV 2</td><td>Rings, das Arpeggio vom Exquis (ab 9C)</td></tr>
+<tr><td>6</td><td>FOUR PLAY (Reihe 3) CV 3</td><td>Hall-Send aus Patch <a class="xref" href="#p-8a">8A</a>: wie viel Raum</td></tr>
+<tr><td>7</td><td>A-106-5 CV1 IN</td><td>Helligkeit der Stimme</td></tr>
+<tr><td>8</td><td>mGrids CHAOS</td><td>wie unruhig die Drums spielen</td></tr>
+<tr><td>Fader</td><td>COM I/O → Programm CHANCE IN</td><td>Energie: Ratchets, Shifts, bedingte Steps</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">Matrix-Regler sind gut für Mengen, nicht für genaue Werte. Für exakte Tonhöhen, also eine Transposition, sind sie zu ungenau (<a class="xref" href="#kwp-13">KWP-13</a>). Dafür gibt es das Programm, Abschnitt 6.</p>
+
+<h4 id="k9-programm">5 · Das Programm als Arrangeur</h4>
+<p>Das Programm kann eine Form auch allein tragen. Es hat einen Song-Modus, Mutes und mehrere Funktionen, die Variation über lange Zeit erzeugen. Im Pult arbeitet es in diesem Kapitel in drei Rollen: als <b>Zähler</b> (PHRASE- und RISER-Spur), als <b>Spieler</b> (Seq.1 für Stimme 2A, Seq.2 für Rings) und als <b>Transponierer</b>.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Funktion</th><th>was sie kann</th><th>für das Arrangement</th><th>Handbuch</th></tr></thead>
+<tbody>
+<tr><td>Song Mode</td><td>32 Songs, je 12 Song-Schritte; jeder Schritt eine Sequenz mit 1–16 Wiederholungen. Erstes Stop pausiert, zweites setzt auf Schritt 1 zurück <span class="tag tag-h">Hersteller</span></td><td>ganze Form ohne Muxlicer; Varianten einer Sequenz nacheinander</td><td>Kap. 30, S. 49–50</td></tr>
+<tr><td>Speicherplätze</td><td>64 Sequenzen; wer einen Platz überschreibt, ändert jeden Song, der ihn benutzt <span class="tag tag-h">Hersteller</span></td><td>Varianten auf eigenen Plätzen anlegen, nie das Original überschreiben</td><td>Kap. 30.08, S. 50</td></tr>
+<tr><td>Mute</td><td>Mute-Screen, Kanäle per Kanaltaste; Mute All über alt + Mute All <span class="tag tag-h">Hersteller</span></td><td>Stimmen von Hand rein und raus; ob auf den Takt quantisiert wird, <span class="tag tag-p" id="pr-110">am Gerät prüfen</span></td><td>Kap. 18.02–18.03, S. 30</td></tr>
+<tr><td>Clock Division</td><td>1–16 pro Spur, greift am ersten Step <span class="tag tag-h">Hersteller</span></td><td>Phrasen- und Riser-Spuren, eingebauter Teiler</td><td>Kap. 20.01, S. 32</td></tr>
+<tr><td>Step Condition</td><td>„x of y“, etwa 1 of 2, 1 of 4, 3 of 4 <span class="tag tag-h">Hersteller</span></td><td>ein Step, der nur in jedem zweiten oder vierten Durchlauf spielt</td><td>Kap. 32.04, S. 55</td></tr>
+<tr><td>CHANCE IN</td><td>CV skaliert die Variation-Settings; offen steht er auf high <span class="tag tag-h">Hersteller</span></td><td>Energie vom Muxlicer-Fader</td><td>Kap. 24, S. 38</td></tr>
+<tr><td>Pattern Generator</td><td>mit Record aus spielt das Ergebnis nur einmal, als Fill <span class="tag tag-h">Hersteller</span></td><td>Fill im Takt 8, von Hand ausgelöst</td><td>Kap. 22.05, S. 36</td></tr>
+<tr><td>Recall</td><td>übernimmt den zuletzt gespielten Loop einer Spur; überschreibt die Sequenz endgültig <span class="tag tag-h">Hersteller</span></td><td>eine gute Improvisation behalten</td><td>Kap. 07.05, S. 14</td></tr>
+<tr><td>RESET OUT</td><td>10 ms, 5 V beim Start und Stopp, bei Reset am Eingang und bei Play während Play <span class="tag tag-h">Hersteller</span></td><td>Muxlicer und externe Teiler auf die Eins holen</td><td>Kap. 31.04, S. 51</td></tr>
+<tr><td>Drum-Gates</td><td>Länge 10–200 ms pro Spur oder Step <span class="tag tag-h">Hersteller</span></td><td>kurz für Zähler und Trigger, lang für Gates</td><td>Kap. 09.03, S. 16</td></tr>
+</tbody></table></div>
+<p><b>Wer führt?</b> In diesem Kapitel führt der Muxlicer die Form, und das Programm spielt in jedem Teil dieselbe Sequenz, nur mit anderer Variation. Das ist die robuste Lösung, weil die Form dann an acht Fadern und vierundsechzig Reglern sichtbar ist. Der Song-Modus des Programm ist die Alternative, wenn das Material selbst wechseln soll, also wenn Teil B eine andere Melodie hat als Teil A. Beides zugleich geht, verlangt aber, dass Song-Schritte und Muxlicer-Schritte gleich lang sind und gemeinsam zurückgesetzt werden.</p>
+
+<h4 id="k9-trans">6 · Transposition als Formmittel</h4>
+<p>Eine Transposition ist der stärkste Einzelwechsel, den ein Arrangement kennt. Derselbe Groove, dieselbe Melodie, nur einen Ganzton höher, und der letzte Teil klingt wie eine Steigerung, obwohl sich sonst nichts geändert hat. Umgekehrt wirkt ein Teil auf der Quarte wie ein Ausflug, und die Rückkehr wie Heimkommen.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Schritt</th><th>Wirkung</th><th>typischer Ort</th></tr></thead>
+<tbody>
+<tr><td>+1 Halbton</td><td>Rückung: großer Schub, schnell abgenutzt</td><td>letzter Teil, einmal</td></tr>
+<tr><td>+2 Halbtöne</td><td>Rückung, frischer und weniger dick</td><td>Peak</td></tr>
+<tr><td>+5 Halbtöne (Quarte)</td><td>öffnet, wie ein Wechsel zur Subdominante; zurück klingt es wie Ankommen</td><td>B-Teil, Bridge</td></tr>
+<tr><td>+7 oder −5 (Quinte)</td><td>Spannung, will zurück</td><td>Aufbau vor dem Peak</td></tr>
+<tr><td>−2, −3</td><td>dunkler, schwerer</td><td>Break</td></tr>
+<tr><td>+12 (Oktave)</td><td>mehr Energie, keine neue Harmonie</td><td>einzelne Stimme im Peak</td></tr>
+</tbody></table></div>
+<p><b>Ganz oder teilweise.</b> Transponierst Du alles, wandert das Stück in eine neue Tonart. Transponierst Du nur die Melodie und lässt Drone oder Bass liegen, entsteht eine neue <i>Harmonie</i> über einem Orgelpunkt, das kennst Du aus Kapitel <a class="xref" href="#k4">04</a>. Das Programm kann genau das, weil es jede der vier Seq-Spuren einzeln transponiert.</p>
+<p><b>Chromatisch oder in der Skala.</b> Verschiebst Du um Halbtöne, bleibt das Intervallmuster gleich, nur die Tonart ändert sich. Verschiebst Du innerhalb der Skala (diatonisch), bleibt die Tonart, aber jede Note rückt auf die nächste Stufe, und aus Dur wird ein anderer Modus. <a class="xref" href="#kwp-13">KWP-13</a> erzeugt das analog mit einer Matrix-Spalte über den A-185-2 vor dem Quantizer. Welche der beiden Arten das Programm benutzt, ist im Handbuch nicht eindeutig, siehe die Tabelle.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Programm</th><th>was das Handbuch sagt</th><th>Kapitel</th></tr></thead>
+<tbody>
+<tr><td>Transpose</td><td>Jede der vier Seq-Spuren lässt sich transponieren: Spuren über ihre Tasten wählen, dann auf der Transpose-Tastatur spielen. Das Layout ist das der chromatischen Mono/Arp-Tastatur in der Tonart der Spur. Die Oktav-Tasten greifen erst, wenn eine Note gespielt wird. <span class="tag tag-h">Hersteller</span></td><td>19.02, S. 31</td></tr>
+<tr><td>Zurücksetzen</td><td>Das Clear-Werkzeug hat einen Eintrag „Transpose für alle Kanäle aus“; die Transposition bleibt also bestehen, bis Du sie löschst. <span class="tag tag-h">Hersteller</span> Ob sie nach dem Loslassen der Taste gehalten wird, <span class="tag tag-p" id="pr-111">am Gerät prüfen</span></td><td>Clear Tool</td></tr>
+<tr><td>Pitch-Regler (Mono)</td><td>„transponiert die ganze Sequenz diatonisch um bis zu ±12 Halbtöne“. Diatonisch und Halbtöne widersprechen sich. <span class="tag tag-h">Hersteller</span> <span class="tag tag-p" id="pr-112">am Gerät prüfen</span></td><td>11.02, S. 20</td></tr>
+<tr><td>Oktaven</td><td>Live-Keyboard, Sequenz und einzelner Step, je bis ±5 Oktaven <span class="tag tag-h">Hersteller</span></td><td>17.01, S. 29</td></tr>
+<tr><td>Tonart, Skala</td><td>Tonart global für alle Seq-Spuren, Skala pro Spur <span class="tag tag-h">Hersteller</span></td><td>10.05, S. 19</td></tr>
+<tr><td>nicht beschrieben</td><td>Transposition pro Song-Schritt, per CV oder per externem MIDI. Der einzige CV-Eingang, der Parameter moduliert, ist CHANCE IN. <span class="tag tag-h">Hersteller</span> <span class="tag tag-p" id="pr-113">am Gerät prüfen</span></td><td>24, 26, 30</td></tr>
+</tbody></table></div>
+<p>Daraus folgen zwei Wege, die beide in Patch <a class="xref" href="#p-9c">9C</a> vorkommen:</p>
+<ol>
+<li><b>Live transponieren.</b> Du drückst die Transposition von Hand, genau auf die Eins eines Teils. Der Riser aus Patch <a class="xref" href="#p-9a">9A</a> ist dabei Dein Zeichen: Wenn er oben ist, kommt der Griff. Das ist das Spielerische, und es passt zur 8-Takt-Regel, weil der Riser die Grenze ohnehin markiert.</li>
+<li><b>Vorab transponieren.</b> Du kopierst die Sequenz auf einen freien Speicherplatz, verschiebst die Kopie mit dem Pitch-Regler oder spielst sie neu ein, und setzt sie im Song-Modus als eigenen Schritt. Das ist reproduzierbar, aber starr. Und: Wird später der Platz der Kopie überschrieben, ändert sich der Song mit. <span class="tag tag-h">Hersteller</span></li>
+</ol>
+
+<h4 id="k9-ueber">7 · Übergänge zwischen Patch-Zuständen</h4>
+<p>Jeder Teil ist ein <b>Zustand</b> des Patches: welche Stimmen klingen, wie hell, wie viel Raum. Ein Übergang ist der Weg zwischen zwei Zuständen. Es gibt drei Grundformen:</p>
+<ul>
+<li><b>Schnitt.</b> Alles wechselt auf der Eins. Hart, klar, für Break und Peak. Im Songpult ist das der Normalfall, weil die Matrix springt.</li>
+<li><b>Blende.</b> Ein Wert gleitet über Sekunden in den neuen. Ein Slew-Limiter in einer Matrix-Spalte macht aus dem Sprung eine Blende: Der Hall wächst langsam, die Stimme kommt herein. Der CatSynth Slimline Slew neben dem Octal VCA ist dafür da.</li>
+<li><b>Brücke.</b> Etwas Drittes trägt über die Grenze: ein Echo, das in den neuen Teil hineinklingt (Throw, Kapitel <a class="xref" href="#k8">08</a>), ein Ton, der liegen bleibt, ein Riser.</li>
+</ul>
+<p>Für alle drei gilt die Regel aus Kapitel <a class="xref" href="#k8">08</a>: <b>Die Bewegung beginnt vor dem Wechsel und endet nach ihm.</b> Ein Wechsel, der genau auf der Eins anfängt, kommt zu spät; das Ohr will ihn kommen hören.</p>
+
+<h4 id="k9-riser">Ankündigen: Riser und ihre Verwandten</h4>
+<p>Ein <b>Riser</b> ist ein Klang, der in den letzten ein oder zwei Takten vor einer Grenze anschwillt und auf der Eins abbricht. Er sagt zwei Leuten etwas: Dir beim Spielen, dass gleich der Wechsel kommt, und den Zuhörenden, dass sie sich darauf freuen dürfen. In der elektronischen Tanzmusik ist er ein festes Ritual, in Ambient eine sanfte Welle. Im Pult gibt es mehrere Arten:</p>
+<figure>
+  <div class="sv">{{FIG:riser}}</div>
+  <figcaption><b>Sechs Ankündigungen über vier Takte vor und zwei nach der Grenze.</b> Der Rausch-Riser aus Patch <a class="xref" href="#p-9a">9A</a> steigt zwei Takte lang immer steiler an und fällt auf der Eins sofort ab. Der Ratchet-Wirbel verdichtet die Schläge, die Lücke nimmt im letzten Takt fast alles weg, das Becken setzt den Punkt, und der Downlifter lässt den neuen Teil aus einer fallenden Bewegung beginnen.</figcaption>
+</figure>
+<div class="tbl w"><table>
+<thead><tr><th>Ankündigung</th><th>so geht es</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>Rausch-Riser</td><td>langer Attack, kurzer Decay, Rauschen durch einen VCA in einen Resonator: das Rauschen bekommt eine Tonhöhe</td><td>Programm-Spur → 281t Kanal 3 → A-130-8 Kanal 3 → Elements (Patch <a class="xref" href="#p-9a">9A</a>)</td></tr>
+<tr><td>Ratchet-Wirbel</td><td>die Snare oder Hi-Hat im letzten Takt mit Ratchets 2, 3, 4</td><td>Ratchet pro Step im Programm; CHANCE IN hebt sie in energischen Teilen</td></tr>
+<tr><td>Swell</td><td>dieselbe Hüllkurve auf Cutoff oder Hall-Send; nach der Grenze länger ausklingen lassen</td><td>Mult hinter dem 281t, ein Attenuverter pro Ziel</td></tr>
+<tr><td>Pitch-Rise</td><td>wenig Hüllkurve auf die Tonhöhe einer Rauschstimme oder eines Drones</td><td>Attenuverter klein, sonst wird es ein Sirenenheulen</td></tr>
+<tr><td>Lücke</td><td>einen Takt vor der Grenze alles bis auf ein Element stumm; Stille kündigt auch an</td><td>Programm-Mute, eine Matrix-Zeile mit Nullen oder Grids-Fills per Hand</td></tr>
+<tr><td>Becken auf der Eins</td><td>Punkt hinter den Riser</td><td>PHRASE-Spur → Samples II TRIG 5</td></tr>
+<tr><td>Downlifter</td><td>nach der Grenze eine fallende Hüllkurve: der neue Teil kommt „von oben“</td><td>zweiter 281t-Kanal, Attack 0, Decay lang, auf Cutoff oder Send</td></tr>
+</tbody></table></div>
+<p><b>Die Länge des Risers</b> ist der Attack der Hüllkurve, und sie hängt am Tempo. Ein Takt dauert 240 ÷ BPM Sekunden. Startet der Trigger auf Step 29 einer 32-Step-Phrase in Vierteln, bleiben bis zur Eins vier Schläge: bei 120 BPM 2 Sekunden. Der 281t schafft Attack und Decay von 1 ms bis 10 s. <span class="tag tag-h">Hersteller</span></p>
+<div class="tbl w"><table>
+<thead><tr><th>Hit auf Step (von 32)</th><th>Länge</th><th>Attack bei 90 BPM</th><th>bei 120 BPM</th><th>bei 140 BPM</th></tr></thead>
+<tbody>
+<tr><td>31</td><td>ein halber Takt</td><td>1,3 s</td><td>1,0 s</td><td>0,9 s</td></tr>
+<tr><td>29</td><td>1 Takt</td><td>2,7 s</td><td>2,0 s</td><td>1,7 s</td></tr>
+<tr><td>25</td><td>2 Takte</td><td>5,3 s</td><td>4,0 s</td><td>3,4 s</td></tr>
+<tr><td>17</td><td>4 Takte</td><td>10,7 s</td><td>8,0 s</td><td>6,9 s</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">Vier Takte bei 90 BPM liegen knapp über dem Bereich des 281t. Dann nimmst Du den NANO SERRA (bis 40 s je Segment) <span class="tag tag-h">Hersteller</span> oder akzeptierst, dass der Riser etwas früher oben ist.</p>
+<p><b>Nur vor der Grenze, nicht bei jedem Durchlauf.</b> Ein Step am Ende eines kurzen Patterns feuert bei jedem Durchlauf. Damit der Riser nur vor der Phrasengrenze kommt, brauchst Du einen <b>Teiler</b>. Das Programm hat ihn eingebaut: Die RISER-Spur bekommt dieselbe Länge und Division wie die PHRASE-Spur, also 32 Steps in Vierteln, und spielt damit von selbst einmal pro acht Takte. Soll er nur alle 16 Takte kommen, wird die Spur 64 Steps lang (Hit auf Step 61) oder der Hit bekommt die Step Condition „1 of 2“. Ein externer Teiler hinter dem Trigger geht genauso, muss aber am Reset-Bus hängen. Sonst zählt er nach einem Stopp versetzt weiter, und der Riser kommt einen Durchlauf zu früh, mitten im Teil.</p>
+
+<h4 id="k9-bogen">8 · Spannung und Entspannung über lange Zeit</h4>
+<p>Die 8-Takt-Regel sorgt dafür, dass es nie langweilig wird. Sie sagt aber nichts darüber, <i>wohin</i> das Stück geht. Dafür braucht es einen Bogen über die ganze Länge, einen Verlauf der Energie.</p>
+<figure>
+  <div class="sv">{{FIG:boegen}}</div>
+  <figcaption><b>Drei Grundformen.</b> Beim Bogen steigt die Energie bis ins letzte Drittel und fällt dann. Die Treppe mit Bruch steigt in Stufen, bricht in einem Break ein und steigt danach höher als vorher. Zwei Wellen erzählen dieselbe Geschichte zweimal, die zweite größer. Alle drei findest Du als Vorlage in der Formleiste.</figcaption>
+</figure>
+<ul>
+<li><b>Höhepunkt spät.</b> Die meisten Stücke setzen ihren stärksten Moment ins letzte Drittel. Kommt er zu früh, bleibt danach nur Abstieg.</li>
+<li><b>Vor dem Höhepunkt zurücknehmen.</b> Ein Break wirkt durch den Kontrast: Die Energie fällt, damit sie danach höher steigen kann als je zuvor. Ohne Break klingt der Peak nur wie „etwas mehr“.</li>
+<li><b>Eine Sache aufheben.</b> Ein Element, das erst im Peak kommt (die Rückung, die volle Kick, die offene Hi-Hat), macht ihn unverwechselbar. Was von Anfang an da ist, kann im Peak nichts Neues mehr sagen.</li>
+<li><b>Langsame Bewegung unter der Form.</b> Ein 281t-Kanal im Loop mit sehr langer Rampe (<a class="xref" href="#kwp-12">KWP-12</a>) oder ein Makro aus Kapitel <a class="xref" href="#k5">05</a> bewegt eine Klangfarbe über Minuten, unabhängig von den Teilen. Die Teile springen, die Rampe gleitet; zusammen klingt das nach einem Stück, das atmet.</li>
+<li><b>Ein Wert pro Phrase.</b> Die EuroPi mit Egressus Melodiam zählt mit. Eine freie Drum-Spur des Programm mit Länge 4, Division 4, Hit auf Step 1 und Gate 20 ms gibt einen Impuls pro Takt an <span class="jack">DIN</span>. Am Skript Länge 4 und Teilung 8: Jeder Schritt dauert genau eine Phrase, das Muster 32 Takte. <span class="tag tag-h">Hersteller</span> Mit Form Square springt der Wert auf der Grenze, und jeder Teil bekommt seine eigene Lage für Cutoff oder Send; mit Sine gleitet er durch die Phrase zum Wert des nächsten Teils. Die PHRASE-Spur selbst taugt nicht als Takt: Ihre 10-ms-Gates sind zu kurz, und acht Takte liegen weit über den 3,75 s, nach denen das Skript sich zurücksetzt. <span class="tag tag-h">Hersteller</span> Laut Quelltext setzt eine Pause nur die Schritte zurück, nicht den Zähler der Teilung. Wer mitten in einer Phrase stoppt, bekommt den ersten Wechsel nach dem Neustart deshalb versetzt zur Grenze. <span class="tag tag-p" id="pr-114">am Gerät prüfen</span> Stopp am Ende einer Phrase, dann bleibt alles im Raster.</li>
+<li><b>Wiederkehr.</b> Wenn das Thema aus Teil 3 im Peak zurückkommt, erkennt man es und freut sich. Darum würfelt die Turing Machine in <a class="xref" href="#kwp-13">KWP-13</a> im Aufbau und Peak <i>nicht</i> neu.</li>
+</ul>
+
+<h4 id="k9-blenden">9 · Stimmen und Effekte ein- und ausblenden</h4>
+<p>Ein- und Ausblenden ist das häufigste Werkzeug des Arrangements, und es gibt dafür viel mehr Wege als einen Fader.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Weg</th><th>Charakter</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>VCA per Matrix</td><td>springt auf der Grenze; mit Slew eine Blende</td><td>FOUR PLAY (Reihe 3) Kanal 1 und 2, Spalten 4 und 5</td></tr>
+<tr><td>Fill auf null</td><td>Drumspur verstummt, ohne Klick, ohne VCA</td><td>Spalten 1–3 an mGrids</td></tr>
+<tr><td>Mute im Programm</td><td>von Hand, eine Taste</td><td>Mute-Screen, Kap. 18 <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Über die Klangfarbe</td><td>eine Stimme tritt zurück, weil sie dunkler wird, bevor sie leiser wird; überzeugender als Pegel</td><td>Spalte 7 an SEM CV1, Wave-CV am 258t</td></tr>
+<tr><td>Über den Raum</td><td>eine Stimme rückt nach hinten, bis sie nur noch Hall ist</td><td>Spalte 6 an den Hall-Send; trockenen Kanal zu</td></tr>
+<tr><td>Effekt rein und raus</td><td>mit Mix, Zeit oder Shift, nicht mit Feedback (<a class="xref" href="#kwp-18">KWP-18</a>)</td><td>Send-VCA, A-151 schaltet den Weg, Hüllkurve auf die Intensität</td></tr>
+</tbody></table></div>
+<p>Ein Grundsatz aus „Klangwege im Pult“ gilt hier besonders: <b>Timbre trennt besser als Pegel.</b> Eine Stimme, die hereinkommt, indem sie heller wird, wirkt gewollt. Eine, die nur lauter wird, wirkt, als habe jemand am Fader gedreht.</p>
+
+<h4 id="k9-rahmen">10 · Generative Systeme rahmen</h4>
+<p>Ein generativer Patch erzeugt ständig Neues. Damit er ein Stück wird und nicht ein Dauerrauschen aus Ideen, braucht er einen <b>Rahmen</b>: Regeln, die festlegen, was sich ändern darf, wie stark und vor allem <i>wann</i>. Der Satz dafür lautet: <b>generativ im Kleinen, komponiert im Großen.</b></p>
+<div class="tbl w"><table>
+<thead><tr><th>Rahmen</th><th>legt fest</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>Tonvorrat</td><td>welche Töne vorkommen dürfen</td><td>A-156 Quantizer, Skala pro Spur im Programm</td></tr>
+<tr><td>Zeitpunkt</td><td>wann sich etwas ändern darf: nur an der Phrasengrenze</td><td>Turing Machine gesperrt, alle 8 Takte kurz geöffnet (<a class="xref" href="#kwp-10">KWP-10</a>); S&amp;H vom 8-Takt-Trigger; Egressus mit Teilung 8 an Takt-Impulsen</td></tr>
+<tr><td>Ausmaß</td><td>wie viel sich ändert</td><td>Öffnungsdauer der TM, Hub vor Grids-Map, CHANCE IN</td></tr>
+<tr><td>Besetzung</td><td>welche Stimme überhaupt spielt</td><td>Matrix-Spalten, Mutes, Schalter am Leo Leo</td></tr>
+<tr><td>Dauer</td><td>wann es endet</td><td>Muxlicer im One-Shot ohne EOC, STOP am Leo Leo</td></tr>
+</tbody></table></div>
+<p><b>Leo Leo als Formschalter.</b> In Lektion 6.7 hast Du mit MUTE, SKIP und STOP eine Form aus fünf Teilen gespielt, ohne ein Kabel zu ziehen (außer DOWN): Intro mit zwei Noten pro Takt, volle Figur, sechzehn Schritte, Dreier gegen Vierer, Stillstand auf der letzten Note. Im Arrangement wird das zur Regel für einen generativen Teil: <b>Die Schalter sind der Rahmen, die Turing Machine an LEFT ist der Inhalt.</b> Du entscheidest pro Phrase, welcher Schalter umgelegt wird; was dann gespielt wird, entscheidet die Maschine. Den Neustart nach STOP holst Du wie in 6.7 über STAGE TRIGGER 1, etwa vom Muxlicer-Gate des nächsten Teils.</p>
+<p><b>Die Grenze zwischen Erkennen und Rauschen.</b> In der Hörübung zu Kapitel <a class="xref" href="#k6">06</a> hast Du die Schwelle gesucht, an der eine generative Figur von „mitsingbar“ zu „Zufall“ kippt. Ein guter Rahmen hält jeden Teil auf einer Seite dieser Schwelle und lässt ihn nur an Grenzen hinüberwechseln.</p>
+
+<h4 id="k9-hand">11 · Feste Form, freie Hand</h4>
+<p>Muxlicer, Matrix und Programm machen jede Aufführung gleich. Das ist gut für die Form, aber ein Stück lebt davon, dass es <i>diesmal</i> so klingt. Darum trennt dieses Kapitel zwei Ebenen: Die <b>Form</b> liegt fest auf den Reglern, die <b>Eingriffe</b> machen jeden Durchlauf einmalig. In der Formleiste ist das die Spur „freie Hand“.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Eingriff</th><th>womit</th><th>wirkt</th></tr></thead>
+<tbody>
+<tr><td>Akkord pro Teil</td><td>Exquis spielt den Arpeggiator von Seq.2; mit Hold läuft er weiter, bis Du neue Noten greifst <span class="tag tag-h">Hersteller</span></td><td>das Muster bleibt, die Harmonie wandert</td></tr>
+<tr><td>eine eingespielte Stimme</td><td>Exquis live über die Form; mit Record wird sie aufgenommen <span class="tag tag-h">Hersteller</span></td><td>eine Stimme, die nur in einem Teil auftaucht</td></tr>
+<tr><td>Ausdruck</td><td>Druck oder Kippen am Exquis als MOD-CV auf Filter oder Send</td><td>ein Teil wird heller oder räumlicher, solange Du drückst</td></tr>
+<tr><td>Transposition</td><td>Transpose-Tastatur im Programm auf der Eins</td><td>Rückung oder Ausflug</td></tr>
+<tr><td>Fill im Takt 8</td><td>Pattern Generator mit Record aus <span class="tag tag-h">Hersteller</span></td><td>einmalige Variation, danach wieder das Original</td></tr>
+<tr><td>Energie nachstellen</td><td>Muxlicer-Fader des laufenden Teils, Regler der laufenden Matrix-Zeile</td><td>ein Teil klingt heute dichter als gestern</td></tr>
+<tr><td>behalten</td><td>Recall im Programm <span class="tag tag-h">Hersteller</span></td><td>was gut war, wird zur neuen Sequenz</td></tr>
+</tbody></table></div>
+<p><b>Drei Regeln für die freie Hand.</b> Erstens: Eingriffe landen auf Grenzen, oder sie arbeiten bewusst gegen sie, etwa ein Akkordwechsel zwei Schläge vor der Eins als Vorhalt. Zweitens: pro Eingriff nur eine Sache, sonst weißt Du hinterher nicht, was gewirkt hat. Drittens: Der Riser ist Dein Countdown. Wenn er anschwillt, ist Zeit für den Griff.</p>
+<div class="box-c">
+<h4>Der Exquis am Programm</h4>
+<p>Der Exquis hat MIDI IN und MIDI OUT als Miniklinken, dazu CV-Ausgänge GATE, PITCH und MOD. <span class="tag tag-h">Hersteller</span> Das Programm empfängt über seine TRS-Buchse nach Typ A; eingehende Noten auf dem Kanal einer Seq-Spur spielen diese Spur, als käme die Note vom eigenen Keyboard, in allen Modi: Mono, Arp, Chord und Chip. <span class="tag tag-h">Hersteller</span> Kap. 26.03, S. 40 Ab Werk hören Seq.1 bis Seq.4 auf die Kanäle 1 bis 4. <span class="tag tag-h">Hersteller</span> Kap. 25.02</p>
+<ul>
+<li><b>Kein MPE.</b> Im MPE-Modus (blaue LED) verteilt der Exquis jede Note auf einen eigenen Kanal. Das Programm würde dann je nach Note eine andere Spur spielen. Für das Programm stellst Du den Modus <b>Poly Aftertouch</b> (gelbe LED) ein und dort den Notenkanal 2. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Skala am Exquis.</b> Grundton und Skala stellst Du am Exquis über die Settings-Taste und die Encoder ein, die Octave-Taste verschiebt um zwölf Halbtöne. <span class="tag tag-h">Hersteller</span> Stell dieselbe Tonart ein wie im Programm, dann liegen auf den Tasten nur Töne, die passen.</li>
+<li><b>Eigener Arpeggiator.</b> Der Exquis hat selbst einen (Order, Up, Down, Convergent, Divergent, Note repeat; classic oder latch). <span class="tag tag-h">Hersteller</span> Hier bleibt er aus: Der Arpeggiator des Programm läuft im Takt des Pults.</li>
+<li><b>Verbindung.</b> Ob der Exquis-Ausgang Typ A oder B ist, steht nicht im Guide; dafür gibt es Adapter. Läuft er über einen MIDI-Host, gilt dasselbe Kabel am Ende. <span class="tag tag-p" id="pr-115">am Gerät prüfen</span></li>
+</ul>
+</div>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k9-praxis">Teil 2 · Praxis am Rack: zählen, arrangieren, eingreifen</h3>
+<p>Alle drei Stufen bauen auf dem auf, was aus den letzten Kapiteln steht: dem Clock-Baum und dem Grids-Schlagzeug aus Patch <a class="xref" href="#p-7b">7B</a>, der Stimme 2A, die das Programm über Seq.1 spielt, und dem Raum am Send aus Patch <a class="xref" href="#p-8a">8A</a>. Stufe 9A legt einen Zähler und einen Riser darüber, 9B macht daraus eine Form mit acht Teilen, 9C gibt Dir die freie Hand. 9B baut auf 9A auf, 9C auf 9B.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-9a">9A</a></b> bekommt das Programm zwei Spuren, die nichts Hörbares spielen, sondern zählen. Die PHRASE-Spur schlägt auf der Eins jeder Phrase ein Becken an, die RISER-Spur startet einen Takt vorher eine Hüllkurve mit langem Anstieg. Sie öffnet einen VCA für Rauschen, das in Elements zu einem tönenden Rauschen wird und auf der Eins abreißt. In <b>Patch <a class="xref" href="#p-9b">9B</a></b> taktet die PHRASE-Spur den Muxlicer. Jeder Schritt ist ein Teil, die Gates gehen in die 8×8, und deren Spalten stellen pro Teil Kick, Snare, Hi-Hat, Stimme, Raum, Helligkeit und Chaos ein. Die Fader des Muxlicer sind die Energie. In <b>Patch <a class="xref" href="#p-9c">9C</a></b> spielt der Exquis über MIDI den Arpeggiator einer zweiten Programm-Spur, die Rings anstößt, und Du transponierst von Hand auf den Teilgrenzen.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Nach diesem Kapitel kannst Du jeden früheren Patch in eine Form bringen, die Du wiederholen kannst. Das Songpult aus 9B ist das Werkzeug für die Stile in Band 3: Techno braucht harte Schnitte und versetzte Drum-Wechsel, Ambient lange Blenden und einen späten Höhepunkt, beides sind nur andere Reglerstellungen. Der Riser aus 9A ist die einfachste Art, einer Form Richtung zu geben. Und 9C ist der Übergang zu Kapitel <a class="xref" href="#k10">10</a>: vom Abspielen einer Form zum Spielen in ihr.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Grundlage</td><td>Clock-Baum und mGrids → Samples II aus Patch <a class="xref" href="#p-7b">7B</a> · Stimme 2A, gespielt von Programm Seq.1 · Hall-Send aus Patch <a class="xref" href="#p-8a">8A</a></td><td>9A</td></tr>
+<tr><td>Zähler</td><td>Cre8audio Programm, Drum-Spuren 3 (PHRASE) und 4 (RISER)</td><td>9A</td></tr>
+<tr><td>Riser</td><td>Tiptop 281t Kanal 3 · CatSynth Attenuverter (Reihe 4) Kanal A · Doepfer A-130-8 Kanal 3 · A-118-2 Rauschen · Elements</td><td>9A</td></tr>
+<tr><td>Becken</td><td>Soundforce Samples II Kanal 5</td><td>9A</td></tr>
+<tr><td>Songpult</td><td>Befaco Muxlicer · CatSynth 8×8 Matrix · CatSynth Logic (Reihe 3) auf OR · 2×4 Mult Teil B</td><td>9B</td></tr>
+<tr><td>Ziele</td><td>mGrids FILL BD, SD, HH, CHAOS · FOUR PLAY (Reihe 3) Kanal 1 und 2, Kanal 3 als Hall-Send · A-106-5 CV1</td><td>9B</td></tr>
+<tr><td>Freie Hand</td><td>Intuitive Instruments Exquis · Programm Seq.2 · Rings</td><td>9C</td></tr>
+<tr><td>Abhören</td><td>Passivfader → L6 Kanal 1–6</td><td>9A / 9C</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Muxlicer, ohne Exquis</h4>
+<p>Ohne Muxlicer übernimmt der Song-Modus des Programm die Form: acht Varianten derselben Sequenz auf eigenen Speicherplätzen, jede mit einer Kleinigkeit anders (eine Spur stumm, eine Hi-Hat dazu, eine Oktave), als Song-Schritte mit je zwei Wiederholungen einer 4-Takt-Sequenz. Dann fehlt nur die Energie-Spannung; CHANCE IN bleibt offen. Ohne Exquis spielst Du in 9C den Arpeggiator auf der Tastatur des Programm selbst; die Hold-Funktion hält die Noten auch dort. <span class="tag tag-h">Hersteller</span></p>
+</div>
+
+<p class="bst" id="k9-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp9">
+  <button type="button" data-stage="9A" aria-pressed="true">Patch 9A</button>
+  <button type="button" data-stage="9B" aria-pressed="false">Patch 9B</button>
+  <button type="button" data-stage="9C" aria-pressed="false">Patch 9C</button>
+</div>
+<figure>
+<div class="sv" id="pp9"><svg class="pp" viewBox="0 0 1240 795" role="img" aria-label="Patchplan Kapitel 09: In Stufe 9A startet Programm-Spur 4 kurz vor jeder Phrasengrenze den 281t, dessen langsamer Anstieg über einen Attenuverter einen A-130-8-Kanal öffnet, der Rauschen in Elements schickt. Spur 3 schlägt auf jeder Eins ein Becken an. In Stufe 9B taktet Spur 3 den Muxlicer, seine acht Gates laufen in die 8×8-Matrix, deren Spalten Grids-Fills, Chaos, drei FOUR-PLAY-Kanäle und das SEM-Filter pro Songteil einstellen; die Fader gehen in CHANCE IN. In Stufe 9C spielt der Exquis über MIDI den Arpeggiator von Seq.2, der Rings anstößt; Matrix-Spalte 5 blendet Rings ein und aus.">
+<g class="mod off" data-st="9C">
+<rect class="m" x="20" y="20" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="44">Exquis</text>
+<text class="ms" x="32" y="60">MIDI-Controller</text>
+<circle class="jk o" cx="155" cy="72" r="7"/>
+<text class="jl" x="143" y="76" text-anchor="end">MIDI OUT</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="20" y="120" width="150" height="360" rx="3"/>
+<text class="mt" x="32" y="144">Programm</text>
+<text class="ms" x="32" y="160">Spuren 3, 4 · Seq.2</text>
+<circle class="jk" cx="35" cy="172" r="7"/>
+<text class="jl" x="47" y="176">MIDI IN</text>
+<circle class="jk" cx="35" cy="212" r="7"/>
+<text class="jl" x="47" y="216">CHANCE IN</text>
+<circle class="jk o" cx="155" cy="260" r="7"/>
+<text class="jl" x="143" y="264" text-anchor="end">DRUM 3</text>
+<circle class="jk o" cx="155" cy="300" r="7"/>
+<text class="jl" x="143" y="304" text-anchor="end">DRUM 4</text>
+<circle class="jk o" cx="155" cy="340" r="7"/>
+<text class="jl" x="143" y="344" text-anchor="end">RESET OUT</text>
+<circle class="jk o" cx="155" cy="400" r="7"/>
+<text class="jl" x="143" y="404" text-anchor="end">SEQ.2 PITCH</text>
+<circle class="jk o" cx="155" cy="440" r="7"/>
+<text class="jl" x="143" y="444" text-anchor="end">SEQ.2 GATE</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="20" y="510" width="150" height="80" rx="3"/>
+<text class="mt" x="32" y="534">A-118-2</text>
+<text class="ms" x="32" y="550">Rauschen</text>
+<circle class="jk o" cx="155" cy="562" r="7"/>
+<text class="jl" x="143" y="566" text-anchor="end">C NOISE</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="215" y="20" width="130" height="110" rx="3"/>
+<text class="mt" x="227" y="44">281t</text>
+<text class="ms" x="227" y="60">Kanal 3 · Riser</text>
+<circle class="jk" cx="230" cy="72" r="7"/>
+<text class="jl" x="242" y="76">TRIG 3</text>
+<circle class="jk o" cx="330" cy="102" r="7"/>
+<text class="jl" x="318" y="106" text-anchor="end">OUT 3</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="215" y="200" width="130" height="130" rx="3"/>
+<text class="mt" x="227" y="224">2×4 Mult</text>
+<text class="ms" x="227" y="240">Teil B</text>
+<circle class="jk" cx="230" cy="252" r="7"/>
+<text class="jl" x="242" y="256">IN</text>
+<circle class="jk o" cx="330" cy="266" r="7"/>
+<text class="jl" x="318" y="270" text-anchor="end"></text>
+<circle class="jk o" cx="330" cy="300" r="7"/>
+<text class="jl" x="318" y="304" text-anchor="end"></text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="215" y="350" width="130" height="130" rx="3"/>
+<text class="mt" x="227" y="374">Logic</text>
+<text class="ms" x="227" y="390">auf OR</text>
+<circle class="jk" cx="230" cy="402" r="7"/>
+<text class="jl" x="242" y="406">IN A</text>
+<circle class="jk" cx="230" cy="442" r="7"/>
+<text class="jl" x="242" y="446">IN B</text>
+<circle class="jk o" cx="330" cy="422" r="7"/>
+<text class="jl" x="318" y="426" text-anchor="end">OUT</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="395" y="20" width="140" height="110" rx="3"/>
+<text class="mt" x="407" y="44">Attenuverter</text>
+<text class="ms" x="407" y="60">Reihe 4 · A</text>
+<circle class="jk" cx="410" cy="72" r="7"/>
+<text class="jl" x="422" y="76">IN A</text>
+<circle class="jk o" cx="520" cy="102" r="7"/>
+<text class="jl" x="508" y="106" text-anchor="end">OUT A</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="395" y="230" width="140" height="260" rx="3"/>
+<text class="mt" x="407" y="254">Muxlicer</text>
+<text class="ms" x="407" y="270">Songpult</text>
+<circle class="jk" cx="410" cy="282" r="7"/>
+<text class="jl" x="422" y="286">CLOCK IN</text>
+<circle class="jk" cx="410" cy="342" r="7"/>
+<text class="jl" x="422" y="346">RESET</text>
+<circle class="jk o" cx="520" cy="312" r="7"/>
+<text class="jl" x="508" y="316" text-anchor="end">EOC</text>
+<circle class="jk o" cx="520" cy="372" r="7"/>
+<text class="jl" x="508" y="376" text-anchor="end">GATE 1–8</text>
+<circle class="jk o" cx="520" cy="452" r="7"/>
+<text class="jl" x="508" y="456" text-anchor="end">COM I/O</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="585" y="20" width="150" height="180" rx="3"/>
+<text class="mt" x="597" y="44">A-130-8</text>
+<text class="ms" x="597" y="60">Kanal 3 · Kanal 1</text>
+<circle class="jk" cx="600" cy="72" r="7"/>
+<text class="jl" x="612" y="76">IN 3</text>
+<circle class="jk" cx="600" cy="112" r="7"/>
+<text class="jl" x="612" y="116">CV 3</text>
+<circle class="jk o" cx="720" cy="92" r="7"/>
+<text class="jl" x="708" y="96" text-anchor="end">OUT 3</text>
+<circle class="jk o" cx="720" cy="172" r="7"/>
+<text class="jl" x="708" y="176" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="585" y="230" width="150" height="340" rx="3"/>
+<text class="mt" x="597" y="254">8×8 Matrix</text>
+<text class="ms" x="597" y="270">Zeile = Teil</text>
+<circle class="jk" cx="600" cy="372" r="7"/>
+<text class="jl" x="612" y="376">IN 1–8</text>
+<circle class="jk o" cx="720" cy="282" r="7"/>
+<text class="jl" x="708" y="286" text-anchor="end">OUT 1</text>
+<circle class="jk o" cx="720" cy="318" r="7"/>
+<text class="jl" x="708" y="322" text-anchor="end">OUT 2</text>
+<circle class="jk o" cx="720" cy="354" r="7"/>
+<text class="jl" x="708" y="358" text-anchor="end">OUT 3</text>
+<circle class="jk o" cx="720" cy="390" r="7"/>
+<text class="jl" x="708" y="394" text-anchor="end">OUT 4</text>
+<circle class="jk o" cx="720" cy="426" r="7"/>
+<text class="jl" x="708" y="430" text-anchor="end">OUT 5</text>
+<circle class="jk o" cx="720" cy="462" r="7"/>
+<text class="jl" x="708" y="466" text-anchor="end">OUT 6</text>
+<circle class="jk o" cx="720" cy="498" r="7"/>
+<text class="jl" x="708" y="502" text-anchor="end">OUT 7</text>
+<circle class="jk o" cx="720" cy="534" r="7"/>
+<text class="jl" x="708" y="538" text-anchor="end">OUT 8</text>
+</g>
+<g class="mod off" data-st="9C">
+<rect class="m" x="585" y="600" width="150" height="130" rx="3"/>
+<text class="mt" x="597" y="624">Rings</text>
+<text class="ms" x="597" y="640">Arp vom Exquis</text>
+<circle class="jk" cx="600" cy="652" r="7"/>
+<text class="jl" x="612" y="656">V/OCT</text>
+<circle class="jk" cx="600" cy="700" r="7"/>
+<text class="jl" x="612" y="704">STRUM</text>
+<circle class="jk o" cx="720" cy="676" r="7"/>
+<text class="jl" x="708" y="680" text-anchor="end">ODD</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="785" y="20" width="150" height="95" rx="3"/>
+<text class="mt" x="797" y="44">Elements</text>
+<text class="ms" x="797" y="60">Resonator</text>
+<circle class="jk" cx="800" cy="72" r="7"/>
+<text class="jl" x="812" y="76">STRIKE IN</text>
+<circle class="jk o" cx="920" cy="90" r="7"/>
+<text class="jl" x="908" y="94" text-anchor="end">OUT R</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="785" y="125" width="150" height="70" rx="3"/>
+<text class="mt" x="797" y="149">Samples II</text>
+<text class="ms" x="797" y="165">Kanal 5 · Becken</text>
+<circle class="jk" cx="800" cy="177" r="7"/>
+<text class="jl" x="812" y="181">TRIG 5</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="785" y="210" width="150" height="180" rx="3"/>
+<text class="mt" x="797" y="234">mGrids</text>
+<text class="ms" x="797" y="250">Fill und Chaos</text>
+<circle class="jk" cx="800" cy="262" r="7"/>
+<text class="jl" x="812" y="266">FILL BD</text>
+<circle class="jk" cx="800" cy="296" r="7"/>
+<text class="jl" x="812" y="300">FILL SD</text>
+<circle class="jk" cx="800" cy="330" r="7"/>
+<text class="jl" x="812" y="334">FILL HH</text>
+<circle class="jk" cx="800" cy="364" r="7"/>
+<text class="jl" x="812" y="368">CHAOS</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="785" y="405" width="150" height="285" rx="3"/>
+<text class="mt" x="797" y="429">FOUR PLAY</text>
+<text class="ms" x="797" y="445">Stimmen und Send</text>
+<circle class="jk" cx="800" cy="457" r="7"/>
+<text class="jl" x="812" y="461">IN 1</text>
+<circle class="jk" cx="800" cy="492" r="7"/>
+<text class="jl" x="812" y="496">CV 1</text>
+<circle class="jk o" cx="920" cy="474" r="7"/>
+<text class="jl" x="908" y="478" text-anchor="end">OUT 1</text>
+<circle class="jk" cx="800" cy="532" r="7"/>
+<text class="jl" x="812" y="536">IN 2</text>
+<circle class="jk" cx="800" cy="567" r="7"/>
+<text class="jl" x="812" y="571">CV 2</text>
+<circle class="jk o" cx="920" cy="550" r="7"/>
+<text class="jl" x="908" y="554" text-anchor="end">OUT 2</text>
+<circle class="jk" cx="800" cy="662" r="7"/>
+<text class="jl" x="812" y="666">CV 3</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="785" y="705" width="150" height="70" rx="3"/>
+<text class="mt" x="797" y="729">A-106-5 SEM</text>
+<text class="ms" x="797" y="745">Helligkeit</text>
+<circle class="jk" cx="800" cy="757" r="7"/>
+<text class="jl" x="812" y="761">CV1 IN</text>
+</g>
+<g class="mod off" data-st="9B 9C">
+<rect class="m" x="965" y="430" width="105" height="80" rx="3"/>
+<text class="mt" x="977" y="454">2×4 Mult</text>
+<text class="ms" x="977" y="470">Teil A</text>
+<circle class="jk" cx="980" cy="482" r="7"/>
+<text class="jl" x="992" y="486">IN</text>
+</g>
+<g class="mod" data-st="9A 9B 9C">
+<rect class="m" x="1100" y="20" width="100" height="760" rx="3"/>
+<text class="mt" x="1112" y="44">L6</text>
+<text class="ms" x="1112" y="60">über Fader</text>
+<circle class="jk" cx="1115" cy="82" r="7"/>
+<text class="jl" x="1127" y="86">K5</text>
+<circle class="jk" cx="1115" cy="550" r="7"/>
+<text class="jl" x="1127" y="554">K6</text>
+</g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab trig" d="M155,300 C195,300 190,72 230,72"/><g class="badge trig"><circle cx="192.5" cy="186" r="11"/><text x="192.5" y="190" text-anchor="middle">1</text></g></g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab cv" d="M330,102 C370,102 370,72 410,72"/><g class="badge cv"><circle cx="370" cy="87" r="11"/><text x="370" y="91" text-anchor="middle">2</text></g></g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab cv" d="M520,102 C560,102 560,112 600,112"/><g class="badge cv"><circle cx="560" cy="107" r="11"/><text x="560" y="111" text-anchor="middle">3</text></g></g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab audio" d="M155,562 C355.2,562 399.8,72 600,72"/><g class="badge audio"><circle cx="377.5" cy="317" r="11"/><text x="377.5" y="321" text-anchor="middle">4</text></g></g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab audio" d="M720,92 C760,92 760,72 800,72"/><g class="badge audio"><circle cx="760" cy="82" r="11"/><text x="760" y="86" text-anchor="middle">5</text></g></g>
+<g class="cg" data-st="9A 9B 9C"><path class="cab audio" d="M920,90 C1007.8,90 1027.2,82 1115,82"/><g class="badge audio"><circle cx="1017.5" cy="86" r="11"/><text x="1017.5" y="90" text-anchor="middle">6</text></g></g>
+<g class="cg" data-st="9A"><path class="cab trig" d="M155,260 C445.2,260 509.8,177 800,177"/><g class="badge trig"><circle cx="477.5" cy="218.5" r="11"/><text x="477.5" y="222.5" text-anchor="middle">7</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M155,260 C195,260 190,252 230,252"/><g class="badge trig"><circle cx="192.5" cy="256" r="11"/><text x="192.5" y="260" text-anchor="middle">8</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M330,266 C541.5,266 588.5,177 800,177"/><g class="badge trig"><circle cx="565" cy="221.5" r="11"/><text x="565" y="225.5" text-anchor="middle">9</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M330,300 C370,300 370,282 410,282"/><g class="badge trig"><circle cx="370" cy="291" r="11"/><text x="370" y="295" text-anchor="middle">10</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M155,340 C195,340 190,402 230,402"/><g class="badge trig"><circle cx="192.5" cy="371" r="11"/><text x="192.5" y="375" text-anchor="middle">11</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M520,312 C590,331.5 160,422.5 230,442"/><g class="badge trig"><circle cx="375" cy="377" r="11"/><text x="375" y="381" text-anchor="middle">12</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab trig" d="M330,422 C370,422 370,342 410,342"/><g class="badge trig"><circle cx="370" cy="382" r="11"/><text x="370" y="386" text-anchor="middle">13</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab gate" d="M520,372 C560,372 560,372 600,372"/><g class="badge gate"><circle cx="560" cy="372" r="11"/><text x="560" y="376" text-anchor="middle">14</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,282 C760,282 760,262 800,262"/><g class="badge cv"><circle cx="760" cy="272" r="11"/><text x="760" y="276" text-anchor="middle">15</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,318 C760,318 760,296 800,296"/><g class="badge cv"><circle cx="760" cy="307" r="11"/><text x="760" y="311" text-anchor="middle">16</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,354 C760,354 760,330 800,330"/><g class="badge cv"><circle cx="760" cy="342" r="11"/><text x="760" y="346" text-anchor="middle">17</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab audio" d="M720,172 C760,172 760,457 800,457"/><g class="badge audio"><circle cx="760" cy="314.5" r="11"/><text x="760" y="318.5" text-anchor="middle">18</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab audio" d="M920,474 C960,474 940,482 980,482"/><g class="badge audio"><circle cx="950" cy="478" r="11"/><text x="950" y="482" text-anchor="middle">19</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,390 C760,390 760,492 800,492"/><g class="badge cv"><circle cx="760" cy="441" r="11"/><text x="760" y="445" text-anchor="middle">20</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,462 C760,462 760,662 800,662"/><g class="badge cv"><circle cx="760" cy="562" r="11"/><text x="760" y="566" text-anchor="middle">21</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,498 C760,498 760,757 800,757"/><g class="badge cv"><circle cx="760" cy="627.5" r="11"/><text x="760" y="631.5" text-anchor="middle">22</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M720,534 C760,534 760,364 800,364"/><g class="badge cv"><circle cx="760" cy="449" r="11"/><text x="760" y="453" text-anchor="middle">23</text></g></g>
+<g class="cg off" data-st="9B 9C"><path class="cab cv" d="M520,452 C590,416 -35,248 35,212"/><g class="badge cv"><circle cx="277.5" cy="332" r="11"/><text x="277.5" y="336" text-anchor="middle">24</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab midi" d="M155,72 C225,87 -35,157 35,172"/><g class="badge midi"><circle cx="95" cy="122" r="11"/><text x="95" y="126" text-anchor="middle">25</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab cv" d="M155,400 C355.2,400 399.8,652 600,652"/><g class="badge cv"><circle cx="377.5" cy="526" r="11"/><text x="377.5" y="530" text-anchor="middle">26</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab gate" d="M155,440 C355.2,440 399.8,700 600,700"/><g class="badge gate"><circle cx="377.5" cy="570" r="11"/><text x="377.5" y="574" text-anchor="middle">27</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab audio" d="M720,676 C760,676 760,532 800,532"/><g class="badge audio"><circle cx="760" cy="604" r="11"/><text x="760" y="608" text-anchor="middle">28</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab audio" d="M920,550 C1007.8,550 1027.2,550 1115,550"/><g class="badge audio"><circle cx="1017.5" cy="550" r="11"/><text x="1017.5" y="554" text-anchor="middle">29</text></g></g>
+<g class="cg off" data-st="9C"><path class="cab cv" d="M720,426 C760,426 760,567 800,567"/><g class="badge cv"><circle cx="760" cy="496.5" r="11"/><text x="760" y="500.5" text-anchor="middle">30</text></g></g>
+</svg></div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--gate)"></i>Gate</span><span><i style="background:var(--trig)"></i>Trigger</span><span><i style="background:var(--muted)"></i>MIDI</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-9A="&lt;b&gt;Patch 9A, Phrasenzähler und Riser.&lt;/b&gt; Spur 4 startet den 281t einen Takt vor der Grenze (1), seine Rampe öffnet über den Attenuverter den A-130-8 (2, 3), der Rauschen in Elements schickt (4, 5), auf Kanal 5 (6). Spur 3 schlägt das Becken auf der Eins (7)." data-cap-9B="&lt;b&gt;Patch 9B, das Songpult.&lt;/b&gt; Spur 3 taktet über einen Mult Becken und Muxlicer (8–10), Reset und EOC laufen über das ODER (11–13). Die acht Gates gehen in die Matrix (14), ihre Spalten an Grids, Stimme, Hall-Send, SEM und Chaos (15–17, 20–23). Die Stimme läuft jetzt über FOUR PLAY Reihe 3 (18, 19), der Fader in CHANCE IN (24). Kabel 7 ist gezogen." data-cap-9C="&lt;b&gt;Patch 9C, freie Hand.&lt;/b&gt; Der Exquis spielt über MIDI Seq.2 (25), deren Pitch und Gate Rings stimmen und anstoßen (26, 27). Rings läuft über FOUR PLAY Kanal 2 auf L6 Kanal 6 (28, 29), Matrix-Spalte 5 blendet ihn pro Teil (30)."><b>Patch <a class="xref" href="#p-9a">9A</a>, Phrasenzähler und Riser.</b> Spur 4 startet den 281t einen Takt vor der Grenze (1), seine Rampe öffnet über den Attenuverter den A-130-8 (2, 3), der Rauschen in Elements schickt (4, 5), auf Kanal 5 (6). Spur 3 schlägt das Becken auf der Eins (7).</figcaption>
+</figure>
+
+<p class="bst" id="k9-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-9a">Stufe 1 · Patch 9A: Phrasenzähler und Riser</h4>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · Clock-Baum und Patch <a class="xref" href="#p-7b">7B</a> laufen, Samples II auf L6 Kanal 4 · Stimme 2A spielt aus Programm Seq.1 (Pitch an 258t 1V/OCT, Gate an 281t TRIG 1, wie im Kasten in Kapitel <a class="xref" href="#k8">08</a>) · Patch <a class="xref" href="#p-8a">8A</a> steckt, Kabel 7 aus 8A gezogen, 8B und 8C abgebaut · Passivfader Kanal 5 und 6 unten · im Programm eine 4-Takt-Sequenz auf Seq.1</div><div class="why">Die Stimme spielt eine kurze Figur mit Pausen, Grids einen Groove, der Hall liegt am Send. Das ist das Material, das gleich eine Form bekommt.</div></div></li>
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Programm</b> · Drum-Spur 3 = PHRASE: Länge 32, Clock Division 4, Hit auf Step 1, Gate 10 ms · Drum-Spur 4 = RISER: Länge 32, Division 4, Hit auf Step 29, Gate 10 ms · bei beiden Spuren Chance In Amount auf 0</div><div class="why">32 Steps in Vierteln sind acht Takte; das Lauflicht der PHRASE-Spur zeigt Dir, wo in der Phrase Du bist (<a class="xref" href="#kwp-13">KWP-13</a>). Chance In Amount 0 sorgt dafür, dass die Energie aus 9B die Zähler nicht verstellt.</div></div></li>
+<li><span class="n trig">1</span><div class="r"><div class="route">Programm <b>DRUM 4</b> → 281t <b>TRIG 3</b></div><div class="why">Kanal 3 auf Attack/Decay (Transient). Ein Takt vor jeder Phrasengrenze startet die Hüllkurve.</div></div></li>
+<li><span class="n cv">2</span><div class="r"><div class="route">281t <b>OUT 3</b> → Attenuverter (Reihe 4) <b>IN A</b></div><div class="why">Der 281t liefert bis 10 V, der A-130-8 ist bei 5 V voll offen. <span class="tag tag-h">Hersteller</span> Ohne Abschwächer wäre der Riser nach dem halben Anstieg schon oben und stünde dann still.</div></div></li>
+<li><span class="n cv">3</span><div class="r"><div class="route">Attenuverter <b>OUT A</b> → A-130-8 <b>CV 3</b></div><div class="why">ATTEN A auf halbem Weg nach rechts, OFFSET A auf 12 Uhr: aus 0–10 V werden 0–5 V, wie in Patch <a class="xref" href="#p-2a">2A</a>. Am ZeroScope siehst Du, ob der Gipfel bei 5 V liegt.</div></div></li>
+<li><span class="n audio">4</span><div class="r"><div class="route">A-118-2 <b>C NOISE</b> → A-130-8 <b>IN 3</b></div><div class="why">Farbiges Rauschen, BLUE zurück, RED etwas auf: weicher als weißes. Der VCA ist ohne CV zu, das Rauschen hörst Du nur, solange der Riser läuft.</div></div></li>
+<li><span class="n audio">5</span><div class="r"><div class="route">A-130-8 <b>OUT 3</b> → Elements <b>STRIKE IN</b></div><div class="why">Elements hat zwei Audioeingänge. Der erste läuft durch die Bow/Blow-Hüllkurve und braucht ein Gate, der zweite geht ohne Bearbeitung direkt in den Resonator. <span class="tag tag-h">Hersteller</span> Hier ist der zweite gemeint; wie er am Nachbau beschriftet ist, <span class="tag tag-p" id="pr-116">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n audio">6</span><div class="r"><div class="route">Elements <b>OUT R</b> → Passivfader → L6 <b>Kanal 5</b></div><div class="why">Bei kleinem SPACE trägt OUT R den Resonator. <span class="tag tag-h">Hersteller</span> Pan leicht aus der Mitte, damit der Riser neben der Stimme steht.</div></div></li>
+<li><span class="n trig">7</span><div class="r"><div class="route">Programm <b>DRUM 3</b> → Samples II <b>TRIG 5</b></div><div class="why">Ein Becken auf Kanal 5 der Bank. Es setzt den Punkt hinter den Riser, genau auf die Eins jeder Phrase. Kanal 5 liegt im Summenausgang OUT 5, solange sein eigener Ausgang frei ist. <span class="tag tag-h">Hersteller</span></div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-9a">9A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 3: ≈ 2 s · 1 Takt"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="73.4" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 2 s · 1 Takt</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 3: kurz · Abriss"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kurz · Abriss</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN A: 10 V → 5 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="35.1" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">10 V → 5 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="OFFSET A: 0 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">OFFSET A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ELEM DAMPING: lang"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ELEM DAMPING</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">lang</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ELEM GEOMETRY: Saite bis Platte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ELEM GEOMETRY</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Saite bis Platte</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ELEM BRIGHTNESS: weich"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ELEM BRIGHTNESS</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">weich</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ELEM SPACE: schmal"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ELEM SPACE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">schmal</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Den Attack stellst Du nach Gehör ein: Der Riser soll genau auf der Eins oben sein, nicht vorher und nicht danach. Ist er früher oben, steht er einen Moment still und verliert die Spannung; kommt er zu spät, schneidet der neue Teil ihn ab. Elements stimmst Du mit den Tonhöhenreglern ohne V/OCT-Kabel auf den Grundton der Stimme, eine oder zwei Oktaven höher.</p>
+<div class="box-c">
+<h4>Gegenprobe: Riser bei jedem Durchlauf</h4>
+<p>Stell die RISER-Spur kurz auf 16 Steps und Division 1, Hit auf Step 13. Jetzt kommt der Riser in jedem Takt, und nach einer halben Minute hörst Du ihn nicht mehr. Das ist der Grund, warum er nur vor der Grenze kommen darf: Eine Ankündigung, die ständig kommt, kündigt nichts mehr an. Danach zurück auf 32 Steps und Division 4.</p>
+</div>
+<div class="check"><b>Kontrollpunkt 9A</b> Das Lauflicht der PHRASE-Spur läuft in acht Takten einmal über alle 32 Pads. Im achten Takt schwillt auf Kanal 5 ein tönendes Rauschen an, wird immer schneller lauter und reißt auf der Eins ab, im selben Moment kommt das Becken. Dann ist acht Takte lang Ruhe. Stopp und Start: Der erste Riser kommt wieder vor Takt 9, nicht irgendwo in der Mitte.</div>
+
+<h4 id="p-9b">Stufe 2 · Patch 9B: das Songpult</h4>
+<p>Zieh Kabel 7 und Kabel 1 aus Patch <a class="xref" href="#p-8a">8A</a> (A-130-8 OUT 1 → Mult A). Muxlicer: Gate Mode auf „Gate = Schritt“; laut <a class="xref" href="#kwp-13">KWP-13</a> steht der Regler dafür auf 9 Uhr, genau auf der Linie zur GATE-MODE-Buchse <span class="tag tag-ok">verifiziert</span>, die Buchse bleibt frei. Address-Regler auf Run, nichts in ADDRESS CV, Mux-I/Os und ALL IN frei. Logic (Reihe 3): Schiebeschalter auf OR. FOUR PLAY (Reihe 3): LEVEL 1, 2 und 3 zu, CURVE linear; Kanal 3 bleibt der Send aus 8A. An mGrids alle drei Fill-Regler und den Chaos-Regler ganz nach links. An der 8×8 alle Regler zu.</p>
+<ol class="cables" start="8">
+<li><span class="n trig">8</span><div class="r"><div class="route">Programm <b>DRUM 3</b> → 2×4 Mult <b>Teil B IN</b></div><div class="why">Kabel 7 wandert hierher. Die PHRASE-Spur wird jetzt zweimal gebraucht.</div></div></li>
+<li><span class="n trig">9</span><div class="r"><div class="route">Mult B → Samples II <b>TRIG 5</b></div><div class="why">Das Becken bleibt.</div></div></li>
+<li><span class="n trig">10</span><div class="r"><div class="route">Mult B → Muxlicer <b>CLOCK IN</b></div><div class="why">Ein Puls pro Phrase, ein Schritt pro Phrase. Der Speed-Encoder stellt sich beim Einstecken auf 1/1. <span class="tag tag-h">Hersteller</span> Der Muxlicer schaltet auf der fallenden Flanke; mit 10 ms Gate liegt der Wechsel unhörbar knapp hinter der Eins. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n trig">11</span><div class="r"><div class="route">Programm <b>RESET OUT</b> → Logic <b>IN A</b></div><div class="why">Beim Start sendet das Programm 10 ms, 5 V. <span class="tag tag-h">Hersteller</span> Kap. 31.04</div></div></li>
+<li><span class="n trig">12</span><div class="r"><div class="route">Muxlicer <b>EOC</b> → Logic <b>IN B</b></div><div class="why">Am Ende von Teil 8 ein kurzer Trigger. <span class="tag tag-h">Hersteller</span> Ziehst Du dieses Kabel, endet der Song nach Teil 8.</div></div></li>
+<li><span class="n trig">13</span><div class="r"><div class="route">Logic <b>OUT</b> → Muxlicer <b>RESET / ONE SHOT</b></div><div class="why">Der Ausgang der ersten Stufe, nicht der Inverter. Gestoppt löst RESET einen einmaligen Durchlauf aus, beim Laufen springt er auf Schritt 1. <span class="tag tag-h">Hersteller</span> Der Muxlicer läuft hier im One-Shot: acht Teile, dann Stopp, das EOC startet über das ODER den nächsten Durchlauf (<a class="xref" href="#kwp-13">KWP-13</a>). <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n gate">14</span><div class="r"><div class="route">Muxlicer <b>GATE OUT 1–8</b> → 8×8 <b>IN 1–8</b></div><div class="why">Acht Kabel, hier als ein Schritt gezählt: Gate 1 an Zeile 1 und so weiter. Die Reihenfolge muss stimmen, Zeile = Teil. Jedes Gate steht den ganzen Teil lang.</div></div></li>
+<li><span class="n cv">15</span><div class="r"><div class="route">8×8 <b>OUT 1</b> → mGrids <b>FILL BD</b></div><div class="why">Spalte 1, die Kick. Grids nimmt 0–5 V zusätzlich zum Regler. <span class="tag tag-h">Hersteller</span> Wie hoch die Muxlicer-Gates sind und welcher Matrix-Regler 5 V ergibt, misst Du einmal mit dem ZeroScope. <span class="tag tag-p" id="pr-117">am Gerät prüfen</span></div></div></li>
+<li><span class="n cv">16</span><div class="r"><div class="route">8×8 <b>OUT 2</b> → mGrids <b>FILL SD</b></div><div class="why">Spalte 2, die Snare.</div></div></li>
+<li><span class="n cv">17</span><div class="r"><div class="route">8×8 <b>OUT 3</b> → mGrids <b>FILL HH</b></div><div class="why">Spalte 3, die Hi-Hat. Die Beschriftung der Fill-Buchsen am mGrids <span class="tag tag-p" id="pr-118">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n audio">18</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → FOUR PLAY (Reihe 3) <b>IN 1</b></div><div class="why">Die Stimme bekommt einen zweiten VCA, der nur vom Arrangement gesteuert wird. Der A-130-8 bleibt der VCA für die Hüllkurve.</div></div></li>
+<li><span class="n audio">19</span><div class="r"><div class="route">FOUR PLAY (Reihe 3) <b>OUT 1</b> → 2×4 Mult <b>Teil A IN</b></div><div class="why">Ab hier ist alles wie in Patch <a class="xref" href="#p-8a">8A</a>: trocken auf Kanal 3, Send in den Hall. Schweigt die Stimme, schweigt auch ihr Send, die Hallfahne klingt aus.</div></div></li>
+<li><span class="n cv">20</span><div class="r"><div class="route">8×8 <b>OUT 4</b> → FOUR PLAY (Reihe 3) <b>CV 1</b></div><div class="why">Spalte 4, die Stimme. Beim Veils-Vorbild reichen +5 V bei vollem CV-Regler für Verstärkung 1 <span class="tag tag-h">Hersteller</span>; ob der FOUR PLAY genauso skaliert, <span class="tag tag-p" id="pr-119">am Gerät prüfen</span>. CV 2 bekommt später ein eigenes Kabel, bis dahin wirkt CV 1 auch auf Kanal 2. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">21</span><div class="r"><div class="route">8×8 <b>OUT 6</b> → FOUR PLAY (Reihe 3) <b>CV 3</b></div><div class="why">Spalte 6, der Hall-Send. Er ersetzt den Throw aus 8A: Jetzt bestimmt jeder Teil, wie viel Raum er hat. Weil CV 3 ein eigenes Kabel hat, wirkt Spalte 4 an CV 1 nicht auf den Send.</div></div></li>
+<li><span class="n cv">22</span><div class="r"><div class="route">8×8 <b>OUT 7</b> → A-106-5 <b>CV1 IN</b></div><div class="why">Spalte 7, die Helligkeit. CV1 hat keinen Abschwächer <span class="tag tag-h">Hersteller</span>, den Hub stellst Du an der Matrix ein; CV2 trägt weiter die Filterhüllkurve aus 2A.</div></div></li>
+<li><span class="n cv">23</span><div class="r"><div class="route">8×8 <b>OUT 8</b> → mGrids <b>CHAOS</b></div><div class="why">Spalte 8, die Unruhe. Im Aufbau hoch, im Peak runter: Das Muster rastet ein, wenn alles zusammenkommt (<a class="xref" href="#kwp-13">KWP-13</a>).</div></div></li>
+<li><span class="n cv">24</span><div class="r"><div class="route">Muxlicer <b>COM I/O</b> → Programm <b>CHANCE IN</b></div><div class="why">Der Fader des laufenden Teils. Im Programm bei Seq.1 Chance In Amount auf etwa die Hälfte und eine Ratchet- und eine Condition-Variation einstellen. <span class="tag tag-h">Hersteller</span> Kap. 24 Mehr Energie heißt mehr Ratchets und bedingte Steps in der Stimme.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-9b">9B</a> · Muxlicer und Matrix</p>
+<p>Die Regler stellst Du nach der Vorlage „Techno/Dub“ der Formleiste ein, Zeile für Zeile. Werte von 0 bis 5 entsprechen sechs Stellungen von 7 Uhr (0) bis 5 Uhr (5): 1 = 9 Uhr, 2 = 11 Uhr, 3 = 1 Uhr, 4 = 3 Uhr. Die Muxlicer-Fader stehen auf der Energie desselben Teils. Die Tabelle unter der Formleiste zeigt den aktuellen Plan; verstellst Du dort etwas, ändert sich die Tabelle mit.</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MUX SPEED: 1/1"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MUX SPEED</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">1/1</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MUX GATE MODE: Gate = Schritt"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MUX GATE MODE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Gate = Schritt</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="GRIDS FILL BD: zu, nur CV"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">GRIDS FILL BD</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu, nur CV</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="GRIDS CHAOS: zu, nur CV"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">GRIDS CHAOS</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu, nur CV</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 1: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP LEVEL 3: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP LEVEL 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+</div>
+<div class="check"><b>Kontrollpunkt 9B</b> Start am µYarns: Teil 1 beginnt nur mit Hi-Hat und Raum. Nach acht Takten kommt das Becken, und mit ihm die Kick, sonst ändert sich wenig. In Teil 3 verdichtet sich die Hi-Hat, die Kick bleibt als Anker, und die Stimme kommt dazu. In Teil 5 bricht alles bis auf einen großen Raum weg, in Teil 7 ist alles da. Nach Teil 8 springt das Stück zurück auf Teil 1. Dreh während Teil 4 am Fader von Schritt 4: Die Stimme spielt mehr oder weniger Ratchets. Dreh in Zeile 6 an Spalte 1: Die Kick ändert sich erst, wenn Teil 6 dran ist.</div>
+
+<h4 id="p-9c">Stufe 3 · Patch 9C: freie Hand mit Exquis, Rings und Transposition</h4>
+<p>9A und 9B bleiben stehen. Am Exquis: Modus Poly Aftertouch (gelbe LED), Notenkanal 2, Grundton und Skala wie im Programm. <span class="tag tag-h">Hersteller</span> Im Programm: Seq.2 auf Arp, Hold an, eine Oktave über der Stimme. Rings: modal, DAMPING mittel, POSITION mittig. L6 Kanal 6 Pan gegenüber Kanal 5, Fader unten.</p>
+<ol class="cables" start="25">
+<li><span class="n midi">25</span><div class="r"><div class="route">Exquis <b>MIDI OUT</b> → (Adapter oder MIDI-Host) → Programm <b>MIDI IN</b></div><div class="why">Noten auf Kanal 2 spielen Seq.2, auch im Arp-Modus. <span class="tag tag-h">Hersteller</span> Kap. 26.03 Kommt nichts an: TRS-Typ des Exquis und Kanal prüfen. <span class="tag tag-p" id="pr-120">am Gerät prüfen</span></div></div></li>
+<li><span class="n cv">26</span><div class="r"><div class="route">Programm <b>SEQ.2 PITCH</b> → Rings <b>V/OCT</b></div><div class="why">Nur Seq.1 und Seq.2 haben analoge Ausgänge; Pitch ist quantisiert, 0–10 V. <span class="tag tag-h">Hersteller</span> Kap. 10.04</div></div></li>
+<li><span class="n gate">27</span><div class="r"><div class="route">Programm <b>SEQ.2 GATE</b> → Rings <b>STRUM</b></div><div class="why">5 V pro Note. <span class="tag tag-h">Hersteller</span> Ohne Kabel in Rings IN regt Rings sich bei jedem Anschlag selbst an. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">28</span><div class="r"><div class="route">Rings <b>ODD</b> → FOUR PLAY (Reihe 3) <b>IN 2</b></div><div class="why">Solange EVEN frei ist, liegen beide Anteile an ODD. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">29</span><div class="r"><div class="route">FOUR PLAY (Reihe 3) <b>OUT 2</b> → Passivfader → L6 <b>Kanal 6</b></div><div class="why">Mit Stecker in OUT 1 und OUT 2 bleiben die Kanäle getrennt, auch vom Send auf Kanal 3; ein freier Ausgang würde in den Kanal rechts daneben mischen. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">30</span><div class="r"><div class="route">8×8 <b>OUT 5</b> → FOUR PLAY (Reihe 3) <b>CV 2</b></div><div class="why">Spalte 5. Jetzt bestimmt das Arrangement, in welchen Teilen Rings klingt; was er spielt, bestimmst Du am Exquis.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-9c">9C</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="RINGS DAMPING: mittel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">RINGS DAMPING</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">mittel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="RINGS POSITION: mittig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">RINGS POSITION</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">mittig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="RINGS BRIGHTNESS: eher weich"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">RINGS BRIGHTNESS</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">eher weich</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="RINGS STRUCTURE: harmonisch"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">RINGS STRUCTURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">harmonisch</text></svg>
+</div>
+<h4>Spielen: drei Eingriffe pro Durchlauf</h4>
+<ol>
+<li><b>Akkord pro Teil.</b> Greif zu Beginn von Teil 3 einen Dreiklang auf dem Exquis und lass los. Der Arpeggiator läuft mit Hold weiter. Zwei Schläge vor Teil 4 greifst Du den nächsten: Die neue Harmonie kommt als Vorhalt und rastet auf der Eins ein.</li>
+<li><b>Rückung im Peak.</b> Wenn in Teil 6 der Riser anschwillt, rufst Du die Transpose-Funktion auf, wählst Seq.1 und Seq.2 und drückst auf der Eins von Teil 7 die Taste zwei Halbtöne über dem Grundton. <span class="tag tag-h">Hersteller</span> Kap. 19.02 Zum Outro über das Clear-Werkzeug „Transpose aus“ zurück. Wie die Transpose-Tastatur auf den Grundton bezogen ist, merkst Du beim ersten Versuch. <span class="tag tag-p" id="pr-121">am Gerät prüfen</span></li>
+<li><b>Orgelpunkt statt Rückung.</b> Dieselbe Rückung nur auf Seq.2: Die Stimme bleibt, Rings rückt. Für einen Teil reibt es, dann löst Du auf.</li>
+</ol>
+<div class="check"><b>Kontrollpunkt 9C</b> In den Teilen, in denen Spalte 5 offen ist, spielt Rings ein Arpeggio aus den Tönen, die Du zuletzt gegriffen hast, im Takt des Pults. Lässt Du los, läuft es weiter. In Teilen mit Spalte 5 auf null schweigt Rings, egal was Du greifst. Nach der Transposition im Peak klingen Stimme und Arpeggio zwei Halbtöne höher, Drums und Riser bleiben, wie sie sind.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k9-hoeren">08 · Hörübung: Wann hörst Du die Grenze?</p>
+<ol>
+<li><b>Ohne Ankündigung.</b> Kabel 3 ziehen, Becken stumm (Programm-Mute auf Spur 3 oder Samples-Kanal 5 zu). Lass zwei Teile laufen und tipp mit, wann ein neuer Teil beginnt. Dann alles wieder an. Mit Riser und Becken weißt Du es einen Takt vorher.</li>
+<li><b>Schnitt oder Übergang.</b> Stell an einer Grenze Kick und Hi-Hat gleichzeitig um, an der nächsten nur die Hi-Hat. Die erste klingt wie ein neues Stück, die zweite wie derselbe Song, der weitergeht.</li>
+<li><b>Energie ohne Besetzung.</b> Lass alle Matrix-Zeilen gleich und bewege nur die Muxlicer-Fader. Was ändert sich, nur weil die Stimme mehr Ratchets spielt? Mehr, als man erwartet.</li>
+<li><b>Riser im Ohr der anderen.</b> Spiel jemandem einen Durchlauf vor, ohne etwas zu erklären. Frag danach, wo der Höhepunkt war. Liegt er dort, wo Du ihn gebaut hast?</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k9-var">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>Riser im Takt der Tonart.</b> Ein Mult hinter Programm SEQ.1 PITCH, ein Abzweig an Elements V/OCT: Der Riser singt jetzt den Ton, den die Stimme gerade spielt.</li>
+<li><b>Riser auch auf das Filter.</b> 281t OUT 3 über einen Mult zusätzlich an einen zweiten Attenuverter-Kanal und an die Cutoff-CV einer anderen Stimme. Rauschen und Klang öffnen sich gemeinsam.</li>
+<li><b>Nur alle 16 Takte.</b> RISER-Spur auf 64 Steps, Hit auf Step 61. Oder Hit auf Step 29 mit der Condition „1 of 2“. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Blende statt Sprung.</b> Matrix-Spalte 6 durch den CatSynth Slew, bevor sie an den Hall-Send geht. Der Raum wächst über Sekunden in den Break hinein.</li>
+<li><b>Sechzehn Takte pro Teil.</b> Speed-Encoder am Muxlicer auf /2. Die Form dauert dann 128 Takte, bei 125 BPM gut vier Minuten (<a class="xref" href="#kwp-13">KWP-13</a>). Der Riser kommt weiter alle acht Takte; für ihn die Spur auf 64 Steps.</li>
+<li><b>Sechs Teile.</b> GATE OUT 7 über einen Mult zusätzlich an das ODER statt des EOC: Sobald Teil 7 beginnen würde, springt der Muxlicer auf Teil 1. Ob Gate 7 dabei kurz aufblitzt, <span class="tag tag-p" id="pr-122">am Gerät prüfen</span> (<a class="xref" href="#kwp-13">KWP-13</a>).</li>
+<li><b>Exquis-Ausdruck.</b> Exquis <b>MOD</b> über einen Attenuverter an Rings BRIGHTNESS. Wer drückt, macht das Arpeggio heller. Welche Achse die MOD-CV führt, <span class="tag tag-p" id="pr-123">am Gerät prüfen</span>.</li>
+<li><b>Fill im achten Takt.</b> Pattern Generator mit Record aus kurz vor der Grenze auslösen: Die Stimme spielt einmal eine Variation, dann wieder ihr Original. <span class="tag tag-h">Hersteller</span> Kap. 22.05</li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · nur der Zähler.</b> Nur 9A: PHRASE-Spur, Becken, Riser. Die Teile wechselst Du von Hand mit Programm-Mutes und den Grids-Fills. Das ist die schnellste Art, einem laufenden Patch eine Form zu geben.</li>
+<li><b>Vertiefte Variante · die TM pro Teil (<a class="xref" href="#kwp-10">KWP-10</a>, <a class="xref" href="#kwp-13">13</a>).</b> Die PHRASE-Spur über einen Volcan und einen FOUR-PLAY-Kanal an die Wahrscheinlichkeit der µTuring Machine, eine freie Matrix-Spalte an die CV dieses FOUR-PLAY-Kanals. Pro Teil ist festgelegt, wie weit die Melodie neu würfelt; in Aufbau und Peak bleibt sie gesperrt, damit das Thema wiederkommt.</li>
+<li><b>Grids pro Phrase (<a class="xref" href="#kwp-11">KWP-11</a>).</b> Eine 8-Takt-getaktete Zufallsspannung über einen Attenuverter an MAP X: Jede Phrase spielt eine Variation desselben Grooves. Wenig Hub heißt Variation, viel Hub ein anderes Pattern.</li>
+<li><b>Die Hi-Hat durch vier Effekte (<a class="xref" href="#kwp-18">KWP-18</a>).</b> Eine 16-Takt-Spur im Programm taktet den A-151, die Riser-Hüllkurve steuert die Intensität der vier Effekte.</li>
+<li><b>Leo Leo als Teil.</b> Eine Muxlicer-Gate-Leitung über einen Mult an STAGE TRIGGER 1 des Leo Leo: Mit Beginn dieses Teils startet die Matrix neu. Mit STOP auf Stufe 4 endet die generative Figur von selbst (Lektion 6.7).</li>
+<li><b>Song-Modus als zweite Ebene.</b> Für einen B-Teil mit eigener Melodie die Sequenz kopieren, ändern, und im Song-Modus mit gleich vielen Takten pro Song-Schritt wie pro Muxlicer-Schritt anlegen. Beide hängen am selben Reset. Ob der Song-Schritt nach der längsten Spur oder nach Seq.1 zählt, <span class="tag tag-p" id="pr-124">am Gerät prüfen</span>.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k9-komp">11 · Kompositionsaufgabe: acht Teile, ein Bogen, drei Eingriffe</p>
+<p>Plan zuerst in der Formleiste eine Form mit acht Teilen à acht Takten, bei 120 BPM gut zwei Minuten. Wähle eine der drei Bogenformen, setz zwei Riser und eine Transposition, und übertrag den Reglerplan auf Muxlicer und Matrix. Dann nimm drei Durchläufe auf dem L6 auf:</p>
+<ol>
+<li><b>Durchlauf 1 · nur die Form.</b> Hände weg. Hör, ob der Bogen trägt und ob jede Grenze eine Änderung bringt.</li>
+<li><b>Durchlauf 2 · mit freier Hand.</b> Drei Eingriffe, nicht mehr: ein Akkordwechsel am Exquis, die Rückung im Peak, eine Sache Deiner Wahl. Notier vorher, an welcher Grenze.</li>
+<li><b>Durchlauf 3 · gegen die Form.</b> Dieselben drei Eingriffe, aber jeweils zwei Schläge vor der Grenze. Klingt es nach Vorhalt oder nach Fehler?</li>
+</ol>
+<p>Vergleich die Aufnahmen. Der L6 nimmt jeden Kanal einzeln auf; beim Nachhören kannst Du Riser und Becken auch einmal stumm schalten und hören, was sie für die Form tun.</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k9-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k9l1"><label for="k9l1">Aus Steps und Clock Division im Programm eine Spur bauen, die genau acht Takte lang ist.</label></li>
+<li><input type="checkbox" id="k9l2"><label for="k9l2">Fünf Zeitebenen benennen und sagen, welches Modul jede zählt.</label></li>
+<li><input type="checkbox" id="k9l3"><label for="k9l3">Erklären, warum eine Matrix-Spalte mit Muxlicer-Gates ein Sequencer mit einem Wert pro Teil ist.</label></li>
+<li><input type="checkbox" id="k9l4"><label for="k9l4">Dichte und Energie unterscheiden und für jede drei Hebel im Pult nennen.</label></li>
+<li><input type="checkbox" id="k9l5"><label for="k9l5">Einen Riser so einstellen, dass er auf der Eins oben ist, und ihn nur vor der Phrasengrenze kommen lassen.</label></li>
+<li><input type="checkbox" id="k9l6"><label for="k9l6">Kick- und Hi-Hat-Wechsel versetzen und einen Schnitt bewusst setzen.</label></li>
+<li><input type="checkbox" id="k9l7"><label for="k9l7">Mit dem Programm live transponieren und die Transposition wieder löschen.</label></li>
+<li><input type="checkbox" id="k9l8"><label for="k9l8">Den Exquis so einstellen, dass er genau eine Programm-Spur spielt.</label></li>
+<li><input type="checkbox" id="k9l9"><label for="k9l9">Einen generativen Teil mit Tonvorrat, Zeitpunkt und Ausmaß rahmen.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Der Riser kommt mitten im Teil</summary><ol>
+<li>Länge und Division der RISER-Spur gleich wie bei PHRASE? Eine neue Division greift erst am ersten Step der Spur. <span class="tag tag-h">Hersteller</span></li>
+<li>Hängt das Programm am Reset-Bus? Ohne Reset beginnt die Zählung nach einem Stopp irgendwo.</li>
+<li>Bei externem Teiler: Bekommt er den Reset?</li>
+</ol></details>
+<details><summary>Der Riser ist zu früh oben oder bleibt leise</summary><ol>
+<li>ATTEN A zu weit rechts: Die Hüllkurve erreicht die 5 V des A-130-8 schon auf halbem Weg. Am ZeroScope nachmessen.</li>
+<li>Attack zur Tempotabelle passend? Bei 120 BPM ein Takt = 2 s.</li>
+<li>Kein Ton aus Elements: Steckt das Rauschen im Eingang, der ein Gate braucht? Dann den anderen Eingang nehmen, oder DAMPING ganz links.</li>
+</ol></details>
+<details><summary>Der Muxlicer beginnt mit Teil 2 oder bleibt stehen</summary><ol>
+<li>Kommt der erste PHRASE-Puls vor dem Reset an, springt er sofort weiter. Dann die Zeilen um eins verschieben oder den Hit auf Step 32 setzen und das Becken auf eine eigene Spur legen. <span class="tag tag-p" id="pr-125">am Gerät prüfen</span></li>
+<li>Steht er nach Teil 8: EOC-Kabel 12 steckt? Logic auf OR, Ausgang der ersten Stufe?</li>
+<li>Gate der PHRASE-Spur zu lang: Der Muxlicer schaltet auf der fallenden Flanke. <span class="tag tag-h">Hersteller</span></li>
+</ol></details>
+<details><summary>Eine Spur schweigt nicht, obwohl ihre Spalte auf null steht</summary><ol>
+<li>Grids-Regler nicht ganz links: Der Regler addiert sich zur CV.</li>
+<li>Chaos nicht null: Es wirft auch in stummgeschaltete Spuren Schläge. <span class="tag tag-h">Hersteller</span></li>
+<li>FOUR PLAY: LEVEL nicht ganz zu, dann bleibt eine Grundöffnung.</li>
+</ol></details>
+<details><summary>Rings spielt nicht oder falsch</summary><ol>
+<li>Exquis im MPE-Modus? Dann verteilt er die Noten über Kanäle. Poly Aftertouch, Kanal 2.</li>
+<li>Seq.2 auf Arp und Hold an? Ohne Hold endet das Arpeggio beim Loslassen.</li>
+<li>Spalte 5 im laufenden Teil auf null?</li>
+<li>Kommen überhaupt Noten an? Spiel Seq.2 einmal auf der Tastatur des Programm selbst. Geht das, liegt es am MIDI-Weg.</li>
+</ol></details>
+<details><summary>Die Transposition bleibt nicht oder trifft alles</summary><ol>
+<li>Welche Seq-Spuren waren auf der Transpose-Seite gewählt? Drums transponieren nicht, Seq.1 und Seq.2 nur, wenn ausgewählt.</li>
+<li>Zurück geht es über das Clear-Werkzeug „Transpose aus“. <span class="tag tag-h">Hersteller</span></li>
+</ol></details>
+</div>
+
+<p class="bst" id="k9-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k4">B1-04</a></span> Orgelpunkt, Rings, Elements<br><span class="id"><a href="#k5">B1-05</a></span> Makros, lange Rampen<br><span class="id"><a href="#k6">B1-06</a></span> Leo Leo 6.7, Turing Machine<br><span class="id"><a href="#k7">B1-07</a></span> Clock-Baum, Muxlicer<br><span class="id"><a href="#k8">B1-08</a></span> Send, Throw, Übergänge</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-f02">B2-F-02</a></span> Songform-Bausteine<br><span class="id"><a href="#b2-d01">B2-D-01</a></span> Matrix-Sequencing<br><span class="id"><a href="#b2-d03">B2-D-03</a></span> Clock, Reset, Logik<br><span class="id"><a href="#b2-c04">B2-C-04</a></span> Ein Modulator, viele Ziele</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-01">B3-01</a></span> Ambient · <a class="xref" href="#b3-02">B3-02</a> · <a class="xref" href="#b3-05">B3-05</a><br><span class="id"><a class="xref" href="#kwp-10">KWP-10</a>, <a class="xref" href="#kwp-11">11</a></span> Die 8-Takt-Regel<br><span class="id"><a href="#kwp-13">KWP-13</a></span> Songform auf dem Muxlicer<br><span class="id"><a href="#kwp-18">KWP-18</a></span> Hi-Hat durch vier FX</div>
+<div><b>Module</b><span class="id"><a href="#mp-programm">MOD-Programm</a></span> · <span class="id"><a href="#mp-muxlicer">MOD-Muxlicer</a></span><br><span class="id"><a href="#mp-8x8">MOD-8x8</a></span> · <span class="id"><a href="#mp-exquis">MOD-Exquis</a></span><br><span class="id"><a href="#mp-elements">MOD-Elements</a></span> · <span class="id"><a href="#mp-rings">MOD-Rings</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult zu prüfen</h4>
+<ul>
+<li><b>Programm:</b> ob Transpose nach dem Loslassen gehalten wird, wie die Transpose-Tastatur auf den Grundton bezogen ist, ob der Pitch-Regler chromatisch oder diatonisch verschiebt, ob Transpose per MIDI oder pro Song-Schritt geht, ob Mutes auf den Takt warten. <span class="tag tag-p" id="pr-126">am Gerät prüfen</span></li>
+<li><b>Muxlicer:</b> Pegel der Gate-Ausgänge; ob der erste PHRASE-Puls nach dem Reset Teil 1 überspringt. <span class="tag tag-p" id="pr-127">am Gerät prüfen</span></li>
+<li><b>8×8 Matrix:</b> welche Reglerstellung bei diesem Gatepegel 5 V an Grids ergibt. <span class="tag tag-p" id="pr-128">am Gerät prüfen</span></li>
+<li><b>Elements-Nachbau:</b> Beschriftung der beiden Audioeingänge. <span class="tag tag-p" id="pr-129">am Gerät prüfen</span></li>
+<li><b>Exquis:</b> TRS Typ A oder B am MIDI-Ausgang; welche Achse an MOD liegt und welcher Spannungsbereich. Nachtrag aus Kapitel <a class="xref" href="#k10">10</a>: laut Händler Typ A, MOD folgt laut Produktbeschreibung dem Druck, die CV-Ausgänge liefern 0–5 V. <span class="tag tag-h">Hersteller</span> <span class="tag tag-p" id="pr-130">am Gerät prüfen</span></li>
+<li><b>FOUR PLAY:</b> CV bis zur vollen Öffnung bei LEVEL zu (wie in Kapitel <a class="xref" href="#k3">03</a> und <a class="xref" href="#k8">08</a>). <span class="tag tag-p" id="pr-131">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

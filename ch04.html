@@ -1,0 +1,832 @@
+<!-- ======================= KAPITEL 04 ======================= -->
+<section class="part chapter" id="k4">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 04</span><h2>Pads, Drones und Atmosphären</h2></div>
+<p class="muted"><i>Von einer Stimme zu einer sich langsam entwickelnden Klangfläche</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 3 × 90 min</b><span>drei Sitzungen</span></div>
+  <div><b>32</b><span>Kabel über vier Stufen</span></div>
+  <div><b>21</b><span>Module + L6</span></div>
+  <div><b><a class="xref" href="#k1">B1-01</a> bis <a class="xref" href="#k3">03</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du baust aus Patch <a class="xref" href="#p-1c">1C</a> eine mehrschichtige Fläche, die über Minuten trägt: Du stimmst Schwebungen und Intervalle nach Gehör, gibst jeder Schicht ihr eigenes Register und ihr eigenes Tempo, wechselst die Harmonie langsam über einem liegenden Grundton und blendest dieselbe Fläche zwischen Drone, Pad und Pluck hin und her. Den Raum baust Du von der ersten Stufe an mit, nicht erst am Schluss.</dd>
+  <dt>Theorie</dt><dd>Drone, Pad und Pluck als drei Zeitgestalten · Schwebung in Hertz und Cent · reine und gleichstufige Intervalle · Resonanzen in Filter, Resonator und Raum · Schichten nach Register und Tempo · langsame Zyklen, die sich nicht wiederholen · Orgelpunkt und Harmoniewechsel · Anregung: Rauschen oder Anstoß · Echo und Hall als Teil des Instruments</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-4a">4A</a> „Der Drone bekommt Raum“ · Patch <a class="xref" href="#p-4b">4B</a> „Eine Fläche über dem Orgelpunkt“ · Patch <a class="xref" href="#p-4c">4C</a> „Resonanzen: Rings, Skies, Elements“ · Patch <a class="xref" href="#p-4d">4D</a> „Vom Drone zum Pluck, die Frahm-Fläche“</dd>
+  <dt>Klangziel</dt><dd>Die ruhigen Stücke von Ólafur Arnalds und Nils Frahm: warm und nah, dunkel statt glänzend, langsame Harmonien über einem liegenden Ton, Wiederholungen, die weicher und weiter weg zurückkommen, und ein Raum, der zum Klang gehört.</dd>
+  <dt>Prüfstatus</dt><dd>Kennwerte nach Herstellerangaben <span class="tag tag-h">Hersteller</span>. Patch <a class="xref" href="#p-1c">1C</a>, die Lötbrücken am A-130-8, der Offset des Attenuverters und die Buchsen an µYarns und Big-O-Folder sind am Pult geprüft <span class="tag tag-ok">verifiziert</span>. Neu in diesem Kapitel und noch <span class="tag tag-p" id="pr-24">am Gerät prüfen</span>: Beschriftungen an Rings-, Elements- und Skies-Nachbau, Buchsen am Morphor Echo, zweiter Eingang des Surges, Tonhöheneingang des Big-O und das Dauer-Gate für Elements. Die Liste steht am Kapitelende.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k4-theorie">Teil 1 · Was eine Fläche trägt</h3>
+<p>Patch <a class="xref" href="#p-1c">1C</a> klang schon nach mehr als einem Ton: zwei Oszillatoren, ein langsam atmendes Filter, eine warme Schwebung. Nach zwei Minuten aber merkst Du, dass er auf der Stelle tritt. Eine Fläche, die fünf oder zehn Minuten trägt, braucht mehr als einen schönen Klang. Sie braucht <b>Schichten</b>, die sich nicht gegenseitig verdecken, <b>Bewegung</b>, die zu langsam ist, um sie mitzuzählen, eine <b>Harmonie</b>, die sich ab und zu verschiebt, und einen <b>Raum</b>, in dem das alles nachklingt.</p>
+<p>Das Klangziel für dieses Kapitel sind die ruhigen Stücke von Ólafur Arnalds und Nils Frahm. Hör Dir vor dem Patchen zwei, drei davon bewusst an und achte nicht auf die Instrumente, sondern auf das, was Du hier nachbauen kannst: Der Grundton bleibt oft sehr lange liegen, während darüber die Akkorde wechseln. Die Anschläge sind weich, fast gedämpft, und das Hohe fehlt. Wiederholungen kommen als Echo zurück und werden dabei dunkler. Und der Hall ist so groß, dass er die Töne miteinander verbindet. Keiner dieser Punkte hängt am Oszillator. Für Frahms „Says“ ist das in <a href="#kwp">KWP-04</a> schon aufgeschrieben: ein gewöhnlicher Sägezahn, aber lange Release-Zeiten, Chorus und ein Arpeggio, das einfach weiterläuft.</p>
+
+<h4 id="k4-dpp">1 · Drone, Pad und Pluck: drei Zeitgestalten</h4>
+<p>Die drei Begriffe beschreiben weniger eine Klangfarbe als einen Verlauf in der Zeit. Ein <b>Drone</b> hat keinen Anfang und kein Ende, er steht. Ein <b>Pad</b> schwillt langsam an, hält und klingt lange aus; es ist eine Fläche, die gespielt wird. Ein <b>Pluck</b> ist ein Anschlag, der schnell verklingt. Was die drei unterscheidet, ist die Art, wie der Klang Energie bekommt: dauernd, für die Dauer einer Note oder nur in einem kurzen Stoß.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 330" role="img" aria-label="Drei Zeitgestalten über zwölf Sekunden: Der Drone wird dauernd angeregt und steht. Das Pad schwillt langsam an, hält und klingt lang aus. Der Pluck bekommt nur kurze Anstöße und klingt jedes Mal schnell ab.">
+<text x="10" y="52" class="t-lab">Drone</text>
+<text x="10" y="70" class="t-sub">Anregung dauernd, kein Ende</text>
+<line x1="270" y1="88" x2="740" y2="88" class="t-grid"/>
+<polyline points="270,88 271.6,84.8 273.1,81.5 274.7,78.2 276.3,74.9 277.8,71.6 279.4,68.3 281,64.9 282.5,61.5 284.1,58.1 285.7,54.7 287.2,54.6 288.8,54.5 290.4,54.4 291.9,54.3 293.5,54.2 295.1,54.1 296.6,54 298.2,53.9 299.8,53.8 301.3,53.7 302.9,53.6 304.5,53.5 306,53.5 307.6,53.4 309.2,53.3 310.7,53.3 312.3,53.2 313.9,53.1 315.4,53.1 317,53 318.6,53 320.1,52.9 321.7,52.9 323.3,52.8 324.8,52.8 326.4,52.8 328,52.7 329.5,52.7 331.1,52.7 332.7,52.7 334.2,52.7 335.8,52.6 337.4,52.6 338.9,52.6 340.5,52.6 342.1,52.7 343.6,52.7 345.2,52.7 346.8,52.7 348.3,52.7 349.9,52.7 351.5,52.8 353,52.8 354.6,52.8 356.2,52.9 357.7,52.9 359.3,53 360.9,53 362.4,53.1 364,53.2 365.6,53.2 367.1,53.3 368.7,53.4 370.3,53.4 371.8,53.5 373.4,53.6 375,53.7 376.5,53.7 378.1,53.8 379.7,53.9 381.2,54 382.8,54.1 384.4,54.2 385.9,54.3 387.5,54.4 389.1,54.5 390.6,54.6 392.2,54.7 393.8,54.8 395.3,54.9 396.9,55 398.5,55.1 400,55.3 401.6,55.4 403.2,55.5 404.7,55.6 406.3,55.7 407.9,55.8 409.4,55.9 411,56 412.6,56.2 414.1,56.3 415.7,56.4 417.3,56.5 418.8,56.6 420.4,56.7 422,56.8 423.5,56.9 425.1,57 426.7,57.1 428.2,57.2 429.8,57.3 431.4,57.4 432.9,57.5 434.5,57.6 436.1,57.7 437.6,57.8 439.2,57.9 440.8,57.9 442.3,58 443.9,58.1 445.5,58.2 447,58.2 448.6,58.3 450.2,58.4 451.7,58.4 453.3,58.5 454.9,58.5 456.4,58.6 458,58.6 459.6,58.7 461.1,58.7 462.7,58.7 464.3,58.8 465.8,58.8 467.4,58.8 469,58.8 470.5,58.9 472.1,58.9 473.7,58.9 475.2,58.9 476.8,58.9 478.4,58.9 479.9,58.9 481.5,58.9 483.1,58.8 484.6,58.8 486.2,58.8 487.8,58.8 489.3,58.7 490.9,58.7 492.5,58.7 494,58.6 495.6,58.6 497.2,58.5 498.7,58.5 500.3,58.4 501.9,58.3 503.4,58.3 505,58.2 506.6,58.1 508.1,58.1 509.7,58 511.3,57.9 512.8,57.8 514.4,57.7 516,57.6 517.5,57.5 519.1,57.5 520.7,57.4 522.2,57.3 523.8,57.2 525.4,57.1 526.9,57 528.5,56.9 530.1,56.8 531.6,56.6 533.2,56.5 534.8,56.4 536.3,56.3 537.9,56.2 539.5,56.1 541,56 542.6,55.9 544.2,55.8 545.7,55.6 547.3,55.5 548.9,55.4 550.4,55.3 552,55.2 553.6,55.1 555.1,55 556.7,54.9 558.3,54.8 559.8,54.7 561.4,54.6 563,54.5 564.5,54.4 566.1,54.3 567.7,54.2 569.2,54.1 570.8,54 572.4,53.9 573.9,53.8 575.5,53.7 577.1,53.6 578.6,53.5 580.2,53.5 581.8,53.4 583.3,53.3 584.9,53.3 586.5,53.2 588,53.1 589.6,53.1 591.2,53 592.7,53 594.3,52.9 595.9,52.9 597.4,52.8 599,52.8 600.6,52.8 602.1,52.7 603.7,52.7 605.3,52.7 606.8,52.7 608.4,52.7 610,52.6 611.5,52.6 613.1,52.6 614.7,52.6 616.2,52.7 617.8,52.7 619.4,52.7 620.9,52.7 622.5,52.7 624.1,52.7 625.6,52.8 627.2,52.8 628.8,52.8 630.3,52.9 631.9,52.9 633.5,53 635,53 636.6,53.1 638.2,53.2 639.7,53.2 641.3,53.3 642.9,53.4 644.4,53.4 646,53.5 647.6,53.6 649.1,53.7 650.7,53.7 652.3,53.8 653.8,53.9 655.4,54 657,54.1 658.5,54.2 660.1,54.3 661.7,54.4 663.2,54.5 664.8,54.6 666.4,54.7 667.9,54.8 669.5,54.9 671.1,55 672.6,55.1 674.2,55.3 675.8,55.4 677.3,55.5 678.9,55.6 680.5,55.7 682,55.8 683.6,55.9 685.2,56 686.7,56.2 688.3,56.3 689.9,56.4 691.4,56.5 693,56.6 694.6,56.7 696.1,56.8 697.7,56.9 699.3,57 700.8,57.1 702.4,57.2 704,57.3 705.5,57.4 707.1,57.5 708.7,57.6 710.2,57.7 711.8,57.8 713.4,57.9 714.9,57.9 716.5,58 718.1,58.1 719.6,58.2 721.2,58.2 722.8,58.3 724.3,58.4 725.9,58.4 727.5,58.5 729,58.5 730.6,58.6 732.2,58.6 733.7,58.7 735.3,58.7 736.9,58.7 738.4,58.8 740,58.8" class="sig sig-audio"/>
+<rect x="270" y="94" width="470" height="6" class="fill-cv" opacity=".55"/>
+<text x="10" y="147" class="t-lab">Pad</text>
+<text x="10" y="165" class="t-sub">langsam an, lange gehalten, lang aus</text>
+<line x1="270" y1="183" x2="740" y2="183" class="t-grid"/>
+<polyline points="270,183 271.6,183 273.1,183 274.7,183 276.3,183 277.8,183 279.4,183 281,183 282.5,183 284.1,183 285.7,183 287.2,183 288.8,183 290.4,183 291.9,183 293.5,183 295.1,183 296.6,183 298.2,183 299.8,183 301.3,183 302.9,183 304.5,183 306,183 307.6,183 309.2,183 310.7,181.5 312.3,180.1 313.9,178.7 315.4,177.4 317,176.1 318.6,174.8 320.1,173.6 321.7,172.4 323.3,171.2 324.8,170.1 326.4,169 328,167.9 329.5,166.9 331.1,165.9 332.7,164.9 334.2,163.9 335.8,163 337.4,162.1 338.9,161.2 340.5,160.4 342.1,159.5 343.6,158.7 345.2,158 346.8,157.2 348.3,156.5 349.9,155.7 351.5,155 353,154.4 354.6,153.7 356.2,153.1 357.7,152.4 359.3,151.8 360.9,151.3 362.4,150.7 364,150.1 365.6,149.6 367.1,149.1 368.7,148.6 370.3,148.1 371.8,147.6 373.4,147.1 375,146.7 376.5,146.2 378.1,145.8 379.7,145.4 381.2,145 382.8,144.6 384.4,144.2 385.9,143.8 387.5,143.5 389.1,143.1 390.6,142.8 392.2,142.4 393.8,142.1 395.3,141.8 396.9,141.5 398.5,141.2 400,140.9 401.6,140.6 403.2,140.4 404.7,140.1 406.3,139.8 407.9,139.6 409.4,139.4 411,139.1 412.6,138.9 414.1,138.7 415.7,138.5 417.3,138.2 418.8,138 420.4,137.8 422,137.6 423.5,137.5 425.1,137.3 426.7,137.1 428.2,136.9 429.8,136.8 431.4,136.6 432.9,136.4 434.5,136.3 436.1,136.1 437.6,136 439.2,135.9 440.8,135.7 442.3,135.6 443.9,135.5 445.5,135.3 447,135.2 448.6,135.1 450.2,135 451.7,134.9 453.3,134.8 454.9,134.6 456.4,134.5 458,134.4 459.6,134.3 461.1,134.3 462.7,134.2 464.3,134.1 465.8,134 467.4,133.9 469,133.8 470.5,133.7 472.1,133.7 473.7,133.6 475.2,133.5 476.8,133.4 478.4,133.4 479.9,133.3 481.5,133.2 483.1,133.2 484.6,133.1 486.2,133.1 487.8,133 489.3,132.9 490.9,132.9 492.5,132.8 494,132.8 495.6,132.7 497.2,132.7 498.7,132.6 500.3,132.6 501.9,132.5 503.4,132.5 505,132.5 506.6,132.4 508.1,132.4 509.7,132.3 511.3,132.3 512.8,132.3 514.4,132.2 516,132.2 517.5,132.2 519.1,132.1 520.7,132.1 522.2,132.1 523.8,132 525.4,132 526.9,132 528.5,132 530.1,131.9 531.6,131.9 533.2,131.9 534.8,131.8 536.3,131.8 537.9,131.8 539.5,131.8 541,131.8 542.6,131.7 544.2,131.7 545.7,131.7 547.3,131.7 548.9,131.7 550.4,131.6 552,131.6 553.6,131.6 555.1,131.6 556.7,131.6 558.3,131.6 559.8,131.5 561.4,131.5 563,131.5 564.5,131.5 566.1,131.5 567.7,131.5 569.2,131.5 570.8,131.4 572.4,131.4 573.9,131.4 575.5,131.4 577.1,131.4 578.6,131.4 580.2,131.4 581.8,131.4 583.3,131.4 584.9,132.6 586.5,133.9 588,135.1 589.6,136.3 591.2,137.4 592.7,138.5 594.3,139.6 595.9,140.7 597.4,141.8 599,142.8 600.6,143.8 602.1,144.7 603.7,145.7 605.3,146.6 606.8,147.5 608.4,148.4 610,149.2 611.5,150.1 613.1,150.9 614.7,151.7 616.2,152.4 617.8,153.2 619.4,153.9 620.9,154.7 622.5,155.4 624.1,156 625.6,156.7 627.2,157.4 628.8,158 630.3,158.6 631.9,159.2 633.5,159.8 635,160.4 636.6,160.9 638.2,161.5 639.7,162 641.3,162.5 642.9,163 644.4,163.5 646,164 647.6,164.5 649.1,164.9 650.7,165.4 652.3,165.8 653.8,166.2 655.4,166.6 657,167 658.5,167.4 660.1,167.8 661.7,168.2 663.2,168.6 664.8,168.9 666.4,169.3 667.9,169.6 669.5,169.9 671.1,170.3 672.6,170.6 674.2,170.9 675.8,171.2 677.3,171.5 678.9,171.8 680.5,172 682,172.3 683.6,172.6 685.2,172.8 686.7,173.1 688.3,173.3 689.9,173.6 691.4,173.8 693,174 694.6,174.2 696.1,174.5 697.7,174.7 699.3,174.9 700.8,175.1 702.4,175.3 704,175.5 705.5,175.7 707.1,175.8 708.7,176 710.2,176.2 711.8,176.4 713.4,176.5 714.9,176.7 716.5,176.8 718.1,177 719.6,177.1 721.2,177.3 722.8,177.4 724.3,177.6 725.9,177.7 727.5,177.8 729,177.9 730.6,178.1 732.2,178.2 733.7,178.3 735.3,178.4 736.9,178.5 738.4,178.7 740,178.8" class="sig sig-audio"/>
+<rect x="309.2" y="189" width="274.2" height="6" class="fill-cv" opacity=".55"/>
+<text x="10" y="242" class="t-lab">Pluck</text>
+<text x="10" y="260" class="t-sub">nur Anstöße, schnelles Abklingen</text>
+<line x1="270" y1="278" x2="740" y2="278" class="t-grid"/>
+<polyline points="270,278 271.6,278 273.1,278 274.7,278 276.3,278 277.8,278 279.4,278 281,278 282.5,278 284.1,278 285.7,278 287.2,278 288.8,278 290.4,233.8 291.9,238.6 293.5,242.8 295.1,246.6 296.6,250 298.2,253 299.8,255.7 301.3,258.1 302.9,260.3 304.5,262.2 306,263.9 307.6,265.4 309.2,266.8 310.7,268 312.3,269.1 313.9,270 315.4,270.9 317,271.7 318.6,272.4 320.1,273 321.7,273.5 323.3,274 324.8,274.4 326.4,274.8 328,275.2 329.5,275.5 331.1,275.7 332.7,276 334.2,276.2 335.8,276.4 337.4,276.6 338.9,276.7 340.5,276.9 342.1,277 343.6,277.1 345.2,277.2 346.8,277.3 348.3,231.2 349.9,236.3 351.5,240.8 353,244.8 354.6,248.4 356.2,251.6 357.7,254.4 359.3,257 360.9,259.2 362.4,261.3 364,263.1 365.6,264.7 367.1,266.1 368.7,267.4 370.3,268.6 371.8,269.6 373.4,270.5 375,271.3 376.5,272 378.1,272.7 379.7,273.2 381.2,273.8 382.8,274.2 384.4,274.6 385.9,275 387.5,275.3 389.1,275.6 390.6,275.9 392.2,276.1 393.8,276.3 395.3,276.5 396.9,276.6 398.5,276.8 400,276.9 401.6,277 403.2,277.1 404.7,277.2 406.3,277.3 407.9,233.8 409.4,238.6 411,242.8 412.6,246.6 414.1,250 415.7,253 417.3,255.7 418.8,258.1 420.4,260.3 422,262.2 423.5,263.9 425.1,265.4 426.7,266.8 428.2,268 429.8,269.1 431.4,270 432.9,270.9 434.5,271.7 436.1,272.4 437.6,273 439.2,273.5 440.8,274 442.3,274.4 443.9,274.8 445.5,275.2 447,275.5 448.6,275.7 450.2,276 451.7,276.2 453.3,276.4 454.9,276.6 456.4,276.7 458,276.9 459.6,277 461.1,277.1 462.7,277.2 464.3,277.3 465.8,231.2 467.4,236.3 469,240.8 470.5,244.8 472.1,248.4 473.7,251.6 475.2,254.4 476.8,257 478.4,259.2 479.9,261.3 481.5,263.1 483.1,264.7 484.6,266.1 486.2,267.4 487.8,268.6 489.3,269.6 490.9,270.5 492.5,271.3 494,272 495.6,272.7 497.2,273.2 498.7,273.8 500.3,274.2 501.9,274.6 503.4,275 505,275.3 506.6,275.6 508.1,275.9 509.7,276.1 511.3,276.3 512.8,276.5 514.4,276.6 516,276.8 517.5,276.9 519.1,277 520.7,277.1 522.2,277.2 523.8,277.3 525.4,233.8 526.9,238.6 528.5,242.8 530.1,246.6 531.6,250 533.2,253 534.8,255.7 536.3,258.1 537.9,260.3 539.5,262.2 541,263.9 542.6,265.4 544.2,266.8 545.7,268 547.3,269.1 548.9,270 550.4,270.9 552,271.7 553.6,272.4 555.1,273 556.7,273.5 558.3,274 559.8,274.4 561.4,274.8 563,275.2 564.5,275.5 566.1,275.7 567.7,276 569.2,276.2 570.8,276.4 572.4,276.6 573.9,276.7 575.5,276.9 577.1,277 578.6,277.1 580.2,277.2 581.8,277.3 583.3,231.2 584.9,236.3 586.5,240.8 588,244.8 589.6,248.4 591.2,251.6 592.7,254.4 594.3,257 595.9,259.2 597.4,261.3 599,263.1 600.6,264.7 602.1,266.1 603.7,267.4 605.3,268.6 606.8,269.6 608.4,270.5 610,271.3 611.5,272 613.1,272.7 614.7,273.2 616.2,273.8 617.8,274.2 619.4,274.6 620.9,275 622.5,275.3 624.1,275.6 625.6,275.9 627.2,276.1 628.8,276.3 630.3,276.5 631.9,276.6 633.5,276.8 635,276.9 636.6,277 638.2,277.1 639.7,277.2 641.3,277.3 642.9,233.8 644.4,238.6 646,242.8 647.6,246.6 649.1,250 650.7,253 652.3,255.7 653.8,258.1 655.4,260.3 657,262.2 658.5,263.9 660.1,265.4 661.7,266.8 663.2,268 664.8,269.1 666.4,270 667.9,270.9 669.5,271.7 671.1,272.4 672.6,273 674.2,273.5 675.8,274 677.3,274.4 678.9,274.8 680.5,275.2 682,275.5 683.6,275.7 685.2,276 686.7,276.2 688.3,276.4 689.9,276.6 691.4,276.7 693,276.9 694.6,277 696.1,277.1 697.7,277.2 699.3,277.3 700.8,231.2 702.4,236.3 704,240.8 705.5,244.8 707.1,248.4 708.7,251.6 710.2,254.4 711.8,257 713.4,259.2 714.9,261.3 716.5,263.1 718.1,264.7 719.6,266.1 721.2,267.4 722.8,268.6 724.3,269.6 725.9,270.5 727.5,271.3 729,272 730.6,272.7 732.2,273.2 733.7,273.8 735.3,274.2 736.9,274.6 738.4,275 740,275.3" class="sig sig-audio"/>
+<rect x="288.1" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="346.8" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="405.6" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="464.3" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="523.1" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="581.8" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="640.6" y="282" width="3" height="10" class="fill-cv"/>
+<rect x="699.3" y="282" width="3" height="10" class="fill-cv"/>
+<text x="270" y="322" class="t-ax" text-anchor="middle">0 s</text>
+<text x="348.3" y="322" class="t-ax" text-anchor="middle">2 s</text>
+<text x="426.7" y="322" class="t-ax" text-anchor="middle">4 s</text>
+<text x="505" y="322" class="t-ax" text-anchor="middle">6 s</text>
+<text x="583.3" y="322" class="t-ax" text-anchor="middle">8 s</text>
+<text x="661.7" y="322" class="t-ax" text-anchor="middle">10 s</text>
+<text x="740" y="322" class="t-ax" text-anchor="middle">12 s</text>
+<text x="740" y="306" class="t-ax" text-anchor="end">blau: Pegel · orange: Anregung</text>
+</svg></div>
+  <figcaption><b>Dauernd, gehalten, angestoßen.</b> Beim Drone liegt die Anregung immer an, beim Pad nur, solange die Note gehalten wird, beim Pluck nur für einen Moment. Ein Resonator wie Rings oder Elements kann alle drei: Es kommt nur darauf an, womit Du ihn anregst und wie lange er nachschwingen darf.</figcaption>
+</figure>
+<p>Daraus folgt die wichtigste Idee des Kapitels: Du musst zwischen Drone, Pad und Pluck nicht umschalten. Du kannst <b>dieselbe Fläche</b> stufenlos von einer Gestalt in die andere drehen, indem Du die Anregung und das Abklingen veränderst. Patch <a class="xref" href="#p-4d">4D</a> baut genau das.</p>
+
+<h4 id="k4-schwebung">2 · Schwebung: Hertz und Cent</h4>
+<p>In Kapitel <a class="xref" href="#k1">01</a> hast Du gehört, dass zwei fast gleiche Töne pulsieren, und zwar genau so oft pro Sekunde, wie sie in Hertz auseinanderliegen. Am Oszillator drehst Du aber keine Hertz, sondern einen Bruchteil eines Halbtons, und Musiker messen Verstimmung in <b>Cent</b>: 100 Cent sind ein Halbton. Dieselbe Verstimmung in Cent ergibt in jeder Oktave eine doppelt so schnelle Schwebung wie in der Oktave darunter.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Grundton</th><th>2 Cent</th><th>5 Cent</th><th>10 Cent</th><th>20 Cent</th></tr></thead>
+<tbody>
+<tr><td>A 55 Hz</td><td>0,06 Hz</td><td>0,16 Hz</td><td>0,32 Hz</td><td>0,64 Hz</td></tr>
+<tr><td>A 110 Hz</td><td>0,13 Hz</td><td>0,32 Hz</td><td>0,64 Hz</td><td>1,28 Hz</td></tr>
+<tr><td>A 220 Hz</td><td>0,25 Hz</td><td>0,64 Hz</td><td>1,27 Hz</td><td>2,56 Hz</td></tr>
+<tr><td>A 440 Hz</td><td>0,51 Hz</td><td>1,27 Hz</td><td>2,55 Hz</td><td>5,11 Hz</td></tr>
+</tbody></table></div>
+<p>Für Flächen sind zwei Bereiche brauchbar. Eine <b>sehr langsame Schwebung</b> unter etwa einem Hertz hörst Du nicht als Pulsieren, sondern als Wandern: Der Klang wird abwechselnd voller und hohler. Eine Schwebung von <b>einem bis drei Hertz</b> klingt wie ein Chorus, warm und breit. Darüber wird es unruhig, und ab etwa zehn Hertz rau. Weil hohe Töne bei gleicher Cent-Verstimmung schneller schweben, verstimmst Du hohe Schichten weniger als tiefe. Das ist auch der Grund, warum ein breit verstimmter Bass schnell matschig klingt: Die Schwebung zwischen den Obertönen läuft viel schneller als die zwischen den Grundtönen.</p>
+
+<h4 id="k4-intervalle">3 · Intervalle: rein und gleichstufig</h4>
+<p>Stimmst Du OSC 2 statt in den Einklang eine Quinte höher, verschwindet die Schwebung zwischen den Grundtönen. Sie wandert aber nur weiter nach oben: Der dritte Oberton des tiefen Tons und der zweite des hohen liegen bei einer Quinte fast aufeinander, und wenn sie nicht genau aufeinanderliegen, schweben sie. Ein Intervall ist <b>rein</b>, wenn seine Töne im Verhältnis kleiner ganzer Zahlen stehen (Quinte 3:2, Quarte 4:3, große Terz 5:4). Dann fallen diese Obertöne zusammen, und die Schwebung steht still.</p>
+<p>Ein Keyboard und der µYarns spielen <b>gleichstufig</b>: Jeder Halbton ist genau 100 Cent breit. Die Quinte liegt dadurch 2 Cent unter der reinen, die große Terz aber 14 Cent darüber. Bei A = 110 Hz sieht das so aus:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Intervall</th><th>rein</th><th>gleichstufig gegenüber rein</th><th>Schwebung bei A = 110 Hz</th><th>wo</th></tr></thead>
+<tbody>
+<tr><td>Oktave</td><td>2:1</td><td>0 Cent</td><td>keine</td><td>220 Hz</td></tr>
+<tr><td>Quinte</td><td>3:2</td><td>−2 Cent</td><td>0,37 Hz</td><td>330 Hz</td></tr>
+<tr><td>Quarte</td><td>4:3</td><td>+2 Cent</td><td>0,50 Hz</td><td>440 Hz</td></tr>
+<tr><td>große Terz</td><td>5:4</td><td>+14 Cent</td><td>4,37 Hz</td><td>550 Hz</td></tr>
+<tr><td>große Sexte</td><td>5:3</td><td>+16 Cent</td><td>4,99 Hz</td><td>550 Hz</td></tr>
+<tr><td>kleine Terz</td><td>6:5</td><td>−16 Cent</td><td>5,94 Hz</td><td>660 Hz</td></tr>
+</tbody></table></div>
+<p>Zwei Folgerungen für das Patchen. Erstens: Oktaven, Quinten und Quarten sind die Intervalle für den <b>Drone</b>. Sie schweben gleichstufig kaum, und wenn Du zwei Oszillatoren nach Gehör stimmst, kannst Du sie ganz zur Ruhe bringen. Zweitens: Terzen und Sexten flimmern gleichstufig mit vier bis sechs Hertz. Das ist kein Fehler, sondern ein Teil der Farbe von Moll und Dur. In einem Pad, das ohnehin lebt, stört es nicht. In einem stehenden Drone klingt es nervös. Stimmst Du eine Terz zwischen zwei freien Oszillatoren nach Gehör, bis sie ruhig wird, landest Du bei der reinen Terz.</p>
+
+<div class="play" id="ivplay">
+<h4>Intervall-Spielplatz</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Zwei Sägezähne, der tiefe auf 110 Hz. Die Balken sind die Obertöne beider Töne; markiert ist das Paar, das am nächsten beieinander liegt und darum am deutlichsten schwebt.</p>
+<div class="presets">
+<button type="button" data-iv="0">Einklang</button><button type="button" data-iv="3">kl. Terz</button><button type="button" data-iv="4">gr. Terz</button><button type="button" data-iv="5">Quarte</button><button type="button" data-iv="7">Quinte</button><button type="button" data-iv="9">gr. Sexte</button><button type="button" data-iv="12">Oktave</button>
+<button type="button" class="btn" id="ivAud" aria-pressed="false">Anhören</button>
+</div>
+<div class="ctrls">
+<div><label for="ivc">Abweichung vom gleichstufigen Intervall <output id="ivcO"></output></label><input type="range" id="ivc" min="-30" max="30" step="0.5" value="0"></div>
+</div>
+<div class="presets" style="margin-bottom:8px"><button type="button" id="ivPure">rein stimmen</button><button type="button" id="ivEq">gleichstufig</button></div>
+<svg id="ivSvg" viewBox="0 0 720 210" role="img" aria-label="Obertöne zweier Töne und die Schwebung des nächstgelegenen Paares"></svg>
+<p class="readout" id="ivR"></p>
+</div>
+
+<h4 id="k4-resonanz">4 · Resonanzen</h4>
+<p>Eine Resonanz ist eine Frequenz, bei der ein System bereitwillig mitschwingt. Ein Filter mit hoher Resonanz hebt eine Frequenz hervor; ein Resonator besteht aus vielen solchen Spitzen; ein Raum aus Tausenden. Dein Pult hat alle drei Arten, und alle drei sind für Flächen wichtig:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Art</th><th>im Pult</th><th>was Du damit machst</th></tr></thead>
+<tbody>
+<tr><td>eine Spitze</td><td>Filterresonanz am SEM, Wasp, Surges</td><td>Mit langsam bewegtem Cutoff einzelne Obertöne des Drones hervorholen; der Drone spielt dann von selbst eine Melodie aus seiner Obertonreihe. Das ist Zustand C aus Kapitel <a class="xref" href="#k1">01</a>, nur langsamer.</td></tr>
+<tr><td>viele Spitzen</td><td>Rings, Elements</td><td>Ein Resonator macht aus jeder Anregung einen Ton. Rauschen hinein ergibt einen tönenden, flirrenden Dauerklang; ein Anstoß ergibt einen Anschlag. Die Tonhöhe kommt vom Resonator, nicht vom Rauschen.</td></tr>
+<tr><td>sehr viele Spitzen</td><td>Milky Way, Skies, Morphor Echo</td><td>Hall verbindet Töne, die nacheinander kommen, zu einem Klang. Ein Echo mit Rückkopplung ist ein Kammfilter: Es betont Frequenzen, deren Periode in die Delayzeit passt.</td></tr>
+</tbody></table></div>
+<p>Rings hat drei Resonatormodelle: <b>modal</b> (Platten und Glocken aus Bandpassfiltern), <b>Sympathiesaiten</b> (mehrere mitschwingende Saiten) und eine <b>nichtlineare Saite</b>. Ohne Kabel im Audioeingang erzeugt er bei jedem Anschlag eine eigene Anregung. <span class="tag tag-h">Hersteller</span> Elements hat drei Erreger, <b>BOW</b> (Bogen), <b>BLOW</b> (Blasen) und <b>STRIKE</b> (Anschlag), und GEOMETRY verschiebt den Resonator von Platten über Saiten und Röhren bis zu Glocken. <span class="tag tag-h">Hersteller</span> Beide sind Nachbauten der Mutable-Instruments-Module; die Beschriftungen können am Nachbau abweichen <span class="tag tag-p" id="pr-25">am Gerät prüfen</span>.</p>
+
+<h4 id="k4-schichten">5 · Schichten: Register, Spektrum, Tempo</h4>
+<p>Kapitel <a class="xref" href="#k2">02</a> hat den Grundsatz geliefert: Gleiche Schaltungen verschmelzen, verschiedene bleiben getrennt hörbar. Für eine Fläche, die aus vier oder fünf Quellen besteht, kommen drei Regeln dazu:</p>
+<ol>
+<li><b>Jede Schicht ein Register.</b> Liegen zwei Quellen im selben Frequenzbereich, verdecken sie sich, und die Summe klingt nicht reicher, sondern nur lauter. Verteile die Schichten von tief nach hoch.</li>
+<li><b>Jede Schicht ein Tempo.</b> Das Fundament bewegt sich kaum, der Körper atmet langsam, die Resonanz folgt der Harmonie, die Luft hat ihre eigene Zeit. Bewegen sich alle Schichten im selben Takt, hörst Du den Takt.</li>
+<li><b>Jede neue Schicht leiser, als Du denkst.</b> Eine Schicht, die Du erst bemerkst, wenn Du sie wieder wegnimmst, hat den richtigen Pegel.</li>
+</ol>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 300" role="img" aria-label="Fünf Schichten einer Fläche auf einer Frequenzachse von 30 Hertz bis 16 Kilohertz: Fundament tief, Körper und Fläche in der Mitte, Resonanz und Luft darüber. Die Bereiche überlappen nur teilweise.">
+<line x1="216.4" y1="14" x2="216.4" y2="260" class="t-grid"/>
+<text x="216.4" y="276" class="t-ax" text-anchor="middle">50 Hz</text>
+<line x1="279.3" y1="14" x2="279.3" y2="260" class="t-grid"/>
+<text x="279.3" y="276" class="t-ax" text-anchor="middle">100 Hz</text>
+<line x1="342.2" y1="14" x2="342.2" y2="260" class="t-grid"/>
+<text x="342.2" y="276" class="t-ax" text-anchor="middle">200 Hz</text>
+<line x1="425.4" y1="14" x2="425.4" y2="260" class="t-grid"/>
+<text x="425.4" y="276" class="t-ax" text-anchor="middle">500 Hz</text>
+<line x1="488.3" y1="14" x2="488.3" y2="260" class="t-grid"/>
+<text x="488.3" y="276" class="t-ax" text-anchor="middle">1 kHz</text>
+<line x1="551.2" y1="14" x2="551.2" y2="260" class="t-grid"/>
+<text x="551.2" y="276" class="t-ax" text-anchor="middle">2 kHz</text>
+<line x1="634.4" y1="14" x2="634.4" y2="260" class="t-grid"/>
+<text x="634.4" y="276" class="t-ax" text-anchor="middle">5 kHz</text>
+<line x1="697.3" y1="14" x2="697.3" y2="260" class="t-grid"/>
+<text x="697.3" y="276" class="t-ax" text-anchor="middle">10 kHz</text>
+<text x="10" y="38" class="t-lab">Fundament</text>
+<text x="10" y="54" class="t-sub">258t OSC 1, nahe Sinus</text>
+<rect x="216.4" y="26" width="149.7" height="26" rx="3" class="bar-lim"/>
+<text x="358" y="44" class="t-ax" text-anchor="end">Bewegung: kaum</text>
+<text x="10" y="86" class="t-lab">Körper</text>
+<text x="10" y="102" class="t-sub">258t OSC 2 + SEM</text>
+<rect x="279.3" y="74" width="239.6" height="26" rx="3" class="bar-lim"/>
+<text x="510.9" y="92" class="t-ax" text-anchor="end">Bewegung: ≈ 15–20 s</text>
+<text x="10" y="134" class="t-lab">Fläche</text>
+<text x="10" y="150" class="t-sub">Cali + Big-O → Surges</text>
+<rect x="309.8" y="122" width="265.2" height="26" rx="3" class="bar-lim"/>
+<text x="567.1" y="140" class="t-ax" text-anchor="end">Bewegung: Harmonie</text>
+<text x="10" y="182" class="t-lab">Resonanz</text>
+<text x="10" y="198" class="t-sub">Rings, Rauschen angeregt</text>
+<rect x="379" y="170" width="264" height="26" rx="3" class="box-mod"/>
+<text x="635.1" y="188" class="t-ax" text-anchor="end">Bewegung: folgt dem Pad</text>
+<text x="10" y="230" class="t-lab">Luft</text>
+<text x="10" y="246" class="t-sub">Elements-Bogen, Skies</text>
+<rect x="478.7" y="218" width="235.1" height="26" rx="3" class="box-mod"/>
+<text x="705.9" y="236" class="t-ax" text-anchor="end">Bewegung: eigene Zeit</text>
+<text x="170" y="294" class="t-ax">Ungefähre Hauptbereiche bei Grundton A = 110 Hz</text>
+</svg></div>
+  <figcaption><b>Fünf Schichten, fünf Register.</b> So sind die Rollen in diesem Kapitel verteilt. Die Klangquellen (blau) liegen unten und in der Mitte, die Resonanzen und die Luft (orange gestrichelt) darüber. Die Bereiche überlappen, aber jede Schicht hat einen Schwerpunkt, den die anderen frei lassen.</figcaption>
+</figure>
+<p>Zum Pegel noch eine Rechnung: Vier Quellen mit je ±5 V ergeben im ungünstigsten Moment ±20 V. Der Milky Way erwartet ±5 V und beginnt ab etwa ±6,5 V zu sättigen. <span class="tag tag-h">Hersteller</span> Darum laufen die Schichten in diesem Kapitel nicht ungebremst zusammen, sondern über die Regler eines eigenen Mischers, den Raum-Bus.</p>
+
+<h4 id="k4-bewegung">6 · Organische Bewegung: Zyklen, die sich nicht wiederholen</h4>
+<p>Ein einzelner langsamer Zyklus wird nach drei, vier Durchläufen vorhersehbar. Zwei Zyklen auf zwei verschiedenen Zielen, deren Längen in keinem einfachen Verhältnis stehen, kommen dagegen erst nach sehr langer Zeit wieder in dieselbe Stellung. Bei 18 und 13 Sekunden sind das 234 Sekunden, fast vier Minuten. Dazwischen trifft jeder Filterzustand auf eine andere Wellenform, und das Ohr hört keine Schleife mehr, sondern Wetter.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 250" role="img" aria-label="Zwei langsame Zyklen von 18 und 13 Sekunden über vier Minuten. Ihre Kombination ergibt erst nach 234 Sekunden wieder dieselbe Stellung.">
+<text x="10" y="36" class="t-lab">281t Kanal 1</text>
+<text x="10" y="52" class="t-sub">Filter · 18 s</text>
+<line x1="150" y1="60" x2="740" y2="60" class="t-grid"/>
+<polyline points="150,60 151.2,57.9 152.5,55.8 153.7,53.7 154.9,51.6 156.1,49.4 157.4,47.3 158.6,45.2 159.8,43.1 161.1,41 162.3,38.9 163.5,36.8 164.8,34.7 166,32.6 167.2,30.4 168.4,28.3 169.7,26.2 170.9,24.1 172.1,22 173.4,24.1 174.6,26.2 175.8,28.3 177,30.4 178.3,32.6 179.5,34.7 180.7,36.8 182,38.9 183.2,41 184.4,43.1 185.6,45.2 186.9,47.3 188.1,49.4 189.3,51.6 190.6,53.7 191.8,55.8 193,57.9 194.2,60 195.5,57.9 196.7,55.8 197.9,53.7 199.2,51.6 200.4,49.4 201.6,47.3 202.9,45.2 204.1,43.1 205.3,41 206.5,38.9 207.8,36.8 209,34.7 210.2,32.6 211.5,30.4 212.7,28.3 213.9,26.2 215.1,24.1 216.4,22 217.6,24.1 218.8,26.2 220.1,28.3 221.3,30.4 222.5,32.6 223.8,34.7 225,36.8 226.2,38.9 227.4,41 228.7,43.1 229.9,45.2 231.1,47.3 232.4,49.4 233.6,51.6 234.8,53.7 236,55.8 237.3,57.9 238.5,60 239.7,57.9 241,55.8 242.2,53.7 243.4,51.6 244.6,49.4 245.9,47.3 247.1,45.2 248.3,43.1 249.6,41 250.8,38.9 252,36.8 253.2,34.7 254.5,32.6 255.7,30.4 256.9,28.3 258.2,26.2 259.4,24.1 260.6,22 261.9,24.1 263.1,26.2 264.3,28.3 265.5,30.4 266.8,32.6 268,34.7 269.2,36.8 270.5,38.9 271.7,41 272.9,43.1 274.1,45.2 275.4,47.3 276.6,49.4 277.8,51.6 279.1,53.7 280.3,55.8 281.5,57.9 282.8,60 284,57.9 285.2,55.8 286.4,53.7 287.7,51.6 288.9,49.4 290.1,47.3 291.4,45.2 292.6,43.1 293.8,41 295,38.9 296.3,36.8 297.5,34.7 298.7,32.6 300,30.4 301.2,28.3 302.4,26.2 303.6,24.1 304.9,22 306.1,24.1 307.3,26.2 308.6,28.3 309.8,30.4 311,32.6 312.2,34.7 313.5,36.8 314.7,38.9 315.9,41 317.2,43.1 318.4,45.2 319.6,47.3 320.9,49.4 322.1,51.6 323.3,53.7 324.5,55.8 325.8,57.9 327,60 328.2,57.9 329.5,55.8 330.7,53.7 331.9,51.6 333.1,49.4 334.4,47.3 335.6,45.2 336.8,43.1 338.1,41 339.3,38.9 340.5,36.8 341.8,34.7 343,32.6 344.2,30.4 345.4,28.3 346.7,26.2 347.9,24.1 349.1,22 350.4,24.1 351.6,26.2 352.8,28.3 354,30.4 355.3,32.6 356.5,34.7 357.7,36.8 359,38.9 360.2,41 361.4,43.1 362.6,45.2 363.9,47.3 365.1,49.4 366.3,51.6 367.6,53.7 368.8,55.8 370,57.9 371.2,60 372.5,57.9 373.7,55.8 374.9,53.7 376.2,51.6 377.4,49.4 378.6,47.3 379.9,45.2 381.1,43.1 382.3,41 383.5,38.9 384.8,36.8 386,34.7 387.2,32.6 388.5,30.4 389.7,28.3 390.9,26.2 392.1,24.1 393.4,22 394.6,24.1 395.8,26.2 397.1,28.3 398.3,30.4 399.5,32.6 400.8,34.7 402,36.8 403.2,38.9 404.4,41 405.7,43.1 406.9,45.2 408.1,47.3 409.4,49.4 410.6,51.6 411.8,53.7 413,55.8 414.3,57.9 415.5,60 416.7,57.9 418,55.8 419.2,53.7 420.4,51.6 421.6,49.4 422.9,47.3 424.1,45.2 425.3,43.1 426.6,41 427.8,38.9 429,36.8 430.2,34.7 431.5,32.6 432.7,30.4 433.9,28.3 435.2,26.2 436.4,24.1 437.6,22 438.9,24.1 440.1,26.2 441.3,28.3 442.5,30.4 443.8,32.6 445,34.7 446.2,36.8 447.5,38.9 448.7,41 449.9,43.1 451.1,45.2 452.4,47.3 453.6,49.4 454.8,51.6 456.1,53.7 457.3,55.8 458.5,57.9 459.8,60 461,57.9 462.2,55.8 463.4,53.7 464.7,51.6 465.9,49.4 467.1,47.3 468.4,45.2 469.6,43.1 470.8,41 472,38.9 473.3,36.8 474.5,34.7 475.7,32.6 477,30.4 478.2,28.3 479.4,26.2 480.6,24.1 481.9,22 483.1,24.1 484.3,26.2 485.6,28.3 486.8,30.4 488,32.6 489.2,34.7 490.5,36.8 491.7,38.9 492.9,41 494.2,43.1 495.4,45.2 496.6,47.3 497.9,49.4 499.1,51.6 500.3,53.7 501.5,55.8 502.8,57.9 504,60 505.2,57.9 506.5,55.8 507.7,53.7 508.9,51.6 510.1,49.4 511.4,47.3 512.6,45.2 513.8,43.1 515.1,41 516.3,38.9 517.5,36.8 518.8,34.7 520,32.6 521.2,30.4 522.4,28.3 523.7,26.2 524.9,24.1 526.1,22 527.4,24.1 528.6,26.2 529.8,28.3 531,30.4 532.3,32.6 533.5,34.7 534.7,36.8 536,38.9 537.2,41 538.4,43.1 539.6,45.2 540.9,47.3 542.1,49.4 543.3,51.6 544.6,53.7 545.8,55.8 547,57.9 548.2,60 549.5,57.9 550.7,55.8 551.9,53.7 553.2,51.6 554.4,49.4 555.6,47.3 556.9,45.2 558.1,43.1 559.3,41 560.5,38.9 561.8,36.8 563,34.7 564.2,32.6 565.5,30.4 566.7,28.3 567.9,26.2 569.1,24.1 570.4,22 571.6,24.1 572.8,26.2 574.1,28.3 575.3,30.4 576.5,32.6 577.8,34.7 579,36.8 580.2,38.9 581.4,41 582.7,43.1 583.9,45.2 585.1,47.3 586.4,49.4 587.6,51.6 588.8,53.7 590,55.8 591.3,57.9 592.5,60 593.7,57.9 595,55.8 596.2,53.7 597.4,51.6 598.6,49.4 599.9,47.3 601.1,45.2 602.3,43.1 603.6,41 604.8,38.9 606,36.8 607.2,34.7 608.5,32.6 609.7,30.4 610.9,28.3 612.2,26.2 613.4,24.1 614.6,22 615.9,24.1 617.1,26.2 618.3,28.3 619.5,30.4 620.8,32.6 622,34.7 623.2,36.8 624.5,38.9 625.7,41 626.9,43.1 628.1,45.2 629.4,47.3 630.6,49.4 631.8,51.6 633.1,53.7 634.3,55.8 635.5,57.9 636.8,60 638,57.9 639.2,55.8 640.4,53.7 641.7,51.6 642.9,49.4 644.1,47.3 645.4,45.2 646.6,43.1 647.8,41 649,38.9 650.3,36.8 651.5,34.7 652.7,32.6 654,30.4 655.2,28.3 656.4,26.2 657.6,24.1 658.9,22 660.1,24.1 661.3,26.2 662.6,28.3 663.8,30.4 665,32.6 666.2,34.7 667.5,36.8 668.7,38.9 669.9,41 671.2,43.1 672.4,45.2 673.6,47.3 674.9,49.4 676.1,51.6 677.3,53.7 678.5,55.8 679.8,57.9 681,60 682.2,57.9 683.5,55.8 684.7,53.7 685.9,51.6 687.1,49.4 688.4,47.3 689.6,45.2 690.8,43.1 692.1,41 693.3,38.9 694.5,36.8 695.8,34.7 697,32.6 698.2,30.4 699.4,28.3 700.7,26.2 701.9,24.1 703.1,22 704.4,24.1 705.6,26.2 706.8,28.3 708,30.4 709.3,32.6 710.5,34.7 711.7,36.8 713,38.9 714.2,41 715.4,43.1 716.6,45.2 717.9,47.3 719.1,49.4 720.3,51.6 721.6,53.7 722.8,55.8 724,57.9 725.2,60 726.5,57.9 727.7,55.8 728.9,53.7 730.2,51.6 731.4,49.4 732.6,47.3 733.9,45.2 735.1,43.1 736.3,41 737.5,38.9 738.8,36.8 740,34.7" class="sig sig-cv"/>
+<text x="10" y="92" class="t-lab">281t Kanal 2</text>
+<text x="10" y="108" class="t-sub">Wellenform · 13 s</text>
+<line x1="150" y1="116" x2="740" y2="116" class="t-grid"/>
+<polyline points="150,116 151.2,113.1 152.5,110.2 153.7,107.2 154.9,104.3 156.1,101.4 157.4,98.5 158.6,95.5 159.8,92.6 161.1,89.7 162.3,86.8 163.5,83.8 164.8,80.9 166,78 167.2,80.9 168.4,83.8 169.7,86.8 170.9,89.7 172.1,92.6 173.4,95.5 174.6,98.5 175.8,101.4 177,104.3 178.3,107.2 179.5,110.2 180.7,113.1 182,116 183.2,113.1 184.4,110.2 185.6,107.2 186.9,104.3 188.1,101.4 189.3,98.5 190.6,95.5 191.8,92.6 193,89.7 194.2,86.8 195.5,83.8 196.7,80.9 197.9,78 199.2,80.9 200.4,83.8 201.6,86.8 202.9,89.7 204.1,92.6 205.3,95.5 206.5,98.5 207.8,101.4 209,104.3 210.2,107.2 211.5,110.2 212.7,113.1 213.9,116 215.1,113.1 216.4,110.2 217.6,107.2 218.8,104.3 220.1,101.4 221.3,98.5 222.5,95.5 223.8,92.6 225,89.7 226.2,86.8 227.4,83.8 228.7,80.9 229.9,78 231.1,80.9 232.4,83.8 233.6,86.8 234.8,89.7 236,92.6 237.3,95.5 238.5,98.5 239.7,101.4 241,104.3 242.2,107.2 243.4,110.2 244.6,113.1 245.9,116 247.1,113.1 248.3,110.2 249.6,107.2 250.8,104.3 252,101.4 253.2,98.5 254.5,95.5 255.7,92.6 256.9,89.7 258.2,86.8 259.4,83.8 260.6,80.9 261.9,78 263.1,80.9 264.3,83.8 265.5,86.8 266.8,89.7 268,92.6 269.2,95.5 270.5,98.5 271.7,101.4 272.9,104.3 274.1,107.2 275.4,110.2 276.6,113.1 277.8,116 279.1,113.1 280.3,110.2 281.5,107.2 282.8,104.3 284,101.4 285.2,98.5 286.4,95.5 287.7,92.6 288.9,89.7 290.1,86.8 291.4,83.8 292.6,80.9 293.8,78 295,80.9 296.3,83.8 297.5,86.8 298.7,89.7 300,92.6 301.2,95.5 302.4,98.5 303.6,101.4 304.9,104.3 306.1,107.2 307.3,110.2 308.6,113.1 309.8,116 311,113.1 312.2,110.2 313.5,107.2 314.7,104.3 315.9,101.4 317.2,98.5 318.4,95.5 319.6,92.6 320.9,89.7 322.1,86.8 323.3,83.8 324.5,80.9 325.8,78 327,80.9 328.2,83.8 329.5,86.8 330.7,89.7 331.9,92.6 333.1,95.5 334.4,98.5 335.6,101.4 336.8,104.3 338.1,107.2 339.3,110.2 340.5,113.1 341.8,116 343,113.1 344.2,110.2 345.4,107.2 346.7,104.3 347.9,101.4 349.1,98.5 350.4,95.5 351.6,92.6 352.8,89.7 354,86.8 355.3,83.8 356.5,80.9 357.7,78 359,80.9 360.2,83.8 361.4,86.8 362.6,89.7 363.9,92.6 365.1,95.5 366.3,98.5 367.6,101.4 368.8,104.3 370,107.2 371.2,110.2 372.5,113.1 373.7,116 374.9,113.1 376.2,110.2 377.4,107.2 378.6,104.3 379.9,101.4 381.1,98.5 382.3,95.5 383.5,92.6 384.8,89.7 386,86.8 387.2,83.8 388.5,80.9 389.7,78 390.9,80.9 392.1,83.8 393.4,86.8 394.6,89.7 395.8,92.6 397.1,95.5 398.3,98.5 399.5,101.4 400.8,104.3 402,107.2 403.2,110.2 404.4,113.1 405.7,116 406.9,113.1 408.1,110.2 409.4,107.2 410.6,104.3 411.8,101.4 413,98.5 414.3,95.5 415.5,92.6 416.7,89.7 418,86.8 419.2,83.8 420.4,80.9 421.6,78 422.9,80.9 424.1,83.8 425.3,86.8 426.6,89.7 427.8,92.6 429,95.5 430.2,98.5 431.5,101.4 432.7,104.3 433.9,107.2 435.2,110.2 436.4,113.1 437.6,116 438.9,113.1 440.1,110.2 441.3,107.2 442.5,104.3 443.8,101.4 445,98.5 446.2,95.5 447.5,92.6 448.7,89.7 449.9,86.8 451.1,83.8 452.4,80.9 453.6,78 454.8,80.9 456.1,83.8 457.3,86.8 458.5,89.7 459.8,92.6 461,95.5 462.2,98.5 463.4,101.4 464.7,104.3 465.9,107.2 467.1,110.2 468.4,113.1 469.6,116 470.8,113.1 472,110.2 473.3,107.2 474.5,104.3 475.7,101.4 477,98.5 478.2,95.5 479.4,92.6 480.6,89.7 481.9,86.8 483.1,83.8 484.3,80.9 485.6,78 486.8,80.9 488,83.8 489.2,86.8 490.5,89.7 491.7,92.6 492.9,95.5 494.2,98.5 495.4,101.4 496.6,104.3 497.9,107.2 499.1,110.2 500.3,113.1 501.5,116 502.8,113.1 504,110.2 505.2,107.2 506.5,104.3 507.7,101.4 508.9,98.5 510.1,95.5 511.4,92.6 512.6,89.7 513.8,86.8 515.1,83.8 516.3,80.9 517.5,78 518.8,80.9 520,83.8 521.2,86.8 522.4,89.7 523.7,92.6 524.9,95.5 526.1,98.5 527.4,101.4 528.6,104.3 529.8,107.2 531,110.2 532.3,113.1 533.5,116 534.7,113.1 536,110.2 537.2,107.2 538.4,104.3 539.6,101.4 540.9,98.5 542.1,95.5 543.3,92.6 544.6,89.7 545.8,86.8 547,83.8 548.2,80.9 549.5,78 550.7,80.9 551.9,83.8 553.2,86.8 554.4,89.7 555.6,92.6 556.9,95.5 558.1,98.5 559.3,101.4 560.5,104.3 561.8,107.2 563,110.2 564.2,113.1 565.5,116 566.7,113.1 567.9,110.2 569.1,107.2 570.4,104.3 571.6,101.4 572.8,98.5 574.1,95.5 575.3,92.6 576.5,89.7 577.8,86.8 579,83.8 580.2,80.9 581.4,78 582.7,80.9 583.9,83.8 585.1,86.8 586.4,89.7 587.6,92.6 588.8,95.5 590,98.5 591.3,101.4 592.5,104.3 593.7,107.2 595,110.2 596.2,113.1 597.4,116 598.6,113.1 599.9,110.2 601.1,107.2 602.3,104.3 603.6,101.4 604.8,98.5 606,95.5 607.2,92.6 608.5,89.7 609.7,86.8 610.9,83.8 612.2,80.9 613.4,78 614.6,80.9 615.9,83.8 617.1,86.8 618.3,89.7 619.5,92.6 620.8,95.5 622,98.5 623.2,101.4 624.5,104.3 625.7,107.2 626.9,110.2 628.1,113.1 629.4,116 630.6,113.1 631.8,110.2 633.1,107.2 634.3,104.3 635.5,101.4 636.8,98.5 638,95.5 639.2,92.6 640.4,89.7 641.7,86.8 642.9,83.8 644.1,80.9 645.4,78 646.6,80.9 647.8,83.8 649,86.8 650.3,89.7 651.5,92.6 652.7,95.5 654,98.5 655.2,101.4 656.4,104.3 657.6,107.2 658.9,110.2 660.1,113.1 661.3,116 662.6,113.1 663.8,110.2 665,107.2 666.2,104.3 667.5,101.4 668.7,98.5 669.9,95.5 671.2,92.6 672.4,89.7 673.6,86.8 674.9,83.8 676.1,80.9 677.3,78 678.5,80.9 679.8,83.8 681,86.8 682.2,89.7 683.5,92.6 684.7,95.5 685.9,98.5 687.1,101.4 688.4,104.3 689.6,107.2 690.8,110.2 692.1,113.1 693.3,116 694.5,113.1 695.8,110.2 697,107.2 698.2,104.3 699.4,101.4 700.7,98.5 701.9,95.5 703.1,92.6 704.4,89.7 705.6,86.8 706.8,83.8 708,80.9 709.3,78 710.5,80.9 711.7,83.8 713,86.8 714.2,89.7 715.4,92.6 716.6,95.5 717.9,98.5 719.1,101.4 720.3,104.3 721.6,107.2 722.8,110.2 724,113.1 725.2,116 726.5,113.1 727.7,110.2 728.9,107.2 730.2,104.3 731.4,101.4 732.6,98.5 733.9,95.5 735.1,92.6 736.3,89.7 737.5,86.8 738.8,83.8 740,80.9" class="sig sig-cv"/>
+<text x="10" y="148" class="t-lab">Zusammen</text>
+<text x="10" y="164" class="t-sub">Klangfarbe insgesamt</text>
+<line x1="150" y1="188" x2="740" y2="188" class="t-grid"/>
+<polyline points="150,188 151.2,184.8 152.5,181.6 153.7,178.4 154.9,175.2 156.1,172 157.4,168.8 158.6,165.6 159.8,162.4 161.1,159.2 162.3,155.9 163.5,152.7 164.8,149.5 166,146.3 167.2,146.2 168.4,146.1 169.7,145.9 170.9,145.8 172.1,145.7 173.4,148.9 174.6,152.1 175.8,155.3 177,158.5 178.3,161.7 179.5,164.9 180.7,168.1 182,171.3 183.2,171.5 184.4,171.6 185.6,171.7 186.9,171.8 188.1,172 189.3,172.1 190.6,172.2 191.8,172.4 193,172.5 194.2,172.6 195.5,169.4 196.7,166.2 197.9,163 199.2,162.9 200.4,162.7 201.6,162.6 202.9,162.5 204.1,162.4 205.3,162.2 206.5,162.1 207.8,162 209,161.8 210.2,161.7 211.5,161.6 212.7,161.5 213.9,161.3 215.1,158.1 216.4,154.9 217.6,155.1 218.8,155.2 220.1,155.3 221.3,155.4 222.5,155.6 223.8,155.7 225,155.8 226.2,155.9 227.4,156.1 228.7,156.2 229.9,156.3 231.1,159.5 232.4,162.7 233.6,165.9 234.8,169.2 236,172.4 237.3,175.6 238.5,178.8 239.7,178.6 241,178.5 242.2,178.4 243.4,178.3 244.6,178.1 245.9,178 247.1,174.8 248.3,171.6 249.6,168.4 250.8,165.2 252,162 253.2,158.8 254.5,155.6 255.7,152.4 256.9,149.2 258.2,145.9 259.4,142.7 260.6,139.5 261.9,139.7 263.1,142.9 264.3,146.1 265.5,149.3 266.8,152.5 268,155.7 269.2,158.9 270.5,162.1 271.7,165.3 272.9,168.5 274.1,171.7 275.4,174.9 276.6,178.1 277.8,181.3 279.1,181.5 280.3,181.6 281.5,181.7 282.8,181.8 284,178.6 285.2,175.4 286.4,172.2 287.7,169 288.9,165.8 290.1,162.6 291.4,159.4 292.6,156.2 293.8,153 295,152.9 296.3,152.7 297.5,152.6 298.7,152.5 300,152.4 301.2,152.2 302.4,152.1 303.6,152 304.9,151.8 306.1,155.1 307.3,158.3 308.6,161.5 309.8,164.7 311,164.8 312.2,164.9 313.5,165.1 314.7,165.2 315.9,165.3 317.2,165.4 318.4,165.6 319.6,165.7 320.9,165.8 322.1,165.9 323.3,166.1 324.5,166.2 325.8,166.3 327,169.5 328.2,169.4 329.5,169.3 330.7,169.2 331.9,169 333.1,168.9 334.4,168.8 335.6,168.6 336.8,168.5 338.1,168.4 339.3,168.3 340.5,168.1 341.8,168 343,164.8 344.2,161.6 345.4,158.4 346.7,155.2 347.9,152 349.1,148.8 350.4,148.9 351.6,149 352.8,149.2 354,149.3 355.3,149.4 356.5,149.5 357.7,149.7 359,152.9 360.2,156.1 361.4,159.3 362.6,162.5 363.9,165.7 365.1,168.9 366.3,172.1 367.6,175.3 368.8,178.5 370,181.7 371.2,184.9 372.5,184.8 373.7,184.7 374.9,181.5 376.2,178.3 377.4,175.1 378.6,171.8 379.9,168.6 381.1,165.4 382.3,162.2 383.5,159 384.8,155.8 386,152.6 387.2,149.4 388.5,146.2 389.7,143 390.9,142.9 392.1,142.7 393.4,142.6 394.6,145.8 395.8,149 397.1,152.2 398.3,155.4 399.5,158.6 400.8,161.8 402,165.1 403.2,168.3 404.4,171.5 405.7,174.7 406.9,174.8 408.1,174.9 409.4,175.1 410.6,175.2 411.8,175.3 413,175.4 414.3,175.6 415.5,175.7 416.7,172.5 418,169.3 419.2,166.1 420.4,162.9 421.6,159.7 422.9,159.5 424.1,159.4 425.3,159.3 426.6,159.2 427.8,159 429,158.9 430.2,158.8 431.5,158.6 432.7,158.5 433.9,158.4 435.2,158.3 436.4,158.1 437.6,158 438.9,158.1 440.1,158.3 441.3,158.4 442.5,158.5 443.8,158.6 445,158.8 446.2,158.9 447.5,159 448.7,159.2 449.9,159.3 451.1,159.4 452.4,159.5 453.6,159.7 454.8,162.9 456.1,166.1 457.3,169.3 458.5,172.5 459.8,175.7 461,175.6 462.2,175.4 463.4,175.3 464.7,175.2 465.9,175.1 467.1,174.9 468.4,174.8 469.6,174.7 470.8,171.5 472,168.3 473.3,165.1 474.5,161.8 475.7,158.6 477,155.4 478.2,152.2 479.4,149 480.6,145.8 481.9,142.6 483.1,142.7 484.3,142.9 485.6,143 486.8,146.2 488,149.4 489.2,152.6 490.5,155.8 491.7,159 492.9,162.2 494.2,165.4 495.4,168.6 496.6,171.8 497.9,175.1 499.1,178.3 500.3,181.5 501.5,184.7 502.8,184.8 504,184.9 505.2,181.7 506.5,178.5 507.7,175.3 508.9,172.1 510.1,168.9 511.4,165.7 512.6,162.5 513.8,159.3 515.1,156.1 516.3,152.9 517.5,149.7 518.8,149.5 520,149.4 521.2,149.3 522.4,149.2 523.7,149 524.9,148.9 526.1,148.8 527.4,152 528.6,155.2 529.8,158.4 531,161.6 532.3,164.8 533.5,168 534.7,168.1 536,168.3 537.2,168.4 538.4,168.5 539.6,168.6 540.9,168.8 542.1,168.9 543.3,169 544.6,169.2 545.8,169.3 547,169.4 548.2,169.5 549.5,166.3 550.7,166.2 551.9,166.1 553.2,165.9 554.4,165.8 555.6,165.7 556.9,165.6 558.1,165.4 559.3,165.3 560.5,165.2 561.8,165.1 563,164.9 564.2,164.8 565.5,164.7 566.7,161.5 567.9,158.3 569.1,155.1 570.4,151.8 571.6,152 572.8,152.1 574.1,152.2 575.3,152.4 576.5,152.5 577.8,152.6 579,152.7 580.2,152.9 581.4,153 582.7,156.2 583.9,159.4 585.1,162.6 586.4,165.8 587.6,169 588.8,172.2 590,175.4 591.3,178.6 592.5,181.8 593.7,181.7 595,181.6 596.2,181.5 597.4,181.3 598.6,178.1 599.9,174.9 601.1,171.7 602.3,168.5 603.6,165.3 604.8,162.1 606,158.9 607.2,155.7 608.5,152.5 609.7,149.3 610.9,146.1 612.2,142.9 613.4,139.7 614.6,139.5 615.9,142.7 617.1,145.9 618.3,149.2 619.5,152.4 620.8,155.6 622,158.8 623.2,162 624.5,165.2 625.7,168.4 626.9,171.6 628.1,174.8 629.4,178 630.6,178.1 631.8,178.3 633.1,178.4 634.3,178.5 635.5,178.6 636.8,178.8 638,175.6 639.2,172.4 640.4,169.2 641.7,165.9 642.9,162.7 644.1,159.5 645.4,156.3 646.6,156.2 647.8,156.1 649,155.9 650.3,155.8 651.5,155.7 652.7,155.6 654,155.4 655.2,155.3 656.4,155.2 657.6,155.1 658.9,154.9 660.1,158.1 661.3,161.3 662.6,161.5 663.8,161.6 665,161.7 666.2,161.8 667.5,162 668.7,162.1 669.9,162.2 671.2,162.4 672.4,162.5 673.6,162.6 674.9,162.7 676.1,162.9 677.3,163 678.5,166.2 679.8,169.4 681,172.6 682.2,172.5 683.5,172.4 684.7,172.2 685.9,172.1 687.1,172 688.4,171.8 689.6,171.7 690.8,171.6 692.1,171.5 693.3,171.3 694.5,168.1 695.8,164.9 697,161.7 698.2,158.5 699.4,155.3 700.7,152.1 701.9,148.9 703.1,145.7 704.4,145.8 705.6,145.9 706.8,146.1 708,146.2 709.3,146.3 710.5,149.5 711.7,152.7 713,155.9 714.2,159.2 715.4,162.4 716.6,165.6 717.9,168.8 719.1,172 720.3,175.2 721.6,178.4 722.8,181.6 724,184.8 725.2,188 726.5,184.8 727.7,181.6 728.9,178.4 730.2,175.2 731.4,172 732.6,168.8 733.9,165.6 735.1,162.4 736.3,159.2 737.5,155.9 738.8,152.7 740,149.5" class="sig sig-audio"/>
+<line x1="725.2" y1="14" x2="725.2" y2="188" class="mark-euro"/>
+<text x="719.2" y="136" class="t-ax" text-anchor="end">erst bei 234 s wieder gleich</text>
+<text x="150" y="242" class="t-ax" text-anchor="middle">0:00</text>
+<text x="297.5" y="242" class="t-ax" text-anchor="middle">1:00</text>
+<text x="445" y="242" class="t-ax" text-anchor="middle">2:00</text>
+<text x="592.5" y="242" class="t-ax" text-anchor="middle">3:00</text>
+<text x="740" y="242" class="t-ax" text-anchor="middle">4:00</text>
+</svg></div>
+  <figcaption><b>Zwei Längen, kein gemeinsamer Takt.</b> 281t Kanal 1 bewegt in Patch <a class="xref" href="#p-4a">4A</a> das Filter, Kanal 2 die Wellenform von OSC 1. Erst nach 234 Sekunden stehen beide wieder gleich. Wähle die Längen nach Gehör, aber nie im Verhältnis 1:2 oder 2:3.</figcaption>
+</figure>
+<p>Der 281t schafft je Phase bis zu 10 Sekunden, ein Loop also bis etwa 20 Sekunden. <span class="tag tag-h">Hersteller</span> Für längere Bewegungen gibt es zwei Wege im Pult: den Zufallsausgang <span class="jack">RND</span> des A-118-2, dessen Geschwindigkeit der RATE-Regler bestimmt und dessen Hub LEVEL <span class="tag tag-h">Hersteller</span>, und die Hand. Eine Hand, die alle dreißig Sekunden einen Regler um eine halbe Stunde dreht, ist die langsamste und musikalischste Modulationsquelle, die Du hast.</p>
+<p>Zwei Faustregeln: Bewege pro Schicht <b>höchstens eine Größe</b>, und lass jede Bewegung <b>klein</b> genug, dass Du sie erst nach einer halben Minute bemerkst. Viele kleine, unabhängige Bewegungen klingen organisch; eine große klingt nach LFO.</p>
+
+<h4 id="k4-harmonie">7 · Orgelpunkt und langsame Harmoniewechsel</h4>
+<p>Ein <b>Orgelpunkt</b> ist ein Ton, der liegen bleibt, während sich darüber die Harmonie ändert. Er ist das einfachste Mittel, eine Fläche zugleich ruhig und bewegt klingen zu lassen: Der Boden steht, und jede neue Note darüber färbt ihn anders. In Patch <a class="xref" href="#p-4b">4B</a> bleibt der 258t als Orgelpunkt auf A, und die Pad-Schicht wechselt alle 16 Sekunden die Note.</p>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 245" role="img" aria-label="Orgelpunkt A liegt 64 Sekunden lang. Darüber wechselt die Fläche alle 16 Sekunden: a, f, c, g. Jeder Ton schwillt langsam an; sein Nachhall reicht in den nächsten hinein.">
+<line x1="120" y1="34" x2="740" y2="34" class="t-grid"/>
+<text x="110" y="38" class="t-ax" text-anchor="end">g</text>
+<line x1="120" y1="62" x2="740" y2="62" class="t-grid"/>
+<text x="110" y="66" class="t-ax" text-anchor="end">f</text>
+<line x1="120" y1="90" x2="740" y2="90" class="t-grid"/>
+<text x="110" y="94" class="t-ax" text-anchor="end">e</text>
+<line x1="120" y1="118" x2="740" y2="118" class="t-grid"/>
+<text x="110" y="122" class="t-ax" text-anchor="end">d</text>
+<line x1="120" y1="146" x2="740" y2="146" class="t-grid"/>
+<text x="110" y="150" class="t-ax" text-anchor="end">c</text>
+<line x1="120" y1="174" x2="740" y2="174" class="t-grid"/>
+<text x="110" y="178" class="t-ax" text-anchor="end">A</text>
+<rect x="120" y="165" width="620" height="18" rx="2" class="box-strong"/>
+<text x="128" y="178" class="t-ax">Orgelpunkt · 258t, steht</text>
+<path d="M120,99 L158.8,81 L255.6,81 L255.6,99 Z" class="bar-lim"/>
+<path d="M255.6,81 L333.1,99 L255.6,99 Z" class="box-mod"/>
+<text x="162.8" y="78" class="t-ax">Quinte</text>
+<path d="M275,71 L313.8,53 L410.6,53 L410.6,71 Z" class="bar-lim"/>
+<path d="M410.6,53 L488.1,71 L410.6,71 Z" class="box-mod"/>
+<text x="317.8" y="50" class="t-ax">kl. Sexte</text>
+<path d="M430,155 L468.8,137 L565.6,137 L565.6,155 Z" class="bar-lim"/>
+<path d="M565.6,137 L643.1,155 L565.6,155 Z" class="box-mod"/>
+<text x="472.8" y="134" class="t-ax">kl. Terz</text>
+<path d="M585,43 L623.8,25 L720.6,25 L720.6,43 Z" class="bar-lim"/>
+<path d="M720.6,25 L740,43 L720.6,43 Z" class="box-mod"/>
+<text x="627.8" y="22" class="t-ax">kl. Septime</text>
+<text x="120" y="215" class="t-ax" text-anchor="middle">0 s</text>
+<text x="275" y="215" class="t-ax" text-anchor="middle">16 s</text>
+<text x="430" y="215" class="t-ax" text-anchor="middle">32 s</text>
+<text x="585" y="215" class="t-ax" text-anchor="middle">48 s</text>
+<text x="740" y="215" class="t-ax" text-anchor="middle">64 s</text>
+<text x="120" y="237" class="t-ax">blau: Swell und Halten · orange: Release und Nachhall</text>
+</svg></div>
+  <figcaption><b>Ein Boden, vier Farben.</b> Über dem liegenden A wechselt das Pad zwischen e, f, c und g. Weil der µYarns einstimmig spielt, überlappen sich die Pad-Töne nicht in der Stimme selbst; die Verbindung schafft der Nachhall, der in den nächsten Ton hineinreicht. Darum gehört der Raum schon beim Aufbau dazu.</figcaption>
+</figure>
+<div class="tbl w"><table>
+<thead><tr><th>Pad-Ton über A</th><th>Intervall</th><th>Wirkung über dem Orgelpunkt</th></tr></thead>
+<tbody>
+<tr><td>a</td><td>Oktave</td><td>Ruhe, Ankunft; verschmilzt fast mit dem Drone</td></tr>
+<tr><td>e</td><td>Quinte</td><td>offen, weit, ohne Geschlecht</td></tr>
+<tr><td>d</td><td>Quarte</td><td>schwebend, will sich auflösen</td></tr>
+<tr><td>c</td><td>kleine Terz</td><td>Moll, dunkel, nah</td></tr>
+<tr><td>f</td><td>kleine Sexte</td><td>Wehmut; die Farbe vieler ruhiger Klavierstücke</td></tr>
+<tr><td>g</td><td>kleine Septime</td><td>offen, ungelöst, lässt weiterhören</td></tr>
+</tbody></table></div>
+<p>Langsam heißt: eine Note alle 8 bis 16 Sekunden, nicht schneller. Die Wechsel dürfen dabei nicht hart sein. Dafür sorgen drei Dinge, die Du in 4B einstellst: ein Attack von einigen Sekunden, ein langer Release und ein Hall, dessen Ausklang in den nächsten Ton reicht. Wer die Tonhöhe selbst gleiten lassen will, findet im µYarns eine Portamento-Einstellung; mit LEGATO auf ON oder AUTO wird bei gebunden gespielten Noten das Gate nicht neu ausgelöst. <span class="tag tag-h">Hersteller</span></p>
+
+<h4 id="k4-uebergang">8 · Übergänge: Rauschen oder Anstoß</h4>
+<p>Rings hat einen Audioeingang <span class="jack">IN</span> und einen Trigger-Eingang <span class="jack">STRUM</span>, und beide dürfen gleichzeitig benutzt werden. Dauerhaftes Rauschen in IN regt den Resonator ununterbrochen an: Es entsteht ein tönender, flirrender Dauerklang auf der Tonhöhe an <span class="jack">V/OCT</span>. Ein Trigger an STRUM schlägt eine Note an. <span class="tag tag-h">Hersteller</span> Wie lange der Resonator danach nachschwingt, bestimmt DAMPING: Ein hoher Wert bedeutet langen Nachklang. <span class="tag tag-h">Hersteller</span> Damit liegen alle drei Zeitgestalten in einem Modul:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Zustand</th><th>Rauschen (FOUR PLAY Reihe 3)</th><th>STRUM</th><th>DAMPING</th><th>SERRA am Pad</th></tr></thead>
+<tbody>
+<tr><td>Drone</td><td>auf, 11 Uhr</td><td>gezogen oder egal</td><td>3–4 Uhr, langer Nachklang</td><td>Pad-Schicht leise</td></tr>
+<tr><td>Pad</td><td>wenig, 9 Uhr</td><td>vom Arpeggio</td><td>2 Uhr</td><td>Attack 2–3 s, Release lang</td></tr>
+<tr><td>Pluck</td><td>zu</td><td>vom Arpeggio</td><td>10–11 Uhr</td><td>Attack kurz, Release ≈ 1 s</td></tr>
+</tbody></table></div>
+<p>Das ist der Kern von <a href="#kwp">KWP-05</a> „Rings aus dem Pad lösen“: Die Tonhöhen liegen von Anfang an an. Bei hohem Damping verschmieren sie zu einem wandernden Drone, sinkt das Damping, lösen sie sich in einzelne Anschläge auf. Das Arpeggio <i>kommt zum Vorschein, statt eingeschaltet zu werden.</i> Die Patchkarte steuert das mit einer Makro-Spannung; in Patch <a class="xref" href="#p-4d">4D</a> machst Du es zuerst mit der Hand.</p>
+
+<h4 id="k4-raum">9 · Den Raum von Anfang an mitbauen</h4>
+<p>Hall und Echo sind für Flächen keine Politur, sondern Teil des Instruments. Ob ein Attack von zwei Sekunden zu lang ist, ob ein Pad-Wechsel hart klingt, ob eine Schicht zu laut ist: Das entscheidet sich erst im Raum. Darum hängt der Milky Way in diesem Kapitel schon ab der ersten Stufe im Signalweg, und Du stellst alles andere so ein, wie es durch den Hall klingt.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Modul</th><th>Rolle im Kapitel</th><th>Kennwerte</th></tr></thead>
+<tbody>
+<tr><td>Endorphin.es Milky Way</td><td>Hall am Ende der Kette, ab 4A</td><td>16 Algorithmen in zwei Bänken: Hall, Shimmer, Room, Plate, Spring, PingPong, Tape Echo, Chorus · Gated, Spring, Reverse, Flanger, Ringmodulator, Overdrive, Kompressor, Freezer. Regler CABIN PRESSURE (meist Dry/Wet) und CABIN FEVER (Hauptparameter, beim Hall die Länge), ein zweiter Parameter über TAP halten. Stereo-Ein- und Ausgänge, IN 1 auf IN 2 normalisiert. Eingang ±5 V, Sättigung ab ±6,5 V; VOLUME sättigt ab 3 Uhr, die LED blinkt dann rot. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Skies</td><td>granulare Wolke auf der Resonanzschicht, ab 4C</td><td>Nachbau des Mutable Clouds: Regler POSITION, SIZE, PITCH, DENSITY, TEXTURE, BLEND und Eingangspegel, CV für alle Parameter ohne Abschwächer, mono und stereo. <span class="tag tag-h">Hersteller</span> Beim Clouds schaltet eine Taste den BLEND-Regler zwischen Dry/Wet, Stereobreite, Rückkopplung und Hall um, und FREEZE hält den Puffer fest. <span class="tag tag-h">Hersteller</span> Dazu laut Clouds-Handbuch: Die grüne LED zeigt, welche der vier Funktionen BLEND und seine CV-Buchse gerade steuern; der FREEZE-Taster rastet ein, die FREEZE-Buchse friert nur, solange ihr Gate oben ist; DENSITY ist in der Mitte stumm, rechts kommen die Körner zufällig, links gleichmäßig. <span class="tag tag-h">Hersteller</span> Ob der Skies das genauso bedient: <span class="tag tag-p" id="pr-26">am Gerät prüfen</span></td></tr>
+<tr><td>Morphor Echo</td><td>Bandecho vor dem Hall, ab 4D</td><td>Analoges BBD-Delay mit vier Taps bei ¼, ½, ¾ und der vollen Zeit, 10 ms bis etwa 2,4 s gesamt. Vier Einzelausgänge, ein Stereomix von Tap 4 und ein Stereomix aller Taps mit Panoramamodi Ping-Pong, Traverse und Chaos. Tiefpass im Delayweg mit früher (dunkler, rauschärmer) oder später Nachführung, externer Rückkopplungseingang, Phasenumkehr. <span class="tag tag-h">Hersteller</span></td></tr>
+</tbody></table></div>
+<p>Die Reihenfolge ist <b>erst Echo, dann Hall</b>, wie beim Bandecho vor der Hallplatte: Die Wiederholungen landen im Raum und werden mit ihm weicher. Umgekehrt würde das Echo jeden Hallschweif noch einmal sauber wiederholen, und die Fläche verschwimmt. Zwei Einstellungen am Milky Way helfen Flächen besonders: der zweite Parameter des Halls, ein fest eingestellter Hochpass, der den Bass aus dem Hall hält <span class="tag tag-h">Hersteller</span>, und ein Mix, der lieber zu niedrig als zu hoch beginnt.</p>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k4-praxis">Teil 2 · Praxis am Rack: vom Drone zur Frahm-Fläche</h3>
+<p>Vier Stufen, die aufeinander aufbauen. Keine Stufe ersetzt die vorige; jede legt eine Schicht dazu. Am Ende laufen fünf Schichten über einen gemeinsamen Raum-Bus durch Echo und Hall, und Du kannst mit wenigen Reglern zwischen Drone, Pad und Pluck wechseln.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-4a">4A</a></b> bekommt Patch <a class="xref" href="#p-1c">1C</a> einen Raum und eine zweite, unabhängige Bewegung: Der 281t bewegt das Filter, ein zweiter Kanal mit anderer Länge die Wellenform von OSC 1. OSC 2 wird vom Einklang in ein reines Intervall gestimmt. Der 258t ist von jetzt an der <b>Orgelpunkt</b>. In <b>Patch <a class="xref" href="#p-4b">4B</a></b> spielst Du darüber vom Keyboard eine zweite Schicht aus Cali und Big-O, leicht gegeneinander verstimmt, mit langsamem Swell aus dem SERRA. In <b>Patch <a class="xref" href="#p-4c">4C</a></b> kommen zwei Resonanzschichten dazu: Rings, mit Rauschen angeregt und auf der Tonhöhe des Pads, durch Skies zu einer Wolke verwischt, und Elements, gestrichen, als hohe Luft über allem. In <b>Patch <a class="xref" href="#p-4d">4D</a></b> schaltet der µYarns auf Arpeggio, Rings bekommt Anstöße, das Morphor Echo kommt vor den Hall, und Du drehst die Fläche vom Drone zum Pluck. Das ist die Frahm-Fläche aus <a class="xref" href="#kwp-04">KWP-04</a> am heutigen Pult.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Aus diesem Patch entsteht alles, was in Ambient und Filmmusik den Boden bildet: Intros, die aus dem Nichts wachsen, Flächen unter Klavier oder Stimme, Übergänge, die eine Szene in die nächste tragen. Du lernst dabei, eine Fläche nicht als Klang zu denken, sondern als Anordnung von Schichten, von denen jede ihr eigenes Register und Tempo hat. Patch <a class="xref" href="#p-4d">4D</a> ist außerdem der Grundpatch für <a href="#b3-01">B3-01 Ambient</a> und für die Echo-Patches <a class="xref" href="#kwp-15">KWP-15</a> bis <a class="xref" href="#kwp-17">17</a> in Kapitel <a class="xref" href="#k8">08</a>.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Orgelpunkt, Fundament und Körper</td><td>Tiptop 258t, OSC 1 und OSC 2 · CatSynth 4× Mixer · A-106-5 SEM · A-130-8 Kanal 1 · Attenuverter Reihe 2 (aus Patch <a class="xref" href="#p-1c">1C</a>)</td><td>4A</td></tr>
+<tr><td>Langsame Bewegung</td><td>Tiptop 281t, Kanal 1 und 2</td><td>4A</td></tr>
+<tr><td>Raum-Bus</td><td>der zweite CatSynth 4× Mixer (Mixer 2): vier Regler als Fader, Summe an OUT</td><td>4A</td></tr>
+<tr><td>Hall</td><td>Endorphin.es Milky Way</td><td>4A</td></tr>
+<tr><td>Spielsteuerung</td><td>µYarns, Layout 1M, vom Masterkeyboard oder Exquis · CatSynth aktiver 1×8 Mult</td><td>4B</td></tr>
+<tr><td>Pad-Schicht</td><td>Dannysound Cali · Capt’n Big-O · Behringer Surges · NANO SERRA · A-130-8 Kanal 2</td><td>4B</td></tr>
+<tr><td>Resonanz</td><td>A-118-2 (Rauschen) · FOUR PLAY Reihe 3, Kanal 1 · Rings · Skies</td><td>4C</td></tr>
+<tr><td>Luft</td><td>Elements · Attenuverter Reihe 4, Kanal A als Dauer-Gate</td><td>4C</td></tr>
+<tr><td>Echo</td><td>Morphor Echo</td><td>4D</td></tr>
+<tr><td>Abhören</td><td>zwei Passivfader → L6 Kanal 1 und 2 (links, rechts)</td><td>4A</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Keyboard</h4>
+<p>Statt µYarns-CV kommt die Tonhöhe des Pads aus dem A-185-2 durch den A-156 wie in Exkurs 1D: <span class="jack">Lev.1</span> am leeren Eingang 1 → Quantizer auf Moll → aktiver Mult. Das Gate für den SERRA gibst Du mit seinem beleuchteten Gate-Taster von Hand; die Anstöße für Rings in 4D kommen vom Pulsausgang eines 281t-Kanals im Loop. Für das Arpeggio in 4D fehlt dann eine Tonfolge; Kapitel <a class="xref" href="#k6">06</a> zeigt, wie Leo Leo sie liefert.</p>
+</div>
+<div class="box-c">
+<h4>Zwei Mixer, ein FOUR PLAY</h4>
+<p>Im Pult stecken zwei CatSynth 4× Mixer und ein FOUR PLAY (Reihe 3). Der erste Mixer mischt wie in Patch <a class="xref" href="#p-1c">1C</a> die beiden Oszillatoren vor dem SEM. Der zweite, hier <b>Mixer 2</b>, ist der <b>Raum-Bus</b>: Jeder Eingang nimmt eine Schicht, die vier Regler sind die Fader, an <span class="jack">OUT</span> liegt die Summe. Wie stark die Regler abschwächen und ob die Summe verstärkt, ist offen <span class="tag tag-p" id="pr-27">am Gerät prüfen</span>; darum fängst Du mit allen Reglern auf halber Stellung an und hörst am Milky Way nach. Der FOUR PLAY dosiert nur das Rauschen für Rings, ohne Kabel im CV-Eingang, CURVE auf linear (Rechtsanschlag).</p>
+</div>
+
+<p class="bst" id="k4-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp4">
+  <button type="button" data-stage="4A" aria-pressed="false">Patch 4A</button>
+  <button type="button" data-stage="4B" aria-pressed="false">Patch 4B</button>
+  <button type="button" data-stage="4C" aria-pressed="false">Patch 4C</button>
+  <button type="button" data-stage="4D" aria-pressed="true">Patch 4D</button>
+</div>
+<figure>
+<div class="sv" id="pp4"><svg class="pp" viewBox="0 0 1470 900" role="img" aria-label="Patchplan Kapitel 04 in vier Stufen: Patch 1C mit Raum, eine Pad-Schicht über dem Orgelpunkt, Rings und Elements als Resonanzschichten, schließlich Pluck und Echo. Alle Schichten laufen über einen zweiten 4× Mixer als Raum-Bus in Morphor Echo und Milky Way.">
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="20" y="20" width="150" height="110" rx="3"/>
+<text class="mt" x="32" y="44">µYarns</text>
+<text class="ms" x="32" y="60">Layout 1M</text>
+<circle class="jk o" cx="42" cy="85" r="7"/>
+<text class="jl" x="42" y="107" text-anchor="middle">GATE 1</text>
+<circle class="jk o" cx="96" cy="85" r="7"/>
+<text class="jl" x="96" y="107" text-anchor="middle">GATE 2</text>
+<circle class="jk o" cx="146" cy="85" r="7"/>
+<text class="jl" x="146" y="107" text-anchor="middle">CV 1</text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="20" y="600" width="150" height="90" rx="3"/>
+<text class="mt" x="32" y="624">A-118-2</text>
+<text class="ms" x="32" y="640">Rauschen</text>
+<circle class="jk o" cx="155" cy="655" r="7"/>
+<text class="jl" x="143" y="659" text-anchor="end">C NOISE</text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="20" y="780" width="150" height="100" rx="3"/>
+<text class="mt" x="32" y="804">Attenuverter</text>
+<text class="ms" x="32" y="820">Reihe 4</text>
+<circle class="jk o" cx="155" cy="840" r="7"/>
+<text class="jl" x="143" y="844" text-anchor="end">OUT A</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="210" y="20" width="140" height="170" rx="3"/>
+<text class="mt" x="222" y="44">281t</text>
+<text class="ms" x="222" y="60">Kanal 1 und 2</text>
+<circle class="jk o" cx="335" cy="95" r="7"/>
+<text class="jl" x="323" y="99" text-anchor="end">OUT 1</text>
+<circle class="jk o" cx="335" cy="150" r="7"/>
+<text class="jl" x="323" y="154" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="210" y="230" width="140" height="180" rx="3"/>
+<text class="mt" x="222" y="254">258t</text>
+<text class="ms" x="222" y="270">OSC 1 und 2</text>
+<circle class="jk o" cx="335" cy="285" r="7"/>
+<text class="jl" x="323" y="289" text-anchor="end">OSC 1 OUT</text>
+<circle class="jk o" cx="335" cy="330" r="7"/>
+<text class="jl" x="323" y="334" text-anchor="end">OSC 2 OUT</text>
+<circle class="jk" cx="225" cy="390" r="7"/>
+<text class="jl" x="237" y="394">WAVE CV 1</text>
+</g>
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="210" y="440" width="140" height="130" rx="3"/>
+<text class="mt" x="222" y="464">Mult</text>
+<text class="ms" x="222" y="480">aktiv, 1×8</text>
+<circle class="jk" cx="225" cy="505" r="7"/>
+<text class="jl" x="237" y="509">IN</text>
+<circle class="jk o" cx="335" cy="470" r="7"/>
+<text class="jl" x="323" y="474" text-anchor="end"></text>
+<circle class="jk o" cx="335" cy="505" r="7"/>
+<text class="jl" x="323" y="509" text-anchor="end"></text>
+<circle class="jk o" cx="335" cy="540" r="7"/>
+<text class="jl" x="323" y="544" text-anchor="end"></text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="210" y="600" width="140" height="90" rx="3"/>
+<text class="mt" x="222" y="624">FOUR PLAY</text>
+<text class="ms" x="222" y="640">Reihe 3</text>
+<circle class="jk" cx="225" cy="655" r="7"/>
+<text class="jl" x="237" y="659">IN 1</text>
+<circle class="jk o" cx="335" cy="655" r="7"/>
+<text class="jl" x="323" y="659" text-anchor="end">OUT 1</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="400" y="20" width="140" height="170" rx="3"/>
+<text class="mt" x="412" y="44">Attenuverter</text>
+<text class="ms" x="412" y="60">Reihe 2</text>
+<circle class="jk o" cx="525" cy="60" r="7"/>
+<text class="jl" x="513" y="64" text-anchor="end">OUT A</text>
+<circle class="jk" cx="415" cy="120" r="7"/>
+<text class="jl" x="427" y="124">IN B</text>
+<circle class="jk o" cx="525" cy="155" r="7"/>
+<text class="jl" x="513" y="159" text-anchor="end">OUT B</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="400" y="230" width="140" height="130" rx="3"/>
+<text class="mt" x="412" y="254">Mixer</text>
+<text class="ms" x="412" y="270">CatSynth 4×</text>
+<circle class="jk" cx="415" cy="285" r="7"/>
+<text class="jl" x="427" y="289">IN 1</text>
+<circle class="jk" cx="415" cy="318" r="7"/>
+<text class="jl" x="427" y="322">IN 2</text>
+<circle class="jk o" cx="525" cy="345" r="7"/>
+<text class="jl" x="513" y="349" text-anchor="end">OUT</text>
+</g>
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="400" y="400" width="140" height="100" rx="3"/>
+<text class="mt" x="412" y="424">SERRA</text>
+<text class="ms" x="412" y="440">ADSR</text>
+<circle class="jk" cx="415" cy="458" r="7"/>
+<text class="jl" x="427" y="462">GATE</text>
+<circle class="jk o" cx="525" cy="485" r="7"/>
+<text class="jl" x="513" y="489" text-anchor="end">OUT</text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="400" y="560" width="140" height="190" rx="3"/>
+<text class="mt" x="412" y="584">Rings</text>
+<text class="ms" x="412" y="600">Resonator</text>
+<circle class="jk" cx="415" cy="612" r="7"/>
+<text class="jl" x="427" y="616">IN</text>
+<circle class="jk" cx="415" cy="650" r="7"/>
+<text class="jl" x="427" y="654">STRUM</text>
+<circle class="jk" cx="415" cy="690" r="7"/>
+<text class="jl" x="427" y="694">V/OCT</text>
+<circle class="jk o" cx="525" cy="725" r="7"/>
+<text class="jl" x="513" y="729" text-anchor="end">ODD</text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="400" y="780" width="140" height="100" rx="3"/>
+<text class="mt" x="412" y="804">Elements</text>
+<text class="ms" x="412" y="820">gestrichen</text>
+<circle class="jk" cx="415" cy="835" r="7"/>
+<text class="jl" x="427" y="839">GATE</text>
+<circle class="jk o" cx="525" cy="855" r="7"/>
+<text class="jl" x="513" y="859" text-anchor="end">OUT R</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="590" y="230" width="150" height="130" rx="3"/>
+<text class="mt" x="602" y="254">A-106-5</text>
+<text class="ms" x="602" y="270">SEM</text>
+<circle class="jk" cx="605" cy="280" r="7"/>
+<text class="jl" x="617" y="284">CV2 IN</text>
+<circle class="jk" cx="605" cy="315" r="7"/>
+<text class="jl" x="617" y="319">AUDIO IN</text>
+<circle class="jk o" cx="725" cy="345" r="7"/>
+<text class="jl" x="713" y="349" text-anchor="end">MIX-OUT</text>
+</g>
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="590" y="400" width="150" height="70" rx="3"/>
+<text class="mt" x="602" y="424">Cali</text>
+<circle class="jk" cx="605" cy="445" r="7"/>
+<text class="jl" x="617" y="449">V/OCT</text>
+<circle class="jk o" cx="725" cy="445" r="7"/>
+<text class="jl" x="713" y="449" text-anchor="end">OUT</text>
+</g>
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="590" y="490" width="150" height="70" rx="3"/>
+<text class="mt" x="602" y="514">Capt’n Big-O</text>
+<circle class="jk" cx="605" cy="535" r="7"/>
+<text class="jl" x="617" y="539">V/OCT</text>
+<circle class="jk o" cx="725" cy="535" r="7"/>
+<text class="jl" x="713" y="539" text-anchor="end">SAW</text>
+</g>
+<g class="mod" data-st="4C 4D">
+<rect class="m" x="590" y="600" width="150" height="90" rx="3"/>
+<text class="mt" x="602" y="624">Skies</text>
+<text class="ms" x="602" y="640">Clouds-Variante</text>
+<circle class="jk" cx="605" cy="655" r="7"/>
+<text class="jl" x="617" y="659">IN L</text>
+<circle class="jk o" cx="725" cy="655" r="7"/>
+<text class="jl" x="713" y="659" text-anchor="end">OUT L</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="790" y="150" width="140" height="230" rx="3"/>
+<text class="mt" x="802" y="174">A-130-8</text>
+<text class="ms" x="802" y="190">Kanal 1 und 2</text>
+<circle class="jk" cx="805" cy="210" r="7"/>
+<text class="jl" x="817" y="214">IN 1</text>
+<circle class="jk" cx="805" cy="240" r="7"/>
+<text class="jl" x="817" y="244">CV 1</text>
+<circle class="jk" cx="805" cy="300" r="7"/>
+<text class="jl" x="817" y="304">IN 2</text>
+<circle class="jk" cx="805" cy="340" r="7"/>
+<text class="jl" x="817" y="344">CV 2</text>
+<circle class="jk o" cx="915" cy="220" r="7"/>
+<text class="jl" x="903" y="224" text-anchor="end">OUT 1</text>
+<circle class="jk o" cx="915" cy="320" r="7"/>
+<text class="jl" x="903" y="324" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod" data-st="4B 4C 4D">
+<rect class="m" x="790" y="420" width="140" height="120" rx="3"/>
+<text class="mt" x="802" y="444">Surges</text>
+<text class="ms" x="802" y="460">Tiefpass</text>
+<circle class="jk" cx="805" cy="475" r="7"/>
+<text class="jl" x="817" y="479">IN 1</text>
+<circle class="jk" cx="805" cy="507" r="7"/>
+<text class="jl" x="817" y="511">IN 2</text>
+<circle class="jk o" cx="915" cy="525" r="7"/>
+<text class="jl" x="903" y="529" text-anchor="end">LP</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="980" y="150" width="140" height="300" rx="3"/>
+<text class="mt" x="992" y="174">4× Mixer</text>
+<text class="ms" x="992" y="190">Mixer 2 · Raum-Bus</text>
+<circle class="jk" cx="995" cy="215" r="7"/>
+<text class="jl" x="1007" y="219">IN 1</text>
+<circle class="jk" cx="995" cy="270" r="7"/>
+<text class="jl" x="1007" y="274">IN 2</text>
+<circle class="jk" cx="995" cy="340" r="7"/>
+<text class="jl" x="1007" y="344">IN 3</text>
+<circle class="jk" cx="995" cy="400" r="7"/>
+<text class="jl" x="1007" y="404">IN 4</text>
+<circle class="jk o" cx="1105" cy="425" r="7"/>
+<text class="jl" x="1093" y="429" text-anchor="end">OUT</text>
+</g>
+<g class="mod" data-st="4D">
+<rect class="m" x="980" y="560" width="140" height="120" rx="3"/>
+<text class="mt" x="992" y="584">Morphor Echo</text>
+<circle class="jk" cx="995" cy="610" r="7"/>
+<text class="jl" x="1007" y="614">IN</text>
+<circle class="jk o" cx="1105" cy="610" r="7"/>
+<text class="jl" x="1093" y="614" text-anchor="end">MIX L</text>
+<circle class="jk o" cx="1105" cy="650" r="7"/>
+<text class="jl" x="1093" y="654" text-anchor="end">MIX R</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="1170" y="150" width="130" height="170" rx="3"/>
+<text class="mt" x="1182" y="174">Milky Way</text>
+<text class="ms" x="1182" y="190">Hall</text>
+<circle class="jk" cx="1185" cy="210" r="7"/>
+<text class="jl" x="1197" y="214">IN 1</text>
+<circle class="jk" cx="1185" cy="270" r="7"/>
+<text class="jl" x="1197" y="274">IN 2</text>
+<circle class="jk o" cx="1285" cy="210" r="7"/>
+<text class="jl" x="1273" y="214" text-anchor="end">OUT 1</text>
+<circle class="jk o" cx="1285" cy="270" r="7"/>
+<text class="jl" x="1273" y="274" text-anchor="end">OUT 2</text>
+</g>
+<g class="mod" data-st="4A 4B 4C 4D">
+<rect class="m" x="1340" y="150" width="110" height="170" rx="3"/>
+<text class="mt" x="1352" y="174">Fader·L6</text>
+<circle class="jk" cx="1360" cy="210" r="7"/>
+<text class="jl" x="1360" y="232" text-anchor="middle">KANAL 1</text>
+<circle class="jk" cx="1360" cy="270" r="7"/>
+<text class="jl" x="1360" y="292" text-anchor="middle">KANAL 2</text>
+</g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M335,285 C375,285 375,285 415,285"/><g class="badge audio"><circle cx="375" cy="285" r="11"/><text x="375" y="289" text-anchor="middle">1</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M335,330 C375,330 375,318 415,318"/><g class="badge audio"><circle cx="375" cy="324" r="11"/><text x="375" y="328" text-anchor="middle">2</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M525,345 C565,345 565,315 605,315"/><g class="badge audio"><circle cx="565" cy="330" r="11"/><text x="565" y="334" text-anchor="middle">3</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M725,345 C765,345 765,210 805,210"/><g class="badge audio"><circle cx="765" cy="277.5" r="11"/><text x="765" y="281.5" text-anchor="middle">4</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab cv" d="M525,60 C651,60 679,240 805,240"/><g class="badge cv"><circle cx="665" cy="150" r="11"/><text x="665" y="154" text-anchor="middle">5</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab cv" d="M335,95 C456.5,95 483.5,280 605,280"/><g class="badge cv"><circle cx="470" cy="187.5" r="11"/><text x="470" y="191.5" text-anchor="middle">6</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M915,220 C955,220 955,215 995,215"/><g class="badge audio"><circle cx="955" cy="217.5" r="11"/><text x="955" y="221.5" text-anchor="middle">7</text></g></g>
+<g class="cg off" data-st="4A 4B 4C"><path class="cab audio" d="M1105,425 C1145,425 1145,210 1185,210"/><g class="badge audio"><circle cx="1145" cy="317.5" r="11"/><text x="1145" y="321.5" text-anchor="middle">8</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M1285,210 C1325,210 1320,210 1360,210"/><g class="badge audio"><circle cx="1322.5" cy="210" r="11"/><text x="1322.5" y="214" text-anchor="middle">9</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab audio" d="M1285,270 C1325,270 1320,270 1360,270"/><g class="badge audio"><circle cx="1322.5" cy="270" r="11"/><text x="1322.5" y="274" text-anchor="middle">10</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab cv" d="M335,150 C375,150 375,120 415,120"/><g class="badge cv"><circle cx="375" cy="135" r="11"/><text x="375" y="139" text-anchor="middle">11</text></g></g>
+<g class="cg" data-st="4A 4B 4C 4D"><path class="cab cv" d="M525,155 C595,190.2 155,354.8 225,390"/><g class="badge cv"><circle cx="375" cy="272.5" r="11"/><text x="375" y="276.5" text-anchor="middle">12</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab cv" d="M146,85 C186,85 185,505 225,505"/><g class="badge cv"><circle cx="185.5" cy="295" r="11"/><text x="185.5" y="299" text-anchor="middle">13</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab cv" d="M335,470 C456.5,470 483.5,445 605,445"/><g class="badge cv"><circle cx="470" cy="457.5" r="11"/><text x="470" y="461.5" text-anchor="middle">14</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab cv" d="M335,505 C456.5,505 483.5,535 605,535"/><g class="badge cv"><circle cx="470" cy="520" r="11"/><text x="470" y="524" text-anchor="middle">15</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab gate" d="M42,85 C209.8,85 247.2,458 415,458"/><g class="badge gate"><circle cx="228.5" cy="271.5" r="11"/><text x="228.5" y="275.5" text-anchor="middle">16</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab cv" d="M525,485 C651,485 679,340 805,340"/><g class="badge cv"><circle cx="665" cy="412.5" r="11"/><text x="665" y="416.5" text-anchor="middle">17</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab audio" d="M725,445 C765,445 765,475 805,475"/><g class="badge audio"><circle cx="765" cy="460" r="11"/><text x="765" y="464" text-anchor="middle">18</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab audio" d="M725,535 C765,535 765,507 805,507"/><g class="badge audio"><circle cx="765" cy="521" r="11"/><text x="765" y="525" text-anchor="middle">19</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab audio" d="M915,525 C985,491.2 735,333.8 805,300"/><g class="badge audio"><circle cx="860" cy="412.5" r="11"/><text x="860" y="416.5" text-anchor="middle">20</text></g></g>
+<g class="cg" data-st="4B 4C 4D"><path class="cab audio" d="M915,320 C955,320 955,270 995,270"/><g class="badge audio"><circle cx="955" cy="295" r="11"/><text x="955" y="299" text-anchor="middle">21</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab audio" d="M155,655 C195,655 185,655 225,655"/><g class="badge audio"><circle cx="190" cy="655" r="11"/><text x="190" y="659" text-anchor="middle">22</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab audio" d="M335,655 C375,655 375,612 415,612"/><g class="badge audio"><circle cx="375" cy="633.5" r="11"/><text x="375" y="637.5" text-anchor="middle">23</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab cv" d="M335,540 C375,540 375,690 415,690"/><g class="badge cv"><circle cx="375" cy="615" r="11"/><text x="375" y="619" text-anchor="middle">24</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab audio" d="M525,725 C565,725 565,655 605,655"/><g class="badge audio"><circle cx="565" cy="690" r="11"/><text x="565" y="694" text-anchor="middle">25</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab audio" d="M725,655 C846.5,655 873.5,340 995,340"/><g class="badge audio"><circle cx="860" cy="497.5" r="11"/><text x="860" y="501.5" text-anchor="middle">26</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab gate" d="M155,840 C272,840 298,835 415,835"/><g class="badge gate"><circle cx="285" cy="837.5" r="11"/><text x="285" y="841.5" text-anchor="middle">27</text></g></g>
+<g class="cg" data-st="4C 4D"><path class="cab audio" d="M525,855 C736.5,855 783.5,400 995,400"/><g class="badge audio"><circle cx="760" cy="627.5" r="11"/><text x="760" y="631.5" text-anchor="middle">28</text></g></g>
+<g class="cg" data-st="4D"><path class="cab trig" d="M96,85 C239.6,85 271.4,650 415,650"/><g class="badge trig"><circle cx="255.5" cy="367.5" r="11"/><text x="255.5" y="371.5" text-anchor="middle">29</text></g></g>
+<g class="cg" data-st="4D"><path class="cab audio" d="M1105,425 C1175,452.8 925,582.2 995,610"/><g class="badge audio"><circle cx="1050" cy="517.5" r="11"/><text x="1050" y="521.5" text-anchor="middle">30</text></g></g>
+<g class="cg" data-st="4D"><path class="cab audio" d="M1105,610 C1145,610 1145,210 1185,210"/><g class="badge audio"><circle cx="1145" cy="410" r="11"/><text x="1145" y="414" text-anchor="middle">31</text></g></g>
+<g class="cg" data-st="4D"><path class="cab audio" d="M1105,650 C1145,650 1145,270 1185,270"/><g class="badge audio"><circle cx="1145" cy="460" r="11"/><text x="1145" y="464" text-anchor="middle">32</text></g></g>
+</svg></div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--gate)"></i>Gate</span><span><i style="background:var(--trig)"></i>Trigger</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-4A="&lt;b&gt;Patch 4A, der Drone bekommt Raum.&lt;/b&gt; Patch 1C (1–6) läuft über den Raum-Bus (7) in den Milky Way (8) und stereo zum L6 (9, 10). Ein zweiter 281t-Kanal bewegt die Wellenform von OSC 1 (11, 12)." data-cap-4B="&lt;b&gt;Patch 4B, eine Fläche über dem Orgelpunkt.&lt;/b&gt; Das Keyboard spielt Cali und Big-O (13–15), der SERRA formt den Swell (16, 17), der Surges filtert beide (18, 19), A-130-8 Kanal 2 bringt das Pad auf den Raum-Bus (20, 21)." data-cap-4C="&lt;b&gt;Patch 4C, Resonanzen.&lt;/b&gt; Rauschen regt Rings an (22, 23), der der Pad-Tonhöhe folgt (24) und durch Skies auf den Bus läuft (25, 26). Elements streicht dauernd (27) und bringt die Luft (28)." data-cap-4D="&lt;b&gt;Patch 4D, die Frahm-Fläche.&lt;/b&gt; Der µYarns spielt ein Arpeggio, GATE 2 stößt Rings an (29). Der Raum-Bus läuft jetzt erst ins Morphor Echo (30) und von dort stereo in den Milky Way (31, 32); Kabel 8 ist gezogen. Mit den Tasten oben siehst Du jede Stufe einzeln."><b>Patch <a class="xref" href="#p-4d">4D</a>, die Frahm-Fläche.</b> Der µYarns spielt ein Arpeggio, GATE 2 stößt Rings an (29). Der Raum-Bus läuft jetzt erst ins Morphor Echo (30) und von dort stereo in den Milky Way (31, 32); Kabel 8 ist gezogen. Mit den Tasten oben siehst Du jede Stufe einzeln.</figcaption>
+</figure>
+
+<p class="bst" id="k4-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-4a">Stufe 1 · Patch 4A: der Drone bekommt Raum</h4>
+<p>Bau Patch <a class="xref" href="#p-1c">1C</a> auf, wie in Kapitel <a class="xref" href="#k1">01</a> beschrieben. Die Kabel bekommen hier neue Nummern; nur das Kabel vom VCA zum L6 ändert sein Ziel.</p>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · L6 und Passivfader zu · Milky Way VOLUME auf 12 Uhr · Mixer 2: alle vier Regler zu · FOUR PLAY: CURVE linear, LEVEL zu</div><div class="why">Erst die Kette ganz durchstecken, dann von vorn nach hinten aufdrehen.</div></div></li>
+<li><span class="n audio">1</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> → Mixer <b>IN 1</b></div><div class="why">Kabel 6 aus Patch <a class="xref" href="#p-1c">1C</a>.</div></div></li>
+<li><span class="n audio">2</span><div class="r"><div class="route">258t <b>OSC 2 OUT</b> → Mixer <b>IN 2</b></div><div class="why">Kabel 7 aus Patch <a class="xref" href="#p-1c">1C</a>.</div></div></li>
+<li><span class="n audio">3</span><div class="r"><div class="route">Mixer <b>OUT</b> → A-106-5 <b>AUDIO IN</b></div><div class="why">Kabel 8 aus Patch <a class="xref" href="#p-1c">1C</a>.</div></div></li>
+<li><span class="n audio">4</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → A-130-8 <b>IN 1</b></div><div class="why">Kabel 2 aus Patch <a class="xref" href="#p-1c">1C</a>. LP/HP-Mix am Linksanschlag, reiner Tiefpass. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n cv">5</span><div class="r"><div class="route">Attenuverter Reihe 2 <b>OUT A</b> → A-130-8 <b>CV 1</b></div><div class="why">Kabel 4 aus Patch <a class="xref" href="#p-1c">1C</a>: OFFSET A ist der Pegelsteller des Drones. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n cv">6</span><div class="r"><div class="route">281t <b>OUT 1</b> → A-106-5 <b>CV2 IN</b></div><div class="why">Kabel 5 aus Patch <a class="xref" href="#p-1c">1C</a>, Kanal 1 im Loop. Nur langsamer als dort.</div></div></li>
+<li><span class="n audio">7</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → Mixer 2 <b>IN 1</b></div><div class="why">Statt direkt zum L6 auf den Raum-Bus. Regler 1 ist jetzt der Kanalfader des Drones.</div></div></li>
+<li><span class="n audio">8</span><div class="r"><div class="route">Mixer 2 <b>OUT</b> → Milky Way <b>IN 1</b></div><div class="why">Mono hinein: IN 1 ist auf IN 2 normalisiert, der Hall macht daraus Stereo. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">9</span><div class="r"><div class="route">Milky Way <b>OUT 1</b> → Passivfader → L6 <b>Kanal 1</b></div><div class="why">Links.</div></div></li>
+<li><span class="n audio">10</span><div class="r"><div class="route">Milky Way <b>OUT 2</b> → Passivfader → L6 <b>Kanal 2</b></div><div class="why">Rechts. Beide Kanäle am L6 gleich laut und ganz nach außen gedreht <span class="tag tag-p" id="pr-28">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n cv">11</span><div class="r"><div class="route">281t <b>OUT 2</b> → Attenuverter Reihe 2 <b>IN B</b></div><div class="why">Kanal 2 auf Loop, mit anderer Länge als Kanal 1.</div></div></li>
+<li><span class="n cv">12</span><div class="r"><div class="route">Attenuverter <b>OUT B</b> → 258t OSC 1 <b>WAVE CV</b></div><div class="why">Der Eingang erwartet typisch 0–5 V; ATTEN B nur wenig rechts von 12 Uhr, die Wellenform soll sich nur ein Stück bewegen.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-4a">4A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t A+D 1: je ≈ 9 s, Zyklus ≈ 18 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="73.4" y2="53.4" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t A+D 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">je ≈ 9 s, Zyklus ≈ 18 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t A+D 2: je ≈ 6,5 s, Zyklus ≈ 13 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="44.9" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t A+D 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">je ≈ 6,5 s, Zyklus ≈ 13 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN B: wenig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="67.7" y2="22.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN B</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: Richtung Sinus"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Richtung Sinus</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 2: Rechteck"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Rechteck</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer 2 IN 1: Drone"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer 2 IN 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Drone</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MW CABIN PRESSURE: Mix, eher trocken"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MW CABIN PRESSURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Mix, eher trocken</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MW CABIN FEVER: langer Hall"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MW CABIN FEVER</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">langer Hall</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Milky Way: Bank AIRWAYS (blaue LED), Algorithmus 1 <b>Hall</b>. Halte TAP länger als eine Sekunde, um den zweiten Parameter zu erreichen, und schalte den Hochpass ein. <span class="tag tag-h">Hersteller</span> Die 281t-Zeiten sind Ziele; zähl einen Zyklus mit. Patch <a class="xref" href="#p-1c">1C</a> hatte 6–10 Sekunden, jetzt sollen es etwa 18 und 13 sein.</p>
+<div class="check"><b>Kontrollpunkt 4A</b> Erst klingt der Drone wie in 1C, nur im Raum: Dreh CABIN PRESSURE einmal ganz auf und zurück und hör, wie der Hall den Ton nach hinten rückt. Dann stimm OSC 2 eine Quinte über OSC 1 (sieben Halbtöne). Dreh FINE an OSC 2 ganz langsam: An einer Stelle hört das Wandern in den Obertönen auf, die Quinte steht still. Das ist die reine Quinte. Nach zwei, drei Minuten Zuhören merkst Du, dass sich der Klang nie genau wiederholt: Filter und Wellenform laufen mit verschiedenen Längen.</div>
+
+<h4 id="p-4b">Stufe 2 · Patch 4B: eine Fläche über dem Orgelpunkt</h4>
+<p>Der Drone bleibt auf A und wird zum Orgelpunkt. Darüber legst Du eine zweite Schicht, die vom Keyboard gespielt wird. Zwei Oszillatoren anderer Bauart, ein anderes Filter, ein eigener VCA-Kanal: Die Schicht soll sich vom Drone absetzen, nicht mit ihm verschmelzen.</p>
+<ol class="cables" start="13">
+<li><span class="n cv">13</span><div class="r"><div class="route">µYarns <b>CV 1</b> → aktiver Mult <b>IN</b></div><div class="why">Layout 1M wie in Kapitel <a class="xref" href="#k2">02</a>. Eine Tonhöhe für drei Ziele, die dritte (Rings) folgt in 4C. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n cv">14</span><div class="r"><div class="route">Mult → Cali <b>V/OCT</b></div><div class="why">Cali auf Oszillator, nicht auf LFO.</div></div></li>
+<li><span class="n cv">15</span><div class="r"><div class="route">Mult → Big-O <b>V/OCT</b></div><div class="why">Big-O eine Oktave unter dem Cali stimmen. Beschriftung des Tonhöheneingangs <span class="tag tag-p" id="pr-29">am Gerät prüfen</span></div></div></li>
+<li><span class="n gate">16</span><div class="r"><div class="route">µYarns <b>GATE 1</b> → SERRA <b>GATE</b></div><div class="why">Gate, solange die Taste gedrückt ist. Den TRIGGER-Eingang des SERRA brauchst Du hier nicht.</div></div></li>
+<li><span class="n cv">17</span><div class="r"><div class="route">SERRA <b>OUT</b> → A-130-8 <b>CV 2</b></div><div class="why">OUT ist die Hüllkurve durch den eingebauten bipolaren Abschwächer. <span class="tag tag-h">Hersteller</span> Abschwächer halb nach rechts, Offset auf 12 Uhr: aus bis zu 10 V werden etwa 5 V, genug für den voll offenen A-130-8.</div></div></li>
+<li><span class="n audio">18</span><div class="r"><div class="route">Cali <b>OUT</b> → Surges <b>IN 1</b></div><div class="why">Eingangspegel 1 auf 11 Uhr.</div></div></li>
+<li><span class="n audio">19</span><div class="r"><div class="route">Big-O <b>SAW</b> → Surges <b>IN 2</b></div><div class="why">Der Surges mischt seine beiden Eingänge. <span class="tag tag-h">Hersteller</span> Ob IN 2 einen eigenen Pegelregler hat: <span class="tag tag-p" id="pr-30">am Gerät prüfen</span></div></div></li>
+<li><span class="n audio">20</span><div class="r"><div class="route">Surges <b>LP</b> → A-130-8 <b>IN 2</b></div><div class="why">2-polig, Cutoff eher dunkel. Der Surges ist der Gegenpol zum runden SEM des Drones.</div></div></li>
+<li><span class="n audio">21</span><div class="r"><div class="route">A-130-8 <b>OUT 2</b> → Mixer 2 <b>IN 2</b></div><div class="why">Regler 2 ist der Fader des Pads. Drone und Pad kommen gemeinsam an OUT an.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-4b">4B</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA A: ≈ 3 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 3 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA S: voll"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA S</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">voll</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA R: ≈ 8 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA R</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 8 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA Abschwächer: 10 V → 5 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="35.1" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA Abschwächer</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">10 V → 5 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Cali Shape: Richtung Säge"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Cali Shape</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Richtung Säge</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Cali Fine: Hauch über Big-O"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="63" y2="21.2" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Cali Fine</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hauch über Big-O</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Surges Cutoff: dunkel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="46.6" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Surges Cutoff</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">dunkel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer 2 IN 2: leiser als der Drone"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer 2 IN 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">leiser als der Drone</text></svg>
+</div>
+<p class="muted" style="font-size:15px">SERRA mit Schalter auf <b>Slow</b> und <b>Norm</b>; die Fader-Stellungen sind Richtwerte, die Zeiten das Ziel. Der SERRA überstreicht je Phase 1 ms bis 40 s. <span class="tag tag-h">Hersteller</span> Cali und Big-O stimmst Du zuerst auf die Oktave, dann den Cali mit FINE so weit daneben, dass die beiden etwa einmal pro Sekunde gegeneinander schweben. Das ist der Chorus aus <a class="xref" href="#kwp-04">KWP-04</a>, ohne Effektgerät.</p>
+<div class="check"><b>Kontrollpunkt 4B</b> Halte am Keyboard ein a über dem Drone. Das Pad schwillt in etwa drei Sekunden an, steht, und klingt nach dem Loslassen lange aus, im Hall noch länger. Spiel jetzt die Folge e, f, c, g, jede Note etwa 16 Sekunden lang, und lass zwischen zwei Noten keine Lücke. Der Drone bleibt, jede Note färbt ihn anders: offen, wehmütig, dunkel, ungelöst. Wenn der Wechsel hart klingt, verlängere Attack und Release, nicht den Hall.</div>
+
+<h4 id="p-4c">Stufe 3 · Patch 4C: Resonanzen</h4>
+<p>Zwei Schichten über dem Pad. Rings folgt der Pad-Tonhöhe und macht aus Rauschen einen tönenden Schimmer; Skies verwischt ihn zu einer Wolke. Elements bleibt fest auf dem Orgelpunkt, zwei Oktaven höher, und wird dauernd gestrichen.</p>
+<ol class="cables" start="22">
+<li><span class="n audio">22</span><div class="r"><div class="route">A-118-2 <b>C NOISE</b> → FOUR PLAY Reihe 3 <b>IN 1</b></div><div class="why">Farbiges Rauschen: BLUE weit zurück, RED auf, dann ist es dunkel und weich. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">23</span><div class="r"><div class="route">FOUR PLAY Reihe 3 <b>OUT 1</b> → Rings <b>IN</b></div><div class="why">LEVEL 1 dosiert, wie stark Rings angeregt wird. Rings erwartet Modularpegel. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">24</span><div class="r"><div class="route">aktiver Mult → Rings <b>V/OCT</b></div><div class="why">Dieselbe Tonhöhe wie Cali und Big-O. Rings singt also immer den Pad-Ton mit.</div></div></li>
+<li><span class="n audio">25</span><div class="r"><div class="route">Rings <b>ODD</b> → Skies <b>IN L</b></div><div class="why">Solange EVEN frei ist, liegen beide Anteile an ODD. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">26</span><div class="r"><div class="route">Skies <b>OUT L</b> → Mixer 2 <b>IN 3</b></div><div class="why">Regler 3 ist die Resonanzschicht.</div></div></li>
+<li><span class="n gate">27</span><div class="r"><div class="route">Attenuverter Reihe 4 <b>OUT A</b> → Elements <b>GATE</b></div><div class="why">Ohne Eingangssignal liefert der Attenuverter nur seine Offset-Spannung. <span class="tag tag-ok">verifiziert</span> OFFSET A weit rechts ist damit ein Gate, das nie endet, und der Bogen streicht dauernd. Ob die Spannung als Gate reicht: <span class="tag tag-p" id="pr-31">am Gerät prüfen</span></div></div></li>
+<li><span class="n audio">28</span><div class="r"><div class="route">Elements <b>OUT R</b> → Mixer 2 <b>IN 4</b></div><div class="why">Bei kleinem SPACE trägt OUT R den Resonator, OUT L den Erreger. <span class="tag tag-h">Hersteller</span> SPACE bleibt unter 12 Uhr; den Raum macht der Milky Way.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-4c">4C</a> · Rings, Modalresonator, einstimmig</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP R3 LEVEL 1: Rauschen leise"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP R3 LEVEL 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Rauschen leise</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Rings STRUCTURE: harmonisch"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Rings STRUCTURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">harmonisch</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Rings BRIGHTNESS: dunkel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="46.6" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Rings BRIGHTNESS</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">dunkel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Rings DAMPING: lang"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="44.9" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Rings DAMPING</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">lang</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Rings POSITION: knapp unter Mitte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Rings POSITION</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">knapp unter Mitte</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer 2 IN 3: leise"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer 2 IN 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">leise</text></svg>
+</div>
+<p class="mh">Skies · granular</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies POSITION: Mitte"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies POSITION</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Mitte</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies SIZE: lange Körner"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies SIZE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">lange Körner</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies PITCH: Originalhöhe"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies PITCH</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Originalhöhe</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies DENSITY: wenig, unregelmäßig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="73.4" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies DENSITY</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig, unregelmäßig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies TEXTURE: weiche Körner"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies TEXTURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">weiche Körner</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Skies BLEND: Dry/Wet, mehr nass"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Skies BLEND</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Dry/Wet, mehr nass</text></svg>
+</div>
+<p class="mh">Elements · gestrichen</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements BOW: Bogen"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements BOW</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Bogen</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="BLOW · STRIKE: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">BLOW · STRIKE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements CONTOUR: hält"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements CONTOUR</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">hält</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements GEOMETRY: Saite"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements GEOMETRY</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Saite</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements BRIGHTNESS: weich"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements BRIGHTNESS</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">weich</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements DAMPING: lang"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements DAMPING</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">lang</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Elements SPACE: schmal"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Elements SPACE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">schmal</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Att. R4 OFFSET A: Dauer-Gate"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Att. R4 OFFSET A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Dauer-Gate</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer 2 IN 4: ganz leise"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41.6" y2="44.9" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer 2 IN 4</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">ganz leise</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Beim Clouds und seinen Nachbauten ist DENSITY in der Mitte stumm; links davon kommen die Körner regelmäßig, rechts unregelmäßig und dichter. TEXTURE macht die Körner von hart (links) zu weich (rechts). <span class="tag tag-h">Hersteller</span> Elements stimmst Du ohne V/OCT-Kabel mit seinen Tonhöhenreglern auf a, zwei Oktaven über dem Drone. Laut Elements-Handbuch läuft CONTOUR von kurzen AD-Formen über lange AD-Formen zu ADSR und am Ende zu schnelleren AR-Formen; das Gate startet die Bogen- und Blas-Hüllkurve. Einen Dauerton gibt es also erst im ADSR- und AR-Bereich, rechts der Mitte; links davon stirbt der Ton trotz gehaltenem Gate. <span class="tag tag-h">Hersteller</span> Die genaue Stellung findest Du nach Gehör.</p>
+<div class="check"><b>Kontrollpunkt 4C</b> Dreh zuerst die Regler 3 und 4 am Mixer 2 ganz zu, dann nacheinander auf. Mit Rings hörst Du über dem Pad einen hellen, flirrenden Ton auf derselben Tonhöhe, als ob das Rauschen singen würde; bei jedem Pad-Wechsel singt er die neue Note mit. Drückst Du FREEZE am Skies, bleibt der aktuelle Ton als Wolke stehen, auch wenn Du die nächste Note spielst: Alte und neue Harmonie liegen kurz übereinander. Elements bringt ganz oben einen leisen, gestrichenen Ton, der nie aufhört. Nimm ihn nach einer Minute weg: Die Fläche klingt plötzlich enger. Dann stimmt sein Pegel.</div>
+
+<h4 id="p-4d">Stufe 4 · Patch 4D: vom Drone zum Pluck · die Frahm-Fläche</h4>
+<p>Jetzt läuft ein Arpeggio. Der µYarns spielt es aus den Tasten, die Du hältst, Pad und Rings folgen ihm. Rings bekommt zu jedem Ton einen Anstoß, und das Morphor Echo kommt vor den Hall. Von hier aus drehst Du die Fläche mit wenigen Reglern zwischen Drone, Pad und Pluck.</p>
+<ol class="cables" start="29">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>µYarns auf Arpeggio</b> · ARP RANGE (AR) auf 1 oder 2 · Modus (AD) UP oder PL · TEMPO (TE) etwa 72</div><div class="why">Der Arpeggiator läuft, sobald eine Taste gedrückt ist und AR größer als null ist. Hältst Du START/STOP etwa eine Sekunde, rastet das Arpeggio ein (Latch) und läuft ohne Tasten weiter. <span class="tag tag-h">Hersteller</span> Menüführung am µYarns <span class="tag tag-p" id="pr-32">am Gerät prüfen</span></div></div></li>
+<li><span class="n trig">29</span><div class="r"><div class="route">µYarns <b>GATE 2</b> → Rings <b>STRUM</b></div><div class="why">GATE 2 gibt am Anfang jeder Note einen kurzen Impuls. <span class="tag tag-h">Hersteller</span> Jeder Arpeggio-Ton schlägt Rings jetzt an; das Rauschen regt ihn weiter dauernd an.</div></div></li>
+<li><span class="n audio">30</span><div class="r"><div class="route">Kabel 8 ziehen · Mixer 2 <b>OUT</b> → Morphor Echo <b>IN</b></div><div class="why">Erst Echo, dann Hall.</div></div></li>
+<li><span class="n audio">31</span><div class="r"><div class="route">Morphor Echo <b>Mix L</b> → Milky Way <b>IN 1</b></div><div class="why">Stereomix aller Taps mit dem trockenen Signal. <span class="tag tag-h">Hersteller</span> Beschriftung der Buchsen <span class="tag tag-p" id="pr-33">am Gerät prüfen</span></div></div></li>
+<li><span class="n audio">32</span><div class="r"><div class="route">Morphor Echo <b>Mix R</b> → Milky Way <b>IN 2</b></div><div class="why">Ein Stecker in IN 2 hebt die Normalisierung von IN 1 auf; der Hall bekommt jetzt echtes Stereo.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-4d">4D</a> · Frahm-Fläche</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA A: ≈ 0,3 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 0,3 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="SERRA R: ≈ 5 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="73.4" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">SERRA R</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 5 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Rings DAMPING: Pad"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Rings DAMPING</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Pad</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="FP R3 LEVEL 1: wenig Rauschen"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">FP R3 LEVEL 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig Rauschen</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Echo TIME: ≈ 1,2 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Echo TIME</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 1,2 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Echo FEEDBACK: wenige Durchläufe"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Echo FEEDBACK</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenige Durchläufe</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Echo MIX: eher trocken"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Echo MIX</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">eher trocken</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="MW CABIN PRESSURE: etwas mehr Hall"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">MW CABIN PRESSURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">etwas mehr Hall</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Am Echo die frühe Tiefpass-Nachführung wählen: dunkler, rauschärmer, eher Band als Digital. <span class="tag tag-h">Hersteller</span> Panoramamodus Ping-Pong oder Traverse. Die Echo-Zeit stellst Du erst nach Gehör; wie sie sich mit Clock und Tempo synchronisieren lässt, steht in <a class="xref" href="#kwp-15">KWP-15</a> und im Nachschlageteil G2 von „Klangwege im Pult“ und kommt in Kapitel <a class="xref" href="#k8">08</a>.</p>
+<div class="box-c" id="k4-kwp04">
+<h4>Patchkarte im Kapitel · <a class="xref" href="#kwp-04">KWP-04</a> „Die Frahm-Fläche“</h4>
+<p>Die Karte nennt drei Zutaten, und alle drei stecken jetzt im Pult: <b>lange Release-Zeit</b> (SERRA), <b>Chorus</b> (Cali und Big-O gegeneinander verstimmt) und <b>ein Arpeggio, das weiterläuft</b> (µYarns mit Latch). Statt TRIGS übernimmt der µYarns das Arpeggio, das Programm ginge genauso. Die vierte Regel der Karte gilt auch hier: nicht das DPLPG nehmen. Ein Vaktrol-LPG ist zu perkussiv für diesen Klang. <b>Kern:</b> Der Reiz entsteht aus der langsamen Veränderung über einem laufenden Muster, nicht aus dem Spielen. Raste das Arpeggio ein, und dann gehören die Hände den Reglern.</p>
+</div>
+<div class="check"><b>Kontrollpunkt 4D</b> Halte e, a und c und raste das Arpeggio ein. Mit den Startwerten hörst Du eine weiche, sich überlappende Fläche, deren Töne als Echo zurückkommen und im Hall verschwimmen. Jetzt die drei Zustände aus der Tabelle in Teil 1, 8 · <b>Drone:</b> Rauschen auf 11 Uhr, DAMPING auf 4 Uhr, Pad-Fader zurück. Das Arpeggio verschmiert zu einem wandernden Ton. <b>Pluck:</b> Rauschen zu, DAMPING auf 10 Uhr, SERRA-Release auf etwa eine Sekunde. Jeder Ton ist ein Anschlag, und das Echo macht daraus ein Muster. Dreh ganz langsam zwischen beiden hin und her, eine halbe Minute pro Weg.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k4-hoeren">08 · Hörübung: Schichten auseinanderhören</p>
+<p>Nimm Dir zehn Minuten mit Patch <a class="xref" href="#p-4c">4C</a> und spiel kaum. Halte eine Pad-Note und hör nacheinander:</p>
+<ol>
+<li><b>Von unten nach oben.</b> Folge einer Minute lang nur dem Fundament, dann nur dem Pad, dann nur Rings, dann nur Elements. Wenn Du eine Schicht nicht findest, ist sie zu leise oder liegt im Register einer anderen. Nimm dann für einen Moment alle anderen Regler am Mixer 2 zurück.</li>
+<li><b>Die Zeitebenen.</b> Welche Schicht bewegt sich in welchem Tempo? Das Filter des Drones atmet in 18 Sekunden, das Pad schwebt einmal pro Sekunde, Rings flirrt schnell, Skies wandert ohne Takt. Wenn zwei Schichten sich im selben Tempo bewegen, verlangsame eine.</li>
+<li><b>Der Raum.</b> Dreh CABIN PRESSURE am Milky Way kurz ganz zu. Die Fläche zerfällt in einzelne Quellen. Dreh ihn langsam auf, bis sie wieder eine Fläche ist, und nicht weiter. Diese Stelle merkst Du Dir.</li>
+<li><b>Die Intervalle.</b> Spiel über dem Orgelpunkt einmal e (Quinte), einmal c (kleine Terz) und hör auf die Obertöne des Drones. Bei der Quinte bleiben sie ruhig, bei der Terz kommt ein feines Flirren dazu: die gleichstufige Terz aus dem Spielplatz.</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k4-var">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>Eine Resonanz spielt die Melodie.</b> In 4A Resonanz am SEM auf 2 Uhr, Cutoff von Hand sehr langsam zwischen 10 und 1 Uhr bewegen. Aus dem Drone treten einzelne Obertöne hervor, eine Melodie aus der Obertonreihe von A.</li>
+<li><b>Der Orgelpunkt wandert.</b> Am 258t FREQ beider Oszillatoren gemeinsam einen Ganzton tiefer, ganz langsam, während das Pad auf c bleibt. Aus Moll über A wird Dur über G: Die Harmonie wechselt, ohne dass Du die obere Stimme bewegst.</li>
+<li><b>Sympathiesaiten.</b> Rings mit seiner Modus-Taste auf Sympathiesaiten. Das Rauschen bringt jetzt mehrere Saiten zugleich zum Klingen, STRUCTURE verändert ihre Verstimmung zueinander. <span class="tag tag-h">Hersteller</span> Breiter, orgeliger.</li>
+<li><b>Shimmer.</b> Milky Way auf AIRWAYS 2 Shimmer; der zweite Parameter bestimmt, wie viel Tonhöhenverschiebung im Hall liegt. <span class="tag tag-h">Hersteller</span> Wenig davon klingt wie ein ferner Chor über der Fläche, viel davon nach Kirche.</li>
+<li><b>Chorus aus dem Milky Way.</b> In 4B den Cali genau auf die Oktave stimmen, sodass das Pad nicht mehr schwebt, und den Milky Way auf AIRWAYS 8 Chorus. Vergleiche: Das verstimmte Paar schwebt in seinem eigenen Tempo, der Chorus gleichmäßig. Den Hall hast Du dann allerdings nicht mehr.</li>
+<li><b>Freeze als Harmonie.</b> In 4C bei jeder zweiten Pad-Note FREEZE am Skies drücken und erst bei der übernächsten lösen. Es entstehen Zweiklänge aus zwei Zeitpunkten.</li>
+<li><b>Bogen auf dem Grundton.</b> Elements eine Oktave über dem Drone statt zwei. Er verschmilzt jetzt mit dem Orgelpunkt und gibt ihm einen gestrichenen Kern.</li>
+</ol>
+<div class="box-c" id="k4-kwp02">
+<h4>Patchkarte im Kapitel · <a class="xref" href="#kwp-02">KWP-02</a> „Drei Stimmen, eine löst sich“</h4>
+<p>Zwei Stimmen halten die Fläche, die dritte tritt hervor, weil sie <b>obertonreicher</b> wird, nicht lauter. In Patch <a class="xref" href="#p-4b">4B</a> sind die beiden Oszillatoren des 258t schon die beiden haltenden Stimmen. So wird der Cali zur dritten, die sich löst:</p>
+<ol>
+<li>Kabel 19 ziehen: Der Big-O spielt nicht mehr im Pad.</li>
+<li>Kabel 18 umstecken: Cali <span class="jack">OUT</span> → Big-O <span class="jack">F.IN</span>, und Big-O <span class="jack">FOLD</span> → Surges <span class="jack">IN 1</span>. Der Cali läuft jetzt durch den Wavefolder. <span class="tag tag-ok">verifiziert</span></li>
+<li>SERRA <span class="jack">ENV</span> → Attenuverter Reihe 4 <span class="jack">IN A</span>, <span class="jack">OUT A</span> → Cali <span class="jack">Wave-Shape CV</span>. Die Hüllkurve öffnet jetzt die Wellenform, der Anschlag wird hell und beruhigt sich. Welchen Bereich der Cali-Eingang erwartet, ist <span class="tag tag-p" id="pr-34">am Gerät prüfen</span>; mit ATTEN A anfangs wenig.</li>
+<li>Big-O Fold auf 10 Uhr, Surges-Cutoff auf 1 Uhr. Die Melodie soll nicht dumpf werden, sonst fällt sie zurück in die Fläche.</li>
+</ol>
+<p>Spiel eine langsame Melodie über dem Drone. Jede Note blüht kurz auf und sinkt dann in die Fläche zurück. Das Prinzip stammt aus der Pittsburgh-Taiga-Demo und ist der West-Coast-Weg aus Kapitel <a class="xref" href="#k2">02</a>: die Hüllkurve auf die Wellenform, nicht auf ein Filter. Weil Attenuverter Reihe 4 Kanal A in 4C das Elements-Gate liefert, baust Du diese Variante auf Patch <a class="xref" href="#p-4b">4B</a> auf, nicht auf 4C.</p>
+</div>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · Harmonie ohne Keyboard.</b> Statt µYarns in den aktiven Mult: A-185-2 → A-156 auf Moll, wie in „Ohne Keyboard“. Den Lev.1-Regler alle 16 Sekunden ein Stück weiter. Du spielst die Harmonie dann mit einem einzigen Drehregler.</li>
+<li><b>Vertiefte Variante · <a class="xref" href="#kwp-05">KWP-05</a> mit Makro.</b> Statt DAMPING von Hand: eine sehr lange Rampe als Szenenspannung, zum Beispiel 281t Kanal 3 im Attack/Decay-Modus mit vollem Attack und Decay (je 10 s), oder die Hand an einem Attenuverter-Offset. Diese Spannung über einen Mult an Rings <span class="jack">BRIGHTNESS</span> und invertiert an Rings <span class="jack">DAMPING</span>. Steigt die Szene, wird Rings heller und kürzer: Ein Regler dreht die Fläche ins Pluck-Arpeggio. Rings hat an seinen Parameter-CV-Eingängen Attenuverter <span class="tag tag-h">Hersteller</span>; damit lässt sich die Spannung direkt am Eingang umdrehen. Ob der Nachbau sie hat, <span class="tag tag-p" id="pr-35">am Gerät prüfen</span>. Die Patchkarte nimmt dafür den A-185-2v.</li>
+<li><b>Vertiefte Variante · zwei Pad-Stimmen.</b> µYarns auf Layout 2M: zwei Stimmen mit eigener Tonhöhe und eigenem Gate. <span class="tag tag-h">Hersteller</span> Cali spielt Stimme 1 mit dem SERRA, Big-O Stimme 2 mit der CatSynth ADSR auf A-130-8 Kanal 3. Dann überlappen sich die Pad-Töne wirklich, und Du kannst Zweiklänge spielen.</li>
+<li><b>Swarm als zweite Fläche.</b> Poly-Modus, Modell Strings oder Organ, Hüllkurve auf AR mit langem Attack und Release. Die acht Potis auf die Töne des Orgelpunkts stimmen, etwa Grundton, Quinte und Terz in zwei Oktaven. Mit den Touch-Tasten oder über MIDI (Kanal 3) greifst Du Zweiklänge und Dreiklänge, die eigene Filter und den Federhall mitbringen. Der Regler <span class="jack">in</span> holt den Hall zurück in den Mixer: Die Fläche beginnt zu singen. → <a href="#b2-b05">B2-B-05</a></li>
+<li><b>Swarm als Drone.</b> Mono, Modell Drone, eine feste Spannung (Attenuverter-OFFSET) in <span class="jack">VCA CV</span>, sonst hängt der VCA an der Hüllkurve und der Ton verstummt. <span class="tag tag-h">Hersteller</span> <span class="jack">spread</span> ganz langsam von Hand, der LFO auf Zufall bewegt Filter 2 schon ohne Kabel.</li>
+<li><b>Langsamer Zufall.</b> A-118-2 <span class="jack">RND</span> mit RATE ganz links über Attenuverter B statt 281t Kanal 2 an die Wellenform von OSC 1. Kein Zyklus mehr, nur Drift.</li>
+<li><b>Bandecho als Rückkopplung.</b> Tap 4 des Morphor Echo über den SEM zurück in den externen Rückkopplungseingang: Jede Wiederholung wird dunkler als die vorige. Ausgearbeitet in <a class="xref" href="#kwp-15">KWP-15</a> „Das Mehrkopf-Bandecho“, in Kapitel <a class="xref" href="#k8">08</a>.</li>
+<li><b>Freezer.</b> Milky Way auf DARKWAVES 8: Ein Gate an CABIN FEVER CV oder TAP friert den Klang als Schleife ein; CABIN FEVER bestimmt die Kornlänge. <span class="tag tag-h">Hersteller</span> Ein eingefrorener Akkord als neuer Orgelpunkt.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k4-komp">11 · Kompositionsaufgabe: sechs Minuten, ein Orgelpunkt</p>
+<p>Nimm mit dem L6 ein Stück von sechs Minuten auf, das nur auf Patch <a class="xref" href="#p-4d">4D</a> beruht. Die einzige Regel: Der Orgelpunkt A bleibt die ganze Zeit liegen. Der L6 nimmt die Spuren einzeln auf; Kanal 1 und 2 sind das Stereobild hinter dem Hall.</p>
+<ol>
+<li><b>0:00–1:00 · Grund.</b> Nur der Drone, Hall weit. Bei 0:30 den zweiten 281t-Kanal auf die Wellenform einblenden.</li>
+<li><b>1:00–2:30 · Fläche.</b> Pad einblenden, Arpeggio noch aus. Lange Noten: e, f, c, je 16 bis 20 Sekunden.</li>
+<li><b>2:30–4:00 · Bewegung.</b> Rings und Elements dazu, dann das Arpeggio einrasten. Alles bleibt im Drone-Zustand, Rings verschmiert die Töne.</li>
+<li><b>4:00–5:00 · Auflösung.</b> Langsam in den Pluck-Zustand drehen. Das Echo macht aus den Anschlägen ein Muster; einmal FREEZE am Skies.</li>
+<li><b>5:00–6:00 · Ausklang.</b> Pad, Rings und Elements der Reihe nach zurück, das Arpeggio stoppen. Am Ende steht nur der Drone im Hall, und OFFSET A schließt ihn.</li>
+</ol>
+<p>Hör die Aufnahme am nächsten Tag noch einmal an. Wo Du ungeduldig wirst, war ein Abschnitt zu lang oder hatte zu wenig Veränderung. Wo Du einen Wechsel erschrocken bemerkst, war er zu schnell.</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k4-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k4l1"><label for="k4l1">Drone, Pad und Pluck an ihrem Verlauf und an ihrer Anregung unterscheiden.</label></li>
+<li><input type="checkbox" id="k4l2"><label for="k4l2">Eine Schwebung gezielt einstellen und wissen, warum hohe Töne weniger Verstimmung vertragen.</label></li>
+<li><input type="checkbox" id="k4l3"><label for="k4l3">Eine Quinte zwischen zwei Oszillatoren nach Gehör rein stimmen.</label></li>
+<li><input type="checkbox" id="k4l4"><label for="k4l4">Schichten nach Register und Tempo verteilen und ihre Pegel über einen Bus mischen.</label></li>
+<li><input type="checkbox" id="k4l5"><label for="k4l5">Über einem Orgelpunkt langsam die Harmonie wechseln, ohne harte Übergänge.</label></li>
+<li><input type="checkbox" id="k4l6"><label for="k4l6">Rings zwischen Rauschanregung und Anschlag hin und her drehen.</label></li>
+<li><input type="checkbox" id="k4l7"><label for="k4l7">Echo und Hall in der richtigen Reihenfolge einsetzen und den Hallanteil nach Gehör finden.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Der Hall verzerrt oder klingt körnig</summary><ol>
+<li>Blinkt die Status-LED am Milky Way rot? Dann ist er übersteuert: VOLUME unter 3 Uhr. <span class="tag tag-h">Hersteller</span></li>
+<li>Zu viele Schichten zu laut auf dem Raum-Bus: alle Regler am Mixer 2 zurück, dann einzeln hoch. Mit dem ZeroScope an Mixer 2 OUT: Die Spitzen sollen unter ±5 V bleiben.</li>
+<li>In 4D: Kommt das Echo mit vollem Pegel und dazu trocken? MIX am Echo zurücknehmen.</li>
+</ol></details>
+<details><summary>Die Fläche klingt matschig, der Bass dröhnt</summary><ol>
+<li>Hochpass im Hall eingeschaltet? TAP länger als eine Sekunde halten.</li>
+<li>Big-O eine Oktave unter dem Cali ist bei tiefen Noten zu tief: eine Oktave höher, oder Surges-Cutoff zurück.</li>
+<li>OSC 1 und 2 zu weit verstimmt: Die Obertöne schweben schneller als die Grundtöne. Die Quinte rein stimmen.</li>
+</ol></details>
+<details><summary>Das Pad bleibt stumm oder spielt nur kurz</summary><ol>
+<li>Leuchtet der Gate-Taster am SERRA bei gedrückter Taste? Wenn nicht: Kabel 16 und µYarns-Layout prüfen.</li>
+<li>Steht der Abschwächer am SERRA OUT rechts von 12 Uhr? Links davon wird die Hüllkurve negativ, und der A-130-8 bleibt zu.</li>
+<li>Steht SUSTAIN am SERRA oben? Ohne Sustain fällt die Hüllkurve nach dem Decay auf null, auch wenn die Taste gedrückt bleibt.</li>
+</ol></details>
+<details><summary>Rings bleibt stumm oder singt die falsche Note</summary><ol>
+<li>Ist LEVEL 1 am FOUR PLAY Reihe 3 offen? Ohne Rauschen und ohne STRUM gibt Rings in 4C nichts aus.</li>
+<li>Steckt Kabel 24 im V/OCT, nicht im FM-Eingang? Der FM-Eingang ist kein 1-V/Oct-Eingang; ohne Kabel wirkt sein Abschwächer als Feinstimmung. <span class="tag tag-h">Hersteller</span></li>
+<li>Steht DAMPING ganz links, klingt jeder Ton sofort ab; mit Rauschen hörst Du dann nur ein Zischen.</li>
+</ol></details>
+<details><summary>Die Fläche wird nach drei Minuten langweilig</summary><ol>
+<li>Bewegen sich zwei Schichten im selben Tempo? Eine davon deutlich langsamer.</li>
+<li>Stehen die beiden 281t-Längen in einem einfachen Verhältnis (1:2, 2:3)? Eine Länge um ein paar Sekunden verschieben.</li>
+<li>Fehlt die Harmonie? Ein einziger Pad-Wechsel pro Minute reicht oft schon.</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k4-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k1">B1-01</a></span> Patch <a class="xref" href="#p-1c">1C</a>, Schwebung<br><span class="id"><a href="#k2">B1-02</a></span> Stimmen schichten<br><span class="id"><a href="#k3">B1-03</a></span> SERRA, VCA, Swell<br><span class="id"><a href="#k5">B1-05</a></span> Modulation vertieft<br><span class="id"><a href="#k8">B1-08</a></span> Echo, Hall, Feedback</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-f01">B2-F-01</a></span> Pad- und Drone-Techniken<br><span class="id"><a href="#b2-b04">B2-B-04</a></span> Mehrstimmigkeit, Layering<br><span class="id"><a href="#b2-b05">B2-B-05</a></span> Swarm als Fläche<br><span class="id"><a href="#b2-c02">B2-C-02</a></span> VCA als Mischer<br><span class="id"><a href="#b2-e01">B2-E-01</a></span> Delay und Reverb</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-01">B3-01</a></span> Ambient<br><span class="id"><a href="#kwp-02">KWP-02</a></span> Drei Stimmen, eine löst sich<br><span class="id"><a href="#kwp-04">KWP-04</a></span> Die Frahm-Fläche<br><span class="id"><a href="#kwp-05">KWP-05</a></span> Rings aus dem Pad lösen<br><span class="id"><a href="#kwp-15">KWP-15</a></span> Das Mehrkopf-Bandecho</div>
+<div><b>Module</b><span class="id"><a href="#mp-rings">MOD-Rings</a></span> · <span class="id"><a href="#mp-elements">MOD-Elements</a></span><br><span class="id"><a href="#mp-milky-way">MOD-Milky Way</a></span> · <span class="id"><a href="#mod-skies">MOD-Skies</a></span><br><span class="id"><a href="#mod-morphor-echo">MOD-Morphor Echo</a></span> · <span class="id"><a href="#mp-four-play">MOD-FOUR PLAY</a></span><br><span class="id"><a href="#mp-mixer">MOD-Mixer</a></span> · <span class="id"><a href="#mp-swarm">MOD-Swarm</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult zu prüfen</h4>
+<ul>
+<li><b>Rings- und Elements-Nachbau:</b> Beschriftung der Regler und Buchsen (STRUCTURE oder SHAPE, DAMPING oder DAMP), Attenuverter an den CV-Eingängen. <span class="tag tag-p" id="pr-36">am Gerät prüfen</span></li>
+<li><b>Elements:</b> Reicht der Attenuverter-Offset als Gate? Ab welcher CONTOUR-Stellung rechts der Mitte der Ton steht (laut Handbuch im ADSR- und AR-Bereich). <span class="tag tag-p" id="pr-37">am Gerät prüfen</span></li>
+<li><b>Skies:</b> Lage von BLEND-Taster und FREEZE am Panel; ob Skies sich bei BLEND, FREEZE und DENSITY wie der Clouds verhält (Clouds-Verhalten siehe Tabelle oben). <span class="tag tag-p" id="pr-38">am Gerät prüfen</span></li>
+<li><b>Morphor Echo:</b> Beschriftung von Eingang, Mix-Ausgängen und Feedback-Regler. <span class="tag tag-p" id="pr-39">am Gerät prüfen</span></li>
+<li><b>Surges:</b> eigener Pegelregler an IN 2. <b>Big-O:</b> Name des Tonhöheneingangs, Oktavlage. <span class="tag tag-p" id="pr-40">am Gerät prüfen</span></li>
+<li><b>L6:</b> Kanal 1 und 2 hart links und rechts für das Stereobild. <span class="tag tag-p" id="pr-41">am Gerät prüfen</span></li>
+<li><b>Raum-Bus:</b> Pegel an Mixer 2 OUT mit vier Schichten, gemessen mit dem ZeroScope; wie stark die Mixer-Regler abschwächen. <span class="tag tag-p" id="pr-42">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

@@ -1,0 +1,515 @@
+<!-- ======================= KAPITEL 10 ======================= -->
+<section class="part chapter" id="k10">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 10</span><h2>Komposition, Performance, Aufnahme und Dokumentation</h2></div>
+<p class="muted"><i>Das Rack als Instrument und als Produktionsumgebung: Ideen entwickeln, spielen, aufnehmen und so festhalten, dass sie wiederkommen</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 3 × 90 min</b><span>Theorie, drei Stufen, Aufnahme</span></div>
+  <div><b>13 Kabel</b><span>davon 4 für MIDI und USB</span></div>
+  <div><b>12 Spuren</b><span>L6: 10 Kanalspuren + Summe</span></div>
+  <div><b><a class="xref" href="#k5">B1-05</a>, <a class="xref" href="#k8">08</a>, <a class="xref" href="#k9">09</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du baust aus einem kurzen Motiv ein Stück, das durch Wiederkehr und Variation zusammenhält. Du spielst es mit wenigen, gut gewählten Griffen: Reglern, Mutes, Stages und Makros, die Du über EN16, TEK2 und Exquis auf den µYarns und den L6 legst. Du pegelst die Passivfader so ein, dass auch die Kanäle ohne 32-Bit-Float-Wandler nicht übersteuern, nimmst den Durchlauf mehrspurig auf, bringst die Spuren in eine DAW und dokumentierst den Patch auf einer Patchkarte so genau, dass Du ihn nach dem Abbauen wieder aufbauen kannst.</dd>
+  <dt>Theorie</dt><dd>Motiv · Wiederkehr und Variation · Spannungsbögen und Kontraste · Improvisation mit Reglern · Mutes, Stages und Makros · Controller über den µYarns · Patch-Zustände dokumentieren · Aufnahme mit dem L6 · Einpegeln · Mehrspur-Export · vom Experiment zur wiederholbaren Performance</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-10a">10A</a> „Die Spielfläche“ · Patch <a class="xref" href="#p-10b">10B</a> „Einpegeln und Mehrspur“ · Patch <a class="xref" href="#p-10c">10C</a> „Die wiederholbare Performance“ · dazu der Pegelrechner und die Patchkarte zum Ausfüllen</dd>
+  <dt>Prüfstatus</dt><dd>L6 nach Operation Manual <span class="tag tag-h">Hersteller</span>, µYarns nach dem Yarns-Handbuch zur Firmware 1.5 <span class="tag tag-h">Hersteller</span>, EN16, TEK2, MIDI-Host und Exquis nach Hersteller- und Händlerangaben <span class="tag tag-h">Hersteller</span>; die acht Passivfader vor dem L6 sind am Pult bestätigt <span class="tag tag-ok">verifiziert</span>. Ob der L6 die Kanalspuren vor oder nach LEVEL und EQ aufnimmt, welche CC- und Program-Change-Nummern er für Mutes und Szenen erwartet, welche Kennlinie die Passivfader haben und welchen Spannungsbereich der µYarns an CV 3 und CV 4 ausgibt, ist offen <span class="tag tag-p" id="pr-132">am Gerät prüfen</span>.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k10-theorie">Teil 1 · Vom Patch zum Stück, vom Stück zur Aufnahme</h3>
+<p>In Kapitel <a class="xref" href="#k9">09</a> hat der Patch eine Form bekommen: acht Teile, ein Bogen, Riser an den Grenzen. Eine Form ist aber nur ein Gefäß. Was darin klingt, muss erkennbar sein, damit die Wiederholungen etwas bedeuten. Und was Du einmal gut gespielt hast, soll wiederkommen, morgen, in einem Monat, nach dem nächsten Umbau. Dieses Kapitel schließt Band 1 mit drei Fragen: <b>Woraus besteht ein Stück?</b> <b>Wie spielt man es?</b> <b>Wie hält man es fest?</b></p>
+<p>Die Antworten hängen zusammen. Ein Stück aus einem klaren Motiv braucht wenige Griffe, weil das Motiv die Arbeit macht. Wenige Griffe lassen sich aufschreiben. Und was aufgeschrieben ist, lässt sich wieder spielen und vergleichen, weil die Aufnahme jeden Durchlauf festhält.</p>
+
+<h4 id="k10-motiv">1 · Das Motiv</h4>
+<p>Ein <b>Motiv</b> ist die kleinste Einheit, die man wiedererkennt: drei bis acht Töne, ein Rhythmus, eine Kontur, manchmal nur eine Klangfarbe mit einer bestimmten Bewegung. Es muss nicht schön sein, aber <b>eindeutig</b>. Ein Motiv, das sich in einer Pentatonik-Wolke aus der Turing Machine auflöst, kann nicht wiederkehren, weil es nie da war.</p>
+<p>Ein Motiv hat vier Eigenschaften, die man getrennt verändern kann: <b>Tonhöhen</b> (welche Töne), <b>Kontur</b> (auf, ab, Sprung, Schritt), <b>Rhythmus</b> (wann und wie lang) und <b>Klang</b> (Farbe, Hüllkurve, Raum). Das Ohr erkennt ein Motiv vor allem an Rhythmus und Kontur. Darum klingt eine Melodie, die nur transponiert wird, sofort vertraut, und eine, die die Töne behält, aber den Rhythmus wechselt, oft wie etwas Neues.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Motivquelle im Pult</th><th>woraus es besteht</th><th>wie Du es festhältst</th></tr></thead>
+<tbody>
+<tr><td>Programm Seq.1</td><td>Töne, Rhythmus, Länge 1 bis 4 Takte</td><td>eigener Speicherplatz; von 64 Plätzen nie das Original überschreiben <span class="tag tag-h">Hersteller</span> (Kap. 30.08)</td></tr>
+<tr><td>Leo Leo, eine Zeile</td><td>vier Stufen, Kontur über Richtung und Schalter</td><td>Reglerstellungen der Zeile und Stellung der Schalter, Kapitel <a class="xref" href="#k6">06</a></td></tr>
+<tr><td>µTuring Machine, gesperrt</td><td>ein gefundenes Muster aus dem Zufall</td><td>Sperre ganz rechts; das Muster lebt nur, solange nichts neu würfelt, darum sofort ins Programm übertragen</td></tr>
+<tr><td>Grids, eine Map-Stellung</td><td>ein rhythmisches Motiv</td><td>MAP X, MAP Y und die drei Fills notieren</td></tr>
+<tr><td>Klangmotiv</td><td>eine Geste: ein Swell, ein Fold-Aufriss, ein Echo-Wurf</td><td>Hüllkurvenwerte und Ziel notieren, der Auslöser steht auf der Patchkarte</td></tr>
+</tbody></table></div>
+<figure>
+  <div class="sv">{{FIG:motiv}}</div>
+  <figcaption><b>Ein Motiv, vier Variationen, jede ändert nur eine Eigenschaft.</b> Bei der Transposition bleiben Kontur und Rhythmus, bei der Umkehrung bleibt der Rhythmus, bei der Augmentation bleiben Töne und Kontur. Der neue Rhythmus behält die Töne. Weil immer etwas gleich bleibt, erkennt man das Motiv in jeder Fassung wieder.</figcaption>
+</figure>
+
+<h4 id="k10-var">2 · Wiederkehr und Variation</h4>
+<p>Die Regel aus Kapitel <a class="xref" href="#k9">09</a> hieß: Alle acht Takte ändert sich etwas. Für das Motiv gilt die Ergänzung: <b>Pro Wiederholung ändert sich eine Eigenschaft.</b> Ändern sich Töne und Rhythmus zugleich, ist es ein neues Motiv. Ändert sich nur eine, ist es eine Variation, und das Ohr freut sich, wenn es den alten Bekannten in neuer Kleidung trifft.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Variation</th><th>was sich ändert</th><th>im Pult</th></tr></thead>
+<tbody>
+<tr><td>Transposition</td><td>Tonhöhe, Kontur bleibt</td><td>Transpose-Tastatur im Programm pro Seq-Spur <span class="tag tag-h">Hersteller</span> (Kap. 19.02); Oktave am Exquis</td></tr>
+<tr><td>Register</td><td>Oktave, Farbe</td><td>Oktaven pro Sequenz oder Step, bis ±5 <span class="tag tag-h">Hersteller</span> (Kap. 17.01)</td></tr>
+<tr><td>Augmentation</td><td>alle Dauern doppelt</td><td>Clock Division der Spur verdoppeln; greift am ersten Step <span class="tag tag-h">Hersteller</span> (Kap. 20.01)</td></tr>
+<tr><td>Ausdünnen</td><td>weniger Töne, Gerüst bleibt</td><td>Step Condition „1 of 2“ auf Nebentönen <span class="tag tag-h">Hersteller</span> (Kap. 32.04); MUTE einzelner Stufen am Leo Leo</td></tr>
+<tr><td>Verzieren</td><td>mehr Töne, Gerüst bleibt</td><td>Ratchets in energischen Teilen über CHANCE IN, Kapitel <a class="xref" href="#k9">09</a></td></tr>
+<tr><td>Einmalige Variante</td><td>ein Fill, danach das Original</td><td>Pattern Generator mit Record aus <span class="tag tag-h">Hersteller</span> (Kap. 22.05)</td></tr>
+<tr><td>Klangfarbe</td><td>Töne bleiben, der Klang wandert</td><td>Makro „Glanz“ aus Patch <a class="xref" href="#p-10a">10A</a>, Wellenform am 258t</td></tr>
+<tr><td>Kontur umdrehen</td><td>Richtung</td><td>Leo Leo von → auf ← umstecken (Kapitel <a class="xref" href="#k6">06</a>); im Programm von Hand als Kopie auf einem neuen Platz</td></tr>
+</tbody></table></div>
+<p><b>Wiederkehr braucht Abwesenheit.</b> Ein Motiv, das ununterbrochen läuft, kann nicht wiederkommen. Gönn ihm einen Teil Pause: im Break nur Raum und Hi-Hat, im Aufbau ein Gegenmotiv auf Rings. Wenn es danach zurückkehrt, wirkt es stärker als vorher, obwohl es dasselbe ist. Das ist der Grund, warum die Turing Machine in <a class="xref" href="#kwp-13">KWP-13</a> vor dem Peak gesperrt bleibt.</p>
+<p><b>Frage und Antwort.</b> Zwei Hälften eines Motivs, die erste endet offen (auf der Quinte, auf einer Pause), die zweite schließt (auf dem Grundton). Im Programm sind das zwei Sequenzen auf zwei Plätzen, die sich im Song-Modus abwechseln, oder eine 2-Takt-Sequenz, deren zweiter Takt nur jedes zweite Mal anders endet: Step Condition „2 of 2“ auf den Schlusstönen. <span class="tag tag-h">Hersteller</span></p>
+
+<h4 id="k10-bogen">3 · Spannungsbögen und Kontraste</h4>
+<p>Kapitel <a class="xref" href="#k9">09</a> hat den großen Bogen über acht Teile gebaut. Hier geht es um die kleinen Bögen darin: über eine Phrase, über einen Teil, über die zehn Sekunden vor einem Wechsel. Spannung entsteht, wenn etwas eine Erwartung weckt und sie noch nicht erfüllt; Entspannung, wenn die Erwartung eingelöst wird. Im Pult gibt es dafür zwei Werkzeuge: <b>Bewegung</b> (etwas läuft auf ein Ziel zu) und <b>Kontrast</b> (etwas schlägt ins Gegenteil um).</p>
+<div class="tbl w"><table>
+<thead><tr><th>Kontrastpaar</th><th>Spannung</th><th>Entspannung</th><th>Griff im Pult</th></tr></thead>
+<tbody>
+<tr><td>dicht · leer</td><td>Schichten kommen dazu</td><td>alles fällt bis auf eins weg</td><td>Matrix-Zeile, Mutes am L6</td></tr>
+<tr><td>hell · dunkel</td><td>Filter öffnet, Fold wächst</td><td>Filter schließt</td><td>Makro „Glanz“, SEM-Spalte der 8×8</td></tr>
+<tr><td>nah · fern</td><td>trocken, direkt</td><td>alles im Hall</td><td>Makro „Raum“</td></tr>
+<tr><td>gerade · ungerade</td><td>Dreier gegen Vierer, SKIP am Leo Leo</td><td>zurück in den Vierer</td><td>Stage-Schalter, Lektion 6.7</td></tr>
+<tr><td>Ton · Geräusch</td><td>Rauschen, Riser, Ratchets</td><td>reiner Ton</td><td>Riser aus Patch <a class="xref" href="#p-9a">9A</a></td></tr>
+<tr><td>fremd · heimisch</td><td>Quinte, Quarte, Rückung</td><td>Grundton</td><td>Transposition, Orgelpunkt</td></tr>
+</tbody></table></div>
+<p><b>Kontrast braucht Vorbereitung.</b> Ein Break wirkt nur, wenn vorher genug da war; Stille wirkt nur nach Klang. Plane deshalb jeden Kontrast als Paar: erst ein Teil, der das eine Ende ausreizt, dann der Umschlag. Und halte ihn kurz. Ein Kontrast, der zu lange dauert, wird zum neuen Normal.</p>
+<p><b>Die zehn Sekunden vor dem Wechsel.</b> Kurz vor einer Grenze ist die Spannung am höchsten. Dort hin gehören Deine Griffe: der Riser, ein Filteraufriss, das Ausdünnen der Drums. Auf der Eins selbst passiert nur noch das, was die Form vorgibt. Das ist die Arbeitsteilung von Kapitel <a class="xref" href="#k9">09</a>: Die Maschine wechselt, Du kündigst an.</p>
+
+<h4 id="k10-regler">4 · Improvisation mit Reglern</h4>
+<p>Am Modularsystem improvisieren heißt fast nie, neue Noten zu erfinden. Es heißt, <b>einen laufenden Prozess zu lenken</b>: lauter, heller, dichter, ferner, früher, später. Das Material steht, die Hände entscheiden, wie es klingt. Gute Improvisation am Rack hat deshalb mehr mit Dirigieren zu tun als mit Solospiel.</p>
+<ul>
+<li><b>Spielregler und Stellregler trennen.</b> Ein Spielregler darf sich über den ganzen Weg bewegen, ohne dass etwas kaputtgeht: Cutoff, Send, Makro. Ein Stellregler hält den Patch zusammen: Feedback, Resonanz am Limit, Tuning, Attenuverter an der V/Oct-Leitung. Spielregler liegen in Griffweite, Stellregler werden markiert und nicht angefasst.</li>
+<li><b>Den sicheren Bereich markieren.</b> Ein Streifen Malerkrepp neben dem Regler mit zwei Strichen: bis hier klingt es, ab hier kippt es. Was am Pult markiert ist, steht auch auf der Patchkarte als Spielraum, etwa „Feedback 11 bis 1 Uhr“.</li>
+<li><b>Eine Hand hält, eine Hand bewegt.</b> Wer mit beiden Händen gleichzeitig dreht, hört nicht mehr, was welche Hand tut. Die freie Hand liegt auf dem nächsten Griff und wartet.</li>
+<li><b>Vier Gesten.</b> Die <i>Fahrt</i> (langsam über Takte), der <i>Sprung</i> (auf der Eins), das <i>Pendeln</i> (hin und zurück, wie ein LFO von Hand) und das <i>Halten</i> (eine Stellung bewusst lange stehen lassen). Die letzte ist die schwerste.</li>
+<li><b>Endlos oder mit Anschlag.</b> Ein Regler mit Anschlag sagt Dir blind, wo Du bist. Ein Endlos-Encoder wie am EN16 kann das nicht; dafür springt er nicht, wenn Du das Profil wechselst. Für die Makros ist das ein Vorteil, für das Notfall-Zudrehen nicht: Die Notbremse bleibt ein Regler mit Anschlag, der Passivfader.</li>
+</ul>
+
+<h4 id="k10-mutes">5 · Mutes, Stages und Makros</h4>
+<p>Drei Arten von Griffen tragen eine Live-Performance, und jede braucht einen anderen Controller. Ein <b>Mute</b> schaltet eine Stimme an oder aus. Eine <b>Stage</b> (Stufe) springt in einen vorbereiteten Zustand. Ein <b>Makro</b> bewegt viele Werte mit einer Hand (Kapitel <a class="xref" href="#k5">05</a>).</p>
+<div class="tbl w"><table>
+<thead><tr><th>Griff</th><th>wo im Pult</th><th>Eigenart</th></tr></thead>
+<tbody>
+<tr><td>Mute am L6</td><td>Stummschaltung pro Kanal, per MIDI-CC fernsteuerbar <span class="tag tag-h">Hersteller</span></td><td>schaltet sofort, also selbst auf die Eins drücken; stummgeschaltet wird die Summe, die Kanalspur auf der Karte <span class="tag tag-p" id="pr-133">am Gerät prüfen</span></td></tr>
+<tr><td>Mute im Programm</td><td>Mute-Screen, Kanaltasten <span class="tag tag-h">Hersteller</span> (Kap. 18)</td><td>ob er auf den Takt wartet, <span class="tag tag-p" id="pr-134">am Gerät prüfen</span></td></tr>
+<tr><td>Fill auf null</td><td>Matrix-Spalten 1–3 an mGrids</td><td>stumm ohne Klick, aber nur pro Teil</td></tr>
+<tr><td>Stage am Leo Leo</td><td>MUTE, SKIP, STOP pro Stufe, Handtaster, STAGE TRIGGER (Kapitel <a class="xref" href="#k6">06</a>)</td><td>verändert den Ablauf, nicht den Pegel</td></tr>
+<tr><td>Teil am Muxlicer</td><td>ein Schritt = ein Teil (Kapitel <a class="xref" href="#k9">09</a>)</td><td>Stages für die ganze Form</td></tr>
+<tr><td>Szene am L6</td><td>drei Speicher A, B, C: Pegel, Pan, EQ, Sends, Mutes, Effekte; lang drücken speichert, kurz drücken ruft ab; Abruf auch per Program Change <span class="tag tag-h">Hersteller</span></td><td>eine Mischung als Stage: Intro, Hauptteil, Break</td></tr>
+<tr><td>Makro</td><td>µYarns CV 3 und CV 4 in die A-138m, Patch <a class="xref" href="#p-10a">10A</a></td><td>ein Encoder, drei Ziele, jedes mit eigener Richtung</td></tr>
+</tbody></table></div>
+<p><b>Mutes und Szenen vertragen sich nicht blind.</b> Eine Szene am L6 speichert auch die Mutes. <span class="tag tag-h">Hersteller</span> Rufst Du sie ab, überschreibt sie, was Du vorher von Hand stummgeschaltet hast. Die Regel: Szenen nur an Teilgrenzen, Mutes innerhalb eines Teils. Und eine Szene wird gespeichert, wenn der Teil gut klingt, nicht vorher.</p>
+<p><b>Ein Makro ist ein kleines Arrangement.</b> Dreht der Encoder „Raum“ auf, wird der Hall größer, die Wellenform dunkler und Rings etwas leiser in der Helligkeit. Drei Wirkungen, die zusammen eine Geste ergeben: „weg“. Das Gegenstück „Glanz“ macht hell und nah. Weil beide in derselben Matrix landen, kannst Du ihre Ziele umverteilen, ohne ein Kabel zu ziehen.</p>
+
+<h4 id="k10-ctrl">6 · Controller über den µYarns</h4>
+<p>EN16, TEK2 und Exquis senden MIDI. Das Pult versteht Spannungen. Der Übersetzer ist der µYarns, und er ist in diesem Pult schon Taktgeber: Im Layout 1M liefert er an GATE 3 die Clock und an GATE 4 den Start, Kapitel <a class="xref" href="#k7">07</a>. Das bleibt so. Für die Controller sind die beiden übrigen CV-Ausgänge frei.</p>
+<div class="tbl w"><table>
+<thead><tr><th>µYarns 1M</th><th>führt</th><th>in diesem Kapitel</th></tr></thead>
+<tbody>
+<tr><td>CV 1 · GATE 1</td><td>Tonhöhe, Gate solange eine Taste gehalten wird <span class="tag tag-h">Hersteller</span></td><td>frei; im Kasten „Ohne Host“ spielt der Exquis hier</td></tr>
+<tr><td>CV 2 · GATE 2</td><td>Anschlagstärke, Trigger am Notenanfang <span class="tag tag-h">Hersteller</span></td><td>frei; Variation 4: acht Tasten, acht Spannungen</td></tr>
+<tr><td>CV 3</td><td>Modulationsrad, CC 1 <span class="tag tag-h">Hersteller</span></td><td>Makro „Glanz“ vom EN16, Encoder 1</td></tr>
+<tr><td>CV 4</td><td>frei belegbar: Velocity, Modulation (CC 1), Aftertouch, Breath (CC 2), Pedal (CC 4), Bend, Vibrato-LFO, LFO; einstellbar über die Optionen 3&gt; und 4&gt; <span class="tag tag-h">Hersteller</span></td><td>auf Pedal, also CC 4: Makro „Raum“, Encoder 2</td></tr>
+<tr><td>GATE 3 · GATE 4</td><td>Clock und Start/Takt <span class="tag tag-h">Hersteller</span></td><td>unverändert der Clock-Baum aus Kapitel <a class="xref" href="#k7">07</a></td></tr>
+</tbody></table></div>
+<p><b>USB braucht einen Wirt.</b> EN16 und TEK2 haben nur USB-C, keinen DIN- oder TRS-MIDI-Anschluss. <span class="tag tag-h">Hersteller</span> Ein USB-MIDI-Controller ist ein „Gerät“, das einen „Host“ braucht, normalerweise den Computer. Der µYarns ist kein Host. Darum sitzt dazwischen ein USB-MIDI-Host, in der MIDI-Planung des Pults der CME H4MIDI WC: Er nimmt an seiner USB-A-Buchse über einen Hub bis zu acht USB-MIDI-Geräte, gibt an zwei DIN-Ausgänge weiter und kann ohne Computer routen, filtern und Controller umrechnen. <span class="tag tag-h">Hersteller</span> Die USB-A-Buchse liefert höchstens 5 V und 1 A an die angeschlossenen Geräte. <span class="tag tag-h">Hersteller</span></p>
+<p><b>Ein Kabel für zwei Controller.</b> Grid-Module wie EN16 und TEK2 halten magnetisch aneinander und teilen sich ein USB-Kabel; bis zu acht Module laufen über einen Anschluss. <span class="tag tag-h">Hersteller</span> Mit dem Exquis sind es also zwei USB-Geräte, und dafür braucht der Host einen Hub. Ein Hub mit eigenem Netzteil ist die sichere Wahl, weil der Exquis ebenfalls über USB versorgt wird. <span class="tag tag-h">Hersteller</span></p>
+<figure>
+  <div class="sv">{{FIG:ctrl10}}</div>
+  <figcaption><b>Zwei Wege aus dem Host.</b> OUT 1 trägt Kanal 1 zum µYarns: Die Encoder des EN16 werden zu CV 3 und CV 4, die als Makros in die A-138m gehen. OUT 2 trägt Kanal 16 zum L6: Die Tasten des TEK2 schalten dort Kanäle stumm und rufen Szenen ab. Der Exquis spielt weiter das Programm (Kabel 25 aus 9C) und liefert zusätzlich seine Druck-Spannung direkt an die Matrix.</figcaption>
+</figure>
+<div class="tbl w"><table>
+<thead><tr><th>Controller</th><th>Element</th><th>sendet</th><th>landet</th></tr></thead>
+<tbody>
+<tr><td>EN16</td><td>Encoder 1</td><td>CC 1, Kanal 1, absolut 0–127</td><td>µYarns CV 3 → A-138m Zeile 1 „Glanz“</td></tr>
+<tr><td>EN16</td><td>Encoder 2</td><td>CC 4, Kanal 1, absolut</td><td>µYarns CV 4 → Zeile 2 „Raum“</td></tr>
+<tr><td>EN16</td><td>Druck auf Encoder 1, 2</td><td>setzt den Wert auf einen Startwert zurück (im Grid Editor als Aktion)</td><td>der „Heimweg“ eines Makros</td></tr>
+<tr><td>TEK2</td><td>Tasten 1–5</td><td>CC 20–24, Kanal 16, Umschalter 0/127</td><td>L6 Mute K1+2 (Hall), K3, K4, K5, K6</td></tr>
+<tr><td>TEK2</td><td>Tasten 6–8</td><td>Program Change, Kanal 16</td><td>L6 Szene A, B, C <span class="tag tag-p" id="pr-135">am Gerät prüfen</span></td></tr>
+<tr><td>TEK2</td><td>zwei Jogräder</td><td>frei</td><td>Variationen 2 und 5</td></tr>
+<tr><td>Exquis</td><td>Druck</td><td>MOD-Ausgang, 0–5 V <span class="tag tag-h">Hersteller</span></td><td>direkt in A-138m Zeile 3 „Ausdruck“</td></tr>
+<tr><td>Exquis</td><td>Encoder 1</td><td>ab Werk CC 41 <span class="tag tag-h">Hersteller</span>; der Host rechnet ihn auf CC 1, Kanal 1 um</td><td>zweiter Griff für „Glanz“ neben der Tastatur</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">Die Encoder des EN16 kennen absolute und relative Modi, vier Seiten mit eigener Belegung und einen Taster pro Encoder; das stellst Du im Grid Editor ein. <span class="tag tag-h">Hersteller</span> Die Nummern CC 20–24 sind ein Vorschlag aus dem freien Bereich. Laut Zoom lassen sich Szenen über MIDI IN umschalten, beim Umschalten sendet der L6 selbst Program Change, und die CC-Zuordnung (auch für MUTE) legst Du im L6 Editor fest. <span class="tag tag-h">Hersteller</span> Welcher Wert „stumm“ bedeutet und welche Program-Change-Nummern zu A, B und C gehören, liest Du im L6 Editor ab. <span class="tag tag-p">am Gerät prüfen</span></p>
+<p><b>Kein Takt von den Controllern.</b> Der Exquis hat eine Taste für MIDI-Clock Start und Stopp. <span class="tag tag-h">Hersteller</span> Kommt ein Start-Befehl beim µYarns an, kann er dessen Sequencer starten und damit den Start-Impuls an GATE 4 auslösen, der im Pult der Reset-Bus ist. Darum filtert der Host Clock, Start, Stopp und Song Position auf dem Weg zu OUT 1. <span class="tag tag-h">Hersteller</span> (Filter im Host)</p>
+<div class="box-c">
+<h4>Weitere Wege für mehr Makros</h4>
+<p><b>Layout 4V.</b> Der µYarns kann auch reine CC-zu-CV-Wandlung: Jeder der vier Teile bekommt einen Kanal und einen Controller, die Werte erscheinen als 0–5 V an CV 1 bis 4, und jedes Gate führt 5 V, solange auf seinem Kanal eine Note gehalten wird. <span class="tag tag-h">Hersteller</span> Das wären vier Makros und vier Mute-Gates aus einem Modul. Der Preis: Clock und Start an GATE 3 und 4 entfallen. Mit dem Clock-Baum dieses Pults geht das erst, wenn die Clock aus einer anderen Quelle kommt.</p>
+<p><b>Speicherplätze.</b> Der µYarns hat acht Speicher, jeder hält alle Einstellungen; Platz P1 wird beim Einschalten geladen. <span class="tag tag-h">Hersteller</span> Leg die Performance-Belegung auf einen eigenen Platz und schreib die Nummer auf die Patchkarte.</p>
+</div>
+
+<h4 id="k10-doku">7 · Patch-Zustände dokumentieren</h4>
+<p>Ein Patch besteht aus mehr als Kabeln. Wer nur die Kabel aufschreibt, baut beim nächsten Mal etwas Ähnliches auf, aber nicht dasselbe. Ein <b>Patch-Zustand</b> hat fünf Schichten, und jede braucht ihre eigene Form der Notiz:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Schicht</th><th>Beispiel</th><th>so hältst Du sie fest</th></tr></thead>
+<tbody>
+<tr><td>Kabel</td><td>„14 · Muxlicer GATE 1–8 → 8×8 IN 1–8“</td><td>durchnummeriert wie in diesem Buch, Art dazu (Audio, CV, Gate, Trigger, MIDI)</td></tr>
+<tr><td>Regler</td><td>„SEM CUTOFF 11 Uhr“</td><td>Uhrzeit, wie bei den Startwerten; bei Spielreglern der Spielraum von–bis</td></tr>
+<tr><td>Schalter und Modi</td><td>„281t Kanal 3 auf Attack/Decay“, „Rings modal“</td><td>Schalterstellung oder LED-Farbe; Modi ohne sichtbare Anzeige ausdrücklich</td></tr>
+<tr><td>Speicher</td><td>Programm-Plätze, µYarns-Slot, L6-Szenen, Grid-Profil, Formleiste</td><td>Nummer und Name; wenn möglich zusätzlich sichern (Grid Editor, Formleiste im Browser)</td></tr>
+<tr><td>Ablauf</td><td>„Teil 6: Riser, dann Rückung +2“</td><td>Teile, Eingriffe, wer was wann macht</td></tr>
+</tbody></table></div>
+<ul>
+<li><b>Was nicht gespeichert wird, muss auf Papier.</b> Die meisten Module im Pult haben keinen Speicher: 281t, SEM, Matrix, Attenuverter, Passivfader. Ihre Stellungen sind der Patch.</li>
+<li><b>Fotos ergänzen, ersetzen aber nicht.</b> Drei Arten reichen: das ganze Pult von vorn, jede Reihe einzeln, Nahaufnahmen der Regler, die oft verdreht werden. Auf einem Foto erkennt man selten, welches Kabel wohin führt, und nie, ob ein Modus umgeschaltet ist.</li>
+<li><b>Nummern wie im Buch.</b> Die Kabelnummern aus den Kapiteln weiterverwenden: „Patch <a class="xref" href="#p-9b">9B</a>, dazu 1–10 aus 10A“ ist kürzer und eindeutiger als jede Neuzählung.</li>
+<li><b>Gleich danach, nicht später.</b> Die Karte wird ausgefüllt, solange der Patch steckt. Am nächsten Tag weißt Du noch, was gut war, aber nicht mehr, warum.</li>
+<li><b>Die Aufnahme gehört dazu.</b> Der Ordnername des L6-Takes steht auf der Karte. Dann gibt es zu jeder Karte einen Klang, an dem Du den Wiederaufbau messen kannst.</li>
+</ul>
+
+<div class="play" id="pcard">
+<h4 id="k10-karte">Spielplatz · Patchkarte zum Ausfüllen</h4>
+<p class="muted pc-noprint" style="font-size:15px;margin-bottom:6px">Füll die Karte aus, während der Patch steckt. Sie bleibt in diesem Browser gespeichert, aber nur dort. „Als Text“ zeigt sie als Markdown zum Kopieren in Deine Notizen, in ein Dokument zum Ausdrucken oder in „Klangwege im Pult“. „Beispiel 10A–C“ füllt sie mit dem Stand am Ende dieses Kapitels.</p>
+<div class="presets pc-noprint" role="group" aria-label="Patchkarte">
+<button type="button" class="btn" id="pcEx">Beispiel 10A–C</button><button type="button" class="btn" id="pcText">Als Text</button><button type="button" class="btn" id="pcClear">Leeren</button>
+</div>
+<div class="pc-head" id="pcHead"></div>
+<p class="mh">Kabel</p>
+<div class="tbl"><table class="pc-t" id="pcCab"><thead><tr><th>Nr</th><th>von</th><th>nach</th><th>Art</th><th>wozu</th><th class="pc-noprint"></th></tr></thead><tbody></tbody></table></div>
+<button type="button" class="btn pc-noprint" data-add="cab">+ Kabel</button>
+<p class="mh">Regler und Schalter</p>
+<div class="tbl"><table class="pc-t" id="pcKnob"><thead><tr><th>Modul</th><th>Regler / Schalter</th><th>Stellung</th><th>Spielraum</th><th class="pc-noprint"></th></tr></thead><tbody></tbody></table></div>
+<button type="button" class="btn pc-noprint" data-add="knob">+ Regler</button>
+<p class="mh">Ablauf und Eingriffe</p>
+<div class="tbl"><table class="pc-t" id="pcFlow"><thead><tr><th>Teil / Zeit</th><th>was passiert</th><th>Griff</th><th class="pc-noprint"></th></tr></thead><tbody></tbody></table></div>
+<button type="button" class="btn pc-noprint" data-add="flow">+ Zeile</button>
+<p class="mh">Aufnahme am L6</p>
+<div class="tbl"><table class="pc-t" id="pcRec"><thead><tr><th>Kanal</th><th>Quelle</th><th>Passivfader</th><th>Datei</th></tr></thead><tbody></tbody></table></div>
+<div class="pc-foot" id="pcFoot"></div>
+<div id="pcOut" hidden><textarea id="pcMd" rows="12" style="width:100%;font-family:var(--f-mono);font-size:12.5px;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:2px;padding:8px" aria-label="Patchkarte als Markdown"></textarea>
+<div class="presets pc-noprint" style="margin-top:6px"><button type="button" class="btn" id="pcCopy">Kopieren</button><button type="button" class="btn" id="pcHide">Schließen</button><span class="readout" id="pcMsg" aria-live="polite"></span></div></div>
+</div>
+
+<h4 id="k10-l6">8 · Aufnahme mit dem L6</h4>
+<p>Der Zoom LiveTrak L6 ist Mischpult, Mehrspurrecorder und Audio-Interface in einem. Für dieses Buch zählt vor allem der Recorder: Mit einer microSD-Karte nimmt er jeden Kanal einzeln auf und dazu die Stereosumme, alles als WAV mit 32 Bit Fließkomma bei 48 kHz. <span class="tag tag-h">Hersteller</span></p>
+<div class="tbl w"><table>
+<thead><tr><th>L6</th><th>Angabe</th><th>Bedeutung im Pult</th></tr></thead>
+<tbody>
+<tr><td>Spuren</td><td>bis 12 gleichzeitig: K1 und K2 mono, K3 und K4 stereo oder mit MONO je zwei Monodateien, K5 und K6 stereo, dazu MASTER stereo <span class="tag tag-h">Hersteller</span></td><td>zehn Kanalspuren und die Summe aus einem Durchlauf</td></tr>
+<tr><td>K5 und K6</td><td>nur L (MONO) gesteckt: trotzdem eine Stereodatei, links und rechts gleich <span class="tag tag-h">Hersteller</span></td><td>Elements und Rings liegen hier mono; im DAW eine Seite nehmen</td></tr>
+<tr><td>Recorder Mode</td><td>„Multi Track“: jede Spur plus Summe · „Master Only“: nur die Summe <span class="tag tag-h">Hersteller</span></td><td>immer Multi Track; die Summe ist Dein Mitschnitt, die Spuren Dein Material</td></tr>
+<tr><td>Summe</td><td>MASTER-Datei folgt dem MASTER-Regler und dem Kompressor <span class="tag tag-h">Hersteller</span></td><td>Kompressor nach Geschmack, die Einzelspuren bleiben frei</td></tr>
+<tr><td>Kanalspuren</td><td>ob vor oder nach LEVEL, EQ und Pan aufgenommen wird, steht nicht im Handbuch; eine Händlerbeschreibung nennt sie „trocken“ <span class="tag tag-p" id="pr-136">am Gerät prüfen</span></td><td>Prüfaufnahme in Patch <a class="xref" href="#p-10b">10B</a></td></tr>
+<tr><td>Ordner</td><td>pro Aufnahme ein neuer Ordner mit Datum und Uhrzeit im Ordner RECORDER; Dateinamen mit TRACK01–06 und MASTER, ST für Stereo, L/R bei MONO <span class="tag tag-h">Hersteller</span></td><td>Uhrzeit vorher im L6 Editor stellen, sonst stimmen die Ordnernamen nicht</td></tr>
+<tr><td>Lange Takes</td><td>über 2 GB beginnt lückenlos eine neue Datei; während der Aufnahme wird regelmäßig gesichert <span class="tag tag-h">Hersteller</span></td><td>eine Monospur erreicht 2 GB nach knapp drei Stunden, eine Stereospur nach etwa 1,5 Stunden</td></tr>
+<tr><td>Bedienung</td><td>REC startet und stoppt; Play spielt die zuletzt aufgenommene Summe <span class="tag tag-h">Hersteller</span></td><td>nach jedem Take kurz anhören, bevor der nächste kommt</td></tr>
+<tr><td>Anzeigen</td><td>Kanal-LED grün bei Signal, rot bei Übersteuerung; Pegelmeter nur für MASTER, −48 bis 0 dB <span class="tag tag-h">Hersteller</span></td><td>die Kanal-LED ist Dein einziges Eingangsinstrument</td></tr>
+<tr><td>Bedienelemente</td><td>pro Kanal ein Encoder für LEVEL, PAN, EQ und Sends; keine Kanalfader <span class="tag tag-h">Hersteller</span></td><td>„Fader“ heißen in diesem Buch die CatSynth-Passivfader vor den Eingängen</td></tr>
+</tbody></table></div>
+<p><b>Was 32 Bit Fließkomma kann.</b> Eine 24-Bit-Datei hat eine feste Obergrenze: Was darüber liegt, ist abgeschnitten. Eine 32-Bit-Float-Datei hat praktisch keine. Ein Take, der in der Summe zu laut wirkt, lässt sich in der DAW leiser ziehen, und die Spitzen sind wieder da. Das gilt aber nur für das, was <i>unbeschnitten in die Datei kam</i>.</p>
+<p><b>Was es nicht kann.</b> Vor der Datei liegen Eingangsstufe und Wandler. Beim L6 haben nur die Eingänge 1 und 2 die doppelten A/D-Wandler, die einen Pegel ohne Gain-Regler auffangen. <span class="tag tag-h">Hersteller</span> Die Line-Eingänge 3 bis 6 vertragen höchstens +9 dBu. <span class="tag tag-h">Hersteller</span> Ein typisches Eurorack-Audiosignal mit 10 V Spitze-Spitze liegt darüber. Übersteuert ein Eingang dort, ist die Verzerrung in der Datei, und kein Fließkomma holt sie zurück. Darum gibt es die acht Passivfader vor dem L6. <span class="tag tag-ok">verifiziert</span></p>
+<figure>
+  <div class="sv">{{FIG:pegel}}</div>
+  <figcaption><b>Wie viel Platz jeder Eingang hat.</b> +9 dBu sind etwa 3,1 V Spitze, +24 dBu etwa 17 V. Ein Signal mit ±5 V liegt gut 4 dB über der Grenze der Kanäle 3 bis 6 und weit unter der der Kanäle 1 und 2. Ziel vor den Kanälen 3 bis 6: 6 dB Reserve, also Spitzen um ±1,5 V.</figcaption>
+</figure>
+
+<h4 id="k10-pegel">Einpegeln mit den Passivfadern</h4>
+<p>Die Rechnung ist einfach: dBu ist ein Pegel bezogen auf 0,775 V Effektivwert. Eine Sinusspitze von ±5 V hat 3,54 V Effektivwert, das sind +13,2 dBu. Bis +9 dBu fehlen 4,2 dB. Mit 6 dB Reserve für Ausreißer, Resonanzspitzen und Feedback muss der Passivfader also gut 10 dB wegnehmen, ein knappes Drittel der Spannung. Halbe Spannung sind −6 dB, ein Drittel etwa −10 dB.</p>
+<div class="play" id="pegelplay">
+<h4>Spielplatz · Pegelrechner</h4>
+<div class="ctrls">
+<div><label for="pgV">Spitze der Quelle <output id="pgVO"></output></label><input type="range" id="pgV" min="0.5" max="12" step="0.5" value="5"></div>
+<div><label for="pgIn">Eingang am L6 <output id="pgInO"></output></label><select id="pgIn" style="width:100%;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:2px;margin-top:6px"><option value="9" selected>K3–K6 Line · +9 dBu</option><option value="24">K1/K2 Klinke TRS · +24 dBu</option></select></div>
+<div><label for="pgR">Reserve <output id="pgRO"></output></label><input type="range" id="pgR" min="0" max="12" step="1" value="6"></div>
+</div>
+<p class="readout" id="pgOut" aria-live="polite"></p>
+<p class="muted" style="font-size:13.5px;margin:0">Gerechnet für eine Sinusspitze. Die Stellung gilt für einen linearen Fader ohne Last; der Eingang des L6 hat 10 kΩ und zieht die Spannung etwas weiter herunter. Ob die CatSynth-Fader linear oder logarithmisch verlaufen, <span class="tag tag-p" id="pr-137">am Gerät prüfen</span>.</p>
+</div>
+<ol>
+<li><b>Lautesten Moment herstellen.</b> Nicht den Mittelwert: den Peak-Teil, den Riser oben, die Resonanz an der Spielgrenze, das Feedback am rechten Rand seines Spielraums.</li>
+<li><b>Fader von unten.</b> Passivfader zu, langsam auf, bis die Kanal-LED rot aufblitzt. Diese Stellung merken.</li>
+<li><b>Zurück um die Reserve.</b> Bei einem linearen Fader auf die Hälfte dieser Stellung, das sind 6 dB. Die LED soll auch im lautesten Moment grün bleiben.</li>
+<li><b>Kontrolle mit dem ZeroScope.</b> An einem freien Ausgang derselben Quelle die Spitze ablesen und mit dem Pegelrechner gegenrechnen.</li>
+<li><b>Markieren.</b> Krepp an den Fader, Stellung auf die Patchkarte. Ab jetzt wird an den Passivfadern nicht mehr gemischt, nur noch an LEVEL am L6.</li>
+</ol>
+<p><b>Welche Quelle an welchen Eingang?</b> Die Kanäle 1 und 2 sind fast nicht zu übersteuern. Dort liegt schon der Hall-Return aus Patch <a class="xref" href="#p-8a">8A</a>, und das ist richtig so: Ein Hall am Send kann bei Feedback und langen Fahnen unerwartet anschwellen. Die zweitbeste Wahl für diese Kanäle wären Quellen mit großen Spitzen, also ein Drum-Bus oder ein Feedback-Patch. Stabile Quellen mit bekannter Spitze, eine Stimme hinter einem VCA, ein Resonator, gehören auf 3 bis 6.</p>
+<p><b>MONO an K3 und K4.</b> Mit gedrückter MONO-Taste werden aus jedem der beiden Stereokanäle zwei Monokanäle mit eigener Datei. <span class="tag tag-h">Hersteller</span> Laut dem Test von Sound On Sound teilen sie sich dann LEVEL, Pan, EQ und Sends. Für die Aufnahme ist das kein Nachteil: Die Balance zwischen L und R stellen die beiden Passivfader ein, die Mischung machst Du später in der DAW.</p>
+
+<h4 id="k10-export">Mehrspur-Export in die DAW</h4>
+<ol>
+<li><b>Karte lesen.</b> Entweder die microSD in einen Kartenleser, oder den L6 per USB an den Computer und im L6 Editor die Dateiübertragung starten. Solange sie läuft, nimmt der L6 nicht auf, und der Editor ist gesperrt. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Ordner kopieren, nicht verschieben.</b> Jeder Take ist ein Ordner mit Datum und Uhrzeit. Kopier ihn ganz und benenn die Kopie nach der Patchkarte, etwa „2026-11-08 Take 2 Patch <a class="xref" href="#p-10c">10C</a>“. Das Original auf der Karte bleibt, bis es zweimal gesichert ist.</li>
+<li><b>Projekt mit 48 kHz.</b> Die DAW auf 48 kHz stellen, sonst werden die Dateien umgerechnet oder laufen falsch schnell. Die 32-Bit-Float-Dateien unverändert importieren. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Alles auf null.</b> Alle Dateien eines Takes beginnen im selben Moment. An den Anfang der Zeitleiste legen, dann sind sie synchron. Nichts verschieben, bevor Du nicht weißt, warum.</li>
+<li><b>Spuren benennen.</b> TRACK01 bis 06 nach dem Kanalplan umbenennen: „K1 Hall L“, „K3 Stimme“. Den Plan liefert die Patchkarte.</li>
+<li><b>Pegel in der DAW, nicht davor.</b> Erst hier wird gemischt und normalisiert. Für die Weitergabe einer fertigen Mischung exportierst Du 24 Bit, für die Weiterarbeit bleiben die 32-Bit-Spuren.</li>
+</ol>
+<p class="muted" style="font-size:15px">Datenmenge zum Planen: Eine Monospur mit 32 Bit und 48 kHz sind 192 kB pro Sekunde. Zwölf Spuren zusammen ergeben gut 8 GB pro Stunde. Der L6 arbeitet zugleich als USB-Interface mit 12 Eingängen und 4 Ausgängen und schreibt dabei weiter auf die Karte. <span class="tag tag-h">Hersteller</span> Für dieses Kapitel reicht die Karte.</p>
+
+<h4 id="k10-weg">9 · Vom Experiment zur wiederholbaren Performance</h4>
+<p>Fast jeder gute Moment am Modularsystem entsteht zufällig. Das Problem ist nicht, ihn zu finden, sondern ihn wiederzufinden. Der Weg dahin hat sieben Schritte, und der wichtigste ist der sechste: den Patch abbauen und nur nach der Karte neu aufbauen. Erst dann weißt Du, ob die Karte stimmt.</p>
+<figure>
+  <div class="sv">{{FIG:weg}}</div>
+  <figcaption><b>Sieben Schritte und eine Schleife.</b> Der Rückbau-Test zeigt, was auf der Karte fehlte. Das kommt dazu, und der nächste Aufbau gelingt besser. Nach zwei oder drei Runden ist ein Patch wiederholbar.</figcaption>
+</figure>
+<ol>
+<li><b>Fund.</b> Der Recorder läuft, wann immer Du experimentierst. Ein Take kostet nur Speicher, ein verlorener Moment kommt nicht wieder.</li>
+<li><b>Sichern.</b> Sofort die Patchkarte, Fotos, alle Speicherplätze. Die Kabel bleiben stecken, bis die Karte fertig ist.</li>
+<li><b>Reduzieren.</b> Was ist der Kern? Meist ein Motiv, ein Klang und zwei oder drei Griffe. Was nichts beiträgt, fliegt raus, bevor es sich festsetzt.</li>
+<li><b>Fixieren.</b> Die Form auf Muxlicer und Matrix, die Mischungen in die L6-Szenen, die Belegung in einen µYarns-Slot und ein Grid-Profil.</li>
+<li><b>Proben.</b> Drei Durchläufe, jeder aufgenommen. Nach jedem notierst Du, was anders war als geplant.</li>
+<li><b>Rückbau-Test.</b> Abbauen, Regler verdrehen, nur nach Karte neu aufbauen. Vergleich mit dem Take aus Schritt 1.</li>
+<li><b>Aufführen.</b> Jetzt ist der Patch ein Stück. Jeder Take bekommt seinen Ordnernamen auf der Karte.</li>
+</ol>
+<div class="tbl w"><table>
+<thead><tr><th>fest</th><th>frei</th></tr></thead>
+<tbody>
+<tr><td>Motiv und Form: Speicherplätze, Muxlicer, Matrix</td><td>wann Du die Rückung drückst, welche Akkorde der Exquis greift</td></tr>
+<tr><td>Kanalplan und Passivfader-Stellungen</td><td>LEVEL am L6 innerhalb eines Teils</td></tr>
+<tr><td>Stellregler: Feedback-Grundwert, Resonanz, Stimmung</td><td>Spielregler im markierten Bereich</td></tr>
+<tr><td>Belegung der Controller</td><td>wie weit Du die Makros fährst</td></tr>
+<tr><td>Länge und Tempo</td><td>ob ein Teil heute dichter klingt als gestern</td></tr>
+</tbody></table></div>
+<p>Die Tabelle ist der eigentliche Plan einer Performance. <b>Was fest ist, steht auf der Karte. Was frei ist, ist Deine Musik.</b> Ohne die linke Spalte gibt es keine Wiederholung, ohne die rechte keinen Grund, das Stück noch einmal zu spielen.</p>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k10-praxis">Teil 2 · Praxis am Rack: spielen, aufnehmen, wieder aufbauen</h3>
+<p>Alle drei Stufen bauen auf Patch <a class="xref" href="#p-9c">9C</a> auf: Songpult, Riser, Stimme 2A aus Programm Seq.1, Rings über den Exquis, Hall am Send. In 10A bekommt der Patch eine Spielfläche aus Makros, Mutes und Szenen. In 10B wird er sauber eingepegelt und mehrspurig aufgenommen. In 10C wird er dokumentiert, abgebaut und nach der Karte wieder aufgebaut.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-10a">10A</a></b> gehen EN16, TEK2 und Exquis über einen Hub in einen USB-MIDI-Host. Dessen erster Ausgang speist den µYarns, der zwei Encoder als Spannungen an CV 3 und CV 4 ausgibt. Zusammen mit dem Druck des Exquis laufen sie in drei Zeilen der A-138m, deren Spalten Hall, Wellenform und Rings bewegen: zwei Makros und ein Ausdruck. Der zweite Ausgang des Hosts steuert den L6: Die TEK2-Tasten schalten Kanäle stumm und rufen Szenen ab. In <b>Patch <a class="xref" href="#p-10b">10B</a></b> legst Du die Kick einzeln auf einen eigenen Kanal, pegelst alle Eingänge mit den Passivfadern ein und machst eine Prüfaufnahme. In <b>Patch <a class="xref" href="#p-10c">10C</a></b> spielst Du einen Durchlauf, füllst die Patchkarte aus, baust ab und wieder auf.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Nach diesem Kapitel hast Du ein Stück, das Du spielen, aufnehmen und wiederholen kannst, und eine Arbeitsweise, die für jeden späteren Patch gilt. Die Makros machen aus dem Songpult ein Instrument: Die Form läuft, Du gestaltest den Klang. Die Mehrspuraufnahme trennt Spielen und Mischen; Du musst beim Spielen nicht mehr an die Balance denken. Und die Patchkarte ist das Bindeglied zu Band 3 und zu „Klangwege im Pult“: Jeder Stil beginnt dort mit einem Patch, den Du wieder aufbauen kannst.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Grundlage</td><td>Patch <a class="xref" href="#p-9c">9C</a> komplett: Songpult, Riser, Stimme 2A, Rings, Hall-Send aus 8A</td><td>10A</td></tr>
+<tr><td>Controller</td><td>Intech EN16 und TEK2 (magnetisch verbunden) · Intuitive Instruments Exquis</td><td>10A</td></tr>
+<tr><td>MIDI-Host</td><td>CME H4MIDI WC oder ein anderer USB-MIDI-Host mit zwei Ausgängen · USB-Hub mit Netzteil</td><td>10A</td></tr>
+<tr><td>Übersetzer</td><td>µYarns, Layout 1M, CV 3 und CV 4</td><td>10A</td></tr>
+<tr><td>Makro-Matrix</td><td>Doepfer A-138m, Zeilen 1–3, Spalten A–C</td><td>10A</td></tr>
+<tr><td>Ziele</td><td>Milky Way CABIN PRESSURE CV · 258t OSC 1 WAVE CV · Rings BRIGHTNESS</td><td>10A</td></tr>
+<tr><td>Aufnahme</td><td>Zoom L6 mit microSD (Class 10 oder schneller) <span class="tag tag-h">Hersteller</span> · 8 CatSynth-Passivfader · ZeroScope</td><td>10B</td></tr>
+<tr><td>Dokumentation</td><td>Patchkarte (oben), Kamera, Malerkrepp, Stift</td><td>10C</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Host: der Exquis direkt am µYarns</h4>
+<p>Der Exquis hat MIDI-Ein- und -Ausgang als Miniklinke; laut Händler TRS Typ A. <span class="tag tag-p" id="pr-138">am Gerät prüfen</span> Ohne Host steckst Du seinen MIDI OUT direkt in den MIDI-Eingang des µYarns; das Kabel aus 9C zum Programm wandert dafür hierher. Dann:</p>
+<ul>
+<li><b>Noten.</b> Exquis im Modus Poly Aftertouch auf Kanal 1: Seine Noten erscheinen an µYarns CV 1 und GATE 1, die Anschlagstärke an CV 2. <span class="tag tag-h">Hersteller</span> Damit spielt er eine Stimme, etwa Elements wie in Kapitel <a class="xref" href="#k2">02</a>.</li>
+<li><b>Makros.</b> Die Encoder senden ab Werk CC 41 bis 44; in der Exquis-App lassen sie sich umbelegen. <span class="tag tag-h">Hersteller</span> Encoder 1 auf CC 1 ergibt CV 3, Encoder 2 auf CC 4 ergibt CV 4.</li>
+<li><b>Druck.</b> Den Druck kann der Exquis als Channel Pressure oder als Poly Aftertouch senden. <span class="tag tag-h">Hersteller</span> Mit 4&gt; auf Aftertouch wird er am µYarns zu CV 4; ob der µYarns dabei Poly Aftertouch auswertet, <span class="tag tag-p" id="pr-139">am Gerät prüfen</span>. Sicherer ist die MOD-Buchse des Exquis, Kabel 7 in 10A.</li>
+<li><b>Mutes und Szenen</b> drückst Du in diesem Fall am L6 selbst.</li>
+</ul>
+</div>
+
+<p class="bst" id="k10-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp10">
+  <button type="button" data-stage="10A" aria-pressed="true">Patch 10A</button>
+  <button type="button" data-stage="10B" aria-pressed="false">Patch 10B</button>
+  <button type="button" data-stage="10C" aria-pressed="false">Patch 10C</button>
+</div>
+<figure>
+<div class="sv" id="pp10">{{FIG:pp_ch10}}</div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--muted)"></i>MIDI, USB</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-10A="&lt;b&gt;Patch 10A, die Spielfläche.&lt;/b&gt; Controller über den Hub in den Host (1, 2), OUT 1 zum µYarns, OUT 2 zum L6 (3, 4). CV 3, CV 4 und Exquis MOD in die A-138m (5–7), deren Spalten an Hall, Wellenform und Rings (8–10). Der Patch aus 9C läuft darunter weiter." data-cap-10B="&lt;b&gt;Patch 10B, Einpegeln und Mehrspur.&lt;/b&gt; Die Kick einzeln über einen Passivfader auf K4 rechts (11, 12), K4 auf MONO. Ein Messkabel bringt die Stimme zum ZeroScope (13); nach dem Einpegeln wieder ab." data-cap-10C="&lt;b&gt;Patch 10C, die wiederholbare Performance.&lt;/b&gt; Keine neuen Kabel: Der ganze Stand wird gespielt, aufgenommen, auf die Patchkarte geschrieben, abgebaut und nach der Karte wieder aufgebaut."><b>Patch <a class="xref" href="#p-10a">10A</a>, die Spielfläche.</b> Controller über den Hub in den Host (1, 2), OUT 1 zum µYarns, OUT 2 zum L6 (3, 4). CV 3, CV 4 und Exquis MOD in die A-138m (5–7), deren Spalten an Hall, Wellenform und Rings (8–10). Der Patch aus 9C läuft darunter weiter.</figcaption>
+</figure>
+
+<p class="bst" id="k10-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-10a">Stufe 1 · Patch 10A: die Spielfläche</h4>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · Patch <a class="xref" href="#p-9c">9C</a> steht und läuft · Kabel 25 (Exquis MIDI OUT → Programm) bleibt · alle Regler der A-138m auf null: Spalte A ganz links, Spalten B und C auf 12 Uhr · Passivfader wie in 9C</div><div class="why">Spalte A ist unipolar, B und C sind bipolar: links von der Mitte kehrt sich die Wirkung um, die Mitte ist null. <span class="tag tag-h">Hersteller</span> So bewegt die Matrix beim Einstecken noch nichts.</div></div></li>
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Grid Editor</b> · EN16 Seite 1: Encoder 1 = CC 1, Encoder 2 = CC 4, beide Kanal 1, absolut 0–127, Druck setzt auf 30 zurück · TEK2: Tasten 1–5 = CC 20–24 Kanal 16 als Umschalter, Tasten 6–8 = Program Change auf Kanal 16 · Profil speichern</div><div class="why">Absolute Werte gehen ohne Umweg zum µYarns. Der Rücksetzwert ist der Heimweg des Makros: ein Druck, und der Klang ist wieder am Ausgangspunkt. Die LEDs der beiden Encoder in den Farben der Zeilen machen sie blind unterscheidbar.</div></div></li>
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>µYarns</b> · Layout 1M, Kanal 1 · Option 4&gt; auf PEDAL (CC 4) · CV 3 bleibt Modulation (CC 1) · Tempo wie bisher · auf einen freien Speicherplatz sichern</div><div class="why">An Clock und Start ändert sich nichts. Den Speicherplatz schreibst Du auf die Karte; P1 lädt beim Einschalten. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Host</b> · USB-Geräte → OUT 1 und OUT 2 · auf dem Weg zu OUT 1: Clock, Start, Stopp und Song Position filtern · Exquis Encoder 1 (CC 41, Kanal 2) auf CC 1, Kanal 1 umrechnen · <b>L6 Editor</b>: Mixer Control via MIDI an, MIDI-Kanal 16, CC 20–24 auf Mute K1+K2, K3, K4, K5, K6</div><div class="why">Routing, Filter und Mapper des Hosts stellst Du mit der zugehörigen Software ein; die Einstellung bleibt im Gerät. <span class="tag tag-h">Hersteller</span> Der L6 kann Mute, LEVEL, Pan, EQ und Sends per CC empfangen. <span class="tag tag-h">Hersteller</span> Weil µYarns auf Kanal 1 und L6 auf Kanal 16 hören, darf der Host alles an beide Ausgänge schicken.</div></div></li>
+<li><span class="n midi">1</span><div class="r"><div class="route">EN16 + TEK2 <b>USB-C</b> → USB-Hub → Host <b>USB-A</b></div><div class="why">Ein Kabel für beide Module. Ob Host und Hub die Grid-Module ohne Computer erkennen und versorgen, <span class="tag tag-p" id="pr-140">am Gerät prüfen</span>; Grid-Module sind USB-Class-Compliant. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n midi">2</span><div class="r"><div class="route">Exquis <b>USB-C</b> → USB-Hub</div><div class="why">USB versorgt den Exquis und trägt sein MIDI. <span class="tag tag-h">Hersteller</span> Ob er gleichzeitig über USB und über seinen TRS-Ausgang (Kabel 25) sendet, <span class="tag tag-p" id="pr-141">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n midi">3</span><div class="r"><div class="route">Host <b>MIDI OUT 1</b> → (DIN-TRS-Adapter) → µYarns <b>MIDI IN</b></div><div class="why">Das bisherige MIDI-Kabel am µYarns wandert an einen freien Eingang des Hosts; Masterkeyboard oder Interface spielen dann über den Host weiter. Der Eingang des m-Brane nimmt laut Michigan Synth Works ab Revision 1.1 jedes TRS-MIDI-Kabel, Typ A oder B; der Ausgang ist ab Revision 1.2 per Jumper umschaltbar, ab Werk Typ A. <span class="tag tag-h">Hersteller</span> Welche Revision im Pult steckt, <span class="tag tag-p" id="pr-142">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n midi">4</span><div class="r"><div class="route">Host <b>MIDI OUT 2</b> → (DIN-TRS-Adapter) → L6 <b>MIDI IN</b></div><div class="why">Der L6 hat MIDI IN und OUT als 3,5-mm-Klinke; für DIN-Geräte braucht es einen Adapter. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n cv">5</span><div class="r"><div class="route">µYarns <b>CV 3</b> → A-138m <b>IN 1</b></div><div class="why">Zeile 1, „Glanz“. Den Bereich der Spannung bei CC 1 = 127 misst Du einmal mit dem ZeroScope. <span class="tag tag-p" id="pr-143">am Gerät prüfen</span></div></div></li>
+<li><span class="n cv">6</span><div class="r"><div class="route">µYarns <b>CV 4</b> → A-138m <b>IN 2</b></div><div class="why">Zeile 2, „Raum“.</div></div></li>
+<li><span class="n cv">7</span><div class="r"><div class="route">Exquis <b>MOD</b> → A-138m <b>IN 3</b></div><div class="why">Zeile 3, „Ausdruck“. Die CV-Ausgänge des Exquis liefern 0–5 V; MOD folgt laut Produktbeschreibung dem Druck. <span class="tag tag-h">Hersteller</span> Ob Druck oder Neigung, <span class="tag tag-p" id="pr-144">am Gerät prüfen</span>.</div></div></li>
+<li><span class="n cv">8</span><div class="r"><div class="route">A-138m <b>OUT A</b> → Milky Way <b>CABIN PRESSURE CV</b></div><div class="why">Spalte A, unipolar: Der Eingang erwartet 0–5 V, und mit gestecktem Kabel wird der CABIN-PRESSURE-Regler zum Abschwächer. <span class="tag tag-h">Hersteller</span> Wie in Patch <a class="xref" href="#p-5d">5D</a>.</div></div></li>
+<li><span class="n cv">9</span><div class="r"><div class="route">A-138m <b>OUT B</b> → 258t <b>OSC 1 WAVE CV</b></div><div class="why">Spalte B, bipolar. Der Eingang erwartet typisch 0–5 V. Hier treffen sich Glanz (nach rechts, heller) und Raum (nach links, dunkler).</div></div></li>
+<li><span class="n cv">10</span><div class="r"><div class="route">A-138m <b>OUT C</b> → Rings <b>BRIGHTNESS</b></div><div class="why">Spalte C, bipolar. Glanz und Ausdruck machen Rings heller, Raum nimmt ein wenig weg.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-10a">10A</a> · A-138m</p>
+<div class="tbl w"><table>
+<thead><tr><th>Zeile</th><th>Spalte A · Hall (unipolar)</th><th>Spalte B · 258t WAVE</th><th>Spalte C · Rings hell</th></tr></thead>
+<tbody>
+<tr><td>1 · Glanz (EN16 Enc 1)</td><td>7 Uhr · nichts</td><td>2 Uhr · heller</td><td>1 Uhr · etwas heller</td></tr>
+<tr><td>2 · Raum (EN16 Enc 2)</td><td>3 Uhr · viel Hall</td><td>10 Uhr · dunkler</td><td>11 Uhr · eine Spur weicher</td></tr>
+<tr><td>3 · Ausdruck (Exquis Druck)</td><td>7 Uhr · nichts</td><td>12 Uhr · nichts</td><td>2 Uhr · drücken = heller</td></tr>
+</tbody></table></div>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="1 · B GLANZ: 258t heller"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">1 · B GLANZ</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">258t heller</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="2 · A RAUM: Hall-Anteil"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">2 · A RAUM</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hall-Anteil</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="2 · B RAUM: 258t dunkler"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">2 · B RAUM</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">258t dunkler</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="3 · C DRUCK: Rings heller"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">3 · C DRUCK</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Rings heller</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="CABIN PRESSURE: Abschwächer"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">CABIN PRESSURE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Abschwächer</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t WAVE: Grundstellung"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t WAVE</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Grundstellung</text></svg>
+</div>
+<p class="muted" style="font-size:15px">WAVE am 258t ein Stück zurücknehmen, damit Glanz nach oben und Raum nach unten Platz hat. Ob sich die Ausgänge der A-138m mit allen Reglern auf null wirklich auf 0 V legen, war schon in Kapitel <a class="xref" href="#k5">05</a> offen; ein Blick mit dem ZeroScope an OUT B klärt es. <span class="tag tag-p" id="pr-145">am Gerät prüfen</span></p>
+<div class="check"><b>Kontrollpunkt 10A</b> Dreh Encoder 1 am EN16 auf: Die Stimme wird heller, Rings klarer, der Hall bleibt. Dreh Encoder 2 auf: Der Hall wächst, die Stimme wird dunkler, als ginge sie weg. Drück einen Encoder: Er springt auf den Startwert. Drück auf dem Exquis eine Taste fester: Rings glänzt, solange Du drückst. Taste 3 am TEK2: K3 am L6 ist stumm, noch einmal: wieder da. Die Clock läuft die ganze Zeit ungestört; drückst Du am Exquis Play, darf am Pult nichts neu starten.</div>
+
+<h4 id="p-10b">Stufe 2 · Patch 10B: einpegeln und mehrspurig aufnehmen</h4>
+<p>Vorher: microSD im L6, Datum und Uhrzeit im L6 Editor gestellt, Recorder Mode „Multi Track“. <span class="tag tag-h">Hersteller</span> Der Kanalplan bleibt der aus den Kapiteln 08 und 09, ergänzt um die einzelne Kick:</p>
+<div class="tbl w"><table>
+<thead><tr><th>Kanal</th><th>Quelle</th><th>Datei</th><th>Hinweis</th></tr></thead>
+<tbody>
+<tr><td>K1 · K2</td><td>Milky Way OUT 1 und 2, Hall-Return</td><td>zwei Monodateien</td><td>doppelte Wandler, Pan hart links und rechts</td></tr>
+<tr><td>K3</td><td>Stimme 2A trocken (Mult A)</td><td>Stereodatei, mit MONO zwei Monodateien</td><td>Line, +9 dBu</td></tr>
+<tr><td>K4 L · K4 R</td><td>Samples II Summe · Kick einzeln</td><td>mit MONO zwei Monodateien</td><td>neu: Kabel 11, 12</td></tr>
+<tr><td>K5</td><td>Elements, Riser</td><td>Stereodatei, L = R</td><td>nur L (MONO) gesteckt</td></tr>
+<tr><td>K6</td><td>Rings über FOUR PLAY</td><td>Stereodatei, L = R</td><td>nur L (MONO) gesteckt</td></tr>
+<tr><td>MASTER</td><td>Summe</td><td>Stereodatei</td><td>Kompressor nach Geschmack</td></tr>
+</tbody></table></div>
+<ol class="cables" start="11">
+<li><span class="n audio">11</span><div class="r"><div class="route">Samples II <b>OUT 1</b> → Passivfader 7</div><div class="why">Die Kick aus Patch <a class="xref" href="#p-7b">7B</a> liegt auf Kanal 1 (mGrids BD → TRIG 1). OUT 5 mischt alle Kanäle, deren Ausgang nicht gesteckt ist; mit Stecker in OUT 1 fällt die Kick aus der Summe. <span class="tag tag-h">Hersteller</span> Sie hat jetzt ihre eigene Spur, und Du kannst sie in der DAW unabhängig vom Rest bearbeiten.</div></div></li>
+<li><span class="n audio">12</span><div class="r"><div class="route">Passivfader 7 → L6 <b>K4 R</b> · MONO an K4 drücken</div><div class="why">Mit MONO wird K4 L zur Drum-Summe und K4 R zur Kick, jede mit eigener Datei. <span class="tag tag-h">Hersteller</span> Die MONO-Einstellung gehört zur Szene; nach einem Szenenabruf prüfen. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">13</span><div class="r"><div class="route">2×4 Mult Teil A, freier Ausgang → ZeroScope <b>IN</b></div><div class="why">Ein Messkabel. Der Mult gibt dieselbe Spannung aus wie an den anderen Ausgängen, also siehst Du die Spitze, die vor dem Passivfader von K3 ankommt. Wandert danach zu Rings und Elements, dann wieder ab.</div></div></li>
+</ol>
+<p class="mh">Einpegeln und Prüfaufnahme</p>
+<ol>
+<li><b>Peak-Teil einstellen.</b> In der Formleiste Teil 7 wählen und den Muxlicer per Hand auf Teil 7 stellen oder warten, bis er kommt. Makro „Glanz“ ganz auf, Riser oben.</li>
+<li><b>Jeden Kanal einzeln.</b> Die übrigen Kanäle am TEK2 stummschalten, den einen mit dem Passivfader von unten an die rote LED heranfahren, dann auf die Hälfte zurück.</li>
+<li><b>Messen.</b> Spitze am ZeroScope ablesen, mit dem Pegelrechner gegenrechnen. Ziel vor K3–K6: um ±1,5 V.</li>
+<li><b>Prüfaufnahme.</b> LEVEL von K6 am L6 ganz zu, 20 Sekunden aufnehmen, LEVEL zurück. Am Computer TRACK06 anhören: Ist Rings dort zu hören, nimmt der L6 vor LEVEL auf. Dasselbe mit einem EQ-Eingriff an K3. Das Ergebnis auf die Karte. <span class="tag tag-p" id="pr-146">am Gerät prüfen</span></li>
+<li><b>Durchlauf aufnehmen.</b> REC, dann Start am µYarns. Am Ende des Outros erst die Hallfahne ausklingen lassen, dann REC stoppen.</li>
+</ol>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K1 · K2: Hall, Reserve groß"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K1 · K2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hall, Reserve groß</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K3: Stimme"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Stimme</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K4 L: Drums"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K4 L</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Drums</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K4 R: Kick"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41.6" y2="35.1" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K4 R</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Kick</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K5: Riser"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K5</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Riser</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="PF K6: Rings"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="46.6" y2="26.6" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">PF K6</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Rings</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Die Stellungen sind Anhaltswerte für ±5-V-Quellen an linearen Fadern; die echten stellst Du nach der LED ein und schreibst sie auf die Karte.</p>
+<div class="check"><b>Kontrollpunkt 10B</b> Im lautesten Teil blitzt keine Kanal-LED rot. Auf der Karte liegt ein neuer Ordner mit Datum und Uhrzeit, darin sieben Kanaldateien (K1, K2, K3 als Stereodatei, K4 L und R, K5, K6; mit MONO an K3 acht) und eine MASTER-Datei. In der DAW liegen alle Spuren bündig, die Kick steht allein auf ihrer Spur, und die Hallspuren klingen zusammen wie der Raum, den Du gehört hast.</div>
+
+<h4>Mehrspur-Export, Schritt für Schritt</h4>
+<p>Nach dem Take den Ordner wie in Abschnitt 8 kopieren, benennen und importieren. Leg Dir in der DAW einmal eine Vorlage an: 48 kHz, acht Spuren mit den Namen aus dem Kanalplan, die Hallspuren als Paar. Dann ist jeder weitere Take in einer Minute geöffnet. Der Ordnername kommt auf die Patchkarte, Feld „Aufnahme“.</p>
+
+<h4 id="p-10c">Stufe 3 · Patch 10C: die wiederholbare Performance</h4>
+<p>Keine neuen Kabel. Diese Stufe ist ein Ablauf, und sie ist der eigentliche Abschluss von Band 1.</p>
+<ol>
+<li><b>Take 1 · spielen.</b> Ein Durchlauf von Teil 1 bis Teil 8 mit höchstens fünf geplanten Griffen: zwei Makrofahrten, ein Mute, ein Szenenwechsel, die Rückung im Peak. Alles andere bleibt.</li>
+<li><b>Karte ausfüllen.</b> Patchkarte oben öffnen, „Beispiel 10A–C“ als Gerüst laden und an Deinen Stand anpassen: Kabel 1–13 dieses Kapitels, dazu „9A–9C wie in Kapitel <a class="xref" href="#k9">09</a>“, die Startwerte, die Passivfader, die Speicherplätze, der Ordnername von Take 1. Als Text kopieren und außerhalb des Browsers sichern, etwa in Deinen Notizen; dort lässt sie sich auch ausdrucken. Fotos: Pult gesamt, jede Reihe, Nahaufnahmen von A-138m, 281t, Passivfadern.</li>
+<li><b>Speicher sichern.</b> Programm: die Sequenzen auf ihren Plätzen; µYarns: Slot; L6: Szenen A, B, C; Grid Editor: Profil exportieren; Formleiste: bleibt im Browser, die Vorlage zusätzlich auf der Karte.</li>
+<li><b>Rückbau.</b> Die Kabel 1–13 dieses Kapitels und die Kabel 25–30 aus 9C ziehen. Alle Regler an A-138m, Rings, Milky Way und 258t auf 12 Uhr drehen, die Passivfader zu. Den Rest des Songpults stehen lassen; für den ersten Test reicht ein Teilrückbau.</li>
+<li><b>Wiederaufbau nur nach Karte.</b> Nicht nach Gedächtnis, nicht nach dem Buch. Was fehlt, notierst Du in Rot auf der Karte.</li>
+<li><b>Take 2 · spielen.</b> Dieselben fünf Griffe. Aufnehmen.</li>
+<li><b>Vergleichen.</b> Take 1 und Take 2 in der DAW untereinander, Spur für Spur hören. Klingt Take 2 erkennbar wie Take 1? Wo nicht, war die Karte unvollständig, oder die Abweichung gehört zur freien Hand.</li>
+</ol>
+<div class="check"><b>Kontrollpunkt 10C</b> Jemand, der beide Takes hört, erkennt dasselbe Stück. Die Unterschiede liegen in der rechten Spalte der Tabelle aus Abschnitt 9: Griffzeitpunkte, Makrotiefe, Akkorde. Kein Unterschied liegt in der linken: Kanalplan, Pegel, Form, Grundklang. Auf der Karte stehen jetzt Ergänzungen, die beim ersten Ausfüllen fehlten.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k10-hoeren">08 · Hörübung: Was macht die Aufnahme hörbar?</p>
+<ol>
+<li><b>Solo und Summe.</b> In der DAW jede Spur einmal allein hören, dann die MASTER-Datei. Welche Spur trägt das Stück? Meist ist es eine, und es ist selten die lauteste.</li>
+<li><b>Ohne Riser, ohne Hall.</b> K5 stumm, dann K1 und K2 stumm. Was fehlt der Form ohne Ankündigung, was dem Klang ohne Raum? Das ist die Probe auf Kapitel <a class="xref" href="#k8">08</a> und <a class="xref" href="#k9">09</a>.</li>
+<li><b>Motiv wiederfinden.</b> Hör nur K3 und markier jede Stelle, an der das Motiv in einer Variation wiederkommt. Findest Du alle, die Du gespielt hast?</li>
+<li><b>Zwei Takes, blind.</b> Lass jemanden Take 1 und Take 2 in zufälliger Reihenfolge abspielen. Erkennst Du, welcher welcher ist? Wenn nicht, ist der Patch wiederholbar.</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k10-var2">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>Echo-Wurf am L6.</b> Ein TEK2-Jograd auf den EFX-Send von K3; der L6 hat fünf interne Effekte, darunter Delay und Echo. <span class="tag tag-h">Hersteller</span> Bekommt der L6 MIDI-Clock, rastet die Tap-Tempo-Zeit des Delays auf Notenwerte ein. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Feinregler.</b> Jograd 2 im relativen Modus auf CC 1: fein nachstellen, ohne den EN16 anzufassen. Beide senden denselben Controller; nicht gleichzeitig bewegen, sonst springt der Wert.</li>
+<li><b>Druck als zweites Makro.</b> Exquis MOD zusätzlich über einen Mult an CV 2 des FOUR PLAY (Reihe 3): Wer fester drückt, holt Rings lauter nach vorn.</li>
+<li><b>Acht Tasten, acht Spannungen.</b> Die TEK2-Tasten auf Kanal 1 als Noten mit verschiedener Anschlagstärke: µYarns CV 2 springt auf acht Werte, die bis zur nächsten Note stehen bleiben. Das ist ein Stage-Wähler. Ob der Wert nach dem Loslassen gehalten wird, <span class="tag tag-p" id="pr-147">am Gerät prüfen</span>.</li>
+<li><b>Sound Pads als Stage.</b> Die vier Sound Pads des L6 spielen Dateien ab und können eine Stereomischung direkt aufnehmen. <span class="tag tag-h">Hersteller</span> Eine Hallfahne aus Take 1 auf ein Pad legen und im Break von Take 2 auslösen.</li>
+<li><b>Arpeggio halten.</b> Am µYarns START/STOP etwa eine Sekunde halten, während ein Arpeggio läuft: Es läuft nach dem Loslassen weiter, bis ein neuer Akkord kommt. <span class="tag tag-h">Hersteller</span></li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · nur aufnehmen.</b> Ohne Host und ohne Makros: Kanalplan, Passivfader, Multi Track. Das reicht für jeden Patch der früheren Kapitel und ist der Anfang jeder Dokumentation.</li>
+<li><b>Vertiefte Variante · vier Makros mit 4V.</b> Sobald die Clock aus dem Programm oder einem anderen Modul kommt, den µYarns auf 4V umstellen: vier Encoder, vier Spannungen, vier Gates für Mutes im Rack. <span class="tag tag-h">Hersteller</span></li>
+<li><b>DAW gleich mit.</b> Den L6 als USB-Interface am Computer, 12 Eingänge, während die Karte weiter aufnimmt. <span class="tag tag-h">Hersteller</span> Für Video-Mitschnitte, bei denen Bild und Ton im selben Programm landen sollen.</li>
+<li><b>Klatsch zum Synchronisieren.</b> Wird zusätzlich gefilmt, zu Beginn jedes Takes einmal auf einen Drum-Trigger hauen: Der Schlag ist in Bild und Spur sichtbar.</li>
+<li><b>Akkorde auf dem Swarm.</b> Den Swarm auf MIDI-Kanal 3 stellen (beim Einschalten <span class="jack">shift</span> halten, Note senden, <span class="jack">start</span>) und im Host die Noten des Exquis oder des Masterkeyboards auf einen freien Ausgang zu ihm leiten. Im Poly-Modus spielen bis zu acht Töne, ihre Tonhöhen kommen von den acht Potis: vorher stimmen, dann greifen. Hüllkurve auf AR. Auf dem Kanalplan bekommt er einen eigenen L6-Kanal. Die Buchse ist TRS <b>Typ B</b>, also mit dem beiliegenden Adapter, nicht mit dem Typ-A-Kabel des Exquis. <span class="tag tag-h">Hersteller</span> Wie die Noten im Poly-Modus auf die Oszillatoren verteilt werden: Probe in <a class="xref" href="#b2-b05">B2-B-05</a>. <span class="tag tag-p" id="pr-148">am Gerät prüfen</span> → <a href="#b2-b05">B2-B-05</a></li>
+<li><b>Karte in die Bibliothek.</b> Den Text der Patchkarte in „Klangwege im Pult“ als neuen KWP-Eintrag übernehmen, mit Verweis auf den Take.</li>
+<li><b>Set aus drei Stücken.</b> Drei Patchkarten, drei Szenen-Sätze, ein Wechselplan: Was wird zwischen den Stücken umgesteckt, was bleibt? Je weniger, desto besser.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k10-komp">11 · Kompositionsaufgabe: ein Stück, drei Tage</p>
+<p>Schreib ein Stück von drei bis vier Minuten aus einem einzigen Motiv von höchstens einem Takt. Plan die Form in der Formleiste aus Kapitel <a class="xref" href="#k9">09</a> und leg für jeden Teil fest, welche Eigenschaft des Motivs sich ändert. Dann:</p>
+<ol>
+<li><b>Tag 1 · finden und sichern.</b> Patch bauen, Motiv finden, Form einstellen, Patchkarte ausfüllen, Take 1.</li>
+<li><b>Tag 2 · aus der Karte.</b> Nach dem Abbauen nur nach Karte neu aufbauen, Take 2. Karte verbessern.</li>
+<li><b>Tag 3 · aufführen und mischen.</b> Take 3 als Aufführung, ohne zu unterbrechen. Danach die Mehrspuren in der DAW mischen: nur Pegel, Pan und etwas EQ, keine neuen Effekte.</li>
+</ol>
+<p>Am Ende stehen drei Takes, eine Karte und eine Mischung. Hör Take 1 und die Mischung von Take 3 hintereinander. Der Abstand zwischen beiden ist, was Du in diesem Band gelernt hast.</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k10-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k10l1"><label for="k10l1">Ein Motiv in Tonhöhen, Kontur, Rhythmus und Klang zerlegen und vier Variationen bilden, die jeweils nur eine Eigenschaft ändern.</label></li>
+<li><input type="checkbox" id="k10l2"><label for="k10l2">Spielregler und Stellregler unterscheiden und für einen Patch den sicheren Bereich markieren.</label></li>
+<li><input type="checkbox" id="k10l3"><label for="k10l3">Mute, Stage und Makro erklären und für jedes ein Werkzeug im Pult nennen.</label></li>
+<li><input type="checkbox" id="k10l4"><label for="k10l4">Einen USB-Controller über einen Host und den µYarns zu einer Steuerspannung machen, ohne den Clock-Baum zu stören.</label></li>
+<li><input type="checkbox" id="k10l5"><label for="k10l5">Sagen, welche L6-Eingänge 32-Bit-Float-Wandler haben und warum die anderen trotzdem übersteuern können.</label></li>
+<li><input type="checkbox" id="k10l6"><label for="k10l6">Einen Kanal mit Passivfader und Kanal-LED auf 6 dB Reserve einpegeln.</label></li>
+<li><input type="checkbox" id="k10l7"><label for="k10l7">Einen Take von der Karte in eine DAW bringen, mit richtigen Spurnamen und bündig.</label></li>
+<li><input type="checkbox" id="k10l8"><label for="k10l8">Eine Patchkarte so ausfüllen, dass ein Rückbau-Test gelingt.</label></li>
+<li><input type="checkbox" id="k10l9"><label for="k10l9">Für eine Performance festlegen, was fest und was frei ist.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Die Encoder bewegen nichts</summary><ol>
+<li>Leuchten die Grid-Module? Sonst bekommen sie keinen Strom: Hub mit Netzteil verwenden, Kabel prüfen.</li>
+<li>Erkennt der Host sie? Die Port-LED blinkt beim Senden schnell. <span class="tag tag-h">Hersteller</span></li>
+<li>Kanal und Controller: EN16 sendet CC 1 auf Kanal 1, µYarns hört auf Kanal 1, Layout 1M?</li>
+<li>Kommt an CV 3 Spannung an? ZeroScope an CV 3, Encoder drehen. Wenn ja, liegt es an der Matrix: Regler der Zeile auf null?</li>
+</ol></details>
+<details><summary>Beim Druck auf Play am Exquis springt das ganze Pult auf die Eins</summary><ol>
+<li>Der Start-Befehl erreicht den µYarns. Im Host Clock, Start und Stopp zu OUT 1 filtern. <span class="tag tag-h">Hersteller</span></li>
+<li>Kommt er stattdessen über Kabel 25 ins Programm und von dort über RESET OUT? Dann die Clock-Taste am Exquis nicht benutzen.</li>
+</ol></details>
+<details><summary>Das Makro springt</summary><ol>
+<li>Zwei Quellen senden denselben Controller: EN16 absolut und Exquis-Encoder oder Jograd. Nur eine Quelle pro Makro bewegen, oder die zweite relativ einstellen.</li>
+<li>Seitenwechsel am EN16: Auf der anderen Seite ist derselbe Encoder anders belegt.</li>
+</ol></details>
+<details><summary>Ein Mute am L6 reagiert nicht oder verkehrt</summary><ol>
+<li>Mixer Control via MIDI an, Kanal 16, CC-Zuordnung im L6 Editor? <span class="tag tag-h">Hersteller</span></li>
+<li>Wertebereich: Versteht der L6 127 als stumm oder als laut? Taste am TEK2 umkehren. <span class="tag tag-p" id="pr-149">am Gerät prüfen</span></li>
+<li>Gerade eine Szene abgerufen? Sie hat die Mutes überschrieben.</li>
+</ol></details>
+<details><summary>In der Aufnahme ist eine Spur verzerrt, obwohl die Summe gut klang</summary><ol>
+<li>Kanal 3 bis 6? Dann hat der Eingang übersteuert; die Datei kann es nicht reparieren. Passivfader weiter zu, neu aufnehmen.</li>
+<li>Ist die Verzerrung schon an der Quelle? Am ZeroScope nachsehen; ein Modul, das bei Feedback auf ±10 V geht, hat dort schon geclippt.</li>
+<li>Kanal 1 oder 2: Dort übersteuert der Eingang praktisch nicht; die Verzerrung kommt aus dem Rack.</li>
+</ol></details>
+<details><summary>Die Spur ist leise und rauscht</summary><ol>
+<li>Passivfader zu weit zu: Er nimmt Signal weg, das Grundrauschen des Eingangs bleibt. Auf 6 dB Reserve stellen, nicht auf 20.</li>
+<li>Bei 32 Bit Float kannst Du die Spur in der DAW anheben; das Rauschen kommt mit.</li>
+</ol></details>
+<details><summary>Ordner mit falschem Datum, Takes nicht auseinanderzuhalten</summary><ol>
+<li>Uhrzeit des L6 im L6 Editor stellen. <span class="tag tag-h">Hersteller</span></li>
+<li>Nach jedem Take den Ordnernamen auf die Patchkarte schreiben, solange Du noch weißt, welcher Take es war.</li>
+</ol></details>
+<details><summary>Der Wiederaufbau klingt anders als Take 1</summary><ol>
+<li>Speicher geladen? Programm-Plätze, µYarns-Slot, L6-Szene, Grid-Profil.</li>
+<li>Modi ohne Anzeige: 281t-Modusschalter, Rings-Modus, MONO am L6, Bank am Milky Way.</li>
+<li>258t warmgelaufen? Nach dem Einschalten eine Viertelstunde, wie in Kapitel <a class="xref" href="#k2">02</a>.</li>
+<li>Was Du jetzt findest, kommt auf die Karte.</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k10-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k5">B1-05</a></span> Makros, A-138m<br><span class="id"><a href="#k6">B1-06</a></span> Leo Leo, Stages 6.7<br><span class="id"><a href="#k7">B1-07</a></span> Clock-Baum, µYarns<br><span class="id"><a href="#k8">B1-08</a></span> Send, L6-Kanäle<br><span class="id"><a href="#k9">B1-09</a></span> Songpult, Formleiste</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-e04">B2-E-04</a></span> Signalarchitektur, Pegel<br><span class="id"><a href="#b2-e03">B2-E-03</a></span> Stereo, Sends<br><span class="id"><a href="#b2-c02">B2-C-02</a></span> VCA-Matrix, Makros<br><span class="id"><a href="#b2-f02">B2-F-02</a></span> Songform-Bausteine<br><span class="id"><a href="#b2-b05">B2-B-05</a></span> Swarm über MIDI</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-01">B3-01</a></span> Ambient<br><span class="id"><a href="#kwp-13">KWP-13</a></span> Songform auf dem Muxlicer<br><span class="id">KWP</span> alle mit Performance-Variante</div>
+<div><b>Module</b><span class="id"><a href="#mp-l6">MOD-L6</a></span> · <span class="id"><a href="#mp-uyarns">MOD-µYarns</a></span><br><span class="id"><a href="#mp-a-138m">MOD-A-138m</a></span> · <span class="id"><a href="#mp-exquis">MOD-Exquis</a></span><br><span class="id"><a href="#mod-en16">MOD-EN16</a></span> · <span class="id"><a href="#mod-tek2">MOD-TEK2</a></span> · <span class="id"><a href="#mp-swarm">MOD-Swarm</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult zu prüfen</h4>
+<ul>
+<li><b>L6:</b> ob die Kanalspuren vor oder nach LEVEL und EQ aufgenommen werden (Prüfaufnahme in 10B); welcher CC-Wert stumm bedeutet; welche Program-Change-Nummern Szene A, B, C abrufen; ob ein einzelner L-Stecker an K3/K4 ohne MONO-Taste auch rechts ankommt (K5/K6: L (MONO) laut Zoom). <span class="tag tag-p" id="pr-150">am Gerät prüfen</span></li>
+<li><b>µYarns:</b> Spannungsbereich an CV 3 und CV 4 bei Wert 127; Revision des m-Brane (ab 1.1 nimmt der Eingang Typ A und B); ob Aftertouch auch als Poly Aftertouch ankommt; ob CV 2 nach dem Loslassen hält. <span class="tag tag-p" id="pr-151">am Gerät prüfen</span></li>
+<li><b>Host und Hub:</b> ob Grid-Module und Exquis ohne Computer erkannt und versorgt werden; Routing und Filter wie in 10A. <span class="tag tag-p" id="pr-152">am Gerät prüfen</span></li>
+<li><b>Exquis:</b> TRS Typ A am MIDI-Ausgang (Händlerangabe); MOD folgt dem Druck (Produktbeschreibung); ob USB und TRS gleichzeitig senden. <span class="tag tag-p" id="pr-153">am Gerät prüfen</span></li>
+<li><b>Passivfader:</b> Kennlinie linear oder logarithmisch. <span class="tag tag-p" id="pr-154">am Gerät prüfen</span></li>
+<li><b>A-138m:</b> ob die Ausgänge mit allen Reglern auf null wirklich 0 V führen (offen seit Kapitel <a class="xref" href="#k5">05</a>). <span class="tag tag-p" id="pr-155">am Gerät prüfen</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

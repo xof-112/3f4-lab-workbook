@@ -1,0 +1,583 @@
+<div class="shell" lang="de">
+<aside class="side">
+<details open id="tocbox">
+<summary>Inhalt</summary>
+<nav aria-label="Inhalt">
+  <a href="#start">Titel</a>
+  <a href="#inhalt">Inhaltsverzeichnis</a>
+  <p class="grp">Teil I · Bauplan</p>
+  <a href="#idee">Ziel und roter Faden</a>
+  <a href="#architektur">Die Bestandteile</a>
+  <a href="#schablone">Kapitel-Schablone</a>
+  <a href="#band1">Band 1 · Übersicht</a>
+  <a href="#band2">Band 2 · Übersicht</a>
+  <a href="#band3">Band 3 · Übersicht</a>
+  <a href="#kwp">Patch-Bibliothek KWP</a>
+  <a href="#regeln">Verweise und Regeln</a>
+  <a href="#aenderungen">Was sich geändert hat</a>
+  <p class="grp">Band 1 · Lernpfad</p>
+  <a href="#k1">01 · Die erste Stimme</a>
+  <a href="#k2">02 · Synth Voices</a>
+  <a href="#k3">03 · Envelopes, VCAs, LPGs</a>
+  <a href="#k4">04 · Pads und Drones</a>
+  <a href="#k5">05 · Modulation</a>
+  <a href="#k6">06 · Sequencing, Leo Leo</a>
+  <a href="#k7">07 · Drums, Clock</a>
+  <a href="#k8">08 · FX, Feedback, Raum</a>
+  <a href="#k9">09 · Arrangement, Songform</a>
+  <a href="#k10">10 · Performance, Aufnahme</a>
+  <p class="grp">Band 2 · Nachschlagewerk</p>
+  <a href="#b2-a01">A-01 · Audio, CV, Gate, Trigger</a>
+  <a href="#b2-a02">A-02 · Pegel, Routing zum L6</a>
+  <a href="#b2-a03">A-03 · V/Oct, Quantisierung</a>
+  <a href="#b2-a04">A-04 · Mults, Attenuverter</a>
+  <a href="#b2-a05">A-05 · Slew, S&amp;H, Logik</a>
+  <a href="#b2-b01">B-01 · Voice-Architekturen</a>
+  <a href="#b2-b02">B-02 · West Coast</a>
+  <a href="#b2-b03">B-03 · Filter</a>
+  <a href="#b2-b04">B-04 · Mehrstimmigkeit</a>
+  <a href="#b2-b05">B-05 · Quadrantid Swarm</a>
+  <a href="#b2-b06">B-06 · Ringmodulation</a>
+  <a href="#b2-c01">C-01 · Hüllkurven</a>
+  <a href="#b2-c02">C-02 · VCAs und Makros</a>
+  <a href="#b2-c03">C-03 · LFO, Zufall, Slew</a>
+  <a href="#b2-c04">C-04 · Ein Modulator, viele Ziele</a>
+  <a href="#b2-d01">D-01 · Sequencer, Matrix</a>
+  <a href="#b2-d02">D-02 · Leo Leo</a>
+  <a href="#b2-d03">D-03 · Clock, Reset, Logik</a>
+  <a href="#b2-d04">D-04 · Euclid, Polyrhythmik</a>
+  <a href="#b2-e01">E-01 · Delay, Hall, Shift</a>
+  <a href="#b2-e02">E-02 · Feedback</a>
+  <a href="#b2-e03">E-03 · Stereo, Sends</a>
+  <a href="#b2-e04">E-04 · Pegel, Fehlersuche</a>
+  <a href="#b2-f01">F-01 · Pads und Drones</a>
+  <a href="#b2-f02">F-02 · Songform-Bausteine</a>
+  <a href="#b2-f03">F-03 · Rezepte, Module</a>
+  <a href="#b2-f04">F-04 · Verweisregister</a>
+  <a href="#modp">MOD · Modulporträts</a>
+  <p class="grp">Band 3 · Stil</p>
+  <a href="#b3-00">B3-00 · Grundpatch</a>
+  <a href="#b3-01">B3-01 · Ambient</a>
+  <a href="#b3-02">B3-02 · Deep Techno</a>
+  <a href="#b3-03">B3-03 · Experimental</a>
+  <a href="#b3-04">B3-04 · Generativ</a>
+  <a href="#b3-05">B3-05 · Hypnotisch</a>
+  <a href="#b3-vergleich">B3 · Stilvergleich</a>
+  <p class="grp">Teil V · Patch-Bibliothek</p>
+  <a href="#teil5">KWP · Übersicht</a>
+  <a href="#kwp-01">KWP-01 · Oberheim</a>
+  <a href="#kwp-02">KWP-02 · Drei Stimmen</a>
+  <a href="#kwp-03">KWP-03 · Glocke und Orgel</a>
+  <a href="#kwp-04">KWP-04 · Frahm-Fläche</a>
+  <a href="#kwp-05">KWP-05 · Rings aus dem Pad</a>
+  <a href="#kwp-06">KWP-06 · Oszillator komponiert</a>
+  <a href="#kwp-07">KWP-07 · Komplexer Oszillator</a>
+  <a href="#kwp-08">KWP-08 · Buchla Bongos</a>
+  <a href="#kwp-09">KWP-09 · Krell</a>
+  <a href="#kwp-10">KWP-10 · 8 Takte · Melodie</a>
+  <a href="#kwp-11">KWP-11 · 8 Takte · Drums</a>
+  <a href="#kwp-12">KWP-12 · Morph 4</a>
+  <a href="#kwp-13">KWP-13 · Songform</a>
+  <a href="#kwp-14">KWP-14 · Organische Modulation</a>
+  <a href="#kwp-15">KWP-15 · Mehrkopf-Echo</a>
+  <a href="#kwp-16">KWP-16 · Taps als Rhythmus</a>
+  <a href="#kwp-17">KWP-17 · Kreisende Wolke</a>
+  <a href="#kwp-18">KWP-18 · Hi-Hat, vier FX</a>
+  <a href="#kwp-19">KWP-19 · Otte</a>
+  <a href="#kwp-20">KWP-20 · Endlose Spirale</a>
+  <p class="grp">Teil VI · Am Pult prüfen</p>
+  <a href="#teil6">Alle offenen Marken</a>
+  <p class="grp">Anhang</p>
+  <a href="#quellen">Quellen</a>
+</nav>
+</details>
+</aside>
+
+<main>
+<header class="cover" id="start">
+  <p class="eyebrow">Fassung 2.5 · 21. November 2026 · 5 × 148 HP Klapppult</p>
+  <h1>3F4-Lab Workbook</h1>
+  <p class="lede">Ein zusammenhängendes Lern- und Nachschlagewerk für genau dieses Rack. Die Fassung 2.5 ist der redigierte Endstand mit den ersten Handbuch-Abgleichen: der Bauplan aller Bände, alle zehn Kapitel von Band 1, alle 27 Seiten aus Band 2 mit Modulübersicht, Verweisregister und 44 Modulporträts, Band 3 mit Grundpatch, fünf Stil-Lektionen und einem Stilvergleich, als Teil V die Patch-Bibliothek mit zwanzig Patchkarten aus „Klangwege im Pult“ und als Teil VI die Liste aller Stellen, die noch am Pult zu prüfen sind. Jede ID im Text ist ein Link, und jedes Kapitel lässt sich vorlesen.</p>
+  <div class="bands">
+    <div><b>B1</b><span>Lernen und Entdecken am Rack</span></div>
+    <div><b>B2</b><span>Techniken, Module und Patch-Rezepte</span></div>
+    <div><b>B3</b><span>Vom Patch zum Stil</span></div>
+    <div><b>KWP</b><span>Klangwege im Pult, weiterentwickelt</span></div>
+  </div>
+</header>
+
+
+<!-- ======================= INHALTSVERZEICHNIS ======================= -->
+<section class="part" id="inhalt">
+<div class="part-h"><span class="pn">Inhalt</span><h2>Inhaltsverzeichnis</h2></div>
+<p class="muted" style="font-size:15px">Alle Einträge sind ausgearbeitet. Am Ende jedes Kapitels, jeder Seite und jeder Karte führt ein Link hierher zurück.</p>
+<div class="tocgrid">
+<div>
+<p class="tg">Teil I · Bauplan des Werks</p>
+<ol class="tl">
+<li><a href="#idee">Ziel und roter Faden</a></li>
+<li><a href="#architektur">Die Bestandteile</a></li>
+<li><a href="#schablone">Kapitel-Schablone</a></li>
+<li><a href="#band1">Band 1 · Übersicht</a></li>
+<li><a href="#band2">Band 2 · Übersicht</a></li>
+<li><a href="#band3">Band 3 · Übersicht</a></li>
+<li><a href="#kwp">Patch-Bibliothek KWP · Status</a></li>
+<li><a href="#regeln">Verweissystem und Regeln</a></li>
+<li><a href="#aenderungen">Was sich geändert hat · Fassung 2.5</a></li>
+</ol>
+<p class="tg">Band 1 · Lernen und Entdecken am Rack</p>
+<ol class="tl">
+<li><a href="#k1"><span class="ti">01</span>Grundlagen und Signalwege · die erste Stimme</a></li>
+<li><a href="#k2"><span class="ti">02</span>Synth Voices und Sound Design</a></li>
+<li><a href="#k3"><span class="ti">03</span>Envelopes, VCAs und LPGs</a></li>
+<li><a href="#k4"><span class="ti">04</span>Pads, Drones und Atmosphären</a></li>
+<li><a href="#k5"><span class="ti">05</span>Modulation · Bewegung und Kontrolle</a></li>
+<li><a href="#k6"><span class="ti">06</span>Sequencing, Leo Leo und generative Musik</a></li>
+<li><a href="#k7"><span class="ti">07</span>Drums, Rhythmus und Clock-Architektur</a></li>
+<li><a href="#k8"><span class="ti">08</span>FX, Feedback und räumlicher Klang</a></li>
+<li><a href="#k9"><span class="ti">09</span>Arrangement und Songform</a></li>
+<li><a href="#k10"><span class="ti">10</span>Komposition, Performance, Aufnahme und Dokumentation</a></li>
+</ol>
+</div>
+<div>
+<p class="tg">Band 2 · Techniken, Module und Patch-Rezepte</p>
+<ol class="tl">
+<li><a href="#b2-a01"><span class="ti">A-01</span>Audio, CV, Gate und Trigger</a></li>
+<li><a href="#b2-a02"><span class="ti">A-02</span>Pegel, Clipping, Routing zum L6</a></li>
+<li><a href="#b2-a03"><span class="ti">A-03</span>V/Oct und Quantisierung</a></li>
+<li><a href="#b2-a04"><span class="ti">A-04</span>Mults, Mixer, Attenuverter, Offset</a></li>
+<li><a href="#b2-a05"><span class="ti">A-05</span>Slew, S&amp;H, Logik, Präzisionsaddition</a></li>
+<li><a href="#b2-b01"><span class="ti">B-01</span>Klassische Voice-Architekturen</a></li>
+<li><a href="#b2-b02"><span class="ti">B-02</span>West Coast, FM, Wavefolding, LPG</a></li>
+<li><a href="#b2-b03"><span class="ti">B-03</span>Filterprinzipien und -kombinationen</a></li>
+<li><a href="#b2-b04"><span class="ti">B-04</span>Mehrstimmigkeit und Layering</a></li>
+<li><a href="#b2-b05"><span class="ti">B-05</span>Quadrantid Swarm · acht Oszillatoren, ein Instrument</a></li>
+<li><a href="#b2-b06"><span class="ti">B-06</span>Ringmodulation, XOR und metallischer Klang</a></li>
+<li><a href="#b2-c01"><span class="ti">C-01</span>AD/ADSR und Function Generatoren</a></li>
+<li><a href="#b2-c02"><span class="ti">C-02</span>VCA-Typen, VCA-Matrix und Makros</a></li>
+<li><a href="#b2-c03"><span class="ti">C-03</span>LFO, Zufall, komplexe Modulation, Slew</a></li>
+<li><a href="#b2-c04"><span class="ti">C-04</span>Ein Modulator, viele Ziele</a></li>
+<li><a href="#b2-d01"><span class="ti">D-01</span>Sequencer und Matrix-Sequencing</a></li>
+<li><a href="#b2-d02"><span class="ti">D-02</span>Leo Leo · The Matrix Programmer</a></li>
+<li><a href="#b2-d03"><span class="ti">D-03</span>Clock, Divider, Reset, Logik</a></li>
+<li><a href="#b2-d04"><span class="ti">D-04</span>Euclid, Polyrhythmik, generativ</a></li>
+<li><a href="#b2-e01"><span class="ti">E-01</span>Delay, Reverb, Phaser, Frequency Shifting</a></li>
+<li><a href="#b2-e02"><span class="ti">E-02</span>Feedback-Architekturen</a></li>
+<li><a href="#b2-e03"><span class="ti">E-03</span>Stereo, Sends und Returns</a></li>
+<li><a href="#b2-e04"><span class="ti">E-04</span>Signalarchitektur, Pegel, sichere Fehlersuche</a></li>
+<li><a href="#b2-f01"><span class="ti">F-01</span>Pad- und Drone-Techniken</a></li>
+<li><a href="#b2-f02"><span class="ti">F-02</span>Arrangement- und Songform-Bausteine</a></li>
+<li><a href="#b2-f03"><span class="ti">F-03</span>Patch-Rezepte und Modulübersicht</a></li>
+<li><a href="#b2-f04"><span class="ti">F-04</span>Verweisregister</a></li>
+</ol>
+<p class="tg">Band 3 · Vom Patch zum Stil</p>
+<ol class="tl">
+<li><a href="#b3-00"><span class="ti">B3-00</span>Gemeinsamer Grundpatch</a></li>
+<li><a href="#b3-01"><span class="ti">B3-01</span>Ambient</a></li>
+<li><a href="#b3-02"><span class="ti">B3-02</span>Deep / Atmospheric Techno</a></li>
+<li><a href="#b3-03"><span class="ti">B3-03</span>Experimental</a></li>
+<li><a href="#b3-04"><span class="ti">B3-04</span>Generative Klanglandschaften</a></li>
+<li><a href="#b3-05"><span class="ti">B3-05</span>Hypnotische Sequenzen</a></li>
+<li><a href="#b3-vergleich"><span class="ti">B3</span>Die fünf Stile im Vergleich</a></li>
+</ol>
+<p class="tg">Band 2 · Modulporträts</p>
+<ol class="tl">
+<li><a href="#mp-uyarns"><span class="ti">MOD</span>µYarns</a></li>
+<li><a href="#mp-leoleo"><span class="ti">MOD</span>Leo Leo</a></li>
+<li><a href="#mp-swarm"><span class="ti">MOD</span>Swarm</a></li>
+<li><a href="#mp-uturing"><span class="ti">MOD</span>µTuring</a></li>
+<li><a href="#mp-mult"><span class="ti">MOD</span>aktiver Mult</a></li>
+<li><a href="#mp-a-118-2"><span class="ti">MOD</span>A-118-2</a></li>
+<li><a href="#mp-mult-1x8"><span class="ti">MOD</span>1×8 Mult</a></li>
+<li><a href="#mp-attenuverter"><span class="ti">MOD</span>Attenuverter</a></li>
+<li><a href="#mp-281t"><span class="ti">MOD</span>281t</a></li>
+<li><a href="#mp-volcan"><span class="ti">MOD</span>Volcan</a></li>
+<li><a href="#mp-serra"><span class="ti">MOD</span>SERRA</a></li>
+<li><a href="#mp-four-lfo"><span class="ti">MOD</span>FOUR LFO</a></li>
+<li><a href="#mp-europi"><span class="ti">MOD</span>EuroPi</a></li>
+<li><a href="#mp-mixer"><span class="ti">MOD</span>4× Mixer</a></li>
+<li><a href="#mp-xdr"><span class="ti">MOD</span>XDR</a></li>
+<li><a href="#mp-arythmatik"><span class="ti">MOD</span>Arythmatik</a></li>
+<li><a href="#mp-mgrids"><span class="ti">MOD</span>mGrids</a></li>
+<li><a href="#mp-chaos"><span class="ti">MOD</span>Chaos</a></li>
+<li><a href="#mp-zeroscope"><span class="ti">MOD</span>ZeroScope</a></li>
+<li><a href="#mp-a-151"><span class="ti">MOD</span>A-151</a></li>
+<li><a href="#mp-a-156"><span class="ti">MOD</span>A-156</a></li>
+<li><a href="#mp-a-185-2"><span class="ti">MOD</span>A-185-2</a></li>
+<li><a href="#mp-258t"><span class="ti">MOD</span>258t</a></li>
+<li><a href="#mp-cali"><span class="ti">MOD</span>Cali</a></li>
+<li><a href="#mp-big-o"><span class="ti">MOD</span>Big-O</a></li>
+<li><a href="#mp-samples-ii"><span class="ti">MOD</span>Samples II</a></li>
+<li><a href="#mp-four-play"><span class="ti">MOD</span>FOUR PLAY</a></li>
+<li><a href="#mp-muxlicer"><span class="ti">MOD</span>Muxlicer</a></li>
+<li><a href="#mp-rings"><span class="ti">MOD</span>Rings</a></li>
+<li><a href="#mp-elements"><span class="ti">MOD</span>Elements</a></li>
+<li><a href="#mp-a-106-5"><span class="ti">MOD</span>SEM</a></li>
+<li><a href="#mp-a-124"><span class="ti">MOD</span>Wasp</a></li>
+<li><a href="#mp-dplpg"><span class="ti">MOD</span>DPLPG</a></li>
+<li><a href="#mp-surges"><span class="ti">MOD</span>Surges</a></li>
+<li><a href="#mp-a-130-8"><span class="ti">MOD</span>A-130-8</a></li>
+<li><a href="#mp-slew"><span class="ti">MOD</span>Slew</a></li>
+<li><a href="#mp-milky-way"><span class="ti">MOD</span>Milky Way</a></li>
+<li><a href="#mp-8x8"><span class="ti">MOD</span>8×8</a></li>
+<li><a href="#mp-programm"><span class="ti">MOD</span>Programm</a></li>
+<li><a href="#mp-a-138m"><span class="ti">MOD</span>A-138m</a></li>
+<li><a href="#mp-l6"><span class="ti">MOD</span>L6</a></li>
+<li><a href="#mp-passivfader"><span class="ti">MOD</span>Passivfader</a></li>
+<li><a href="#mp-exquis"><span class="ti">MOD</span>Exquis</a></li>
+<li><a href="#mp-masterkeyboard"><span class="ti">MOD</span>Masterkeyboard</a></li>
+</ol>
+<p class="tg">Teil V · Patch-Bibliothek · Klangwege im Pult</p>
+<ol class="tl">
+<li><a href="#teil5"><span class="ti">KWP</span>Übersicht, Status, geänderte Modulverweise</a></li>
+<li><a href="#kwp-01"><span class="ti">01</span>Zwei Stimmen nach Oberheim</a></li>
+<li><a href="#kwp-02"><span class="ti">02</span>Drei Stimmen, eine löst sich</a></li>
+<li><a href="#kwp-03"><span class="ti">03</span>Zwischen Glocke und Orgel</a></li>
+<li><a href="#kwp-04"><span class="ti">04</span>Die Frahm-Fläche</a></li>
+<li><a href="#kwp-05"><span class="ti">05</span>Rings aus dem Pad lösen</a></li>
+<li><a href="#kwp-06"><span class="ti">06</span>Der Oszillator als Komponist</a></li>
+<li><a href="#kwp-07"><span class="ti">07</span>Der komplexe Oszillator</a></li>
+<li><a href="#kwp-08"><span class="ti">08</span>Buchla Bongos</a></li>
+<li><a href="#kwp-09"><span class="ti">09</span>Der Krell-Patch</a></li>
+<li><a href="#kwp-10"><span class="ti">10</span>Die 8-Takt-Regel · Melodie</a></li>
+<li><a href="#kwp-11"><span class="ti">11</span>Die 8-Takt-Regel · Drums und Form</a></li>
+<li><a href="#kwp-12"><span class="ti">12</span>Morph 4 aus Bordmitteln</a></li>
+<li><a href="#kwp-13"><span class="ti">13</span>Songform auf dem Muxlicer</a></li>
+<li><a href="#kwp-14"><span class="ti">14</span>Organische Modulation im Test</a></li>
+<li><a href="#kwp-15"><span class="ti">15</span>Das Mehrkopf-Bandecho</a></li>
+<li><a href="#kwp-16"><span class="ti">16</span>Taps als Rhythmusmaschine</a></li>
+<li><a href="#kwp-17"><span class="ti">17</span>Die kreisende Wolke</a></li>
+<li><a href="#kwp-18"><span class="ti">18</span>Die Hi-Hat wandert durch vier Effekte</a></li>
+<li><a href="#kwp-19"><span class="ti">19</span>Ottes Buch der Klänge</a></li>
+<li><a href="#kwp-20"><span class="ti">20</span>Die endlose Spirale</a></li>
+</ol>
+<p class="tg">Teil VI · Am Pult prüfen</p>
+<ol class="tl"><li><a href="#teil6"><span class="ti">VI</span>Alle offenen Marken, zum Abhaken</a></li></ol>
+<p class="tg">Anhang</p>
+<ol class="tl"><li><a href="#quellen">Quellen</a></li></ol>
+</div>
+</div>
+</section>
+
+<!-- ======================= TEIL I ======================= -->
+<section class="part" id="teil1">
+<div class="part-h"><span class="pn">Teil I</span><h2>Bauplan des Werks</h2></div>
+{{READER}}
+
+<h3 id="idee">Ziel und roter Faden</h3>
+<p>Das 3F4-Lab Workbook ist kein loses Tutorial-Archiv. Der Hauptteil führt praktisch durch aufeinander aufbauende Übungen, das Nachschlagewerk erklärt die technischen Bausteine unabhängig von der Reihenfolge, und der Stilteil zeigt, wie sich ein gemeinsamer Grundpatch musikalisch unterschiedlich deuten lässt. Die vorhandenen Patch-Ideen aus „Klangwege im Pult“ bleiben als eigene Bibliothek erhalten und werden mit allen Bänden verknüpft.</p>
+<p>Der rote Faden von Band 1 hat fünf Schritte, und jede Lektion geht sie in dieser Reihenfolge: <b>verstehen, patchen, hören, verändern, gestalten.</b> Theorie kommt genau dort, wo sie beim Patchen gebraucht wird. Jede Lektion bringt Dich schnell ans Rack und gibt Dir genug Hintergrund, um ein Patch nicht nur nachzubauen, sondern selbst zu verändern.</p>
+
+<h3 id="architektur">Die Bestandteile</h3>
+<figure>
+  <div class="sv"><svg viewBox="0 0 760 330" role="img" aria-label="Wie die Teile des 3F4-Lab Workbooks zusammenhängen: Band 1 ist der Lernpfad, schlägt Techniken in Band 2 nach, führt zu den Stilübungen in Band 3 und nutzt die Patchkarten der Bibliothek.">
+<defs><marker id="arK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="fill-ink"/></marker></defs>
+<rect x="20" y="120" width="230" height="76" rx="3" class="box box-strong"/>
+<text x="34" y="146" class="t-lab">B1 · Lernpfad</text>
+<text x="34" y="166" class="t-sub">10 Kapitel, der Reihe nach</text>
+<rect x="510" y="20" width="230" height="76" rx="3" class="box"/>
+<text x="524" y="46" class="t-lab">B2 · Nachschlagewerk</text>
+<text x="524" y="66" class="t-sub">Techniken A–F, beliebig</text>
+<rect x="510" y="228" width="230" height="76" rx="3" class="box"/>
+<text x="524" y="254" class="t-lab">B3 · Vom Patch zum Stil</text>
+<text x="524" y="274" class="t-sub">Grundpatch + 5 Stile</text>
+<rect x="275" y="250" width="200" height="64" rx="3" class="box"/>
+<text x="289" y="276" class="t-lab">KWP · Bibliothek</text>
+<text x="289" y="296" class="t-sub">20 Patchkarten</text>
+<rect x="290" y="20" width="150" height="64" rx="3" class="box"/>
+<text x="304" y="46" class="t-lab">MOD · Module</text>
+<text x="304" y="66" class="t-sub">44 Porträts</text>
+<line x1="250" y1="136" x2="506" y2="66" class="wire-ink" marker-end="url(#arK)"/>
+<text x="410" y="128" class="t-ax" text-anchor="middle">schlägt Technik nach</text>
+<line x1="250" y1="180" x2="506" y2="256" class="wire-ink" marker-end="url(#arK)"/>
+<text x="395" y="205" class="t-ax" text-anchor="middle">führt weiter zu</text>
+<line x1="330" y1="248" x2="170" y2="200" class="wire-ink" marker-end="url(#arK)"/>
+<text x="210" y="240" class="t-ax" text-anchor="end">Patchkarte je Kapitel</text>
+<line x1="475" y1="282" x2="506" y2="278" class="wire-ink" marker-end="url(#arK)"/>
+<text x="0" y="0" class="t-ax" text-anchor="middle"></text>
+<text x="490" y="322" class="t-ax" text-anchor="middle">Stil-Varianten</text>
+<line x1="506" y1="56" x2="444" y2="52" class="wire-ink" marker-end="url(#arK)"/>
+<text x="475" y="44" class="t-ax" text-anchor="middle">Module</text>
+</svg></div>
+  <figcaption><b>Band 1 ist der einzige Teil, den Du der Reihe nach liest.</b> Alles andere wird von dort aus angesprungen: Band 2 zum Nachschlagen, Band 3 als Weiterführung, die Patch-Bibliothek als Sammlung fertiger Karten. Die Modulporträts (MOD) hängen an Band 2.</figcaption>
+</figure>
+<div class="tbl"><table>
+<thead><tr><th>Bestandteil</th><th>Aufgabe</th><th>So wird er benutzt</th></tr></thead>
+<tbody>
+<tr><td>Band 1 · Hauptteil</td><td>Aufeinander aufbauender Praxis- und Lernpfad</td><td>Kapitel für Kapitel durcharbeiten; Patches am Rack bauen, hören, variieren, musikalisch einsetzen</td></tr>
+<tr><td>Band 2 · Nachschlagewerk</td><td>Techniken, Modulverhalten, Signalwege und Rezepte systematisch erklären</td><td>Gezielt nachschlagen, wenn eine Technik in Band 1 oder beim freien Patchen gebraucht wird</td></tr>
+<tr><td>Band 3 · Vom Patch zum Stil</td><td>Einen Grundpatch in verschiedene musikalische Richtungen überführen</td><td>Gleicher Kern, andere Entscheidungen bei Klang, Steuerung, Spielweise und Form</td></tr>
+<tr><td>Band 2 · Modulporträts · MOD</td><td>Für jedes Modul, das in mindestens drei Kapiteln von Band 1 vorkommt, sammeln, was das Buch darüber weiß</td><td>Über die MOD-ID anspringen: Fundstellen, Patches, Geprüftes und Offenes auf einen Blick</td></tr>
+<tr><td>Teil V · Patch-Bibliothek · KWP</td><td>Die 20 Patches aus „Klangwege im Pult“ bewahren, mit dem Pult abgleichen und erweitern</td><td>Eigenständige Patchkarten mit Status, Kabelliste und eindeutigen Verweisen auf B1, B2 und B3</td></tr>
+<tr><td>Teil VI · Am Pult prüfen</td><td>Alle Marken <span class="tag tag-p">am Gerät prüfen</span> an einer Stelle sammeln</td><td>Am Pult durchgehen, abhaken, Ergebnisse in die nächste Fassung übernehmen</td></tr>
+</tbody></table></div>
+
+<h3 id="schablone">Die Kapitel-Schablone für Band 1</h3>
+<p>Jedes Praxiskapitel folgt derselben Gliederung. Nicht jeder Baustein muss gleich lang sein, aber alle sind erkennbar vorhanden, und sie tragen in jedem Kapitel dieselbe Nummer. Gegenüber dem Entwurf sind zwei Bausteine dazugekommen: ein Steckbrief am Anfang und der Kontrollpunkt am Ende jeder Ausbaustufe.</p>
+<ol class="tpl">
+  <li class="new"><b>Steckbrief</b>Dauer, Kabelzahl, Module, Voraussetzungen, Prüfstatus</li>
+  <li><b>Idee und Funktionsprinzip</b>Was passiert im Patch, und warum funktioniert es?</li>
+  <li><b>Musikalischer Nutzen</b>Welche Möglichkeiten eröffnet die Technik?</li>
+  <li><b>Modulbedarf</b>Module aus dem aktiven Rack; Alternativen getrennt</li>
+  <li><b>Signalweg</b>Patchplan mit Audio, CV, Gate und Trigger an echten Buchsen</li>
+  <li><b>Schritt-für-Schritt-Aufbau</b>Nummerierte Kabel, prüfbar Stufe für Stufe</li>
+  <li><b>Startwerte</b>Hörbares Ziel zuerst, Reglerstellung als Richtwert</li>
+  <li class="new"><b>Kontrollpunkt</b>Was Du nach jeder Stufe hören musst, bevor es weitergeht</li>
+  <li><b>Hörübung</b>Worauf achten, welche Veränderung bewusst wahrnehmen</li>
+  <li><b>Variationen</b>Pro Experiment genau ein Parameter oder ein Kabel</li>
+  <li><b>Erweiterungen</b>Einfache und vertiefte Variante, Exkurse</li>
+  <li><b>Kompositionsaufgabe</b>Kurze musikalische Anwendung mit Formverlauf</li>
+  <li><b>Wiederholung und Fehlercheck</b>Was sitzen muss; Symptom → Prüfreihenfolge</li>
+  <li><b>Querverweise</b>B2-Technik, B3-Stilübung, KWP- und MOD-IDs</li>
+</ol>
+<div class="box-c">
+<h4>Vier Konventionen, die in allen Bänden gelten</h4>
+<ul>
+<li><b>Signalfarben.</b> <span class="a">Audio blau</span>, <span class="c">CV orange</span>, <span class="g">Gate grün</span>, <span class="t">Trigger magenta</span>. Im Text, in jeder Grafik und, wenn Du magst, auch bei den echten Patchkabeln im Pult.</li>
+<li><b>Reglerstellungen als Uhrzeit.</b> 7 Uhr ist Linksanschlag, 12 Uhr Mitte, 5 Uhr Rechtsanschlag. Bei bipolaren Reglern (Attenuverter, FM-Tiefe) ist 12 Uhr die Null.</li>
+<li><b>Ziel vor Richtwert.</b> Startwerte nennen zuerst, was Du hören sollst („ein Zyklus dauert etwa 8 Sekunden“). Die Uhrzeit ist nur der Weg dorthin, solange sie nicht am Gerät gemessen ist.</li>
+<li><b>Prüfstatus sichtbar.</b> <span class="tag tag-h">Hersteller</span> steht für Angaben aus Handbuch oder Herstellerseite, <span class="tag tag-ok">verifiziert</span> für am Pult nachgeprüft, <span class="tag tag-p">am Gerät prüfen</span> für alles, was noch offen ist. Eigene didaktische Ergänzungen bleiben unmarkiert.</li>
+</ul>
+</div>
+
+<h3 id="band1">Band 1 · Lernen und Entdecken am Rack</h3>
+<p>Zehn Kapitel, ein Lernpfad. Die acht früheren Lernphasen stehen als kleine Marke rechts am Kapitel; so bleibt die alte Übersicht erhalten, ohne dass Themen doppelt geführt werden. Alle zehn Kapitel sind in Teil II ausgearbeitet.</p>
+
+<details class="chap here" open>
+<summary><span class="cn">01</span><span><span class="ct">Grundlagen und Signalwege · die erste Stimme</span><span class="cs">Vom ersten Signal zum nachvollziehbaren Audio-/CV-Patch</span></span><span class="ph">Phase 1</span></summary>
+<div class="cb">
+<dl class="kv"><dt>Lernziel</dt><dd>Audio, CV, Gate und Trigger unterscheiden, Signalwege lesen, eine einfache Stimme sicher aufbauen.</dd>
+<dt>Inhalte</dt><dd>Vier Signalarten · Signalarchitektur · Pegel und vorsichtiger Start am L6 · 1 V/Oct und Quantisierung · Grundbegriffe Patchen, Normalisierung, Mult, Signalrichtung</dd>
+<dt>Praxis</dt><dd>258t → A-106-5 → A-130-8 → L6, in drei Stufen bis zum zweistimmigen Drone</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-a01">B2-A-01</a> bis <a class="xref" href="#b2-a04">A-04</a> · <a class="xref" href="#b2-c01">B2-C-01</a> · <a class="xref" href="#kwp-02">KWP-02</a>, <a class="xref" href="#kwp-04">04</a></dd></dl>
+<p><a href="#k1">→ Ausgearbeitet in Teil II</a></p>
+</div></details>
+
+<details class="chap">
+<summary><span class="cn">02</span><span><span class="ct">Synth Voices und Sound Design</span><span class="cs">Aus einer funktionierenden Grundstimme werden unterschiedliche Klangarchitekturen</span></span><span class="ph">Phase 1</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Synthese- und Klangformungsansätze erkennen, aufbauen und gezielt einsetzen.</dd>
+<dt>Inhalte</dt><dd>Klassische Stimme VCO → VCF → VCA mit Hüllkurve · Wellenformen, Verstimmung, mehrere Quellen · Filtercharakter SEM, Wasp, Surges · West Coast: Wavefolding, Function Generatoren · FM, kontrolliert und chaotisch · LPG · Mehrstimmigkeit und Layering</dd>
+<dt>Praxis</dt><dd>258t, Cali, Capt’n Big-O, Rings und Elements; Filter, Wavefolder und DPLPG je nach Patch</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-b01">B2-B-01</a> bis <a class="xref" href="#b2-b04">B-04</a> · <a class="xref" href="#kwp-01">KWP-01</a>, <a class="xref" href="#kwp-03">03</a>, <a class="xref" href="#kwp-06">06</a>, <a class="xref" href="#kwp-07">07</a></dd></dl></div></details>
+
+<details class="chap">
+<summary><span class="cn">03</span><span><span class="ct">Envelopes, VCAs und LPGs · Dynamik und Artikulation</span><span class="cs">Wie ein Klang beginnt, sich entwickelt und wieder verschwindet</span></span><span class="ph">Phase 2</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Hüllkurven und VCAs als zentrale musikalische Gestalter einsetzen, nicht nur als Lautstärkewerkzeug.</dd>
+<dt>Inhalte</dt><dd>AD/ADSR und ihre Wirkung · VCA: Audio steuern, CV dosieren · lineare und exponentielle Verläufe · LPG als Lautstärke plus Klangfarbe · Triggern, Retriggern, Freigeben · getrennte Hüllkurven für Klang, Modulation und Akzente</dd>
+<dt>Praxis</dt><dd>Ein gehaltenes Signal mit 281t, NANO SERRA und Catsynth ADSR formen; A-130-8, FOUR PLAY und DPLPG im Vergleich hören</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-c01">B2-C-01</a>, <a class="xref" href="#b2-c02">C-02</a> · <a class="xref" href="#b2-b02">B2-B-02</a> · <a class="xref" href="#kwp-08">KWP-08</a> · setzt <a class="xref" href="#k1">B1-01</a> und <a class="xref" href="#k2">02</a> voraus</dd></dl>
+<p><a href="#k3">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">04</span><span><span class="ct">Pads, Drones und Atmosphären</span><span class="cs">Von einer Stimme zu einer sich langsam entwickelnden Klangfläche</span></span><span class="ph">Phase 3</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Mehrschichtige, lange und organisch bewegte Flächen aufbauen und steuern.</dd>
+<dt>Inhalte</dt><dd>Lange Entwicklungen, langsame Harmoniewechsel · Schwebung, Intervalle, Resonanzen · Layering · organische Flächen aus Modulation, Klangfarbe und Dynamik · Übergänge Drone ↔ Pad ↔ Pluck · Raum schon beim Aufbau mitdenken</dd>
+<dt>Praxis</dt><dd>Von Patch <a class="xref" href="#p-1c">1C</a> über eine Pad-Schicht am Orgelpunkt, Rings, Skies und Elements als Resonanzen bis zur Frahm-Fläche mit Morphor Echo und Milky Way</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-f01">B2-F-01</a> · <a class="xref" href="#b3-01">B3-01</a> · <a class="xref" href="#kwp-02">KWP-02</a>, <a class="xref" href="#kwp-04">04</a>, <a class="xref" href="#kwp-05">05</a></dd></dl>
+<p><a href="#k4">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">05</span><span><span class="ct">Modulation · Bewegung und Kontrolle</span><span class="cs">Vom einzelnen LFO bis zur mehrdimensionalen Makro-Bewegung</span></span><span class="ph">Phase 4</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Modulationsquellen passend auswählen, skalieren, kombinieren und auf mehrere Ziele verteilen.</dd>
+<dt>Inhalte</dt><dd>LFO-Formen, Tempo, Sync · Function Generatoren zyklisch und einmalig · Slew · Zufall und S&amp;H · Kombination mehrerer Quellen · ein Makro, viele Ziele: verteilen, abschwächen, invertieren · langsam für Flächen, rhythmisch für Sequenzen</dd>
+<dt>Praxis</dt><dd>Bewegtes Pad mit 281t, FOUR LFO, Volts/Voltages, Slew und Attenuverter; danach ein Makro für mehrere Ziele</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-c03">B2-C-03</a>, <a class="xref" href="#b2-c04">C-04</a> · <a class="xref" href="#b2-a04">B2-A-04</a>, <a class="xref" href="#b2-a05">A-05</a> · <a class="xref" href="#kwp-12">KWP-12</a>, <a class="xref" href="#kwp-14">14</a></dd></dl>
+<p><a href="#k5">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">06</span><span><span class="ct">Sequencing, Leo Leo und generative Musik</span><span class="cs">Von wiederholbaren Motiven zu kontrolliert veränderlichen Systemen</span></span><span class="ph">Phase 5</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Tonhöhen- und CV-Sequenzen aufbauen, variieren und Leo Leo als Steuerzentrum verstehen.</dd>
+<dt>Inhalte</dt><dd>Melodie, Wiederholung, Variation · Matrix-Sequencing · Zufall und Wahrscheinlichkeit mit µTuring Machine · CV-Sequenzen für Klangparameter · generative Regelwerke · Clock-Richtungen (Vertiefung in 07)</dd>
+<dt>Leo Leo</dt><dd>Acht Unterlektionen: 6.1 klassischer Step-Sequencer · 6.2 achtkanaliger CV-Modulator · 6.3 sich verändernde Melodien · 6.4 rhythmisch mit Clock-Richtungen Left/Right/Down · 6.5 Pads und Drones · 6.6 mit µTuring Machine, Volts, Voltages · 6.7 Arrangement über Skip/Stop/Active/Mute · 6.8 mit 281t. Matrixformen 4×4, 2×8, 2×16 werden an Doku und Panel geprüft.</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-d01">B2-D-01</a>, <a class="xref" href="#b2-d02">D-02</a> · <a class="xref" href="#b2-a03">B2-A-03</a> · <a class="xref" href="#b3-04">B3-04</a>, <a class="xref" href="#b3-05">05</a> · <a class="xref" href="#kwp-10">KWP-10</a>, <a class="xref" href="#kwp-19">19</a></dd></dl>
+<p><a href="#k6">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">07</span><span><span class="ct">Drums, Rhythmus und Clock-Architektur</span><span class="cs">Puls, Muster und zeitliche Beziehungen gestalten</span></span><span class="ph">Phase 6</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Clock-, Trigger- und Drum-Strukturen aufbauen, variieren und mehrere Zeitraster kombinieren.</dd>
+<dt>Inhalte</dt><dd>Quelle, Teiler, Multiplikator, Reset, Sync (24 PPQN im Pult) · Trigger-/Gate-Muster, Akzente, Fills · Euclid mit Arythmatik · Polyrhythmik · Krell-artige Systeme · Drum-Stimmen und Samples · Clock-Architektur fürs Ganze</dd>
+<dt>Praxis</dt><dd>A-160-2, Arythmatik, mGrids, Dual Logic, Muxlicer, Blck_Noir und Samples II zu Rhythmusnetzen verbinden</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-d01">B2-D-01</a>, <a class="xref" href="#b2-d03">D-03</a>, <a class="xref" href="#b2-d04">D-04</a> · <a class="xref" href="#b3-02">B3-02</a>, <a class="xref" href="#b3-05">05</a> · <a class="xref" href="#kwp-09">KWP-09</a>, <a class="xref" href="#kwp-11">11</a>, <a class="xref" href="#kwp-16">16</a></dd></dl>
+<p><a href="#k7">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">08</span><span><span class="ct">FX, Feedback und räumlicher Klang</span><span class="cs">Klang vertiefen, vervielfachen, verschieben und bewegen</span></span><span class="ph">Phase 7</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Effekte als Gestaltungselement und als Teil der Signalarchitektur einsetzen.</dd>
+<dt>Inhalte</dt><dd>Delay: Zeit, Feedback, Taps · Reverb, Send/Return und Insert · Phaser · Frequency Shifting · Feedback-Schleifen mit Pegelsicherheit · Stereo und Panorama · Effekte als Rhythmus, Textur, Übergang</dd>
+<dt>Praxis</dt><dd>Morphor Echo, Skies, Milky Way, Lyra8-FX und Bode 1630 in verschiedenen Signalwegen</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-e01">B2-E-01</a> bis <a class="xref" href="#b2-e03">E-03</a> · <a class="xref" href="#b3-01">B3-01</a>, <a class="xref" href="#b3-02">02</a>, <a class="xref" href="#b3-03">03</a> · <a class="xref" href="#kwp-15">KWP-15</a> bis <a class="xref" href="#kwp-18">18</a>, <a class="xref" href="#kwp-20">20</a></dd></dl>
+<p><a href="#k8">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">09</span><span><span class="ct">Arrangement und Songform</span><span class="cs">Aus einzelnen Patches wird ein musikalischer Verlauf</span></span><span class="ph">Phase 8</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Wiederholung, Veränderung, Dichte und Energie zu einer nachvollziehbaren Form verbinden.</dd>
+<dt>Inhalte</dt><dd>Phrase, Teil, Form · 8-Takt-Regel · Dichte und Energie · Muxlicer und 8×8 als Songpult · Programm als Arrangeur · Transposition als Formmittel · Übergänge und Riser · Spannung und Entspannung über lange Zeit · Stimmen, Effekte, Modulationsziele ein- und ausblenden · generative Systeme rahmen · feste Form, freie Hand mit dem Exquis</dd>
+<dt>Praxis</dt><dd>Patch <a class="xref" href="#p-9a">9A</a> Phrasenzähler und Rausch-Riser · Patch <a class="xref" href="#p-9b">9B</a> Songpult aus Muxlicer und 8×8 · Patch <a class="xref" href="#p-9c">9C</a> Exquis, Rings und Transposition · interaktive Formleiste · eine Form in drei Durchläufen aufnehmen</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-f02">B2-F-02</a> · alle B3-Kapitel · <a class="xref" href="#kwp-10">KWP-10</a>, <a class="xref" href="#kwp-11">11</a>, <a class="xref" href="#kwp-13">13</a>, <a class="xref" href="#kwp-18">18</a></dd></dl>
+<p><a href="#k9">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<details class="chap">
+<summary><span class="cn">10</span><span><span class="ct">Komposition, Performance, Aufnahme und Dokumentation</span><span class="cs">Das Rack als Instrument und als Produktionsumgebung</span></span><span class="ph">Phase 8</span></summary>
+<div class="cb"><dl class="kv"><dt>Lernziel</dt><dd>Ideen entwickeln, improvisieren, aufnehmen und reproduzierbar dokumentieren.</dd>
+<dt>Inhalte</dt><dd>Motiv, Wiederkehr, Variation · Spannungsbögen und Kontraste · Improvisation mit Reglern · Mutes, Stages, Makros · EN16, TEK2 und Exquis über Host und µYarns · Patch-Zustände dokumentieren, Patchkarte · Aufnahme mit dem L6 (32-Bit-Float-Mehrspur), Passivfader einpegeln, Mehrspur-Export · vom Experiment zur wiederholbaren Performance</dd>
+<dt>Praxis</dt><dd>Patch <a class="xref" href="#p-10a">10A</a> Spielfläche aus Makros, Mutes und Szenen · Patch <a class="xref" href="#p-10b">10B</a> Einpegeln und Mehrspuraufnahme · Patch <a class="xref" href="#p-10c">10C</a> Rückbau-Test nach Patchkarte · Pegelrechner und Patchkarte zum Ausfüllen</dd>
+<dt>Verweise</dt><dd><a class="xref" href="#b2-a02">B2-A-02</a> · <a class="xref" href="#b2-e03">B2-E-03</a> · <a class="xref" href="#b2-e04">B2-E-04</a> · B3-Formübungen · alle KWP mit Performance-Variante</dd></dl>
+<p><a href="#k10">→ Ausgearbeitet in Teil II</a></p></div></details>
+
+<h3 id="band2">Band 2 · Techniken, Module und Patch-Rezepte</h3>
+<p>Thematisch geordnet und nicht an den Lernfortschritt gebunden. Jede Seite hat eine feste ID, damit Band 1, Band 3 und die Patchkarten eindeutig darauf zeigen können. Seit Fassung 2.0 hat jedes Modul, das in mindestens drei Kapiteln von Band 1 vorkommt, ein <a href="#modp">Modulporträt</a> (44 Stück); dorthin führt seine MOD-ID. Die MOD-IDs aller übrigen Module führen zur <a href="#b2-f03">Modulübersicht B2-F-03</a>, und das <a href="#b2-f04">Verweisregister B2-F-04</a> sammelt alle IDs mit ihren Fundstellen. Wie eine Seite aussieht, zeigt die <a href="#b2-c01">Musterseite B2-C-01</a>.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Gruppe</th><th>Seiten</th></tr></thead>
+<tbody>
+<tr><td>A · Signalfluss und CV</td><td><span class="mono"><a href="#b2-a01">A-01</a></span> Audio, CV, Gate und Trigger · <span class="mono"><a href="#b2-a02">A-02</a></span> Pegel, Verstärkung, Clipping, Routing zum L6 · <span class="mono"><a href="#b2-a03">A-03</a></span> V/Oct, Quantisierung, Tonhöhe · <span class="mono"><a href="#b2-a04">A-04</a></span> Mults, Mixer, Attenuverter, Offset, Skalierung · <span class="mono"><a href="#b2-a05">A-05</a></span> Slew, S&amp;H, Logik, Präzisionsaddition</td></tr>
+<tr><td>B · Stimmen und Klangformung</td><td><span class="mono"><a href="#b2-b01">B-01</a></span> Klassische Voice-Architekturen · <span class="mono"><a href="#b2-b02">B-02</a></span> West Coast, FM, Wavefolding, LPG · <span class="mono"><a href="#b2-b03">B-03</a></span> Filterprinzipien und -kombinationen · <span class="mono"><a href="#b2-b04">B-04</a></span> Mehrstimmigkeit, Layering, Klangquellen · <span class="mono"><a href="#b2-b05">B-05</a></span> Quadrantid Swarm · <span class="mono"><a href="#b2-b06">B-06</a></span> Ringmodulation, XOR, Metall</td></tr>
+<tr><td>C · Dynamik und Modulation</td><td><span class="mono"><a href="#b2-c01">C-01</a></span> AD/ADSR, Function Generatoren, zyklische Hüllkurven · <span class="mono"><a href="#b2-c02">C-02</a></span> VCA-Typen, VCA-Matrix und Makros · <span class="mono"><a href="#b2-c03">C-03</a></span> LFO, Zufall, komplexe Modulation, Slew · <span class="mono"><a href="#b2-c04">C-04</a></span> Ein Modulator, viele Ziele</td></tr>
+<tr><td>D · Zeit und Rhythmus</td><td><span class="mono"><a href="#b2-d01">D-01</a></span> Sequencer und Matrix-Sequencing · <span class="mono"><a href="#b2-d02">D-02</a></span> Leo Leo · <span class="mono"><a href="#b2-d03">D-03</a></span> Clock, Divider, Reset, Logik · <span class="mono"><a href="#b2-d04">D-04</a></span> Euclid, Polyrhythmik, generative Rhythmen</td></tr>
+<tr><td>E · Effekte und Systemdesign</td><td><span class="mono"><a href="#b2-e01">E-01</a></span> Delay, Reverb, Phaser, Frequency Shifting · <span class="mono"><a href="#b2-e02">E-02</a></span> Feedback-Architekturen · <span class="mono"><a href="#b2-e03">E-03</a></span> Stereo, Sends und Returns · <span class="mono"><a href="#b2-e04">E-04</a></span> Signalarchitektur, Pegel, sichere Fehlersuche</td></tr>
+<tr><td>F · Musikalische Systeme</td><td><span class="mono"><a href="#b2-f01">F-01</a></span> Pad- und Drone-Techniken · <span class="mono"><a href="#b2-f02">F-02</a></span> Arrangement- und Songform-Bausteine · <span class="mono"><a href="#b2-f03">F-03</a></span> Patch-Rezepte und Modulübersichten · <span class="mono"><a href="#b2-f04">F-04</a></span> Verweisregister</td></tr>
+</tbody></table></div>
+
+<h3 id="band3">Band 3 · Vom Patch zum Stil</h3>
+<p>Band 3 entwickelt die Stile praktisch aus einem gemeinsamen Grundpatch (<a class="xref" href="#b3-00">B3-00</a>): zwei Klangquellen, Klangformung, Dynamik, Modulation und Raum. Die Bausteine sind 258t, SEM oder Wasp, A-130-8 sowie Morphor Echo oder Skies; die Verkabelung steht als stabile Ausgangsversion in <a class="xref" href="#b3-00">B3-00</a>, und jede Stilübung startet von dort. Wie tief eine Stil-Lektion geht, zeigt die <a href="#b3-01">Musterseite B3-01</a>; die übrigen vier folgen derselben Schablone, und am Ende von <a class="xref" href="#b3-05">B3-05</a> stehen alle fünf in einer <a href="#b3-vergleich">Vergleichstabelle</a>.</p>
+<div class="tbl w"><table>
+<thead><tr><th>ID · Stil</th><th>Typische Entscheidungen</th><th>Hörerlebnis</th></tr></thead>
+<tbody>
+<tr><td><a class="xref" href="#b3-01">B3-01</a> Ambient</td><td>Lange Töne, langsame Harmoniewechsel, weiche Hüllkurven, viel Raum, wenig rhythmischer Druck</td><td>Atmosphäre, Tiefe, emotionale Entwicklung</td></tr>
+<tr><td><a class="xref" href="#b3-02">B3-02</a> Deep / Atmospheric Techno</td><td>Klarer Puls, wiederkehrende Sequenzen, langsame Filterbewegung über rhythmischem Fundament</td><td>Hypnotische Bewegung, kontrollierte Spannung</td></tr>
+<tr><td><a class="xref" href="#b3-03">B3-03</a> Experimental</td><td>Ungewöhnliche Modulationswege, Feedback, Ringmodulation, Frequenzverschiebung, Brüche</td><td>Klang als Entdeckungsraum</td></tr>
+<tr><td><a class="xref" href="#b3-04">B3-04</a> Generative Klanglandschaften</td><td>Zufall, Wahrscheinlichkeiten, Regelwerke, unabhängige Zyklen</td><td>Musik, die sich entwickelt, ohne festgelegt zu sein</td></tr>
+<tr><td><a class="xref" href="#b3-05">B3-05</a> Hypnotische Sequenzen</td><td>Kurze Motive, Auslassungen, Akzente, Polyrhythmik, verschiedene Clock-Teiler</td><td>Sog, Wiedererkennung, subtiler Wandel</td></tr>
+</tbody></table></div>
+<p>Jede Stil-Lektion hat sieben Teile: Grundpatch sichern · stilistische Transformation (nur die relevanten Änderungen) · Spielweise festlegen · Arrangement · Vergleich mit den anderen Stilen · eigene Variante · 10-Minuten-Übung.</p>
+
+<h3 id="kwp">Patch-Bibliothek · Klangwege im Pult</h3>
+<p>Die 20 Patches aus „Klangwege im Pult“ stehen seit Fassung 1.14 als Patchkarten in <a href="#teil5">Teil V</a>, jede mit fester ID, stabilem Titel, Status, Kabelliste mit Buchsennamen, Startwerten, Kern-Idee und Verweisen auf Band 1, 2 und 3. Abgeglichen ist gegen den Rack-Stand nach dem Umbau (Behringer 112, Perseids v1 und FOUR PLAY #2 ausgebaut; 258t, A-130-8, Bode 1630 und Morphor Echo verbaut). Geänderte Modulverweise stehen auf jeder Karte im Feld „Abgleich“ und gesammelt in <a href="#kwp-aenderungen">Teil V</a>; nichts ist stillschweigend ersetzt.</p>
+<div class="tbl w"><table class="reg">
+<thead><tr><th>KWP</th><th>Titel</th><th>Hauptkapitel</th><th>Status</th><th>Abgleich mit dem Pult</th></tr></thead><tbody>
+<tr><td class="mono"><a href="#kwp-01">KWP-01</a></td><td>Zwei Stimmen nach Oberheim</td><td class="mono"><a class="xref" href="#k2">B1-02</a></td><td><span class="st st-a">angepasst</span></td><td>Die Behringer 112 ist ausgebaut; die beiden Stimmen spielt jetzt der 258t. Ausgabe über zwei L6-Kanäle statt über die 8×8.</td></tr>
+<tr><td class="mono"><a href="#kwp-02">KWP-02</a></td><td>Drei Stimmen, eine löst sich</td><td class="mono"><a class="xref" href="#k4">B1-04</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken. In <a class="xref" href="#k4">B1-04</a> steht eine Kurzfassung als Kasten auf Patch <a class="xref" href="#p-4b">4B</a>.</td></tr>
+<tr><td class="mono"><a href="#kwp-03">KWP-03</a></td><td>Zwischen Glocke und Orgel</td><td class="mono"><a class="xref" href="#k2">B1-02</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Hauptfassung mit Elements direkt. Die Orgel-Variante ist angepasst: der A-115 hat nur einen Summenausgang.</td></tr>
+<tr><td class="mono"><a href="#kwp-04">KWP-04</a></td><td>Die Frahm-Fläche</td><td class="mono"><a class="xref" href="#k4">B1-04</a></td><td><span class="st st-a">angepasst</span></td><td>TLM TRIGS steckt nicht im Pult; das Arpeggio kommt vom µYarns. Ausgearbeitet als <a class="xref" href="#k4">B1-04</a> Patch <a class="xref" href="#p-4d">4D</a>.</td></tr>
+<tr><td class="mono"><a href="#kwp-05">KWP-05</a></td><td>Rings aus dem Pad lösen</td><td class="mono"><a class="xref" href="#k4">B1-04</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken; nur Namen und der eine FOUR PLAY sind angepasst. Kurzfassung in <a class="xref" href="#k4">B1-04</a> als vertiefte Variante.</td></tr>
+<tr><td class="mono"><a href="#kwp-06">KWP-06</a></td><td>Der Oszillator als Komponist</td><td class="mono"><a class="xref" href="#k2">B1-02</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Die Vorlage sagte „braucht den 258t“; er ist seit dem Umbau verbaut. Alle Module stecken.</td></tr>
+<tr><td class="mono"><a href="#kwp-07">KWP-07</a></td><td>Der komplexe Oszillator</td><td class="mono"><a class="xref" href="#k2">B1-02</a></td><td><span class="st st-a">angepasst</span></td><td>Die Behringer 112 ist ausgebaut; Modulator ist jetzt 258t OSC 2. Der Untertitel der Vorlage („West Coast ohne den 258t“) gilt nicht mehr.</td></tr>
+<tr><td class="mono"><a href="#kwp-08">KWP-08</a></td><td>Buchla Bongos</td><td class="mono"><a class="xref" href="#k3">B1-03</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken. Der Tonhöhen-Anschlag geht auf den logarithmischen FM-Eingang des Cali statt auf V/OCT, weil dort ein Abschwächer sitzt.</td></tr>
+<tr><td class="mono"><a href="#kwp-09">KWP-09</a></td><td>Der Krell-Patch</td><td class="mono"><a class="xref" href="#k7">B1-07</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken; die zweite Zufallsquelle ist der Chaos. In <a class="xref" href="#k7">B1-07</a> als Kasten und als Patch <a class="xref" href="#p-7c">7C</a> (Krell im Raster).</td></tr>
+<tr><td class="mono"><a href="#kwp-10">KWP-10</a></td><td>Die 8-Takt-Regel · Melodie</td><td class="mono"><a class="xref" href="#k9">B1-09</a></td><td><span class="st st-a">angepasst</span></td><td>Die Klangfarben-Schicht brauchte vier FOUR-PLAY-Kanäle als Mengenregler; im Pult steckt nur ein FOUR PLAY. Jetzt übernehmen Chaos und A-138m.</td></tr>
+<tr><td class="mono"><a href="#kwp-11">KWP-11</a></td><td>Die 8-Takt-Regel · Drums und Form</td><td class="mono"><a class="xref" href="#k9">B1-09</a></td><td><span class="st st-a">angepasst</span></td><td>Statt dreier FOUR-PLAY-Kanäle: Attenuverter als Abschwächer und ein A-130-8-Kanal für die wechselnde Stimme.</td></tr>
+<tr><td class="mono"><a href="#kwp-12">KWP-12</a></td><td>Morph 4 aus Bordmitteln</td><td class="mono"><a class="xref" href="#k5">B1-05</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken. In <a class="xref" href="#k5">B1-05</a> als Kasten. Merker M1 „Morph 4, richtig gebaut“ ist jetzt mit dem A-130-8 steckbar (Fassung D).</td></tr>
+<tr><td class="mono"><a href="#kwp-13">KWP-13</a></td><td>Songform auf dem Muxlicer</td><td class="mono"><a class="xref" href="#k9">B1-09</a></td><td><span class="st st-a">angepasst</span></td><td>Die Spalten 4–7 steuerten FOUR-PLAY-Kanäle; jetzt vier lineare Kanäle des A-130-8. Kurzfassung in <a class="xref" href="#k9">B1-09</a> als Patch <a class="xref" href="#p-9b">9B</a>.</td></tr>
+<tr><td class="mono"><a href="#kwp-14">KWP-14</a></td><td>Organische Modulation im Test</td><td class="mono"><a class="xref" href="#k5">B1-05</a></td><td><span class="st st-a">angepasst</span></td><td>Die Klangquelle war 112 und Cali; jetzt 258t und Cali. Kurzfassung in <a class="xref" href="#k5">B1-05</a> an Patch <a class="xref" href="#p-5a">5A</a>.</td></tr>
+<tr><td class="mono"><a href="#kwp-15">KWP-15</a></td><td>Das Mehrkopf-Bandecho</td><td class="mono"><a class="xref" href="#k8">B1-08</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Das Morphor Echo ist seit dem 25.10.2026 verbaut; alle Module stecken. Der Rückweg bekommt wie in <a class="xref" href="#k8">B1-08</a> Patch <a class="xref" href="#p-8b">8B</a> einen A-130-8-Kanal als Regler.</td></tr>
+<tr><td class="mono"><a href="#kwp-16">KWP-16</a></td><td>Taps als Rhythmusmaschine</td><td class="mono"><a class="xref" href="#k8">B1-08</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken. Die Taps laufen wie in <a class="xref" href="#k8">B1-08</a> über die A-130-8-Kanäle 5–8 statt über den FOUR PLAY.</td></tr>
+<tr><td class="mono"><a href="#kwp-17">KWP-17</a></td><td>Die kreisende Wolke</td><td class="mono"><a class="xref" href="#k8">B1-08</a></td><td><span class="st st-a">angepasst</span></td><td>Ein Phaser steckt nicht im Pult. Die Hauptfassung nimmt den Wasp-Bandpass im Rückweg, wie es die Vorlage als Vorbereitung vorschlug; die Phaser-Fassung ist optional.</td></tr>
+<tr><td class="mono"><a href="#kwp-18">KWP-18</a></td><td>Die Hi-Hat wandert durch vier Effekte</td><td class="mono"><a class="xref" href="#k8">B1-08</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken; die vier Effekte sind Morphor Echo, Lyra8-FX, Bode 1630 und Skies, wie in <a class="xref" href="#k8">B1-08</a>.</td></tr>
+<tr><td class="mono"><a href="#kwp-19">KWP-19</a></td><td>Ottes Buch der Klänge</td><td class="mono"><a class="xref" href="#k6">B1-06</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Alle Module stecken; das Morphor Echo, auf das die Vorlage noch wartete, ist verbaut und steht als Variante.</td></tr>
+<tr><td class="mono"><a href="#kwp-20">KWP-20</a></td><td>Die endlose Spirale</td><td class="mono"><a class="xref" href="#k8">B1-08</a></td><td><span class="st st-d">direkt umsetzbar</span></td><td>Der Bode 1630 ist verbaut. <a class="xref" href="#k8">B1-08</a> Patch <a class="xref" href="#p-8c">8C</a> baut dieselbe Spirale mit dem Wasp im Rückweg.</td></tr>
+</tbody></table></div>
+<p class="muted" style="font-size:15px">12 Karten direkt umsetzbar, 8 angepasst, 0 nur mit ausgelagerten Modulen. Fassungen mit ausgelagerten oder fehlenden Modulen (Behringer 112, TRIGS, Phaser) stehen als Varianten auf den Karten.</p>
+
+<h3 id="regeln">Verweissystem und Redaktionsregeln</h3>
+<div class="tbl"><table>
+<thead><tr><th>Kürzel</th><th>Bedeutung</th><th>Beispiel</th></tr></thead>
+<tbody>
+<tr><td>B1-nn</td><td>Lernlektion</td><td><a class="xref" href="#k4">B1-04</a> Pads, Drones und Atmosphären</td></tr>
+<tr><td>B2-X-nn</td><td>Technikseite</td><td><a class="xref" href="#b2-c03">B2-C-03</a> LFO, Zufall, komplexe Modulation, Slew</td></tr>
+<tr><td>B3-nn</td><td>Stilübung</td><td><a class="xref" href="#b3-01">B3-01</a> Ambient aus dem Grundpatch</td></tr>
+<tr><td>KWP-nn</td><td>Patchkarte</td><td><a class="xref" href="#kwp-14">KWP-14</a> Organische Modulation im Test</td></tr>
+<tr><td>MOD-name</td><td>Modulporträt</td><td><a class="xref" href="#mp-258t">MOD-258t</a> Tiptop Buchla 258t</td></tr>
+</tbody></table></div>
+<p>Verweise stehen am Ende jeder B1-Lektion, am Ende jeder B2-Seite und auf jeder Patchkarte. Band 3 verweist zurück auf die nötigen Grundlagen.</p>
+<ul>
+<li>Der aktuelle Rack-Stand ist die Modulbasis. Ältere Stände aus „Klangwege im Pult“ gelten nicht automatisch.</li>
+<li>Patchkarten nennen konkrete Modul- und Buchsennamen, sobald sie verifiziert sind; „in einen CV-Eingang“ ist nur als vorläufige Formulierung erlaubt und dann markiert.</li>
+<li>Jede Anleitung nennt Module, Signalrichtung, Startwerte, erwartetes Ergebnis und einen kurzen Fehlercheck.</li>
+<li>Alternativen und ausgelagerte Module stehen getrennt von der direkt umsetzbaren Version.</li>
+<li>Herstellerangaben, am Gerät Geprüftes und eigene Didaktik bleiben unterscheidbar (siehe Prüfmarken).</li>
+<li>Reihenfolge der Ausarbeitung: Band 1 vollständig · parallel die B2-Seiten, auf die es verweist · KWP-Abgleich · Band 3 aus stabilem Grundpatch · Leo-Leo-Pfad gegen Doku · IDs und Begriffe vereinheitlichen. Alles davon ist mit Fassung 2.0 erledigt. Offen bleibt das Prüfen am Pult; die Liste dafür ist <a href="#teil6">Teil VI</a>.</li>
+<li>Jede ID im Text ist ein Link, auch in Aufzählungen wie „<a class="xref" href="#k1">B1-01</a> bis <a class="xref" href="#k3">03</a>“ oder „<a class="xref" href="#kwp-10">KWP-10</a>, <a class="xref" href="#kwp-11">11</a>“. Nicht verlinkt sind nur Selbstverweise, Überschriften, Beschriftungen von Knöpfen und Grafiken.</li>
+<li>Buchsen heißen wie auf dem Panel, in Großbuchstaben (<span class="jack">CLOCK IN</span>, <span class="jack">RESET OUT</span>, <span class="jack">TRIG IN</span>); Menüpunkte und Parameter behalten die Schreibweise des Handbuchs (Chance In Amount).</li>
+</ul>
+
+<h3 id="aenderungen">Was sich geändert hat</h3>
+<p>Fassung 2.5 stellt die Seite auf das dunkle Farbsystem „Kante“ um. Fassung 2.4 gibt der Formleiste in Kapitel <a class="xref" href="#k9">09</a> einen Ton. Fassung 2.3 bindet die EuroPi mit Egressus Melodiam als Modulationsquelle ein. Fassung 2.2 baut die Vorlesefunktion um. Fassung 2.1 gleicht offene Marken mit Handbüchern, Kurzanleitungen und Herstellerseiten ab. Fassung 2.0 war die Schlussredaktion über das ganze Werk: neue Wege durch das Buch und eine einheitliche Sprache.</p>
+<h4 id="aend-25">Fassung 2.5 · Farbsystem „Kante“</h4>
+<ul>
+<li><b>Farben.</b> Die ganze Seite ist dunkel, mit dem Aurora-Theme „Kante“: Grund #1B1C1E, Schrift #C9CBD0. Die Signalfarben bleiben bei ihrer Bedeutung: <span class="a">Audio</span> blau #4F9DB5, <span class="c">CV</span> orange #D39B57, <span class="g">Gate</span> grün #6FB08A, <span class="t">Trigger</span> magenta #C77DA6.</li>
+<li><b>Kein Hell/Dunkel-Schalter mehr.</b> Der Schalter in der Seitenleiste (auf dem Telefon unten rechts) ist entfallen; eine früher gespeicherte Wahl wird nicht mehr gelesen.</li>
+<li><b>Fassungsnummer.</b> Aus Fassung 2.4 wird 2.5.</li>
+</ul>
+<h4 id="aend-24">Fassung 2.4 · Formleiste mit Ton</h4>
+<ul>
+<li><b><a class="xref" href="#k9">B1-09</a>, Spielplatz Formleiste.</b> Neuer Schalter „♪ Ton“: Der Durchlauf läuft dann in Echtzeit und klingt als Skizze. Drums, Bassfigur und Fläche folgen ihren Spalten, Hall, Helligkeit und Chaos formen den Klang, die Energie den Pegel; Riser, Becken nach dem Riser, Eingriffe und Transpositionen sind hörbar. Ohne Ton bleibt der stille Zeitraffer.</li>
+<li><b>Fassungsnummer.</b> Aus Fassung 2.3 wird 2.4.</li>
+</ul>
+<h4 id="aend-23">Fassung 2.3 · EuroPi mit Egressus Melodiam</h4>
+<ul>
+<li><b><a class="xref" href="#k5">B1-05</a>.</b> Egressus in Abschnitt 1 (acht Formen), 2 (getaktet, Teilung, Rücksetzen nach 3,75 s Pause) und 5 (Bedienung, Muster, Grenzen) mit neuer Grafik „Acht Formen, ein Muster“. Neue Variation 8 „Egressus statt Turing und S&amp;H“ an Patch <a class="xref" href="#p-5b">5B</a>, neue Erweiterung „Egressus als getakteter Patch <a class="xref" href="#p-5a">5A</a>“, Takthinweis im Kasten <a class="xref" href="#k5-kwp14">KWP-14</a>.</li>
+<li><b><a class="xref" href="#kwp-14">KWP-14</a>.</b> Startwerte für Egressus auf Teilung 8, 7 und 6 korrigiert: Ein LFO-Zyklus dauert laut Quelltext zwei mal die Teilung, nicht einmal; damit treffen die Viertel bei 90 BPM die 4 Takte der Referenz. Die offene Frage dazu ist geklärt.</li>
+<li><b><a class="xref" href="#b2-c03">B2-C-03</a>, <a class="xref" href="#b2-a03">B2-A-03</a>.</b> Kennwerte, Sync-Tabelle, drei Rezepte und zwei Fehlerbilder für Egressus; Rezept „Melodie mit Gedächtnis“.</li>
+<li><b><a class="xref" href="#k7">B1-07</a>, <a class="xref" href="#k9">B1-09</a>.</b> Hinweis, dass Egressus und ein Teiler-Skript nicht zugleich laufen; in Kapitel <a class="xref" href="#k9">09</a> „Ein Wert pro Phrase“ mit einem Impuls pro Takt und Teilung 8, und warum die PHRASE-Spur dafür nicht taugt.</li>
+<li><b>Fassungsnummer.</b> Aus Fassung 2.2 wird 2.3.</li>
+</ul>
+<h4 id="aend-22">Fassung 2.2 · Vorlesen</h4>
+<ul>
+<li><b>Pause und Weiter.</b> „❚❚ Pause“ hält an und merkt sich den Satz. „▶ Weiter“ setzt genau dort wieder ein, auch nach dem Neuladen: jeder Abschnitt behält seine Lesemarke, bis er zu Ende gelesen ist. „↺ Von vorn“ fängt den Abschnitt neu an.</li>
+<li><b>Mitten im Kapitel einsteigen.</b> Über „Start bei …“ an jeder Überschrift. Oder Du scrollst an die Stelle und tippst unten auf „▶ Ab hier vorlesen“: Gelesen wird ab dem ersten Absatz auf dem Bildschirm. Läuft das Vorlesen schon, springt ein Klick auf einen Absatz dorthin.</li>
+<li><b>Schwebende Leiste.</b> Solange vorgelesen wird, steht unten eine Leiste mit Absatz zurück, Pause/Weiter, Absatz vor, „◎ zur Stelle“, Stopp und Tempo. Scrollst Du selbst weg, folgt die Seite nicht mehr, bis Du ◎ drückst. Esc pausiert.</li>
+<li><b>Auslassen.</b> Unter „Optionen“ wählst Du, was mitgelesen wird: Tabellen (zeilenweise, Standard aus), Kabellisten, Kontrollpunkte, Kästen, Bildunterschriften. Kontrollpunkte und Kästen ohne eigene Absätze werden jetzt überhaupt erst vorgelesen; zugeklappte Inhalte nicht. Die Wahl gilt für alle Abschnitte.</li>
+<li><b>Fassungsnummer.</b> Aus Fassung 2.1 wird 2.2.</li>
+</ul>
+<h4 id="aend-21">Fassung 2.1 · Abgleich mit Herstellerunterlagen</h4>
+<ul>
+<li><b>Was sich geändert hat.</b> Wo eine Herstellerquelle eine offene Frage beantwortet, steht die Antwort jetzt im Text mit <span class="tag tag-h">Hersteller</span>. Am Pult bestätigt ist dadurch nichts; <span class="tag tag-ok">verifiziert</span> bleibt dem vorbehalten, was Du selbst nachgeprüft hast. Bei Nachbauten (Skies, Chaos, FOUR PLAY, FOUR LFO, mGrids, Rings- und Elements-Nachbau) steht das Verhalten des Vorbilds dabei; ob der Nachbau es genauso macht, bleibt offen.</li>
+<li><b>Geklärt.</b> Bode 1630: SCALE (0, EXP, ±5 Hz bis ±5 kHz), Richtung des Reglers, MIXTURE links = A, SQUELCH vorhanden, SIG IN wechselspannungsgekoppelt · A-166: Ausgang „1“ ≈ +12 V · 281t: 1 ms bis 10 s je Phase, positive Zeit-CV verlängert · Blck_Noir: Stimmenkürzel, Fill-Takt ÷ 6 · L6: K3/K4 mit MONO-Taste, K5/K6 mono über L (MONO), AUX-Sends als 6,3-mm-TRS, Szenen und CC über MIDI und L6 Editor · Lyra8-FX: Modulationsschalter Self oder Zeit-CV, CV für Zeit, Feedback und Drive · Muxlicer: CLOCK OUT bis ÷ 16 / × 16, freie Mux-I/Os folgen über ALL IN den Fadern · m-Brane: Eingang nimmt TRS Typ A und B, Gate +5 V, Layout 2P · Elements: Dauerton erst im ADSR- und AR-Bereich von CONTOUR.</li>
+<li><b>Korrigiert.</b> Der A-118-2 hat keinen Signaleingang für das S&amp;H; es hält den eigenen stetigen Zufall, nicht das Rauschen (<a class="xref" href="#k5">B1-05</a>, <a class="xref" href="#kwp-09">KWP-09</a>). Die Variante „Im Raster“ in <a class="xref" href="#kwp-06">KWP-06</a> braucht darum ein S&amp;H mit Eingang, das im Pult fehlt. In <a class="xref" href="#kwp-18">KWP-18</a> geht die Intensitäts-CV an den Drive-CV-Eingang des Lyra8-FX.</li>
+<li><b>Fassungsnummer.</b> Aus Fassung 2.0 wird 2.1.</li>
+</ul>
+<h4 id="aend-20">Fassung 2.0 · Schlussredaktion</h4>
+<ul>
+<li><b>Querverweise.</b> Jede genannte ID (B1, B2, B3, KWP, MOD) ist geprüft und verlinkt, auch im Fließtext, in Tabellen, Grafiklegenden, Kästen und Aufzählungen wie „<a class="xref" href="#kwp-15">KWP-15</a> bis <a class="xref" href="#kwp-18">18</a>, <a class="xref" href="#kwp-20">20</a>“. „Kapitel <a class="xref" href="#k4">04</a>“ und „Patch <a class="xref" href="#p-4b">4B</a>“ führen ebenfalls an ihre Stelle, „Kasten <a class="xref" href="#k4-kwp02">KWP-02</a>“ zum Kasten in <a class="xref" href="#k4">B1-04</a>. Kein Link zeigt ins Leere; der Bau bricht ab, wenn ein Platzhalter übrig bleibt.</li>
+<li><b>Modulporträts.</b> 44 Module, die in mindestens drei Kapiteln von Band 1 vorkommen, haben ein <a href="#modp">Porträt</a> mit Fundstellen, Patches, Bestätigtem und offenen Marken. Ihre MOD-ID führt dorthin, die Modulübersicht verlinkt zusätzlich je Zeile.</li>
+<li><b>Teil VI.</b> Alle Marken <span class="tag tag-p">am Gerät prüfen</span> stehen gesammelt in <a href="#teil6">Teil VI</a>, mit dem Satz, in dem sie stehen, einem Sprung an die Stelle und einem Haken zum Abarbeiten. Zwei Stellen in <a class="xref" href="#k1">B1-01</a>, die als „offen“ markiert waren, aber eine Messung am Pult meinen, tragen jetzt dieselbe Marke.</li>
+<li><b>Verzeichnisse.</b> Inhaltsverzeichnis und Seitenleiste führen alle Abschnitte aus Teil I, die Modulporträts und Teil VI. Teil I, die Einleitung zu Teil V und Teil VI lassen sich jetzt ebenfalls vorlesen.</li>
+<li><b>Fassungsnummer.</b> Aus der Arbeitsfassung 1.17 wird die Fassung 2.0.</li>
+</ul>
+<h4 id="aend-begriffe">Vereinheitlicht in 2.0</h4>
+<div class="tbl w"><table>
+<thead><tr><th>Bereich</th><th>vorher gemischt</th><th>jetzt einheitlich</th></tr></thead>
+<tbody>
+<tr><td>Buchsennamen</td><td><code class="old">Clock In, Clock Out, Reset In/Out, Trig In, Trig. In/Out, Res In, Chance In, CV In/Out, Audio In, LP/HP Out, Gate Out, Bode Out A, MIDI-In/-Out, SERRA-OUT</code></td><td>wie auf dem Panel in Großbuchstaben: <span class="jack">CLOCK IN</span>, <span class="jack">CLOCK OUT</span>, <span class="jack">RESET IN</span>, <span class="jack">RESET OUT</span>, <span class="jack">TRIG IN</span>, <span class="jack">TRIG OUT</span>, <span class="jack">RES IN</span>, <span class="jack">CHANCE IN</span>, <span class="jack">CV IN</span>, <span class="jack">AUDIO IN</span>, <span class="jack">GATE OUT</span>, <span class="jack">MIDI IN</span> …; Menüpunkte wie „Chance In Amount“ bleiben in Handbuch-Schreibweise. Alte Namen in Zitaten (Abgleichtabellen) bleiben stehen.</td></tr>
+<tr><td>Tonhöhe</td><td><code class="old">1V/Oct, 1 V/Okt., V/Okt, 1-V/Okt-Eingang</code></td><td>1 V/Oct, als Wortteil 1-V/Oct-Eingang</td></tr>
+<tr><td>Takt</td><td><code class="old">ppqn, PPQ, 16tel</code></td><td>PPQN, Sechzehntel (in Grafiken darf „16tel“ als Kurzform stehen)</td></tr>
+<tr><td>Hüllkurven</td><td><code class="old">Funktionsgenerator neben Function Generator</code></td><td>Function Generator, Mehrzahl Function Generatoren, wie in <a class="xref" href="#b2-c01">B2-C-01</a></td></tr>
+<tr><td>Modulnamen</td><td><code class="old">Lyra-8 FX neben Lyra8-FX · Hihat neben Hi-Hat</code></td><td>Lyra8-FX (wie die MOD-ID) · Hi-Hat, auch im Titel von <a class="xref" href="#kwp-18">KWP-18</a></td></tr>
+<tr><td>MOD-IDs</td><td><code class="old">MOD-Bode 1630, MOD-8×8 Matrix, MOD-EN16/TEK2</code></td><td><a class="xref" href="#mod-bode">MOD-Bode</a>, <a class="xref" href="#mp-8x8">MOD-8x8</a>, <a class="xref" href="#mod-en16">MOD-EN16</a> · <a class="xref" href="#mod-tek2">MOD-TEK2</a>: genau die IDs aus der Modulübersicht</td></tr>
+</tbody></table></div>
+<h4 id="aend-weg">Der Weg zur 2.0</h4>
+<div class="tbl"><table>
+<thead><tr><th>Fassung</th><th>Was dazukam</th></tr></thead>
+<tbody>
+<tr><td class="mono">bis 1.13</td><td>Band 1, Band 2 und Band 3 vollständig geschrieben; Modulübersicht, Rezeptverzeichnis und Verweisregister entstehen beim Bauen aus dem Text. Beim Abgleich 1.12 korrigiert: Der A-185-2 braucht Schalter 1 rechts, damit Lev.1 am leeren Eingang 0 bis +1 V addiert.</td></tr>
+<tr><td class="mono">1.14</td><td>Teil V: die zwanzig Patches aus „Klangwege im Pult“ als Patchkarten <a class="xref" href="#kwp-01">KWP-01</a> bis <a class="xref" href="#kwp-20">KWP-20</a>, abgeglichen mit dem Pult. Korrigiert: A-115 hat nur einen Summenausgang, A-138f mischt nur benachbarte Eingänge, Programm-Drum-Gates sind höchstens 200 ms lang, der Echo-Zeit-Eingang heißt DELAY CV.</td></tr>
+<tr><td class="mono">1.15</td><td>Band 1 rechnet mit dem einen FOUR PLAY in Reihe 3; Raum-Bus in <a class="xref" href="#k4">B1-04</a> über den zweiten CatSynth 4× Mixer.</td></tr>
+<tr><td class="mono">1.16</td><td><a class="xref" href="#b2-b05">B2-B-05</a> Quadrantid Swarm und <a class="xref" href="#b2-b06">B2-B-06</a> Ringmodulation, XOR, XDR; Varianten in <a class="xref" href="#k2">B1-02</a>, <a class="xref" href="#k4">04</a>, <a class="xref" href="#k5">05</a>, <a class="xref" href="#k7">07</a>, <a class="xref" href="#k8">08</a>, <a class="xref" href="#k10">10</a>. Korrigiert: Der XDR ist ein Doppel-Ringmodulator, kein Verzerrer.</td></tr>
+<tr><td class="mono">1.17</td><td>Belegte Antworten zu Swarm und XDR eingearbeitet (VCA vor dem Hall, CV IN nicht auf 1 V/Oct kalibriert, MIDI-Buchse TRS Typ B, XDR-RANGE schaltet den MIX-CV-Eingang); Bode-Satz in <a class="xref" href="#b2-b06">B2-B-06</a> präzisiert.</td></tr>
+<tr><td class="mono">2.0</td><td>Schlussredaktion: Querverweise, Begriffe, Teil VI, Modulporträts, Verzeichnisse.</td></tr>
+</tbody></table></div>
+<h4 id="aend-entwurf">Korrekturen am ersten Kapitel-Entwurf</h4>
+<p>Beim Abgleich mit Herstellerangaben und dem Rack-Stand haben sich im Beispielkapitel einige Annahmen als falsch oder überholt herausgestellt. Teil II ist entsprechend umgeschrieben.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Stelle</th><th>Entwurf</th><th>Jetzt</th></tr></thead>
+<tbody>
+<tr><td>XDR im Register</td><td>„Verzerrer/Treiber“</td><td>Doppel-Ringmodulator (Diode und XOR) mit Überblendung, Hochpass und Rauschen. <span class="tag tag-h">Hersteller</span> Neue Seite <a class="xref" href="#b2-b06">B2-B-06</a>.</td></tr>
+<tr><td>Modulliste</td><td>Referenzmodule „prüfen, ob vorhanden“, dazu eine zweite Liste mit Alternativen</td><td>258t, A-106-5 und A-130-8 sind seit dem Umbau im Pult. Es gibt eine Liste aus dem aktiven Rack und einen getrennten Kasten mit Alternativen.</td></tr>
+<tr><td>A-106-5 Ausgänge</td><td>„LP Out“, „HP Out“</td><td>Es gibt <span class="jack">MIX-OUT</span> (Tiefpass ↔ Notch ↔ Hochpass per Mix-Regler) und einen separaten Bandpass-Ausgang. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>A-106-5 Eingänge</td><td>Zweiter Audio-Eingang für Oszillator 2</td><td>Nur ein Audio-Eingang mit Abschwächer; für Patch <a class="xref" href="#p-1c">1C</a> braucht es einen Mixer davor. CV1 ohne, CV2 mit Polarizer. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>A-130-8</td><td>„Level-Regler auf 11 Uhr“</td><td>Der A-130-8 hat keine Regler, nur CV-, IN- und OUT-Buchsen pro Kanal. Ohne Steuerspannung bleibt er zu; die CV ist der Lautstärkeregler. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>L6-Eingang</td><td>„Pad und Gain am L6 niedrig halten“</td><td>Die Kanäle 1 und 2 haben weder Gain noch Pad. Ihr Klinkenanschluss verträgt +24 dBu; die Line-Eingänge 3–6 nur +9 dBu und werden von 10 Vpp übersteuert. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>258t Wellenform</td><td>„Sägezahn/Rechteck“ für beide</td><td>Oszillator 1 morpht Sinus → Sägezahn, Oszillator 2 Sinus → Rechteck. Jeder hat zwei gleiche Ausgänge. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Grundbegriffe</td><td>fehlten</td><td>Patchen, Normalisierung, Mult, Ein-/Ausgang und Signalrichtung stehen jetzt am Kapitelanfang, wie im Bauplan vorgesehen.</td></tr>
+</tbody></table></div>
+{{BACK}}
+</section>

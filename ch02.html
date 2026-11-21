@@ -1,0 +1,309 @@
+<!-- ======================= KAPITEL 02 ======================= -->
+<section class="part chapter" id="k2">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 02</span><h2>Synth Voices und Sound Design</h2></div>
+<p class="muted"><i>Aus einer funktionierenden Grundstimme werden unterschiedliche Klangarchitekturen</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>≈ 2 × 90 min</b><span>zwei Sitzungen</span></div>
+  <div><b>22</b><span>Kabel über drei Stufen</span></div>
+  <div><b>13</b><span>Module + L6</span></div>
+  <div><b><a class="xref" href="#k1">B1-01</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du baust eine spielbare klassische Stimme, hörst den Charakter dreier Filter im direkten Vergleich und stellst ihr eine West-Coast-Stimme gegenüber, deren Klangfarbe nicht aus dem Filter, sondern aus Wellenform, Faltung und Low Pass Gate kommt.</dd>
+  <dt>Theorie</dt><dd>Was eine Stimme ist · Wellenformen und Obertöne · Filtercharakter SEM, Wasp, Surges · Wavefolding · FM linear und exponentiell · Low Pass Gate · Stimmen schichten</dd>
+  <dt>Praxis</dt><dd>Patch <a class="xref" href="#p-2a">2A</a> „Die spielbare Stimme“ · Patch <a class="xref" href="#p-2b">2B</a> „Drei Filter, ein Ton“ · Patch <a class="xref" href="#p-2c">2C</a> „Westküste daneben“</dd>
+  <dt>Prüfstatus</dt><dd>Kennwerte nach Herstellerangaben <span class="tag tag-h">Hersteller</span>. Buchsen an µYarns und Capt’n Big-O, Selbstoszillation des Surges und Tiefpass-Seite des Wasp am Pult geprüft <span class="tag tag-ok">verifiziert</span>.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k2-theorie">Teil 1 · Was eine Stimme ausmacht</h3>
+<p>In Kapitel <a class="xref" href="#k1">01</a> hast Du einen Ton gebaut, der einfach da ist. Eine <b>Stimme</b> ist mehr: Sie hat eine Tonhöhe, die gespielt wird, einen Anfang und ein Ende, und eine Klangfarbe, die sich mit der Note bewegt. Technisch braucht sie dafür vier Dinge: eine Klangquelle, eine Formung, eine Dynamik und eine Steuerung, die sagt, welcher Ton wann beginnt. Die ersten drei kennst Du. Neu ist die Steuerung: eine <span class="c">Tonhöhen-CV</span> und ein <span class="g">Gate</span>, wie sie ein Keyboard über den µYarns liefert.</p>
+<p>Zwei Denkschulen haben diese vier Bausteine unterschiedlich angeordnet. Moog an der Ostküste der USA nahm einen obertonreichen Oszillator und schnitt mit dem Filter weg, was zu viel war. Buchla an der Westküste begann mit einem fast reinen Sinus und <i>formte</i> Obertöne hinzu; Lautstärke und Helligkeit übernahm ein einziges Bauteil, das Low Pass Gate. Dein Pult kann beides, und in diesem Kapitel hörst Du beides nebeneinander.</p>
+<figure>
+  <div class="sv">{{FIG:eastwest}}</div>
+  <figcaption><b>Wegnehmen oder Hinzufügen.</b> An der Ostküste steuern zwei Hüllkurven Filter und VCA getrennt. An der Westküste bewegt eine langsame Modulation den Wavefolder, und eine einzige Hüllkurve öffnet das LPG, das Helligkeit und Lautstärke gemeinsam führt.</figcaption>
+</figure>
+
+<h4 id="k2-wellen">1 · Wellenformen und Obertöne</h4>
+<p>Jede periodische Schwingung lässt sich als Summe von Sinustönen beschreiben: dem Grundton und seinen Obertönen bei 2-, 3-, 4-facher Frequenz und so weiter. Welche Obertöne wie stark dabei sind, macht die Klangfarbe aus. Für die vier Grundformen ist das einfach zu merken:</p>
+<figure>
+  <div class="sv">{{FIG:waves}}</div>
+  <figcaption><b>Mehr Ecken, mehr Obertöne.</b> Der Sinus hat nur den Grundton. Dreieck und Rechteck haben nur ungerade Obertöne, das Dreieck aber sehr schwache (1/n²), das Rechteck kräftige (1/n). Der Sägezahn hat alle Obertöne mit 1/n und ist deshalb das Lieblingsmaterial für Filter.</figcaption>
+</figure>
+<p>Am 258t morpht OSC 1 stufenlos von Sinus zu Sägezahn, OSC 2 von Sinus zu Rechteck. <span class="tag tag-h">Hersteller</span> Der Cali hat zusätzlich einen Dreifach-Schalter, dessen Mittelstellung eine Puls-zu-Trapez-Form ergibt, und einen eigenen Pulsausgang mit PWM. <span class="tag tag-h">Hersteller</span> Der Capt’n Big-O liefert Sinus, Dreieck, Sägezahn und Rechteck gleichzeitig. <span class="tag tag-h">Hersteller</span></p>
+
+<h4 id="k2-filter">2 · Filtercharakter: drei Filter im Pult</h4>
+<p>Zwei Filter mit gleicher Flankensteilheit und gleichem Cutoff klingen trotzdem verschieden. Der Unterschied liegt in der Schaltung: wie sie bei Resonanz reagiert, wie sie auf heiße Eingangspegel reagiert und ob sie selbst zu schwingen beginnt.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Filter</th><th>Typ</th><th>Ausgänge</th><th>Charakter</th></tr></thead>
+<tbody>
+<tr><td>A-106-5 SEM</td><td>12 dB/Okt., Zustandsvariable</td><td>MIX-OUT (LP ↔ Notch ↔ HP), BP</td><td>Weich, rund, musikalisch. Schwingt nicht selbst. <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>A-124 Wasp</td><td>12 dB/Okt.</td><td>LP/HP (Mix-Regler), BP</td><td>Benutzt Digital-Inverter als analoge Verstärker; daher die typische schmutzige, verzerrte Färbung. Schwingt nicht selbst, CV 1 folgt nur ungefähr 1 V/Oct <span class="tag tag-h">Hersteller</span></td></tr>
+<tr><td>Surges</td><td>Ripples-Klon, 2- oder 4-polig</td><td>HP, BP, LP (BP und LP umschaltbar 2/4-polig), LP mit VCA</td><td>Sauber und kräftig; mit zwei gemischten Eingängen, Pegelregler an Eingang 1 zum Anfahren. <span class="tag tag-h">Hersteller</span> Schwingt bei voller Resonanz selbst und wird dann zum Sinus-Oszillator. <span class="tag tag-ok">verifiziert</span></td></tr>
+</tbody></table></div>
+<p>Eine 4-polige Flanke (24 dB/Okt.) schneidet steiler ab als eine 2-polige (12 dB/Okt.): Oberhalb des Cutoffs wird es pro Oktave doppelt so schnell leiser. Das klingt „fetter“ und dunkler, aber auch weniger durchsichtig. Die 12-dB-Filter lassen mehr Obertöne als Schimmer durch.</p>
+
+<h4 id="k2-fold">3 · Wavefolding: Obertöne durch Zurückklappen</h4>
+<p>Ein Wavefolder verstärkt ein Signal, und überall, wo es eine Grenze überschreiten würde, klappt er es zurück. Ein Sinus mit wenig Verstärkung kommt unverändert durch. Mit mehr Verstärkung entstehen Falten, und jede Falte bringt neue Obertöne. Anders als beim Filter ist die Klangfarbenbewegung damit <i>additiv</i>: Je weiter Du aufdrehst, desto heller und metallischer wird der Klang.</p>
+<figure>
+  <div class="sv">{{FIG:fold}}</div>
+  <figcaption><b>Lauter rein, mehr Falten raus.</b> Bei Verstärkung 1 bleibt der Sinus ein Sinus. Ab etwa dem Doppelten klappen die Spitzen zurück, bei vierfacher Verstärkung faltet sich jede Halbwelle mehrfach. Beim Big-O liegt am Folder intern der Sinus an; er ist aber auf jede interne oder externe Quelle patchbar. <span class="tag tag-h">Hersteller</span></figcaption>
+</figure>
+
+<div class="play" id="foldplay">
+<h4>Wavefolder-Spielplatz</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Ein Sinus auf 110 Hz durch einen Dreiecksfalter. Die Symmetrie verschiebt den Sinus vor dem Falten, das erzeugt auch gerade Obertöne.</p>
+<div class="presets"><button type="button" class="btn" id="foldAud" aria-pressed="false">Anhören</button></div>
+<div class="ctrls">
+<div><label for="fg">Faltung <output id="fgO"></output></label><input type="range" id="fg" min="1" max="6" step="0.01" value="2.2"></div>
+<div><label for="fb">Symmetrie <output id="fbO"></output></label><input type="range" id="fb" min="-1" max="1" step="0.01" value="0"></div>
+</div>
+<svg id="foldSvg" viewBox="0 0 720 200" role="img" aria-label="Gefaltete Wellenform und ihr Obertonspektrum"></svg>
+<p class="readout" id="foldR"></p>
+</div>
+
+<h4 id="k2-fm">4 · FM: ein Oszillator moduliert den anderen</h4>
+<p>Bei der Frequenzmodulation bewegt ein <b>Modulator</b> die Tonhöhe eines <b>Trägers</b>, und zwar so schnell, dass Du kein Vibrato mehr hörst, sondern eine neue Klangfarbe. Um den Träger entstehen Seitenbänder im Abstand der Modulatorfrequenz. Zwei Größen bestimmen das Ergebnis:</p>
+<ul>
+<li><b>Verhältnis</b> von Modulator zu Träger. Ganzzahlige Verhältnisse (1:1, 2:1, 3:1) legen die Seitenbänder auf Obertöne des Trägers, der Klang bleibt harmonisch, orgel- oder bläserartig. Krumme Verhältnisse (1,41:1) erzeugen unharmonische Teiltöne: Glocke, Metall, Gong.</li>
+<li><b>Index</b>, die Modulationstiefe. Kleiner Index, wenige Seitenbänder; großer Index, breites, helles Spektrum. Der Index ist das, was Du mit einer Hüllkurve steuerst.</li>
+</ul>
+<p><b>Linear oder exponentiell?</b> Exponentielle FM geht in den 1-V/Oct-Eingang. Weil der Ton sich dort pro Volt verdoppelt, wandert die mittlere Tonhöhe beim Aufdrehen nach oben; der Ton verstimmt sich. Lineare FM verschiebt die Frequenz um gleich viele Hertz nach oben und unten, die Tonhöhe bleibt stehen. Für melodische FM nimmst Du darum die lineare Buchse: Der 258t hat pro Oszillator einen linearen, wechselspannungsgekoppelten FM-Eingang mit bipolarem Regler, der Cali und der Big-O haben je einen linearen und einen exponentiellen. <span class="tag tag-h">Hersteller</span></p>
+
+<div class="play" id="fmplay">
+<h4>FM-Spielplatz</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Träger 220 Hz, lineare FM. Die Balken zeigen die Seitenbänder; ihre Höhe folgt den Bessel-Funktionen.</p>
+<div class="presets">
+<button type="button" data-fm="1,1.5">Orgel 1:1</button><button type="button" data-fm="2,2.5">Bläser 2:1</button><button type="button" data-fm="1.41,3">Glocke 1,41:1</button>
+<button type="button" class="btn" id="fmAud" aria-pressed="false">Anhören</button>
+</div>
+<div class="ctrls">
+<div><label for="fr">Verhältnis M:T <output id="frO"></output></label><input type="range" id="fr" min="0.5" max="4" step="0.01" value="1"></div>
+<div><label for="fi">Index <output id="fiO"></output></label><input type="range" id="fi" min="0" max="8" step="0.05" value="1.5"></div>
+</div>
+<svg id="fmSvg" viewBox="0 0 720 200" role="img" aria-label="FM-Spektrum mit Träger und Seitenbändern"></svg>
+<p class="readout" id="fmR"></p>
+</div>
+
+<p><b>Verwandt: Ringmodulation.</b> Ein Ringmodulator multipliziert zwei Signale. Wie bei der FM entstehen Seitenbänder, aber nur genau zwei pro Teiltonpaar, Summe und Differenz, und die Eingangstöne selbst verschwinden. Das Verhältnis der beiden Tonhöhen entscheidet genauso über harmonisch oder glockig. Im Pult macht das der <b>XDR</b> in Reihe 2 mit einem Dioden- und einem XOR-Zweig. Ausführlich in <a href="#b2-b06">B2-B-06</a>.</p>
+
+<h4 id="k2-lpg">5 · Das Low Pass Gate</h4>
+<p>Ein angeschlagener Gegenstand wird beim Ausklingen nicht nur leiser, sondern auch dunkler: Die hohen Teiltöne verlieren ihre Energie zuerst. Ein VCA allein kann das nicht, die Klangfarbe bleibt beim Ausblenden gleich. Das Low Pass Gate ist Tiefpass und VCA in einem, gesteuert über einen <b>Vaktrol</b>, eine Leuchtdiode mit lichtempfindlichem Widerstand. Je heller die LED, desto offener und lauter. Weil der Widerstand träge auf das Licht reagiert, klingt das Gate nach einem kurzen Impuls von selbst natürlich aus.</p>
+<p>Dein <b>DPLPG</b> von Meng Qi ist ein passives Doppel-LPG ohne Regler: pro Kanal ein Audio-Eingang, ein Steuereingang und ein Ausgang. Ein Trigger öffnet das Gate, und es klingt über die Kurve des Vaktrols aus; eine Gleichspannung hält es offen. <span class="tag tag-h">Hersteller</span> Passiv heißt: Es verstärkt nicht und braucht eine kräftige Steuerspannung. Die 10 V aus dem 281t passen.</p>
+
+<h4 id="k2-schichten">6 · Stimmen schichten und vervielfachen</h4>
+<p>Zwei Stimmen klingen nach mehr als einer, wenn sie sich unterscheiden: andere Filter, andere Hüllkurven, leicht andere Stimmung. Gleiche Schaltungen verschmelzen zu einer breiten Stimme; verschiedene Schaltungen bleiben als zwei hörbar. Das ist der Grundsatz hinter <a class="xref" href="#kwp-01">KWP-01</a> „Zwei Stimmen nach Oberheim“ und <a class="xref" href="#kwp-02">KWP-02</a> „Drei Stimmen, eine löst sich“. Mehrstimmig spielbar wird es im Pult über den µYarns, der eingehende Noten auf mehrere CV/Gate-Paare verteilen kann, und über Rings, der selbst bis zu vierstimmig arbeitet. <span class="tag tag-h">Hersteller</span></p>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k2-praxis">Teil 2 · Praxis am Rack: drei Stimmen, ein Oszillator</h3>
+<p>Alle drei Stufen benutzen OSC 1 des 258t, gespielt vom Keyboard über den µYarns. Stufe 2B und 2C bauen jeweils auf 2A auf. In 2C läuft die klassische Stimme weiter, sodass Du Ost und West auf zwei L6-Kanälen direkt umschalten kannst.</p>
+
+<p class="bst">01 · Idee und Funktionsprinzip</p>
+<p>In <b>Patch <a class="xref" href="#p-2a">2A</a></b> wird aus dem Grundton von Kapitel <a class="xref" href="#k1">01</a> ein spielbares Instrument: Der µYarns liefert Tonhöhe und Gate, der 281t macht aus dem Gate eine Hüllkurve, und ein aktiver Mult verteilt sie auf VCA und Filter. Ein Attenuverter skaliert sie dabei auf den Bereich, den der A-130-8 erwartet. In <b>Patch <a class="xref" href="#p-2b">2B</a></b> teilt ein zweiter Mult den Ton auf drei Filter, die Du über den Mixer einzeln abhörst. In <b>Patch <a class="xref" href="#p-2c">2C</a></b> bekommt die zweite Ausgangsbuchse von OSC 1 einen eigenen Weg: Wavefolder, dann Low Pass Gate. Dieselbe Hüllkurve stößt beide Stimmen an.</p>
+
+<p class="bst">02 · Musikalischer Nutzen</p>
+<p>Du lernst, eine Klangfarbe nicht nach Rezept, sondern nach Architektur zu wählen. Für einen runden Bass oder ein Pad nimmst Du den SEM, für eine angeraute Lead-Stimme den Wasp, für einen druckvollen 4-Pol-Bass den Surges, für Perkussives, Glockiges und Holziges den Westküsten-Weg. Die Stimmen aus diesem Kapitel sind die Bausteine für alle späteren: Kapitel <a class="xref" href="#k3">03</a> formt ihre Artikulation, Kapitel <a class="xref" href="#k4">04</a> schichtet sie zu Flächen.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul im Pult</th><th>ab Stufe</th></tr></thead>
+<tbody>
+<tr><td>Spielsteuerung</td><td>µYarns, gespielt vom Masterkeyboard oder Exquis</td><td>2A</td></tr>
+<tr><td>Klangquelle</td><td>Tiptop 258t, OSC 1 (beide Ausgangsbuchsen)</td><td>2A</td></tr>
+<tr><td>Hüllkurven</td><td>Tiptop 281t, Kanal 1 (Hüllkurve) und Kanal 3 (Loop)</td><td>2A / 2C</td></tr>
+<tr><td>CV verteilen</td><td>CatSynth aktiver 1×8 Mult (Reihe 2)</td><td>2A</td></tr>
+<tr><td>CV skalieren</td><td>CatSynth Slimline Dual Attenuverter, Kanal A und B</td><td>2A / 2C</td></tr>
+<tr><td>Filter</td><td>A-106-5 SEM · A-124 Wasp · Behringer Surges</td><td>2A / 2B</td></tr>
+<tr><td>Audio verteilen und mischen</td><td>aktiver 2×4 Mult (Reihe 4) · CatSynth 4× Mixer</td><td>2B</td></tr>
+<tr><td>VCA</td><td>Doepfer A-130-8, Kanal 1</td><td>2A</td></tr>
+<tr><td>West Coast</td><td>Cre8audio Capt’n Big-O (Wavefolder) · Meng Qi DPLPG</td><td>2C</td></tr>
+<tr><td>Abhören</td><td>Passivfader → L6 Kanal 1 und 2</td><td>2A / 2C</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Ohne Keyboard</h4>
+<p>Kabel 1 und 2 entfallen. Stell Kanal 2 des 281t auf Loop mit etwa einer Sekunde Zyklus und patch seinen Pulsausgang (Ende des Decays) in TRIG 1. Kanal 1 dann auf Attack/Decay, weil ein Puls kein Gate ist. Die Tonhöhe stellst Du mit FREQ oder über den A-185-2 aus Exkurs 1D.</p>
+</div>
+
+<p class="bst" id="k2-plan">04 · Signalweg</p>
+<div class="stages" role="group" aria-label="Ausbaustufe anzeigen" data-for="pp2">
+  <button type="button" data-stage="2A" aria-pressed="true">Patch 2A</button>
+  <button type="button" data-stage="2B" aria-pressed="false">Patch 2B</button>
+  <button type="button" data-stage="2C" aria-pressed="false">Patch 2C</button>
+</div>
+<figure>
+<div class="sv" id="pp2">{{FIG:pp_ch2}}</div>
+<div class="legend"><span><i style="background:var(--audio)"></i>Audio</span><span><i style="background:var(--cv)"></i>CV</span><span><i style="background:var(--gate)"></i>Gate</span><span>○ Eingang · ● Ausgang</span><span>Zahl = Kabel im Aufbau</span></div>
+<figcaption class="ppcap" data-cap-2A="&lt;b&gt;Patch 2A, die spielbare Stimme.&lt;/b&gt; Keyboard-CV und Gate (1, 2), Audioweg (3, 4, 5), eine Hüllkurve über den Mult auf VCA und Filter (6–9)." data-cap-2B="&lt;b&gt;Patch 2B, drei Filter.&lt;/b&gt; Die zweite Ausgangsbuchse von OSC 1 speist über den 2×4 Mult Wasp und Surges; alle drei Filter laufen in den Mixer und von dort in den VCA. Kabel 4 und 9 sind gezogen." data-cap-2C="&lt;b&gt;Patch 2C, Westküste daneben.&lt;/b&gt; Die klassische Stimme aus 2A läuft auf L6 Kanal 1 weiter. Daneben: OSC 1 → Wavefolder → DPLPG → Kanal 2, angestoßen von derselben Hüllkurve, die Wellenform langsam bewegt von 281t Kanal 3."><b>Patch <a class="xref" href="#p-2a">2A</a>, die spielbare Stimme.</b> Keyboard-CV und Gate (1, 2), Audioweg (3, 4, 5), eine Hüllkurve über den Mult auf VCA und Filter (6–9).</figcaption>
+</figure>
+
+<p class="bst" id="k2-aufbau">05 · Aufbau · 06 · Startwerte · 07 · Kontrollpunkt</p>
+<h4 id="p-2a">Stufe 1 · Patch 2A: die spielbare Stimme</h4>
+<ol class="cables">
+<li><span class="n zero">0</span><div class="r"><div class="route"><b>Vorbereitung</b> · Passivfader und L6 zu · µYarns auf Layout <b>1M</b></div><div class="why">In 1M (einstimmig) sind die vier CV-Ausgänge Tonhöhe (V/Oct), Velocity, Modulationsrad und eine frei belegbare Quelle; die vier Gate-Ausgänge Gate, Trigger am Notenanfang, Clock und Start/Takt-Trigger. <span class="tag tag-h">Hersteller</span> GATE 1 ist der oberste Ausgang links, CV 1 rechts daneben. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n cv">1</span><div class="r"><div class="route">µYarns <b>CV 1</b> → 258t OSC 1 <b>1V/OCT</b></div><div class="why">Tonhöhe vom Keyboard. FREQ am 258t bestimmt jetzt, welcher Ton bei 0 V klingt.</div></div></li>
+<li><span class="n gate">2</span><div class="r"><div class="route">µYarns <b>GATE 1</b> → 281t <b>TRIG 1</b></div><div class="why">Modusschalter Kanal 1 auf <b>Attack/Hold/Decay</b>: Die Hüllkurve hält, solange die Taste gedrückt ist. <span class="tag tag-ok">verifiziert</span> Das Gate liegt auf +5 V, solange die Taste gedrückt bleibt. <span class="tag tag-h">Hersteller</span> Für Attack/Decay nimmst Du statt GATE 1 den Trigger-Ausgang GATE 2: Er gibt am Anfang jeder Note einen kurzen Impuls, auch bei Legato.</div></div></li>
+<li><span class="n audio">3</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> → A-106-5 <b>AUDIO IN</b></div><div class="why">Wie in Kapitel <a class="xref" href="#k1">01</a>, SHAPE auf Sägezahn.</div></div></li>
+<li><span class="n audio">4</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → A-130-8 <b>IN 1</b></div><div class="why">Mix-Regler auf 7 Uhr, reiner Tiefpass.</div></div></li>
+<li><span class="n audio">5</span><div class="r"><div class="route">A-130-8 <b>OUT 1</b> → Passivfader → L6 <b>Kanal 1</b></div><div class="why">Fader erst einpegeln, wenn die Stimme spielt.</div></div></li>
+<li><span class="n cv">6</span><div class="r"><div class="route">281t <b>OUT 1</b> → aktiver Mult <b>IN</b></div><div class="why">Eine Hüllkurve, mehrere Ziele. Der aktive Mult hält die Spannung stabil, auch wenn drei Eingänge an ihr ziehen.</div></div></li>
+<li><span class="n cv">7</span><div class="r"><div class="route">Mult → Attenuverter <b>IN A</b></div><div class="why">Der 281t liefert 0–10 V, der A-130-8 ist bei 5 V schon voll offen. Darüber würde die Hüllkurve oben abgeschnitten.</div></div></li>
+<li><span class="n cv">8</span><div class="r"><div class="route">Attenuverter <b>OUT A</b> → A-130-8 <b>CV 1</b></div><div class="why">Mit ATTEN A auf halbem Weg nach rechts wird aus 0–10 V ein Bereich von 0–5 V. OFFSET A bleibt auf 12 Uhr.</div></div></li>
+<li><span class="n cv">9</span><div class="r"><div class="route">Mult → A-106-5 <b>CV2 IN</b></div><div class="why">Die Filterhüllkurve. Mit dem CV2-Polarizer dosierst Du, wie weit das Filter bei jedem Anschlag aufgeht.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-2a">2A</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 1: kurz, ≈ 10 ms"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="43.5" y2="49.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kurz, ≈ 10 ms</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 1: ≈ 0,5 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 0,5 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN A: 10 V → 5 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="35.1" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">10 V → 5 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="OFFSET A: 0 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">OFFSET A</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">0 V</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Freq: eher dunkel"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Freq</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">eher dunkel</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 Reso: wenig"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 Reso</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">wenig</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="106-5 CV2: Hüllkurventiefe"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="76.5" y2="30.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">106-5 CV2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Hüllkurventiefe</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: Sägezahn"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Sägezahn</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Bei Attack/Hold/Decay steigt die Hüllkurve auf 10 V, bleibt dort, solange das Gate anliegt, und fällt nach dem Loslassen mit der Decay-Zeit. Die ATTEN-Stellung gilt für einen bipolaren Attenuverter: 12 Uhr ist null, Rechtsanschlag einfache Verstärkung, halber Weg nach rechts (etwa 2:30 Uhr) also die Hälfte.</p>
+<div class="check"><b>Kontrollpunkt 2A</b> Jede Taste startet einen Ton, der beim Loslassen ausklingt; tiefe und hohe Tasten liegen eine Oktave auseinander, wenn sie zwölf Tasten auseinanderliegen. Mit dem CV2-Polarizer auf 12 Uhr hat jeder Ton die gleiche Helligkeit; drehst Du ihn nach rechts, öffnet sich das Filter bei jedem Anschlag kurz. Das ist die klassische Synthesizer-Stimme.</div>
+
+<h4 id="p-2b">Stufe 2 · Patch 2B: drei Filter, ein Ton</h4>
+<p>Zieh Kabel 4 und 9. Die Filterhüllkurve bleibt für den Vergleich weg, damit jedes Filter nur seinen eigenen Charakter zeigt.</p>
+<ol class="cables" start="10">
+<li><span class="n audio">10</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> (zweite Buchse) → 2×4 Mult <b>IN</b></div><div class="why">Die zweite Buchse liefert dasselbe Signal wie die erste. <span class="tag tag-h">Hersteller</span></div></div></li>
+<li><span class="n audio">11</span><div class="r"><div class="route">2×4 Mult → A-124 <b>AUDIO IN</b></div><div class="why">LEV am Wasp auf 11 Uhr; bei mehr beginnt die Wasp-Verzerrung, die Du später absichtlich nutzt.</div></div></li>
+<li><span class="n audio">12</span><div class="r"><div class="route">2×4 Mult → Surges <b>IN 1</b></div><div class="why">Eingangspegel 1 auf 11 Uhr.</div></div></li>
+<li><span class="n audio">13</span><div class="r"><div class="route">A-106-5 <b>MIX-OUT</b> → Mixer <b>IN 1</b></div><div class="why">Das ist Kabel 4 mit neuem Ziel.</div></div></li>
+<li><span class="n audio">14</span><div class="r"><div class="route">A-124 <b>LP/HP OUT</b> → Mixer <b>IN 2</b></div><div class="why">Mix-Regler am Wasp auf 7 Uhr, reiner Tiefpass. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n audio">15</span><div class="r"><div class="route">Surges <b>LP</b> → Mixer <b>IN 3</b></div><div class="why">Erst 2-polig hören, damit der Vergleich fair ist; später auf 4-polig umschalten.</div></div></li>
+<li><span class="n audio">16</span><div class="r"><div class="route">Mixer <b>OUT</b> → A-130-8 <b>IN 1</b></div><div class="why">VCA, Hüllkurve und Fader bleiben, wie sie sind.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-2b">2B</a> · alle drei Filter gleich</p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Cutoff: alle drei"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Cutoff</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">alle drei</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Resonanz: alle drei"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="69.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Resonanz</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">alle drei</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer IN 1: nur einer offen"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer IN 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">nur einer offen</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer IN 2: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer IN 2</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Mixer IN 3: zu"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Mixer IN 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">zu</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Gleiche Reglerstellung heißt nicht gleicher Cutoff. Stell darum nach Gehör ein: Spiel eine tiefe Note, und dreh jedes Filter so, dass der Ton gleich dunkel wirkt. Erst dann vergleichen.</p>
+<div class="check"><b>Kontrollpunkt 2B</b> Öffne immer nur einen Mixer-Kanal. Alle drei Filter liefern einen ähnlich hellen Ton, und doch erkennst Du sie mit geschlossenen Augen: der SEM rund und weich, der Wasp rauer, mit einer Körnung in der Resonanz, der Surges sauber und direkt. Schalt den Surges auf 4-polig: Der Ton wird dunkler und dichter, ohne leiser zu werden.</div>
+
+<h4 id="p-2c">Stufe 3 · Patch 2C: Westküste daneben</h4>
+<p>Zieh die Kabel 10 bis 16 und steck 4 und 9 wieder. Die klassische Stimme spielt jetzt wie in 2A auf Kanal 1. Die zweite Buchse von OSC 1 bekommt einen eigenen Weg.</p>
+<ol class="cables" start="17">
+<li><span class="n audio">17</span><div class="r"><div class="route">258t <b>OSC 1 OUT</b> (zweite Buchse) → Big-O <b>F.IN</b></div><div class="why">Ein Stecker hier ersetzt den internen Sinus am Folder. <span class="tag tag-ok">verifiziert</span></div></div></li>
+<li><span class="n audio">18</span><div class="r"><div class="route">Big-O <b>FOLD</b> → DPLPG <b>IN 1</b></div><div class="why">Kein Filter: Das LPG übernimmt Helligkeit und Lautstärke.</div></div></li>
+<li><span class="n audio">19</span><div class="r"><div class="route">DPLPG <b>OUT 1</b> → Passivfader → L6 <b>Kanal 2</b></div><div class="why">Das DPLPG ist passiv und gibt weniger Pegel ab; der Fader darf hier weiter auf.</div></div></li>
+<li><span class="n cv">20</span><div class="r"><div class="route">Mult → DPLPG <b>TRIG 1</b></div><div class="why">Dieselbe Hüllkurve wie für die klassische Stimme, ungeschwächt mit 10 V.</div></div></li>
+<li><span class="n cv">21</span><div class="r"><div class="route">281t <b>OUT 3</b> → Attenuverter <b>IN B</b></div><div class="why">Kanal 3 auf Loop, ein Zyklus von zehn Sekunden oder mehr.</div></div></li>
+<li><span class="n cv">22</span><div class="r"><div class="route">Attenuverter <b>OUT B</b> → 258t OSC 1 <b>WAVE CV</b></div><div class="why">Der Eingang erwartet typisch 0–5 V; ATTEN B wie ATTEN A auf halben Weg.</div></div></li>
+</ol>
+<p class="mh">Startwerte Patch <a class="xref" href="#p-2c">2C</a></p>
+<div class="knobs">
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="258t SHAPE 1: nahe Sinus"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="41" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">258t SHAPE 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">nahe Sinus</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="Big-O Fold: halb"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="60" y2="21" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">Big-O Fold</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">halb</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t ATTACK 1: kürzest"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="56.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t ATTACK 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">kürzest</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t DECAY 1: ≈ 0,3 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="50.5" y2="23.5" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t DECAY 1</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">≈ 0,3 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="281t A+D 3: Zyklus ≥ 10 s"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="79" y2="40" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">281t A+D 3</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">Zyklus ≥ 10 s</text></svg>
+<svg viewBox="0 0 120 118" class="knob" role="img" aria-label="ATTEN B: 10 V → 5 V"><line x1="46.5" y1="63.4" x2="44" y2="67.7" class="tick"/><line x1="36.6" y1="53.5" x2="32.3" y2="56" class="tick"/><line x1="33" y1="40" x2="28" y2="40" class="tick"/><line x1="36.6" y1="26.5" x2="32.3" y2="24" class="tick"/><line x1="46.5" y1="16.6" x2="44" y2="12.3" class="tick"/><line x1="60" y1="13" x2="60" y2="8" class="tick tick-c"/><line x1="73.5" y1="16.6" x2="76" y2="12.3" class="tick"/><line x1="83.4" y1="26.5" x2="87.7" y2="24" class="tick"/><line x1="87" y1="40" x2="92" y2="40" class="tick"/><line x1="83.4" y1="53.5" x2="87.7" y2="56" class="tick"/><line x1="73.5" y1="63.4" x2="76" y2="67.7" class="tick"/><circle cx="60.0" cy="40" r="22" class="kn"/><line x1="60.0" y1="40" x2="78.4" y2="35.1" class="kp"/><text x="60.0" y="92" text-anchor="middle" class="k-lab">ATTEN B</text><text x="60.0" y="108" text-anchor="middle" class="k-sub">10 V → 5 V</text></svg>
+</div>
+<p class="muted" style="font-size:15px">Für perkussive Töne schaltest Du Kanal 1 auf Attack/Decay: Dann zählt nur der Anschlag, nicht die Haltedauer der Taste. Das gilt für beide Stimmen.</p>
+<div class="check"><b>Kontrollpunkt 2C</b> Schalt am L6 zwischen Kanal 1 und Kanal 2 hin und her. Die SEM-Stimme klingt beim Ausklingen gleich hell und wird nur leiser. Die Westküsten-Stimme wird beim Ausklingen dunkler, fast wie eine angeschlagene Saite oder ein Holzblock. Und während 281t Kanal 3 langsam läuft, verändern beide Stimmen ihre Grundfarbe: die eine gefiltert, die andere gefaltet.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k2-hoeren">08 · Hörübung: Architektur erkennen</p>
+<p>Spiel eine kurze Figur aus vier Tönen in Schleife, mit der Hand oder über die Arpeggiator-Funktion Deines Keyboards, und höre nacheinander:</p>
+<ol>
+<li><b>Der Ausklang.</b> Halte bei einer langen Note nur das Ende im Ohr. Wird der Ton dunkler, während er leiser wird? Nur beim LPG. Das ist das sicherste Erkennungsmerkmal.</li>
+<li><b>Die Resonanz.</b> In 2B die Resonanz aller drei Filter gleichzeitig auf 3 Uhr. Wo singt sie glatt, wo kratzt sie? Keiner der beiden Doepfer-Filter schwingt selbst; der Surges tut es und kippt ganz oben in einen reinen Pfeifton. Nimm seine Resonanz dafür ein Stück zurück, sonst vergleichst Du einen Filter mit einem Oszillator.</li>
+<li><b>Die Tonhöhe.</b> Spiel in 2C zwei Oktaven auseinander. Die Falten bleiben im gleichen Verhältnis zum Grundton, der Klang „wandert mit“. Beim Filter mit festem Cutoff wird der hohe Ton heller als der tiefe, weil mehr seiner Obertöne unter dem Cutoff liegen.</li>
+</ol>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k2-var">09 · Variationen und kleine Experimente</p>
+<ol>
+<li><b>Anschlagstärke.</b> µYarns CV 2 (Velocity) in Eingang B des Attenuverters und von dort zusätzlich in CV 1 des Wasp oder in den Fold-CV des Big-O. Fester gespielte Töne werden heller. Das Modulationsrad auf CV 3 eignet sich genauso als Handregler für den Filter.</li>
+<li><b>Hüllkurve nur aufs Filter.</b> In 2A Kabel 8 ziehen und den VCA mit OFFSET A statisch öffnen. Der Ton klingt dauernd, nur die Helligkeit springt bei jedem Anschlag: ein „Wah“ auf einem Drone.</li>
+<li><b>Key-Tracking am Wasp.</b> In 2B die Tonhöhen-CV über den Mult zusätzlich in CV 1 des Wasp. Hohe Töne öffnen das Filter mit, alle Noten klingen gleich hell. Der Wasp folgt dabei laut Doepfer nur ungefähr 1 V/Oct</li>
+<li><b>Den Wasp anfahren.</b> LEV am A-124 über 12 Uhr. Die Verzerrung ist Teil seines Charakters und klingt bei hoher Resonanz besonders kehlig.</li>
+<li><b>Nur Trigger ins LPG.</b> In 2C Kabel 20 nicht vom Mult, sondern vom µYarns-Gate. Das Gate hält das LPG offen, solange die Taste gedrückt ist; das Ausklingen macht dann allein der Vaktrol.</li>
+<li><b>Faltung unter Spannung.</b> In 2C Kabel 22 vom 258t lösen und in den Fold-CV-Eingang des Big-O stecken. Jetzt bewegt 281t Kanal 3 nicht die Grundform, sondern die Faltung. Vergleiche beides: WAVE CV am 258t klingt weicher, die Faltung glitzernder.</li>
+<li><b>Fold per Hand.</b> Fold-Regler am Big-O langsam von links nach rechts, bei gedrückter Taste. Hör, wie aus dem Sinus ein Nasenton und dann ein metallisches Klirren wird.</li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen und alternative Patchwege</p>
+<ul>
+<li><b>Einfache Variante · der 258t als komplexer Oszillator.</b> OSC 2 in den FM-Eingang von OSC 1, OSC 2 auf Sinus. Den bipolaren FM-Regler an OSC 1 langsam aus der Mitte drehen. Stimm OSC 2 auf dieselbe Note (1:1), dann eine Oktave höher (2:1), dann bewusst daneben. Damit hast Du die drei Charaktere aus dem FM-Spielplatz am Pult.</li>
+<li><b>Vertiefte Variante · FM-Index unter Hüllkurve.</b> OSC 2 statt direkt über einen FOUR PLAY-Kanal in den FM-Eingang, Hüllkurve auf dessen CV. Der Anschlag ist metallisch, der Ausklang ruhig. Das ist die Brücke zu <a class="xref" href="#kwp-06">KWP-06</a> und <a class="xref" href="#kwp-07">KWP-07</a>.</li>
+<li><b>Glocke aus zwei Oszillatoren · XDR.</b> 258t OSC 1 und OSC 2 auf Sinus, beide an den XDR: Kabel 3 von <span class="jack">AUDIO IN</span> des SEM lösen und in <span class="jack">X</span> stecken, OSC 2 in <span class="jack">Y</span>, <span class="jack">DIODE</span> OUT in den frei gewordenen <span class="jack">AUDIO IN</span>. Stimm OSC 2 auf ein krummes Verhältnis: Jede Taste spielt eine Glocke, die der Tonleiter folgt, solange beide Oszillatoren dieselbe Tonhöhen-CV bekommen. Dann den <span class="jack">XOR</span> OUT probieren: Aus der Glocke wird ein sägendes Metall. → <a href="#b2-b06">B2-B-06</a></li>
+<li><b>Eine fertige Stimme daneben · Swarm.</b> Der Swarm in Reihe 1 ist ein ganzer Synthesizer mit acht Oszillatoren, zwei Filtern, VCA und Federhall, alles vorverkabelt. Sein Mono-Modus legt acht Oszillatoren als Cluster auf einen Ton; <span class="jack">spread</span> fächert sie auf. Ein Vergleich lohnt sich: Was baust Du in 2A mit zehn Kabeln, was bringt er ohne eines? → <a href="#b2-b05">B2-B-05</a></li>
+<li><b>Physikalische Stimme · Elements.</b> µYarns CV 1 in V/OCT, GATE 1 in GATE. STRIKE ergibt Anschläge, BOW einen gestrichenen Dauerton; GEOMETRY verschiebt die Teiltöne von harmonisch zu glockig. Elements bringt Erreger, Resonator und Hall in einem Modul mit und ist damit eine komplette Stimme. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Physikalische Stimme · Rings.</b> V/OCT vom µYarns, STRUM vom Gate. Ohne Kabel im IN benutzt Rings einen internen Erreger. Mit dem Taster für die Polyphonie wird er zwei- oder vierstimmig, mit dem zweiten Taster wechselst Du zwischen Modal-, Sympathie- und Saitenresonator. <span class="tag tag-h">Hersteller</span></li>
+<li><b>Zwei Stimmen nebeneinander.</b> Cali durch den Wasp mit eigenem VCA-Kanal, der 258t durch den SEM: zwei Charaktere, die sich nicht vermischen. Ausgearbeitet in <a class="xref" href="#kwp-01">KWP-01</a>.</li>
+</ul>
+
+<!-- 11 Kompositionsaufgabe -->
+<p class="bst" id="k2-komp">11 · Kompositionsaufgabe: ein Motiv, drei Architekturen</p>
+<p>Erfinde ein Motiv aus vier bis sechs Tönen. Nimm es auf dem L6 dreimal auf, je 30 Sekunden, und ändere dazwischen nur die Architektur:</p>
+<ol>
+<li><b>Ostküste:</b> Patch <a class="xref" href="#p-2a">2A</a>, SEM, Filterhüllkurve mittel.</li>
+<li><b>Rau:</b> Patch <a class="xref" href="#p-2b">2B</a>, nur der Wasp offen, LEV über 12 Uhr, Resonanz hoch.</li>
+<li><b>Westküste:</b> Patch <a class="xref" href="#p-2c">2C</a>, nur Kanal 2, 281t Kanal 1 auf Attack/Decay.</li>
+</ol>
+<p>Leg die drei Aufnahmen hintereinander. Du hast ein 90-Sekunden-Stück, in dem sich nichts an der Melodie ändert und doch drei Charaktere auftreten. Im Mehrspur-Export des L6 kannst Du die beiden Stimmen aus 2C später auch noch übereinanderlegen.</p>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k2-check">12 · Wiederholung, Lernziele und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k2l1"><label for="k2l1">Eine Stimme aus Tonhöhen-CV, Gate, Hüllkurve, Filter und VCA aufbauen und spielen.</label></li>
+<li><input type="checkbox" id="k2l2"><label for="k2l2">Eine 0–10-V-Hüllkurve mit dem Attenuverter auf den Bereich eines Ziels skalieren.</label></li>
+<li><input type="checkbox" id="k2l3"><label for="k2l3">SEM, Wasp und Surges am Klang unterscheiden.</label></li>
+<li><input type="checkbox" id="k2l4"><label for="k2l4">Erklären, warum ein Wavefolder Obertöne hinzufügt und ein Filter sie wegnimmt.</label></li>
+<li><input type="checkbox" id="k2l5"><label for="k2l5">Den Unterschied zwischen linearer und exponentieller FM hören.</label></li>
+<li><input type="checkbox" id="k2l6"><label for="k2l6">Ein LPG am Ausklang erkennen.</label></li>
+</ul>
+<h4>Fehlercheck</h4>
+<div class="fault">
+<details><summary>Tasten spielen, aber kein Ton</summary><ol>
+<li>Kommt am 281t überhaupt etwas an? Der Taster TRIG am Kanal startet die Hüllkurve von Hand.</li>
+<li>Steckt Kabel 8 im CV 1 und steht ATTEN A rechts von 12 Uhr?</li>
+<li>Gibt der µYarns Gates aus? Layout 1M prüfen und den MIDI-Kanal mit dem Keyboard vergleichen.</li>
+</ol></details>
+<details><summary>Falsche Tonhöhen oder Oktaven, die nicht stimmen</summary><ol>
+<li>Steckt Kabel 1 im 1V/OCT, nicht im PROCESSING- oder FM-Eingang?</li>
+<li>Hat der µYarns eine Transposition oder Pitch-Bend-Einstellung aktiv?</li>
+<li>Den 258t nach dem Einschalten eine Viertelstunde warmlaufen lassen.</li>
+</ol></details>
+<details><summary>Der Ton klingt oben abgeschnitten oder knackt</summary><ol>
+<li>ATTEN A zu weit offen: Über 5 V ist der A-130-8 voll auf, die Hüllkurve wird gekappt. Zurücknehmen.</li>
+<li>Attack am 281t ganz auf Linksanschlag kann bei tiefen Tönen knacken. Einen Hauch mehr Attack.</li>
+</ol></details>
+<details><summary>Die Westküsten-Stimme bleibt stumm oder sehr leise</summary><ol>
+<li>Bekommt das DPLPG die volle Hüllkurve? Kabel 20 muss vom Mult kommen, nicht vom Attenuverter.</li>
+<li>Ist der Fader von Kanal 2 offen genug? Ein passives LPG verliert Pegel.</li>
+<li>Steckt Kabel 17 in <b>F.IN</b> und Kabel 18 in <b>FOLD</b>, nicht in einem der Wellenform-Ausgänge des Big-O?</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k2-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k1">B1-01</a></span> Grundlagen, Signalarten<br><span class="id"><a href="#k3">B1-03</a></span> Hüllkurven, VCA, LPG vertieft<br><span class="id"><a href="#k4">B1-04</a></span> Stimmen zu Flächen schichten</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-b01">B2-B-01</a></span> Voice-Architekturen<br><span class="id"><a href="#b2-b02">B2-B-02</a></span> West Coast, FM, Folding, LPG<br><span class="id"><a href="#b2-b03">B2-B-03</a></span> Filterprinzipien<br><span class="id"><a href="#b2-b04">B2-B-04</a></span> Mehrstimmigkeit<br><span class="id"><a href="#b2-b05">B2-B-05</a></span> Quadrantid Swarm<br><span class="id"><a href="#b2-b06">B2-B-06</a></span> Ringmodulation</div>
+<div><b>KWP</b><span class="id"><a href="#kwp-01">KWP-01</a></span> Zwei Stimmen nach Oberheim<br><span class="id"><a href="#kwp-03">KWP-03</a></span> Zwischen Glocke und Orgel<br><span class="id"><a href="#kwp-06">KWP-06</a></span> Oszillator als Komponist<br><span class="id"><a href="#kwp-08">KWP-08</a></span> Buchla Bongos</div>
+<div><b>Module</b><span class="id"><a href="#mp-258t">MOD-258t</a></span> · <span class="id"><a href="#mp-a-124">MOD-A-124</a></span><br><span class="id"><a href="#mp-surges">MOD-Surges</a></span> · <span class="id"><a href="#mp-big-o">MOD-Big-O</a></span><br><span class="id"><a href="#mp-dplpg">MOD-DPLPG</a></span> · <span class="id"><a href="#mp-uyarns">MOD-µYarns</a></span><br><span class="id"><a href="#mp-xdr">MOD-XDR</a></span> · <span class="id"><a href="#mp-swarm">MOD-Swarm</a></span></div>
+</div>
+<div class="box-c">
+<h4>Am Pult geprüft · 3. November 2026</h4>
+<ul>
+<li><b>µYarns:</b> Layout 1M; GATE 1 ist der oberste Ausgang links, CV 1 rechts daneben. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>Capt’n Big-O:</b> Folder-Eingang <span class="jack">F.IN</span>, Folder-Ausgang <span class="jack">FOLD</span>, dazu ein CV-Eingang für die Faltung. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>Surges:</b> schwingt bei voller Resonanz selbst. <span class="tag tag-ok">verifiziert</span></li>
+<li><b>A-124 Wasp:</b> Mix-Regler am Linksanschlag (7 Uhr) ist Tiefpass. <span class="tag tag-ok">verifiziert</span></li>
+</ul>
+</div>
+{{BACK}}
+</section>

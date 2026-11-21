@@ -1,0 +1,293 @@
+<!-- ======================= KAPITEL 06 ======================= -->
+<section class="part chapter" id="k6">
+<div class="part-h"><span class="pn">Band 1 · Kapitel 06</span><h2>Sequencing, Leo Leo und generative Musik</h2></div>
+<p class="muted"><i>Von wiederholbaren Motiven zu kontrolliert veränderlichen musikalischen Systemen</i></p>
+{{READER}}
+
+<p class="bst">00 · Steckbrief</p>
+<div class="facts">
+  <div><b>8 × 30 min</b><span>acht Lektionen</span></div>
+  <div><b>4–10</b><span>Kabel je Lektion</span></div>
+  <div><b>Leo Leo</b><span>+ Stimme aus <a class="xref" href="#k2">B1-02</a></span></div>
+  <div><b><a class="xref" href="#k1">B1-01</a>, <a class="xref" href="#k2">02</a></b><span>Voraussetzung</span></div>
+</div>
+<div class="box-c">
+<dl class="goal">
+  <dt>Lernziel</dt><dd>Du verstehst den Leo Leo als Matrix aus Spuren und Schritten, spielst ihn als 4-, 8- und 16-Schritt-Sequencer, als achtkanaligen Modulator und als Rhythmusgeber, und Du baust aus drei Takteingängen, Stufenregeln und Zufall Sequenzen, die sich kontrolliert verändern.</dd>
+  <dt>Theorie</dt><dd>Was ein Sequencer tut · Serges Programmer und die Idee der aktiven Stufe · Matrix lesen: 4 × 4, 2 × 8, 1 × 16 · Regeln pro Stufe und Richtung · Zufall, Wahrscheinlichkeit und generative Regeln</dd>
+  <dt>Praxis</dt><dd>Leo-Leo-Pfad 6.1 bis 6.8 mit der spielbaren Stimme aus Patch <a class="xref" href="#p-2a">2A</a></dd>
+  <dt>Prüfstatus</dt><dd>Funktionen nach der Bauanleitung von Voxmachina <span class="tag tag-h">Hersteller</span>. Wie STOP sich genau verhält und welche Schalterreihe welche Richtung regelt, ist am Pult noch zu prüfen <span class="tag tag-p" id="pr-70">am Gerät prüfen</span>.</dd>
+</dl>
+</div>
+
+<!-- ---------- Teil 1 ---------- -->
+<h3 id="k6-theorie">Teil 1 · Wie ein Sequencer denkt</h3>
+<p>Ein Sequencer ist ein Gedächtnis für Spannungen. Bei jedem Takt springt er eine Stufe weiter und gibt die dort eingestellte <span class="c">Spannung</span> aus, dazu meist ein <span class="g">Gate</span>, das sagt: Hier beginnt ein neuer Schritt. Drei Dinge bestimmen, was dabei herauskommt: <b>wann</b> geschaltet wird (die Clock), <b>wohin</b> geschaltet wird (Richtung, Länge, Sprünge) und <b>was</b> an jeder Stufe steht (die Reglerwerte).</p>
+<p>Die meisten Sequencer erledigen das „wann“ und „wohin“ intern. Der Leo Leo nicht. Er geht auf den ersten Serge Programmer aus den 1970er-Jahren zurück: vier Stufen mit je einer Spannung, die man auch einzeln anspringen konnte, ganz ähnlich wie Buchlas Sequential Voltage Source. Der Leo Leo hat <b>keine eigene Clock</b>. Er weiß nur, welche Stufe gerade aktiv ist, und wartet auf Impulse von außen. <span class="tag tag-h">Hersteller</span></p>
+<div class="box-c">
+<h4>Das Bild vom Ball</h4>
+<p>Voxmachina beschreibt die aktive Stufe als Ball, den sich eine Gruppe zuwirft: Es gibt nur einen Ball, aber man kann mehr Mitspieler dazunehmen. Jeder Takteingang ist ein Wurf in eine Richtung. <span class="jack">RIGHT</span> wirft nach rechts, <span class="jack">LEFT</span> nach links, <span class="jack">DOWN</span> eine Zeile nach unten. Die drei Eingänge arbeiten unabhängig voneinander, Du kannst also drei Clocks gleichzeitig werfen lassen. <span class="tag tag-h">Hersteller</span></p>
+</div>
+
+<h4 id="k6-matrix">1 · Die Matrix lesen</h4>
+<p>Die 16 Regler bilden eine Matrix. Die <b>Spalten 1–4 sind die Stufen</b>, also die Zeit. Die <b>Zeilen A–D sind Spuren</b>. An den vier Buchsen <span class="jack">ROW CV OUT</span> liegt immer der Wert der aktiven Stufe in der jeweiligen Zeile, jede mit 0 bis etwa 10 V. Daraus ergeben sich drei Lesarten:</p>
+<figure>
+  <div class="sv">{{FIG:readings}}</div>
+  <figcaption><b>Dieselben 16 Regler, drei Sequencer.</b> Mit RIGHT allein bekommst Du vier parallele Spuren zu je vier Schritten. Mit DOWN dazu wandert die aktive Zeile, und an <span class="jack">ABCD</span> entsteht eine lange Sequenz. Die Buchse <span class="jack">/2</span> gibt den DOWN-Takt halbiert aus; in RESET gesteckt bleibt ABCD in den Zeilen A und B, während DCBA gleichzeitig D und C spielt: zwei Sequenzen zu je acht Schritten. <span class="tag tag-h">Hersteller</span></figcaption>
+</figure>
+
+<h4 id="k6-regeln">2 · Regeln pro Stufe und Richtung</h4>
+<p>Acht Schalter legen fest, was an jeder Stufe passiert, und zwar getrennt nach Laufrichtung: vier für den Lauf nach rechts, vier für den Lauf nach links, wie die Pfeile auf dem Panel zeigen. Jede Stufe kann <b>spielen</b>, <b>übersprungen</b> werden oder die Sequenz <b>anhalten</b>. Weil die beiden Reihen unabhängig sind, kann eine Stufe beim Hinweg gespielt und beim Rückweg übersprungen werden. <span class="tag tag-h">Hersteller</span></p>
+<p>Unabhängig davon gibt es pro Spalte einen <b>MUTE</b>-Schalter. Eine stummgeschaltete Stufe wird angesprungen, gibt aber kein Gate aus, auch nicht an <span class="jack">ALL</span>. Die Spannungen laufen weiter. Musikalisch ist das eine Pause. Dazu kommen die Gates: <span class="jack">GATE OUT 1–4</span> feuern, wenn ihre Stufe aktiv wird, <span class="jack">ALL</span> bei jedem Stufenwechsel außer auf stummen Stufen, <span class="jack">COMMON</span> bei Stufenwechsel <i>oder</i> Stufen-Trigger. Über <span class="jack">STAGE TRIGGER 1–4</span> und die vier Handtaster springst Du eine Stufe direkt an. <span class="tag tag-h">Hersteller</span></p>
+<div class="warn">
+<strong>Was „STOP“ genau tut</strong>
+<p>Die Bauanleitung sagt nur, dass eine Stufe die Sequenz „anhalten“ kann. Der Simulator unten nimmt an, dass der Ball auf einer STOP-Stufe liegen bleibt, solange Takte aus dieser Richtung kommen, und dass ihn ein Takt aus der Gegenrichtung, ein Stufen-Trigger oder ein Handtaster wieder freigibt. <span class="tag tag-p" id="pr-71">am Gerät prüfen</span> Ebenso, welche der beiden Schalterreihen am Panel für rechts und welche für links zuständig ist.</p>
+</div>
+
+<h4 id="k6-zufall">3 · Zufall, Wahrscheinlichkeit, Regeln</h4>
+<p>Eine generative Sequenz entsteht nicht, indem man Noten würfelt, sondern indem man <b>Regeln</b> aufstellt, innerhalb derer sich etwas verändern darf. Der Leo Leo liefert die Regeln über seine Schalter und Takteingänge. Den Zufall liefern andere Module: die µTuring Machine mit ihrem Loop-Regler (links: alles zufällig, rechts: feste Schleife, dazwischen: langsames Verändern), Pulses und Volts als Gate- und Spannungsausgänge der Turing Machine, der Behringer Chaos als Zufallsquelle mit Zeit- und Spannungsteil. Zufällig ist dann nur, <i>wann</i> die Matrix aus der Reihe springt; <i>wohin</i> sie springen kann, steht in den Reglern. So bleibt das Ergebnis wiedererkennbar.</p>
+
+<h4 id="k6-panel">4 · Der Leo Leo im Überblick</h4>
+<figure>
+  <div class="sv">{{FIG:leopanel}}</div>
+  <figcaption><b>Die Panelkarte.</b> Links die Matrix, rechts die Ein- und Ausgänge. Die Anordnung folgt dem Panel von Voxmachina, vereinfacht. Ausführlich mit allen Buchsen auf der Band-2-Seite <a href="#b2-d02">B2-D-02</a>.</figcaption>
+</figure>
+
+<div class="play" id="leosim">
+<h4>Leo-Leo-Simulator</h4>
+<p class="muted" style="font-size:15px;margin-bottom:6px">Ein Modell des Leo Leo zum Ausprobieren der Regeln. Regler ziehen, Schalter anklicken (PLAY → SKIP → STOP), dann mit den Takttasten den Ball werfen. Der Simulator rechnet den ABCD-Wert in einen Ton um, mit 1 V pro Oktave ab C.</p>
+<div class="leo-wrap">
+<div class="leo-grid" id="leoGrid"></div>
+<div class="leo-side">
+<div class="presets">
+<button type="button" class="btn" data-leo="right">RIGHT ▶</button>
+<button type="button" class="btn" data-leo="left">◀ LEFT</button>
+<button type="button" class="btn" data-leo="down">DOWN ▼</button>
+<button type="button" class="btn" data-leo="reset">RESET</button>
+</div>
+<div class="presets" style="margin-top:8px">
+<button type="button" class="btn" id="leoRun" aria-pressed="false">Clock RIGHT läuft</button>
+<button type="button" class="btn" id="leoDown4" aria-pressed="false">GATE 1 → DOWN</button>
+<button type="button" class="btn" id="leoHalf" aria-pressed="false">/2 → RESET</button>
+<button type="button" class="btn" id="leoSnd" aria-pressed="false">Ton an</button>
+</div>
+<div class="leo-out" id="leoOut"></div>
+</div>
+</div>
+<svg id="leoHist" viewBox="0 0 720 110" role="img" aria-label="Verlauf der letzten 32 ABCD-Werte als Treppenkurve"></svg>
+<p class="readout" id="leoR"></p>
+</div>
+
+<!-- ---------- Teil 2 ---------- -->
+<h3 id="k6-praxis">Teil 2 · Der Leo-Leo-Pfad</h3>
+<p class="bst">01 · Idee · 02 · Nutzen</p>
+<p>Die acht Lektionen bauen aufeinander auf und benutzen dieselbe Stimme: Patch <a class="xref" href="#p-2a">2A</a> aus Kapitel <a class="xref" href="#k2">02</a>, also 258t → SEM → A-130-8 mit der Hüllkurve aus 281t Kanal 1. Der Leo Leo übernimmt die Rolle des Keyboards. Am Ende kannst Du ihn als Melodiegeber, als Steuerzentrale für mehrere Parameter, als Rhythmusgeber, als Formwerkzeug und als Teil eines selbstlaufenden Systems einsetzen. Musikalisch ist das der Schritt vom einzelnen Ton zu Motiven, Phrasen und Verläufen, auf dem die Kapitel <a class="xref" href="#k7">07</a> bis <a class="xref" href="#k9">09</a> aufbauen.</p>
+
+<p class="bst">03 · Modulbedarf</p>
+<div class="tbl w"><table>
+<thead><tr><th>Rolle</th><th>Modul</th><th>Lektion</th></tr></thead>
+<tbody>
+<tr><td>Matrix</td><td>Voxmachina Leo Leo (Reihe 1)</td><td>alle</td></tr>
+<tr><td>Clock</td><td>µYarns GATE 3 (Clock, Teiler <span class="mono">O/</span> = 16) und GATE 4 (Takt-Trigger, <span class="mono">B-</span> = 4) <span class="tag tag-h">Hersteller</span></td><td>alle</td></tr>
+<tr><td>Quantisieren</td><td>Doepfer A-156 (Eingang 0–10 V, gemeinsamer Transpose-Eingang)</td><td>alle</td></tr>
+<tr><td>Stimme</td><td>Patch <a class="xref" href="#p-2a">2A</a>: 258t, A-106-5, A-130-8, 281t, Mult, Attenuverter</td><td>alle</td></tr>
+<tr><td>Zweite Stimme</td><td>Cali → A-124 Wasp → FOUR PLAY</td><td>6.1</td></tr>
+<tr><td>Rhythmus</td><td>Endorphin.es Blck_Noir, Soundforce Samples II, Arythmatik</td><td>6.4</td></tr>
+<tr><td>Glätten</td><td>Eowave Volcan (SLEW-Eingang), CatSynth Slew</td><td>6.5</td></tr>
+<tr><td>Zufall</td><td>µTuring Machine mit Pulses, Volts, Voltages · Behringer Chaos</td><td>6.3, 6.6</td></tr>
+</tbody></table></div>
+<div class="box-c">
+<h4>Clock vom µYarns</h4>
+<p>Im Layout 1M liegt die Clock auf GATE 3 und der Start- oder Takt-Trigger auf GATE 4. <span class="mono">O/</span> (OUTPUT CLK DIV) steht ab Werk auf 16, also Sechzehntel. <span class="mono">B-</span> (BAR DURATION) auf 4 gibt einen Impuls zu Beginn jedes Takts. Das Tempo stellst Du mit <span class="mono">TE</span> oder per TAP ein; bei Tempo unter 40 erwartet der µYarns MIDI-Clock von außen. <span class="tag tag-h">Hersteller</span> Wer lieber die Pult-Clock nimmt: Bei 24 PPQN sind Sechzehntel ein Teiler von 6.</p>
+</div>
+
+<!-- 6.1 -->
+<h4 id="k6-1">6.1 · Klassischer Step-Sequencer</h4>
+<p><b>Ziel:</b> Vier Töne, dann sechzehn, dann zwei Melodien zu acht. Die Stimme aus 2A spielt, was die Matrix sagt.</p>
+<ol class="cables">
+<li><span class="n gate">L1</span><div class="r"><div class="route">µYarns <b>GATE 3</b> (Clock) → Leo Leo <b>RIGHT</b></div><div class="why">Jeder Sechzehntel-Impuls wirft den Ball eine Stufe nach rechts.</div></div></li>
+<li><span class="n cv">L2</span><div class="r"><div class="route">Leo Leo <b>ROW CV OUT A</b> → A-156 Q1 <b>CV IN</b></div><div class="why">Die Regler reichen über rund zehn Oktaven. Ohne Quantizer triffst Du keinen Ton.</div></div></li>
+<li><span class="n cv">L3</span><div class="r"><div class="route">A-156 Q1 <b>CV OUT</b> → 258t OSC 1 <b>1V/OCT</b></div><div class="why">Ersetzt Kabel 1 (µYarns CV 1) aus Patch <a class="xref" href="#p-2a">2A</a>.</div></div></li>
+<li><span class="n gate">L4</span><div class="r"><div class="route">Leo Leo <b>GATE OUT ALL</b> → 281t <b>TRIG 1</b></div><div class="why">Ersetzt Kabel 2. Modusschalter Kanal 1 auf Attack/Decay, denn wie lang die Gates des Leo Leo sind, ist nicht dokumentiert.</div></div></li>
+</ol>
+<p class="mh">Startwerte</p>
+<p>Alle acht Regelschalter auf PLAY, alle MUTE aus, Zeile A mit vier verschiedenen Tönen im unteren Drittel der Regler, Q1 des A-156 auf Halbtöne.</p>
+<p class="muted" style="font-size:15px">Bei 0–10 V über den ganzen Regelweg ist eine Oktave nur etwa 30° breit. Dreh die Regler langsam und hör, wo der Quantizer umspringt. Wenn Dir das zu fein ist: Nimm Quantizer 2 auf Dur oder Moll, dann liegen weniger Stufen auf demselben Weg.</p>
+<div class="check"><b>Kontrollpunkt 6.1a</b> Eine Figur aus vier Tönen läuft in Schleife. MUTE 3 an: An Stelle 3 entsteht eine Pause, der Rhythmus bekommt ein Loch.</div>
+<p><b>Sechzehn Schritte.</b> Zwei Kabel mehr:</p>
+<ol class="cables">
+<li><span class="n gate">L5</span><div class="r"><div class="route">Leo Leo <b>GATE OUT 1</b> → Leo Leo <b>DOWN</b></div><div class="why">Jedes Mal, wenn Stufe 1 aktiv wird, rutscht die Zeile eine weiter.</div></div></li>
+<li><span class="n cv">L6</span><div class="r"><div class="route">Leo Leo <b>ABCD</b> → A-156 Q1 <b>CV IN</b></div><div class="why">Statt ROW CV A. ABCD folgt der aktiven Zeile.</div></div></li>
+</ol>
+<div class="check"><b>Kontrollpunkt 6.1b</b> Die Melodie ist jetzt 16 Schritte lang und läuft durch alle vier Zeilen. Ob die Zeile genau mit Stufe 1 wechselt oder einen Schritt später, hörst Du an der ersten Note jeder Zeile. <span class="tag tag-p" id="pr-72">am Gerät prüfen</span></div>
+<p><b>Zwei mal acht.</b> <span class="jack">/2</span> → <span class="jack">RESET</span> stecken. ABCD spielt jetzt die Zeilen A und B, <span class="jack">DCBA</span> gleichzeitig D und C. DCBA über A-156 Q2 in den Cali, Cali → Wasp → ein FOUR-PLAY-Kanal, dessen CV ebenfalls von GATE ALL über eine eigene Hüllkurve kommt (281t Kanal 2). Zwei Melodien, die immer im selben Raster bleiben.</p>
+
+<!-- 6.2 -->
+<h4 id="k6-2">6.2 · Achtkanaliger CV-Modulator</h4>
+<p><b>Ziel:</b> Jede Zeile steuert einen anderen Parameter. Jeder Schritt bekommt seine eigene Tonhöhe, Helligkeit, Länge und Klangfarbe. Das entspricht den Parameter-Locks moderner Sequencer, nur mit Reglern.</p>
+<ol class="cables">
+<li><span class="n cv">M1</span><div class="r"><div class="route">ROW CV <b>A</b> → A-156 → 258t 1V/OCT</div><div class="why">Wie in 6.1 (L1–L4 bleiben, L5 und L6 werden gezogen).</div></div></li>
+<li><span class="n cv">M2</span><div class="r"><div class="route">ROW CV <b>B</b> → A-106-5 <b>CV2 IN</b></div><div class="why">Statt Kabel 9 aus 2A. Polarizer bestimmt, wie stark die Zeile B den Cutoff verstellt.</div></div></li>
+<li><span class="n cv">M3</span><div class="r"><div class="route">ROW CV <b>C</b> → 281t Kanal 1 <b>DECAY CV</b></div><div class="why">Jeder Schritt bekommt seine Notenlänge.</div></div></li>
+<li><span class="n cv">M4</span><div class="r"><div class="route">ROW CV <b>D</b> → Attenuverter <b>IN B</b> → 258t <b>WAVE CV</b></div><div class="why">Klangfarbe pro Schritt; ATTEN B halbiert auf 0–5 V.</div></div></li>
+</ol>
+<p>Die vier Gate-Ausgänge 1–4 bleiben frei für vier weitere Ziele, deshalb „achtkanalig“: Ein Gate auf den Taster eines Effekts, eines auf den Trigger von Rings, eines auf den Takt eines zweiten Moduls.</p>
+<div class="check"><b>Kontrollpunkt 6.2</b> Drehe nur an Zeile B: Die Töne bleiben, aber jeder wird anders hell. Nur an Zeile C: Kurze und lange Noten wechseln sich ab. Das Motiv bekommt eine Artikulation, ohne dass sich eine Note ändert.</div>
+
+<!-- 6.3 -->
+<h4 id="k6-3">6.3 · Melodien, die sich verändern</h4>
+<p><b>Ziel:</b> Zwei Takteingänge gegeneinander. RIGHT läuft gleichmäßig, LEFT kommt selten und unregelmäßig. Die Melodie läuft meist vorwärts, macht aber hin und wieder einen Schritt zurück.</p>
+<ol class="cables">
+<li><span class="n gate">V1</span><div class="r"><div class="route">µTuring Machine <b>Pulses</b>, ein Gate-Ausgang → Leo Leo <b>LEFT</b></div><div class="why">Turing auf dieselbe Clock wie den Leo Leo. Ein Pulses-Ausgang feuert nur, wenn sein Bit gesetzt ist, also unregelmäßig. Alternativ ein t-Ausgang des Chaos.</div></div></li>
+<li><span class="n gate">V2</span><div class="r"><div class="route">µYarns <b>GATE 4</b> (Takt) → Leo Leo <b>DOWN</b></div><div class="why">Statt GATE 1 → DOWN: Die Zeile wechselt jetzt einmal pro Takt, unabhängig davon, wo der Ball gerade ist.</div></div></li>
+</ol>
+<ul>
+<li>Schalter für den Lauf nach links: Stufe 2 auf <b>SKIP</b>. Ein Rückschritt springt dann gleich zwei Stufen zurück.</li>
+<li>Loop-Regler der Turing Machine zuerst rechts (feste Schleife): Die Abweichungen wiederholen sich. Dann ein Stück nach links: Sie verändern sich langsam.</li>
+</ul>
+<div class="check"><b>Kontrollpunkt 6.3</b> Du erkennst das Motiv aus 6.1 noch, aber es ist nie zweimal gleich. Je weiter der Loop-Regler links steht, desto öfter stolpert die Figur. Weil RIGHT und LEFT aus derselben Clock kommen, bleibt alles im Raster.</div>
+
+<!-- 6.4 -->
+<h4 id="k6-4">6.4 · Rhythmus aus den Gates</h4>
+<p><b>Ziel:</b> Die vier Stufen-Gates spielen Drums. Die Laufrichtung bestimmt das Muster.</p>
+<ol class="cables">
+<li><span class="n gate">R1</span><div class="r"><div class="route">GATE OUT <b>1</b> → Blck_Noir, Bassdrum-Trigger</div><div class="why">Die genauen Eingänge am Blck_Noir trägst Du beim Durcharbeiten ein. <span class="tag tag-p" id="pr-73">am Gerät prüfen</span></div></div></li>
+<li><span class="n gate">R2</span><div class="r"><div class="route">GATE OUT <b>3</b> → Blck_Noir, Snare- oder Clap-Trigger</div><div class="why"></div></div></li>
+<li><span class="n gate">R3</span><div class="r"><div class="route">GATE OUT <b>ALL</b> → Samples II, Hi-Hat</div><div class="why">ALL feuert auf jedem nicht stummen Schritt.</div></div></li>
+<li><span class="n gate">R4</span><div class="r"><div class="route">µYarns <b>GATE 4</b> (Takt) → Leo Leo <b>STAGE TRIGGER 1</b></div><div class="why">Jeder Takt beginnt mit Stufe 1. Das ist die Synchronisierung auf die Eins.</div></div></li>
+<li><span class="n gate">R5</span><div class="r"><div class="route">Arythmatik, ein Euclid-Ausgang → Leo Leo <b>LEFT</b></div><div class="why">Ein Euklid-Muster gegen den geraden RIGHT-Takt: Die Drums laufen streckenweise rückwärts.</div></div></li>
+</ol>
+<ul>
+<li>MUTE auf Stufe 2: Die Hi-Hat bekommt dort eine Lücke, die Snare auf 3 bleibt.</li>
+<li><span class="jack">COMMON</span> statt ALL auf die Hi-Hat: Jetzt kommt bei jedem Takt-Trigger (R4) ein zusätzlicher Schlag, ein kleiner Akzent auf der Eins.</li>
+</ul>
+<div class="check"><b>Kontrollpunkt 6.4</b> Mit RIGHT allein ein gerader Vier-Schritt-Groove. Mit R5 dazu entstehen Fills, die sich mit dem Euklid-Muster verändern, und R4 holt jeden Takt zuverlässig auf die Eins zurück.</div>
+
+<!-- 6.5 -->
+<h4 id="k6-5">6.5 · Pads und Drones</h4>
+<p><b>Ziel:</b> Der Leo Leo als sehr langsamer Wechsler für mehrere Parameter einer Fläche. Ausgangspunkt ist Patch <a class="xref" href="#p-1c">1C</a> aus Kapitel <a class="xref" href="#k1">01</a>.</p>
+<ol class="cables">
+<li><span class="n cv">P1</span><div class="r"><div class="route">281t Kanal 2 auf Loop, Zyklus ≈ 8 s, <b>PULSE OUT</b> → Leo Leo <b>RIGHT</b></div><div class="why">Ein Schritt alle acht Sekunden.</div></div></li>
+<li><span class="n cv">P2</span><div class="r"><div class="route">ROW CV <b>A</b> → A-156 Q2 (Dur) → Volcan <b>SLEW IN</b> → Volcan OUT → 258t OSC 2 <b>1V/OCT</b></div><div class="why">Der Volcan glättet den Sprung; mit SHAPE wählst Du, ob der Ton gleitet oder sich anschleicht. Nur OSC 2 bewegt sich, OSC 1 bleibt der Grundton: wechselnde Intervalle über einem Bordun.</div></div></li>
+<li><span class="n cv">P3</span><div class="r"><div class="route">ROW CV <b>B</b> → CatSynth Slew → A-106-5 <b>CV2 IN</b></div><div class="why">Statt des 281t aus 1B: Jede Stufe hat ihre eigene Helligkeit, weich überblendet.</div></div></li>
+<li><span class="n cv">P4</span><div class="r"><div class="route">ROW CV <b>C</b> → Attenuverter <b>IN B</b> → 258t OSC 1 <b>WAVE CV</b></div><div class="why">Klangfarbe des Bordun pro Stufe.</div></div></li>
+</ol>
+<div class="check"><b>Kontrollpunkt 6.5</b> Eine Fläche, die sich alle acht Sekunden in eine neue Konstellation bewegt, ohne harte Schnitte. Nach 32 Sekunden beginnt der Zyklus von vorn. Mit DOWN von einem zweiten, noch langsameren Takt werden daraus 16 Konstellationen.</div>
+
+<!-- 6.6 -->
+<h4 id="k6-6">6.6 · Mit µTuring Machine, Volts und Voltages</h4>
+<p><b>Ziel:</b> Der Leo Leo liefert die Melodie, die Turing Machine verändert sie: per Transposition und per Sprung.</p>
+<ol class="cables">
+<li><span class="n cv">T1</span><div class="r"><div class="route">Turing <b>Voltages</b>-Ausgang → A-156 <b>TRANSPOSE</b></div><div class="why">Der gemeinsame Transpose-Eingang des A-156 rastet in Halbtönen. <span class="tag tag-h">Hersteller</span> Voltages auf kleinen Bereich drehen: Sprünge um wenige Halbtöne.</div></div></li>
+<li><span class="n gate">T2</span><div class="r"><div class="route">Turing taktet mit µYarns <b>GATE 4</b> (Takt)</div><div class="why">Ein neuer Transpositionswert pro Takt.</div></div></li>
+<li><span class="n gate">T3</span><div class="r"><div class="route">Pulses-Ausgang → Leo Leo <b>STAGE TRIGGER 3</b></div><div class="why">Ab und zu springt die Melodie direkt auf Stufe 3.</div></div></li>
+<li><span class="n cv">T4</span><div class="r"><div class="route">ein Volts-Ausgang → 281t Kanal 1 <b>ATTACK CV</b></div><div class="why">Manche Noten schwellen an, andere setzen hart ein.</div></div></li>
+</ol>
+<div class="check"><b>Kontrollpunkt 6.6</b> Dieselben vier Töne erscheinen in wechselnden Lagen. Mit dem Loop-Regler ganz rechts wiederholt sich die Folge der Lagen nach 8 oder 16 Takten: eine Form, die Du nicht programmiert hast.</div>
+
+<!-- 6.7 -->
+<h4 id="k6-7">6.7 · Arrangement mit Schaltern</h4>
+<p><b>Ziel:</b> Mute-, Skip- und Stop-Schalter als Spielwerkzeug für eine Form. Grundlage ist 6.1 mit 16 Schritten.</p>
+<div class="tbl w"><table>
+<thead><tr><th>Teil</th><th>Schalter</th><th>Wirkung</th></tr></thead>
+<tbody>
+<tr><td>Intro</td><td>MUTE 2 und 4 an, DOWN abgezogen</td><td>nur zwei Noten pro Takt, immer Zeile A</td></tr>
+<tr><td>Teil A</td><td>alle MUTE aus</td><td>volle Vier-Schritt-Figur</td></tr>
+<tr><td>Teil B</td><td>GATE 1 → DOWN stecken</td><td>16-Schritt-Melodie</td></tr>
+<tr><td>Zuspitzung</td><td>→ Stufe 3 auf SKIP</td><td>Dreier-Figur gegen den Vierer-Takt</td></tr>
+<tr><td>Ende</td><td>→ Stufe 4 auf STOP</td><td>die Melodie bleibt auf ihrer letzten Note stehen</td></tr>
+</tbody></table></div>
+<p>Den Neustart nach dem STOP machst Du per Handtaster auf Stufe 1, oder per µYarns <span class="jack">GATE 4</span> mit <span class="mono">B-</span> = <span class="mono">oo</span>, das nur beim Start des µYarns-Sequencers einen Impuls gibt, in <span class="jack">STAGE TRIGGER 1</span> und <span class="jack">RESET</span>. <span class="tag tag-h">Hersteller</span></p>
+<div class="check"><b>Kontrollpunkt 6.7</b> Ohne ein Kabel zu ändern (außer DOWN) entsteht eine Form mit fünf Teilen. Du spielst sie mit den Schaltern wie ein Instrument.</div>
+
+<!-- 6.8 -->
+<h4 id="k6-8">6.8 · Mit dem 281t: Schritte mit eigener Länge</h4>
+<p><b>Ziel:</b> Der 281t wird zur Clock, und jede Stufe bestimmt, wie lange es bis zum nächsten Schritt dauert. Das ist die Arbeitsweise von Buchlas Sequential Voltage Source, und sie verbindet dieses Kapitel mit dem Krell-Patch (<a class="xref" href="#kwp-09">KWP-09</a>).</p>
+<ol class="cables">
+<li><span class="n gate">F1</span><div class="r"><div class="route">281t Kanal 2 <b>PULSE OUT</b> → Mult → 281t <b>TRIG 2</b> und Leo Leo <b>RIGHT</b></div><div class="why">Kanal 2 auf Attack/Decay. Am Ende jedes Decays startet er sich selbst und schiebt den Ball weiter.</div></div></li>
+<li><span class="n cv">F2</span><div class="r"><div class="route">ROW CV <b>D</b> → Attenuverter <b>IN A</b> → 281t Kanal 2 <b>DECAY CV</b></div><div class="why">Zeile D bestimmt pro Stufe die Dauer bis zum nächsten Schritt. ATTEN A klein beginnen.</div></div></li>
+<li><span class="n gate">F3</span><div class="r"><div class="route">GATE OUT <b>ALL</b> → 281t <b>TRIG 1</b></div><div class="why">Die Stimme aus 2A spielt jeden Schritt.</div></div></li>
+</ol>
+<div class="check"><b>Kontrollpunkt 6.8</b> Die Figur bekommt einen eigenen, ungeraden Rhythmus: Stufen mit hohem D-Wert halten länger. Dreh an D2 während des Laufens: Nur dieser eine Abstand ändert sich. Der Rhythmus ist jetzt Teil der Matrix.</div>
+
+<!-- 08 Hörübung -->
+<p class="bst" id="k6-hoeren">08 · Hörübung: Regel oder Zufall?</p>
+<p>Lass 6.3 zwei Minuten laufen, ohne einzugreifen. Zähl, wie oft die Figur zurückspringt, und versuche vorherzusagen, wann. Dann dreh den Loop-Regler ganz nach rechts und hör noch einmal zwei Minuten: Ab wann erkennst Du das Muster der Rücksprünge wieder? Diese Schwelle zwischen „ich kann es mitsingen“ und „ich höre nur Zufall“ ist das wichtigste Gefühl für generative Musik.</p>
+
+<!-- 09 Variationen -->
+<p class="bst" id="k6-var">09 · Variationen</p>
+<ol>
+<li><b>Ping-Pong.</b> RIGHT und LEFT von derselben Clock, aber LEFT über A-160-2 halbiert. Der Ball pendelt, statt zu kreisen.</li>
+<li><b>Stufen per Hand.</b> Keine Clock, nur die vier Handtaster. Der Leo Leo wird zu einem Instrument mit vier Tasten, jede mit vier Spannungen.</li>
+<li><b>Ein Pfad pro Richtung.</b> → spielt alle Stufen, ← überspringt 2 und 3. Zwei Clocks im Verhältnis 3:1 ergeben ein Muster, das sich erst nach mehreren Takten wiederholt.</li>
+<li><b>DCBA als Gegenstimme.</b> In 1 × 16 läuft DCBA gleichzeitig von unten. Ein Oszillator auf ABCD, ein zweiter auf DCBA ergibt Gegenbewegung.</li>
+</ol>
+
+<!-- 10 Erweiterungen -->
+<p class="bst">10 · Erweiterungen</p>
+<ul>
+<li><b>Muxlicer als Ballwerfer.</b> Die Ausgänge des Muxlicer auf die vier STAGE-TRIGGER-Eingänge: Die Reihenfolge der Stufen folgt dann dem Muxlicer.</li>
+<li><b>Kaskade.</b> Mit dem ∞-Schalter wandert der Ball in einen zweiten Leo Leo, verbunden über ein 10-poliges Kabel auf der Rückseite. Clocks, CVs und Gates werden dabei nicht mit verbunden, nur die aktive Stufe. <span class="tag tag-h">Hersteller</span> Für Dein Pult derzeit nicht relevant, aber gut zu wissen.</li>
+<li><b>Programm als zweite Ebene.</b> Der Cre8audio Programm spielt die Melodie, der Leo Leo nur die Klangparameter (6.2 ohne Zeile A).</li>
+</ul>
+
+<!-- 11 Komposition -->
+<p class="bst" id="k6-komp">11 · Kompositionsaufgabe: ein Matrix-Stück</p>
+<p>Drei Minuten, aufgenommen auf dem L6, nur aus Leo Leo, Stimme 2A und Drums aus 6.4:</p>
+<ol>
+<li><b>0:00–0:45</b> Rhythmus allein (6.4), Melodie stumm über MUTE 1–4.</li>
+<li><b>0:45–1:45</b> Melodie dazu, erst vier Schritte, dann mit DOWN sechzehn. Zeile B als Filterspur (6.2).</li>
+<li><b>1:45–2:30</b> LEFT von der Turing Machine dazu (6.3). Das Stück beginnt zu stolpern.</li>
+<li><b>2:30–3:00</b> Ende mit STOP auf Stufe 4 (6.7), Drums laufen aus.</li>
+</ol>
+
+<!-- 12 Wiederholung -->
+<p class="bst" id="k6-check">12 · Wiederholung und Fehlercheck</p>
+<ul class="todo">
+<li><input type="checkbox" id="k6l1"><label for="k6l1">Die Matrix als 4 × 4, 2 × 8 und 1 × 16 patchen.</label></li>
+<li><input type="checkbox" id="k6l2"><label for="k6l2">Erklären, warum der Leo Leo keine eigene Clock braucht und was RIGHT, LEFT und DOWN tun.</label></li>
+<li><input type="checkbox" id="k6l3"><label for="k6l3">PLAY, SKIP, STOP und MUTE gezielt einsetzen.</label></li>
+<li><input type="checkbox" id="k6l4"><label for="k6l4">Die vier Zeilen als vier Parameterspuren benutzen.</label></li>
+<li><input type="checkbox" id="k6l5"><label for="k6l5">Mit einer zweiten, unregelmäßigen Clock eine Melodie kontrolliert verändern.</label></li>
+<li><input type="checkbox" id="k6l6"><label for="k6l6">Mit dem 281t jedem Schritt eine eigene Dauer geben.</label></li>
+</ul>
+<div class="fault">
+<details><summary>Der Ball bewegt sich nicht</summary><ol>
+<li>Steckt die Clock in RIGHT oder LEFT, nicht in DOWN oder einem STAGE-TRIGGER-Eingang?</li>
+<li>Steht die aktive Stufe für diese Richtung auf STOP? Handtaster einer anderen Stufe drücken.</li>
+<li>Läuft die µYarns-Clock? Sie läuft nur, wenn der interne Takt gestartet ist oder MIDI-Clock ankommt.</li>
+</ol></details>
+<details><summary>Die Töne treffen keine Tonart</summary><ol>
+<li>Geht ROW CV wirklich durch den A-156, und ist der Ausgang des Quantizers im 1V/OCT des 258t?</li>
+<li>Q2 im falschen Modus (Akkord statt Tonleiter)? Dreifachschalter prüfen.</li>
+<li>Transpose-Eingang belegt (6.6) und zu großer Bereich am Voltages?</li>
+</ol></details>
+<details><summary>Keine oder unregelmäßige Gates</summary><ol>
+<li>MUTE-Schalter der Stufe an? Dann schweigt auch ALL.</li>
+<li>281t Kanal 1 auf Attack/Hold/Decay und das Gate ist kurz? Auf Attack/Decay schalten.</li>
+</ol></details>
+<details><summary>DCBA oder RESET verhalten sich seltsam</summary><ol>
+<li>Steckt /2 in RESET (2 × 8) oder nicht (1 × 16)? Das ändert, welche Zeilen DCBA spielt.</li>
+<li>Frühe Bausätze hatten ein bekanntes Problem mit dem DCBA-Ausgang und dem Rücksetzen, das in einer späteren Korrektur der Schaltung behoben wurde (Pull-Request 18 im Voxmachina-Repository, zwei zusätzliche 1N4148-Dioden). Bei einem gebraucht gekauften Modul lohnt der Blick auf die Platine.</li>
+</ol></details>
+</div>
+
+<p class="bst" id="k6-ref">13 · Querverweise</p>
+<div class="refs">
+<div><b>Band 1</b><span class="id"><a href="#k2">B1-02</a></span> Stimme 2A<br><span class="id"><a href="#k5">B1-05</a></span> Modulation, Slew, Makros<br><span class="id"><a href="#k7">B1-07</a></span> Clock-Architektur<br><span class="id"><a href="#k9">B1-09</a></span> Form und Arrangement</div>
+<div><b>Band 2</b><span class="id"><a href="#b2-d01">B2-D-01</a></span> Sequencer und Matrix-Sequencing<br><span class="id"><a href="#b2-d02">B2-D-02</a></span> Leo Leo<br><span class="id"><a href="#b2-a03">B2-A-03</a></span> V/Oct und Quantisierung<br><span class="id"><a href="#b2-d03">B2-D-03</a></span> Clock, Divider, Reset</div>
+<div><b>Band 3 · KWP</b><span class="id"><a href="#b3-04">B3-04</a></span> Generative Klanglandschaften<br><span class="id"><a href="#b3-05">B3-05</a></span> Hypnotische Sequenzen<br><span class="id"><a href="#kwp-09">KWP-09</a></span> Krell<br><span class="id"><a href="#kwp-10">KWP-10</a></span> 8-Takt-Regel · Melodie<br><span class="id"><a href="#kwp-19">KWP-19</a></span> Ottes Buch der Klänge</div>
+<div><b>Module</b><span class="id"><a href="#mp-leoleo">MOD-LeoLeo</a></span> · <span class="id"><a href="#mp-uyarns">MOD-µYarns</a></span><br><span class="id"><a href="#mp-a-156">MOD-A-156</a></span> · <span class="id"><a href="#mp-uturing">MOD-µTuring</a></span></div>
+</div>
+<div class="box-c">
+<h4>Noch am Pult zu prüfen</h4>
+<ul>
+<li>Welche Schalterreihe regelt den Lauf nach rechts, welche nach links, und wie sind die drei Stellungen beschriftet?</li>
+<li>Was STOP genau tut und was die Sequenz wieder freigibt.</li>
+<li>Ob die Zeile bei GATE 1 → DOWN mit Stufe 1 oder einen Schritt später wechselt.</li>
+<li>Länge der Gate-Ausgänge.</li>
+<li>Blck_Noir: Namen der Trigger-Eingänge.</li>
+</ul>
+</div>
+{{BACK}}
+</section>
